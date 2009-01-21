@@ -1,0 +1,7 @@
+setupRequired(utils >= svn6609)
+setupRequired(pex_exceptions >= svn6650)
+
+envAppend(LD_LIBRARY_PATH, ${PRODUCT_DIR}/lib)
+envAppend(DYLD_LIBRARY_PATH, ${PRODUCT_DIR}/lib)
+
+envAppend(PYTHONPATH, ${PRODUCT_DIR}/python)
