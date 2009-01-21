@@ -1,7 +1,11 @@
 # -*- python -*-
 Import('env')
-import glob
+import os, fnmatch
 
 pkg = env["eups_product"]
-env.SharedLibrary(pkg, glob.glob("../src/*.cc"),
+sources = []
+for root, dirs, files in os.walk("../src"):
+    sources += [os.path.join(root, f) for f in fnmatch.filter(files, "*.cc")]
+    dirs = [d for d in dirs if not fnmatch.fnmatch(d, ".*")]
+env.SharedLibrary(pkg, sources,
     LIBS=filter(lambda x: x != pkg, env.getlibs(pkg)))

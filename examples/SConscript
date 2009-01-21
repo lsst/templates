@@ -2,4 +2,5 @@
 Import('env')
 import glob
 
-env.Program(glob.glob("*.cc"), LIBS=env.getlibs(env["eups_product"]))
+for prog in glob.glob("*.cc"):
+    env.Program(prog, LIBS=env.getlibs(env["eups_product"]))
