@@ -1,8 +1,3 @@
-*** UNDER CONSTRUCTION -- DO NOT USE ***
-
-The files in this package are currently under construction and may not reflect
-recommended usage.
-
 ===============================================================================
 TEMPLATE FILES FOR LSST PACKAGES
 ===============================================================================
@@ -21,14 +16,17 @@ appropriate.  These include the following:
    * python/lsst/TMPL/SConscript contents
    * python/lsst/TMPL/TMPLLib.i filename and contents
    * ups/TMPL.table filename and contents
+   * ups/TMPL.cfg filename and contents
 
 The following files need to be modified with information about packages that
 this one depends on (its dependencies):
 
-   * SConstruct
-   * python/lsst/TMPL/SConscript
    * python/lsst/TMPL/TMPLLib.i
    * ups/TMPL.table
+   * ups/TMPL.cfg
+
+For more information on the SCons files, please see the sconsUtils
+Doxygen documentation.
 
 -------------------------------------------------------------------------------
 
