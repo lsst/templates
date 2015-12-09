@@ -13,4 +13,6 @@ setupRequired(pex_exceptions >= 4.6.0.0)
 # Pure-Python packages only need the last line.
 envPrepend(LD_LIBRARY_PATH, ${PRODUCT_DIR}/lib)
 envPrepend(DYLD_LIBRARY_PATH, ${PRODUCT_DIR}/lib)
+# For OS X El Capitan (see http://dmtn-001.lsst.io/)
+envPrepend(LSST_LIBRARY_PATH, ${PRODUCT_DIR}/lib)
 envPrepend(PYTHONPATH, ${PRODUCT_DIR}/python)
