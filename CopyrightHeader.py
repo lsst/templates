@@ -1,7 +1,7 @@
 # 
 # LSST Data Management System
 #
-# Copyright 2008-2014  AURA/LSST.
+# Copyright 2008-2016  AURA/LSST.
 # 
 # This product includes software developed by the
 # LSST Project (http://www.lsst.org/).
