@@ -20,3 +20,20 @@
 # the GNU General Public License along with this program.  If not, 
 # see <https://www.lsstcorp.org/LegalNotices/>.
 #
+
+from __future__ import absolute_import
+import numpy as np
+
+from lsst.utils import TemplateMeta
+from .exampleThree import ExampleThreeF, ExampleThreeD
+
+__all__ = [] # import for side effects
+
+class ExampleThree(metaclass=TemplateMeta):
+    pass
+
+ExampleThree.register(np.float32, ExampleThreeF)
+ExampleThree.register(np.float64, ExampleThreeD)
+ExampleThree.alias("F", ExampleThreeF)
+ExampleThree.alias("D", ExampleThreeD)
+

@@ -20,3 +20,17 @@
 # the GNU General Public License along with this program.  If not, 
 # see <https://www.lsstcorp.org/LegalNotices/>.
 #
+
+from __future__ import absolute_import
+from lsst.utils import continueClass
+
+from .exampleTwo import ExampleTwo
+
+__all__ = [] # import for side effects
+
+@continueClass
+class ExampleTwo:
+        
+    def someExtraFunction(self, x):
+        return x + self.someOtherMethod()
+
