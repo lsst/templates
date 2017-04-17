@@ -1,3 +1,3 @@
 # -*- python -*-
 from lsst.sconsUtils import scripts
-scripts.BasicSConstruct("TMPL")
+scripts.BasicSConstruct("daf_fmt_mysql")
