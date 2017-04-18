@@ -21,6 +21,16 @@
 # see <https://www.lsstcorp.org/LegalNotices/>.
 #
 
-import pkgutil, lsstimport
-__path__ = pkgutil.extend_path(__path__, __name__)
+from __future__ import absolute_import
+from lsst.utils import continueClass
+
+from .exampleTwo import ExampleTwo
+
+__all__ = [] # import for side effects
+
+@continueClass
+class ExampleTwo:
+        
+    def someExtraFunction(self, x):
+        return x + self.someOtherMethod()
 

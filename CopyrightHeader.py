@@ -20,7 +20,3 @@
 # the GNU General Public License along with this program.  If not, 
 # see <https://www.lsstcorp.org/LegalNotices/>.
 #
-
-import pkgutil, lsstimport
-__path__ = pkgutil.extend_path(__path__, __name__)
-
