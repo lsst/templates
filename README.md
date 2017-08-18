@@ -6,7 +6,6 @@ We're continuously updating these templates with our adopted standards and best 
 
 Two classes of templates are available in separate directories:
 
-
 1. `file_templates/`.
    **File templates** are either entire files or snippets you can add to files.
    Examples of templates are license statements, documentation pages, and test module boilerplate.
@@ -19,7 +18,7 @@ Two classes of templates are available in separate directories:
 
 ## List of project templates
 
-- [stack_package](project_tempaltes/stack_package/)
+- [stack_package](project_templates/stack_package/)
 
 ## List of file templates
 
