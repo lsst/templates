@@ -24,6 +24,7 @@ Two classes of templates are available in separate directories:
 ## List of file templates
 
 - [copyright](file_templates/copyright)
+- [license_gplv3](file_templates/license_gplv3)
 - [stack_license_preamble_cpp](file_templates/stack_license_preamble_cpp)
 - [stack_license_preamble_py](file_templates/stack_license_preamble_py)
 - [stack_license_preamble_txt](file_templates/stack_license_preamble_txt)
