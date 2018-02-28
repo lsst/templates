@@ -8,16 +8,16 @@ from templatekit.filerender import render_file_template
 def test_render_file_template():
     """Test render_file_template().
 
-    This test uses file_templates/stack_license_py/template.py.jinja as an
-    example project.
+    This test uses file_templates/stack_license_preamble_txt/template.txt.jinja
+    as an example project.
     """
     template_path = os.path.abspath(os.path.join(
         os.path.dirname(__file__),
-        '../file_templates/stack_license_py/template.py.jinja'))
+        '../file_templates/stack_license_preamble_txt/template.txt.jinja'))
 
     expected_content_path = os.path.abspath(os.path.join(
         os.path.dirname(__file__),
-        '../file_templates/stack_license_py/example.py'))
+        '../file_templates/stack_license_preamble_txt/example.txt'))
     with open(expected_content_path) as fh:
         expected_content = fh.read()
 

@@ -1,5 +1,0 @@
-from templatekit.builder import file_template_builder
-
-
-env = Environment(BUILDERS={'FileTemplate': file_template_builder})
-env.FileTemplate('example.cc', 'template.cc.jinja')

@@ -23,7 +23,6 @@ Two classes of templates are available in separate directories:
 
 ## List of file templates
 
-- [stack_license_cpp](file_templates/stack_license_cpp)
-- [stack_license_f90](file_templates/stack_license_f90)
-- [stack_license_py](file_templates/stack_license_py)
+- [stack_license_preamble_cpp](file_templates/stack_license_preamble_cpp)
+- [stack_license_preamble_py](file_templates/stack_license_preamble_py)
 - [stack_license_preamble_txt](file_templates/stack_license_preamble_txt)
