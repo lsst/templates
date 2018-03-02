@@ -2,4 +2,4 @@ from templatekit.builder import file_template_builder
 
 
 env = Environment(BUILDERS={'FileTemplate': file_template_builder})
-env.FileTemplate('example.py', 'template.py.jinja')
+env.FileTemplate('LICENSE', 'LICENSE.jinja')

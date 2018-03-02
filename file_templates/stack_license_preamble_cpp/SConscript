@@ -1,0 +1,10 @@
+from templatekit.builder import file_template_builder, line_format_builder
+
+
+env = Environment(BUILDERS={'FileTemplate': file_template_builder,
+                            'LineFormat': line_format_builder},
+                  line_format=' * {}',
+                  header='/*',
+                  footer=' */')
+env.LineFormat('template.cc.jinja', '../stack_license_preamble_txt/template.txt.jinja')
+env.FileTemplate('example.cc', 'template.cc.jinja')
