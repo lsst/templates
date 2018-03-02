@@ -14,3 +14,6 @@ doc/*.inc
 doc/doxygen.conf
 tests/.tests
 version.py
+.eggs
+.pytest_cache
+*.egg-info

@@ -1,6 +1,6 @@
 ! 
 ! LSST Data Management System
-! Copyright 2008-2017  AURA/LSST.
+! Copyright 2018 Association of Universities for Research in Astronomy
 ! 
 ! This product includes software developed by the
 ! LSST Project (http://www.lsst.org/).

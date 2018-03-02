@@ -18,6 +18,7 @@ Two classes of templates are available in separate directories:
 
 ## List of project templates
 
+- [example_project](project_templates/example_project/)
 - [stack_package](project_templates/stack_package/)
 
 ## List of file templates
