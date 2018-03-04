@@ -1,5 +1,15 @@
 from templatekit.builder import cookiecutter_project_builder
 
+# Copy file templates
+Command(
+    "{{cookiecutter.package_name}}/LICENSE",
+    "../../file_templates/license_gplv3/LICENSE.jinja",
+    Copy("$TARGET", "$SOURCE"))
+Command(
+    "{{cookiecutter.package_name}}/COPYRIGHT",
+    "../../file_templates/copyright/COPYRIGHT.jinja",
+    Copy("$TARGET", "$SOURCE"))
 
+# Run cookiecutter to generate the 'example' package
 env = Environment(BUILDERS={'Cookiecutter': cookiecutter_project_builder})
 env.Cookiecutter('cookiecutter.json')
