@@ -1,0 +1,6 @@
+{
+  "package_name": "example",
+  "copyright_year": "{% now 'utc', '%Y' %}",
+  "copyright_holder": "Association of Universities for Research in Astronomy",
+  "_extensions": ["jinja2_time.TimeExtension"]
+}
