@@ -11,6 +11,8 @@ import sys
 
 # This variable is interpolated by cookiecutter before this hook is run
 python_sub_dirs = '{{ cookiecutter.python_sub_dirs }}'
+uses_cpp = True if ('{{ cookiecutter.uses_cpp }}' is True
+                    or '{{ cookiecutter.uses_cpp }}' == 'True') else False
 
 python_sub_dir_parts = python_sub_dirs.split('/')
 
@@ -38,3 +40,11 @@ if len(python_sub_dir_parts) > 2:
         shutil.copy(root_init_path, init_path)
         print('(post-gen hook) Copied {0} to {1}'
               .format(root_init_path, init_path))
+
+
+# Remove C++ directories if cookiecutter.uses_cpp is False
+if not uses_cpp:
+    cpp_dirnames = ('lib', 'src', 'include')
+    for dirname in cpp_dirnames:
+        print('(post-gen hook) Removing {0} directory'.format(dirname))
+        shutil.rmtree(dirname, ignore_errors=True)
