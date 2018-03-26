@@ -11,5 +11,18 @@ Command(
     Copy("$TARGET", "$SOURCE"))
 
 # Run cookiecutter to generate the 'example' package
+# The explicit target directory, with AlwaysBuild, is needed for Scons to
+# differntiate this build from the other example build below.
 env = Environment(BUILDERS={'Cookiecutter': cookiecutter_project_builder})
-env.Cookiecutter('cookiecutter.json')
+env.Cookiecutter(AlwaysBuild(Dir('example')),
+                 'cookiecutter.json')
+
+# Run cookiecutter to generate the 'example_subpackage' package
+# This shows off multi-level namespaces
+# The explicit target directory, with AlwaysBuild, is needed for Scons to
+# differntiate this build from the example build above. We can't use Scons'
+# default build caching because we'd have to compute the cookiecutter
+# template anyways.
+env.Cookiecutter(AlwaysBuild(Dir('example_subpackage')),
+                 'cookiecutter.json',
+                 cookiecutter_context={'package_name': 'example_subpackage'})
