@@ -26,3 +26,14 @@ env.Cookiecutter(AlwaysBuild(Dir('example')),
 env.Cookiecutter(AlwaysBuild(Dir('example_subpackage')),
                  'cookiecutter.json',
                  cookiecutter_context={'package_name': 'example_subpackage'})
+
+# Run cookiecutter to generate the 'example_pythononly' package
+# This shows off a Python-only package (and multi-level namespaces).
+# The explicit target directory, with AlwaysBuild, is needed for Scons to
+# differntiate this build from the example build above. We can't use Scons'
+# default build caching because we'd have to compute the cookiecutter
+# template anyways.
+env.Cookiecutter(AlwaysBuild(Dir('example_pythononly')),
+                 'cookiecutter.json',
+                 cookiecutter_context={'package_name': 'example_pythononly',
+                                       'uses_cpp': False})
