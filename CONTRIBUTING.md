@@ -15,6 +15,8 @@ Because of the broad impact of these templates, a [Request for Comments (RFC)](h
 5. [templatekit](#templatekit)
 6. [FAQ](#faq)
 
+* * *
+
 ## Set up for development
 
 To effectively contribute templates, you'll need to install the [templatekit Python package](#templatekit) that includes helpers for rendering templates, as well as sets dependencies on third-party tools like Cookiecutter and Scons:
@@ -34,6 +36,12 @@ scons
 ```
 
 The [Making a file template](#making-a-file-template) and [Making a project template](#making-a-project-template) sections describe how to add and modify templates.
+
+* * *
+
+[Jump to top 🔝](#contributing-to-lssttemplates)
+
+* * *
 
 ## Making a file template
 
@@ -99,6 +107,12 @@ Remember to include this `SConscript` file's path to the `SConstruct` file at th
 
 The example file is generated via `scons` and should be committed in the Git repository whenever the template changes.
 The file name of the example comes from the `SConscript`, and the template values are the defaults set in `cookiecutter.json`.
+
+* * *
+
+[Jump to top 🔝](#contributing-to-lssttemplates)
+
+* * *
 
 ## Making a project template
 
@@ -260,6 +274,12 @@ The name of the example directory should ideally be `example`.
 You can set this from the `project_name` field in `cookiecutter.json`, assuming that the template cookiecutter directory is named `{{cookiecutter.project_name}}`.
 Be sure to commit the example files to the Git repository whenever the template changes.
 
+* * *
+
+[Jump to top 🔝](#contributing-to-lssttemplates)
+
+* * *
+
 ## Continuous integration
 
 [Travis CI](https://travis-ci.org/lsst/templates) tests the repository when you push to GitHub.
@@ -280,6 +300,12 @@ If files have been deleted from the template project, be sure to delete them fro
 
 See the [.travis.yml](.travis.yml) file for more details on how the tests are run.
 
+* * *
+
+[Jump to top 🔝](#contributing-to-lssttemplates)
+
+* * *
+
 ## templatekit
 
 `templatekit` is a Python package, included in the templates repository, that provides helpers for rendering file and project templates (including custom Scons builders).
@@ -289,6 +315,12 @@ To install `templatekit` for development, run `python setup.py develop` from the
 
 You can invoke the unit tests by running `python setup.py test`.
 We use [pytest](https://docs.pytest.org/en/latest/) as the testing framework.
+
+* * *
+
+[Jump to top 🔝](#contributing-to-lssttemplates)
+
+* * *
 
 ## FAQ
 
@@ -320,3 +352,7 @@ It's inevitable that projects (and templates) will duplicate content from other 
 For example, Python modules in a project will contain license boilerplate that originates in a template.
 Use SCons to copy the file template into the appropriate project templates, see [Copying a file template into a project template](#copying-a-file-template-into-a-project template).
 The [continuous integration](#continuous-integration) service ensures that the file and project templates are kept in sync.
+
+* * *
+
+[Jump to top 🔝](#contributing-to-lssttemplates)
