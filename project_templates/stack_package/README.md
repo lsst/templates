@@ -47,3 +47,22 @@ Supported Stack packages are always located in the `lsst` organization.
 
 If `true` (default), the package is configured to support C++ and pybind11 code.
 If `false`, the generated package is Python-only.
+
+## Examples
+
+This project template has multiple examples that demonstrate different configurations.
+
+### example/
+
+The [example](example) directory is a Stack package created using only the template defaults.
+
+### example_subpackage/
+
+The [example_subpackage](example_subpackage) directory shows a Stack package with a three-level Python namespace (`lsst.example.subpackage`).
+Packages with deep namespaces need [`__init__.py` files](example_subpackage/python/lsst/example/__init__.py) at each level that extend the namespace.
+
+### example_pythononly/
+
+The [example_pythononly](example_pythononly) directory shows a Stack package that only includes Python code (and no C++ sources).
+Such packages don't have `lib`, `include`, and `src` directories.
+Some of the dependencies configured in the [`ups` directory](example_pythononly/ups) are also different.
