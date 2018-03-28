@@ -13,5 +13,5 @@
   ],
   "github_org": ["lsst", "lsst-dm", "lsst-sims"],
   "uses_cpp": [true, false],
-  "_extensions": ["jinja2_time.TimeExtension"]
+  "_extensions": ["jinja2_time.TimeExtension", "templatekit.TemplatekitExtension"]
 }

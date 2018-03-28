@@ -220,7 +220,10 @@ It's also customary to import objects from other modules here to craft the publi
 
 ### src/
 
-Add C++ source to this directory.
+Add C++ source files to the `src/` directory.
+The included `Starter.cc` shows how to create a namespace.
+You should rename this file to suit your application.
+
 *Only necessary for packages developed in C++.*
 
 ### tests/SConscript
