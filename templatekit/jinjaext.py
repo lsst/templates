@@ -3,8 +3,11 @@
 
 __all__ = ('convert_py_to_cpp_namespace_code',
            'convert_py_namespace_to_cpp_header_def',
-           'convert_py_to_cpp_namespace')
+           'convert_py_to_cpp_namespace',
+           'convert_py_namespace_to_includes_dir',
+           'convert_py_namespace_to_header_filename')
 
+import os
 from jinja2.ext import Extension
 
 
@@ -36,6 +39,10 @@ class TemplatekitExtension(Extension):
     - ``convert_py_namespace_to_cpp_header_def``
       (`convert_py_namespace_to_cpp_header_def`)
     - ``convert_py_to_cpp_namespace`` (`convert_py_to_cpp_namespace`)
+    - ``convert_py_namespace_to_includes_dir``
+      (`convert_py_namespace_to_includes_dir`)
+    - ``convert_py_namespace_to_header_filename``
+      (`convert_py_namespace_to_header_filename`)
     """
 
     def __init__(self, environment):
@@ -44,6 +51,8 @@ class TemplatekitExtension(Extension):
         environment.filters['convert_py_to_cpp_namespace_code'] = convert_py_to_cpp_namespace_code  # noqa: E501
         environment.filters['convert_py_namespace_to_cpp_header_def'] = convert_py_namespace_to_cpp_header_def  # noqa: E501
         environment.filters['convert_py_to_cpp_namespace'] = convert_py_to_cpp_namespace  # noqa: E501
+        environment.filters['convert_py_namespace_to_includes_dir'] = convert_py_namespace_to_includes_dir  # noqa: E501
+        environment.filters['convert_py_namespace_to_header_filename'] = convert_py_namespace_to_header_filename  # noqa: E501
 
 
 def convert_py_to_cpp_namespace_code(python_namespace):
@@ -111,3 +120,39 @@ def convert_py_to_cpp_namespace(python_namespace):
         A C++ namespace. For example: ``'lsst::example'``.
     """
     return python_namespace.replace('.', '::')
+
+
+def convert_py_namespace_to_includes_dir(python_namespace):
+    """Convert a Python namespace into a C++ header def token.
+
+    Parameters
+    ----------
+    python_namespace : `str`
+        A string describing a Python namespace. For example,
+        ``'lsst.example'``.
+
+    Returns
+    -------
+    includes_dir : `str`
+        The includes directory.
+    """
+    parts = python_namespace.split('.')
+    return os.path.join(*parts[:-1])
+
+
+def convert_py_namespace_to_header_filename(python_namespace):
+    """Convert a Python namespace to the name of the root C++ header file.
+
+    Parameters
+    ----------
+    python_namespace : `str`
+        A string describing a Python namespace. For example,
+        ``'lsst.example'``.
+
+    Returns
+    -------
+    header_filename : `str`
+        Filename of the root header file.
+    """
+    parts = python_namespace.split('.')
+    return parts[-1] + '.h'
