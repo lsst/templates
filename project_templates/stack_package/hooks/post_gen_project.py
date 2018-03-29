@@ -3,13 +3,27 @@
 This script runs from the root directory of the created project itself. In
 addition, cookiecutter interpolates Jinja2 templates to insert any necessary
 variables.
+
+Key functionality is:
+
+1. Create intermediate ``__init__.py`` files for packages with two or more
+   namespace layers.
+
+2. Move ``include/root.h`` to its proper subdirectory and name.
+
+3. Remove C++ directories if ``cookiecutter.uses_cpp`` is False.
 """
 import os
 import shutil
 import sys
 
+from templatekit.jinjaext import (
+    convert_py_namespace_to_includes_dir,
+    convert_py_namespace_to_header_filename)
 
-# This variable is interpolated by cookiecutter before this hook is run
+
+# These variables are interpolated by cookiecutter before this hook is run
+python_namespace = '{{ cookiecutter.python_module }}'
 python_sub_dirs = '{{ cookiecutter.python_sub_dirs }}'
 uses_cpp = True if ('{{ cookiecutter.uses_cpp }}' is True
                     or '{{ cookiecutter.uses_cpp }}' == 'True') else False
@@ -41,6 +55,21 @@ if len(python_sub_dir_parts) > 2:
         print('(post-gen hook) Copied {0} to {1}'
               .format(root_init_path, init_path))
 
+# Move include/root.h to a directory and name based on the namespace.
+initial_header_path = os.path.join('include', 'root.h')
+if os.path.exists(initial_header_path):
+    new_include_dir = os.path.join(
+        'include',
+        convert_py_namespace_to_includes_dir(python_namespace))
+    if not os.path.exists(new_include_dir):
+        os.makedirs(new_include_dir)
+    new_header_filename = os.path.join(
+        new_include_dir,
+        convert_py_namespace_to_header_filename(python_namespace))
+    if os.path.exists(new_header_filename):
+        os.remove(new_header_filename)
+    shutil.move(initial_header_path, new_header_filename)
+    print('(post-gen hook) Moved root.h to {}'.format(new_header_filename))
 
 # Remove C++ directories if cookiecutter.uses_cpp is False
 if not uses_cpp:

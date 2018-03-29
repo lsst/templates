@@ -187,9 +187,16 @@ You shouldn't need to modify this file.
 You can put example Python modules in this `examples` directory.
 Keep in mind that these examples aren't tested by continuous integration and we may change our usage of the examples directory in the future.
 
-### include/
+### include/root.h
 
-This directory is for C++ header files.
+Example: [include/lsst/example.h](example/include/lsst/example.h)
+
+This is the root C++ header file.
+Typically you will only `#include` other header files from this root header.
+
+Note: the name `root.h` is only used by the template source.
+When the template is built, a post-generate hook moves this header into place, based on the package's namespace.
+
 *Only necessary for packages developed in C++.*
 
 ### lib/SConscript
@@ -219,6 +226,8 @@ At a minimum, this `__init__.py` imports objects from the `version.py` module cr
 It's also customary to import objects from other modules here to craft the public API that users import.
 
 ### src/
+
+Example: [src/Starter.cc](example/src/Starter.cc).
 
 Add C++ source files to the `src/` directory.
 The included `Starter.cc` shows how to create a namespace.
