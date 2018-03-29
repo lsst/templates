@@ -9,21 +9,6 @@
 EUPS package name.
 This is the name of the repository and the directory.
 
-### cookiecutter.python_module
-
-The package's Python namespace.
-Normally this is a sub-package of `lsst`, and based on the EUPS package name.
-For example, the Python namespace of the `pipe_base` package is `lsst.pipe.base`.
-
-This variable is automatically computed from `cookiecutter.package_name`.
-
-### cookiecutter.python_sub_dirs
-
-The directory path where the Package's Python code is located.
-For example, this variable is `lsst/pipe/base` for the `pipe_base` package.
-
-This variable is automatically computed from `cookiecutter.python_module`.
-
 ### cookiecutter.copyright_year
 
 The year, or years that the named institution made contributions.
@@ -47,6 +32,21 @@ Supported Stack packages are always located in the `lsst` organization.
 
 If `true` (default), the package is configured to support C++ and pybind11 code.
 If `false`, the generated package is Python-only.
+
+### cookiecutter.python_module
+
+The package's Python namespace.
+Normally this is a sub-package of `lsst`, and based on the EUPS package name.
+For example, the Python namespace of the `pipe_base` package is `lsst.pipe.base`.
+
+A default for this variable is automatically computed from `cookiecutter.package_name`.
+
+### cookiecutter.python_sub_dirs
+
+The directory path where the Package's Python code is located.
+For example, this variable is `lsst/pipe/base` for the `pipe_base` package.
+
+A default for this variable is automatically computed from `cookiecutter.package_name`.
 
 ## Examples
 
