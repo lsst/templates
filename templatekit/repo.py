@@ -1,10 +1,91 @@
 """Template repository APIs.
 """
 
-__all__ = ('RepoTemplate',)
+__all__ = ('Repo', 'RepoTemplate')
 
 import os
 import logging
+
+
+class Repo(object):
+    """Template repository.
+
+    Parameters
+    ----------
+    root : `str`
+        Path to the root directory of the template repository. Use ``'.'``
+        as the current working directory.
+    """
+
+    def __init__(self, root):
+        super().__init__()
+        self._log = logging.getLogger(__name__)
+        self.root = root
+
+    @property
+    def file_templates_dirname(self):
+        """Path of the ``file_templates`` directory in the repository (`str`).
+        """
+        return os.path.join(self.root, 'file_templates')
+
+    @property
+    def project_templates_dirname(self):
+        """Path of the ``project_templates`` directory in the repository
+        (`str`).
+        """
+        return os.path.join(self.root, 'project_templates')
+
+    def iter_file_templates(self):
+        """Iterate over file templates in the repository.
+
+        These templates are in the ``file_templates`` directory of the
+        repository and either template a single file, or a snippet of one.
+
+        Yields
+        ------
+        template : `RepoTemplate`
+            Template object.
+        """
+        dir_items = self._list_directory_items(self.file_templates_dirname)
+        for template_dir in dir_items:
+            try:
+                template = RepoTemplate(template_dir)
+            except (OSError, ValueError) as err:
+                # Not a template directory
+                message = ('Found file_template directory {0!r} but it is not '
+                           'a recognizable template. {1!s}')
+                logging.warning(message.format(template_dir, err))
+                continue
+            yield template
+
+    def iter_project_templates(self):
+        """Iterate over project templates in the repository.
+
+        These templates are in the ``project_templates`` directory of the
+        repository and template full project directory trees and contents.
+
+        Yields
+        ------
+        template : `RepoTemplate`
+            Template object.
+        """
+        dir_items = self._list_directory_items(self.project_templates_dirname)
+        for template_dir in dir_items:
+            try:
+                template = RepoTemplate(template_dir)
+            except (OSError, ValueError) as err:
+                # Not a template directory
+                message = ('Found project_template directory {0!r} but it is '
+                           'not a recognizable template. {1!s}')
+                logging.warning(message.format(template_dir, err))
+                continue
+            yield template
+
+    def _list_directory_items(self, dirname):
+        fs_items = os.listdir(dirname)
+        fs_items.sort()
+        fs_items = [os.path.join(dirname, item) for item in fs_items]
+        return [fs_item for fs_item in fs_items if os.path.isdir(fs_item)]
 
 
 class RepoTemplate(object):
