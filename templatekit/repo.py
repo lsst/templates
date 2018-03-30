@@ -22,6 +22,53 @@ class Repo(object):
         self._log = logging.getLogger(__name__)
         self.root = root
 
+    @classmethod
+    def discover_repo(cls, dirname='.'):
+        """Create a Repo instance by discovering the template repo's
+        root directory.
+
+        Parameters
+        ----------
+        dirname : `str`
+            Relative or absolute path of a directory. This directory should
+            either be the root of a template repository, or a subdirectory
+            of the template repository.
+
+        Returns
+        -------
+        repo : `Repo`
+            The Repo instance corresponding to the given directory.
+
+        Raises
+        ------
+        OSError
+            Raised if ``dirname`` is not, or is not contained by, a
+            recognizable templates repository.
+        """
+        original_dirname = dirname
+        dirname = os.path.abspath(dirname)
+
+        while dirname != '/':
+            if cls._is_repo_dir(dirname):
+                return cls(dirname)
+
+            # Repeat with the parent directory
+            dirname = os.path.split(dirname)[0]
+
+        message = ('The directory {0!r} is not contained by a recognizable '
+                   'template repository.')
+        raise OSError(message.format(original_dirname))
+
+    @staticmethod
+    def _is_repo_dir(dirname):
+        if not os.path.isdir(os.path.join(dirname, 'file_templates')):
+            return False
+
+        if not os.path.isdir(os.path.join(dirname, 'project_templates')):
+            return False
+
+        return True
+
     @property
     def file_templates_dirname(self):
         """Path of the ``file_templates`` directory in the repository (`str`).

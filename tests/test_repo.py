@@ -1,8 +1,33 @@
 """Test the templatekit.repo.Repo class.
+
+All these tests assume they are being run from the root of a lsst/templates
+directory clone.
 """
 
 import os
+import pytest
 from templatekit.repo import Repo, RepoTemplate
+
+
+def test_discovery_repo_at_root():
+    """Test Repo.discover_repo given the root directory itself.
+    """
+    repo = Repo.discover_repo(dirname='.')
+    assert isinstance(repo, Repo)
+
+
+def test_discover_repo_in_subdir():
+    """Test Repo.discover_repo given a subdirectory of the root.
+    """
+    repo = Repo.discover_repo(dirname='file_templates')
+    assert isinstance(repo, Repo)
+
+
+def test_discover_repo_invalid():
+    """Test Repo.discover_repo an invalid starting directory.
+    """
+    with pytest.raises(OSError):
+        Repo.discover_repo(dirname=os.path.abspath('..'))
 
 
 def test_file_templates_dirname():
