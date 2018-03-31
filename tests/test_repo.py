@@ -6,7 +6,7 @@ directory clone.
 
 import os
 import pytest
-from templatekit.repo import Repo, RepoTemplate
+from templatekit.repo import Repo, FileTemplate, ProjectTemplate
 
 
 def test_discovery_repo_at_root():
@@ -51,7 +51,7 @@ def test_iter_file_templates():
     file_templates = list(repo.iter_file_templates())
     assert len(file_templates) > 0
     for file_template in file_templates:
-        assert isinstance(file_template, RepoTemplate)
+        assert isinstance(file_template, FileTemplate)
 
 
 def test_iter_project_templates():
@@ -61,7 +61,7 @@ def test_iter_project_templates():
     project_templates = list(repo.iter_project_templates())
     assert len(project_templates) > 0
     for project_template in project_templates:
-        assert isinstance(project_template, RepoTemplate)
+        assert isinstance(project_template, ProjectTemplate)
 
 
 def test_getitem():
@@ -72,11 +72,11 @@ def test_getitem():
         repo['whatwhat']
 
     copyright_template = repo['copyright']
-    assert isinstance(copyright_template, RepoTemplate)
+    assert isinstance(copyright_template, FileTemplate)
     assert copyright_template.name == 'copyright'
 
     example_project_template = repo['example_project']
-    assert isinstance(example_project_template, RepoTemplate)
+    assert isinstance(example_project_template, ProjectTemplate)
     assert example_project_template.name == 'example_project'
 
 

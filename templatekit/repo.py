@@ -1,7 +1,7 @@
 """Template repository APIs.
 """
 
-__all__ = ('Repo', 'RepoTemplate')
+__all__ = ('Repo', 'FileTemplate', 'ProjectTemplate', 'BaseTemplate')
 
 import os
 import itertools
@@ -117,7 +117,7 @@ class Repo(object):
 
         Yields
         ------
-        template : `RepoTemplate`
+        template : `FileTemplate` or `ProjectTemplate`
             Template object.
         """
         file_iterator = self.iter_file_templates()
@@ -133,13 +133,13 @@ class Repo(object):
 
         Yields
         ------
-        template : `RepoTemplate`
+        template : `FileTemplate`
             Template object.
         """
         dir_items = self._list_directory_items(self.file_templates_dirname)
         for template_dir in dir_items:
             try:
-                template = RepoTemplate(template_dir)
+                template = FileTemplate(template_dir)
             except (OSError, ValueError) as err:
                 # Not a template directory
                 message = ('Found file_template directory {0!r} but it is not '
@@ -156,13 +156,13 @@ class Repo(object):
 
         Yields
         ------
-        template : `RepoTemplate`
+        template : `ProjectTemplate`
             Template object.
         """
         dir_items = self._list_directory_items(self.project_templates_dirname)
         for template_dir in dir_items:
             try:
-                template = RepoTemplate(template_dir)
+                template = ProjectTemplate(template_dir)
             except (OSError, ValueError) as err:
                 # Not a template directory
                 message = ('Found project_template directory {0!r} but it is '
@@ -178,7 +178,7 @@ class Repo(object):
         return [fs_item for fs_item in fs_items if os.path.isdir(fs_item)]
 
 
-class RepoTemplate(object):
+class BaseTemplate(object):
     """Template (file or project) in the templates repo.
 
     Parameters
@@ -214,10 +214,10 @@ class RepoTemplate(object):
             raise ValueError(message)
 
     def __str__(self):
-        return 'RepoTemplate({0!r})'.format(self.name)
+        return '{0!s}({1!r})'.format(self.__class__.__name__, self.name)
 
     def __repr__(self):
-        return 'RepoTemplate({0!r})'.format(self.path)
+        return '{0!s}({1!r})'.format(self.__class__.__name__, self.name)
 
     @property
     def name(self):
@@ -230,3 +230,48 @@ class RepoTemplate(object):
         """Path of the cookiecutter.json file (`str`).
         """
         return os.path.join(self.path, 'cookiecutter.json')
+
+
+class FileTemplate(BaseTemplate):
+    """File template.
+
+    Parameters
+    ----------
+    path : `str`
+        Path of the template's directory.
+
+    Raises
+    ------
+    OSError
+        Raised if ``path`` is not a directory.
+    ValueError
+        Raised if ``path`` is a directory that does not contain a recognizable
+        template.
+    """
+
+    @property
+    def source_path(self):
+        """Path to the template source file (a .jinja extension) (`str`).
+        """
+        items = os.listdir(self.path)
+        for item in items:
+            if os.path.splitext(item)[-1] == '.jinja':
+                return os.path.join(self.path, item)
+
+
+class ProjectTemplate(BaseTemplate):
+    """Project template.
+
+    Parameters
+    ----------
+    path : `str`
+        Path of the template's directory.
+
+    Raises
+    ------
+    OSError
+        Raised if ``path`` is not a directory.
+    ValueError
+        Raised if ``path`` is a directory that does not contain a recognizable
+        template.
+    """
