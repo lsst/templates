@@ -6,25 +6,42 @@ __all__ = ('make',)
 import os
 import click
 from cookiecutter.main import cookiecutter
+import pyperclip
 
 from ..filerender import render_file_template
 from ..repo import FileTemplate
 
 
-@click.command()
+@click.command(short_help='Make a file or project from a template.')
 @click.argument('name', metavar='<template name>', required=True)
 @click.option('-o', '--output', 'output_path',
               type=click.Path(resolve_path=True),
               help="Filepath to render a file template into, or directory "
                    "to create a project in.")
+@click.option('-c', '--copy/--no-copy', 'copy_to_clipboard',
+              default=False,
+              help='Copy a rendered file/snippet to the clipboard.')
 @click.pass_obj
-def make(state, name, output_path):
+def make(state, name, output_path, copy_to_clipboard):
     """Make a file or project from a template called <template name>.
 
-    --output is optional. When provided for a file template, templatekit
-    renders the output into that file path. For a project template, this is
-    the directory the project's directory is created in (default is the
-    current working directory).
+    You will be prompted to configure the template.
+
+    \b
+    Project output options
+    ----------------------
+
+    --output sets the base directory that templatekit creates your new
+    project in. Default is the
+
+    \b
+    File/snippet output options
+    ---------------------------
+
+    Set --output to be the file the content is rendered into. Otherwise,
+    the content is printed to stdout.
+
+    Set -c/--copy to also copy the rendered content to the clipboard.
     """
     repo = state['repo']
     try:
@@ -35,12 +52,12 @@ def make(state, name, output_path):
         raise click.UsageError(message)
 
     if isinstance(template, FileTemplate):
-        _handle_file_template(template, output_path)
+        _handle_file_template(template, output_path, copy_to_clipboard)
     else:
         _handle_project_template(template, output_path)
 
 
-def _handle_file_template(template, output_path):
+def _handle_file_template(template, output_path, copy_to_clipboard):
     """Handle rendering and output for a file template.
     """
     rendered_text = render_file_template(template.source_path,
@@ -58,6 +75,10 @@ def _handle_file_template(template, output_path):
             os.makedirs(base_dir)
         with open(output_path, 'w') as fh:
             fh.write(rendered_text)
+
+    if copy_to_clipboard:
+        pyperclip.copy(rendered_text)
+        click.echo('Copied to clipboard')
 
 
 def _handle_project_template(template, output_path):

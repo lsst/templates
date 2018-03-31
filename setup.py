@@ -20,7 +20,8 @@ install_requires = [
     'cookiecutter==1.6.0',
     'Jinja2==2.10',
     'scons==3.0.1',
-    'click>=6.7,<7.0'
+    'click>=6.7,<7.0',
+    'pyperclip>=1.6.0,<1.7.0'
 ]
 
 # Test dependencies
