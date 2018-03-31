@@ -7,6 +7,7 @@ import click
 
 from ..repo import Repo
 from .listtemplates import list_templates
+from .make import make
 
 
 # Add -h as a help shortcut option
@@ -37,3 +38,4 @@ def main(ctx, template_repo):
 
 
 main.add_command(list_templates, name='list')
+main.add_command(make)
