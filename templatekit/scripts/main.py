@@ -6,6 +6,7 @@ __all__ = ('main',)
 import click
 
 from ..repo import Repo
+from .listtemplates import list_templates
 
 
 # Add -h as a help shortcut option
@@ -33,3 +34,6 @@ def main(ctx, template_repo):
     # ctx.obj object as the first argument. Subcommands shouldn't create their
     # own Repo instance.
     ctx.obj = {'repo': Repo.discover_repo(dirname=template_repo)}
+
+
+main.add_command(list_templates, name='list')
