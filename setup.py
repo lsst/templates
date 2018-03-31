@@ -19,7 +19,8 @@ version = '0.1.0b1'
 install_requires = [
     'cookiecutter==1.6.0',
     'Jinja2==2.10',
-    'scons==3.0.1'
+    'scons==3.0.1',
+    'click>=6.7,<7.0'
 ]
 
 # Test dependencies
@@ -48,4 +49,7 @@ setup(
     install_requires=install_requires,
     tests_require=tests_require,
     setup_requires=setup_requires,
+    entry_points={
+        'console_scripts': ['templatekit = templatekit.scripts.main:main']
+    }
 )
