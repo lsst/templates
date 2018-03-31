@@ -4,6 +4,7 @@
 __all__ = ('Repo', 'RepoTemplate')
 
 import os
+import itertools
 import logging
 
 
@@ -69,6 +70,34 @@ class Repo(object):
 
         return True
 
+    def __repr__(self):
+        return 'Repo({0!r})'.format(self.root)
+
+    def __str__(self):
+        return '{0!r}\nProject templates: {1!s}\nFile templates: {2!s}'.format(
+            self,
+            ', '.join([t.name for t in self.iter_project_templates()]),
+            ', '.join([t.name for t in self.iter_file_templates()])
+        )
+
+    def __iter__(self):
+        """Iterate over the names of all templates in the repository.
+
+        ``__contains__`` delegates to this method.
+        """
+        for template in self.iter_templates():
+            yield template.name
+
+    def __getitem__(self, key):
+        """Get either a file or project template by name.
+        """
+        for template in self.iter_templates():
+            if template.name == key:
+                return template
+
+        message = 'Template {0!r} not found'.format(key)
+        raise KeyError(message)
+
     @property
     def file_templates_dirname(self):
         """Path of the ``file_templates`` directory in the repository (`str`).
@@ -81,6 +110,20 @@ class Repo(object):
         (`str`).
         """
         return os.path.join(self.root, 'project_templates')
+
+    def iter_templates(self):
+        """Iterate over all templates in the repository (both file and
+        project).
+
+        Yields
+        ------
+        template : `RepoTemplate`
+            Template object.
+        """
+        file_iterator = self.iter_file_templates()
+        project_iterator = self.iter_project_templates()
+        for template in itertools.chain(project_iterator, file_iterator):
+            yield template
 
     def iter_file_templates(self):
         """Iterate over file templates in the repository.

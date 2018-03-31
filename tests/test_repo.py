@@ -62,3 +62,29 @@ def test_iter_project_templates():
     assert len(project_templates) > 0
     for project_template in project_templates:
         assert isinstance(project_template, RepoTemplate)
+
+
+def test_getitem():
+    """Test key access for templates.
+    """
+    repo = Repo('.')
+    with pytest.raises(KeyError):
+        repo['whatwhat']
+
+    copyright_template = repo['copyright']
+    assert isinstance(copyright_template, RepoTemplate)
+    assert copyright_template.name == 'copyright'
+
+    example_project_template = repo['example_project']
+    assert isinstance(example_project_template, RepoTemplate)
+    assert example_project_template.name == 'example_project'
+
+
+def test_contains():
+    """Test contains delegated through __iter__.
+    """
+    repo = Repo('.')
+
+    assert 'copyright' in repo
+    assert 'example_project' in repo
+    assert 'whatwhat' not in repo
