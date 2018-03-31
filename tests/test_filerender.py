@@ -21,5 +21,5 @@ def test_render_file_template():
     with open(expected_content_path) as fh:
         expected_content = fh.read()
 
-    content = render_file_template(template_path)
+    content = render_file_template(template_path, use_defaults=True)
     assert expected_content == content

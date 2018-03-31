@@ -15,7 +15,7 @@ from jinja2 import FileSystemLoader
 from jinja2.exceptions import TemplateSyntaxError
 
 
-def render_file_template(template_path):
+def render_file_template(template_path, use_defaults=False):
     """Render a single-file template with Cookiecutter.
 
     Currently this function only renders a file using default values defined
@@ -41,9 +41,7 @@ def render_file_template(template_path):
     template_dir = os.path.dirname(template_path)
     context_file = os.path.join(template_dir, 'cookiecutter.json')
     context = generate_context(context_file=context_file)
-    # Use defaults when rendering template
-    # This function could by generalized here to allow overrides
-    context['cookiecutter'] = prompt_for_config(context, True)
+    context['cookiecutter'] = prompt_for_config(context, use_defaults)
 
     # Jinja2 template rendering environment
     env = StrictEnvironment(
@@ -80,7 +78,7 @@ def render_and_write_file_template(template_path, output_path):
     """
     logger = logging.getLogger(__name__)
 
-    rendered_text = render_file_template(template_path)
+    rendered_text = render_file_template(template_path, use_defaults=True)
 
     logger.debug('Writing rendered file to {}'.format(output_path))
     with io.open(output_path, 'w', encoding='utf-8') as fh:
