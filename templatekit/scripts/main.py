@@ -37,5 +37,21 @@ def main(ctx, template_repo):
     ctx.obj = {'repo': Repo.discover_repo(dirname=template_repo)}
 
 
+# The help command implementation is taken from
+# https://www.burgundywall.com/post/having-click-help-subcommand
+
+@main.command()
+@click.argument('topic', default=None, required=False, nargs=1)
+@click.pass_context
+def help(ctx, topic, **kw):
+    """Show help for any command.
+    """
+    if topic is None:
+        click.echo(ctx.parent.get_help())
+    else:
+        click.echo(main.commands[topic].get_help(ctx))
+
+
+# Add subcommands from other modules
 main.add_command(list_templates, name='list')
 main.add_command(make)
