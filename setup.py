@@ -31,6 +31,12 @@ tests_require = [
 ]
 tests_require += install_requires
 
+# Optional dependencies (like for dev)
+extras_require = {
+    # For development environments
+    'dev': tests_require
+}
+
 # Setup-time dependencies
 setup_requires = [
     'pytest-runner>=2.11.1,<3'
@@ -50,6 +56,7 @@ setup(
     install_requires=install_requires,
     tests_require=tests_require,
     setup_requires=setup_requires,
+    extras_require=extras_require,
     entry_points={
         'console_scripts': ['templatekit = templatekit.scripts.main:main']
     }
