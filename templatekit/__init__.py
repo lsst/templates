@@ -1,0 +1,1 @@
+from .jinjaext import TemplatekitExtension

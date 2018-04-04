@@ -65,18 +65,30 @@ def build_project_template(target, source, env):
         A list of Node objects containing only the ``cookiecutter.json`` file
         node.
     env : `Scons.Script.Environment`
-        The construction environment used for building the target.
+        The construction environment used for building the target. The
+        following construction environment variables are used:
+
+        - ``cookiecutter_context``: a `dict` of key-value pairs, matching
+          one or more fields from the ``cookiecutter.json`` file. Use these
+          key-value pairs to override one or more of the defaults from the
+          project template's ``cookiecutter.json`` file.
     """
-    # target_path = str(target[0])
     cookiecutter_json_source = str(source[0])
 
     template_dir = os.path.dirname(cookiecutter_json_source)
+
+    construction_vars = env.Dictionary()
+    if 'cookiecutter_context' in construction_vars:
+        context_overrides = construction_vars['cookiecutter_context']
+    else:
+        context_overrides = None
 
     cookiecutter(
         template_dir,
         output_dir=template_dir,
         overwrite_if_exists=True,
-        no_input=True)
+        no_input=True,
+        extra_context=context_overrides)
 
 
 def emit_cookiecutter_sources(target, source, env):

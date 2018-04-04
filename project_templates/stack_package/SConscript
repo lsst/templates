@@ -1,0 +1,39 @@
+from templatekit.builder import cookiecutter_project_builder
+
+# Copy file templates
+Command(
+    "{{cookiecutter.package_name}}/LICENSE",
+    "../../file_templates/license_gplv3/LICENSE.jinja",
+    Copy("$TARGET", "$SOURCE"))
+Command(
+    "{{cookiecutter.package_name}}/COPYRIGHT",
+    "../../file_templates/copyright/COPYRIGHT.jinja",
+    Copy("$TARGET", "$SOURCE"))
+
+# Run cookiecutter to generate the 'example' package
+# The explicit target directory, with AlwaysBuild, is needed for Scons to
+# differntiate this build from the other example build below.
+env = Environment(BUILDERS={'Cookiecutter': cookiecutter_project_builder})
+env.Cookiecutter(AlwaysBuild(Dir('example')),
+                 'cookiecutter.json')
+
+# Run cookiecutter to generate the 'example_subpackage' package
+# This shows off multi-level namespaces
+# The explicit target directory, with AlwaysBuild, is needed for Scons to
+# differntiate this build from the example build above. We can't use Scons'
+# default build caching because we'd have to compute the cookiecutter
+# template anyways.
+env.Cookiecutter(AlwaysBuild(Dir('example_subpackage')),
+                 'cookiecutter.json',
+                 cookiecutter_context={'package_name': 'example_subpackage'})
+
+# Run cookiecutter to generate the 'example_pythononly' package
+# This shows off a Python-only package (and multi-level namespaces).
+# The explicit target directory, with AlwaysBuild, is needed for Scons to
+# differntiate this build from the example build above. We can't use Scons'
+# default build caching because we'd have to compute the cookiecutter
+# template anyways.
+env.Cookiecutter(AlwaysBuild(Dir('example_pythononly')),
+                 'cookiecutter.json',
+                 cookiecutter_context={'package_name': 'example_pythononly',
+                                       'uses_cpp': False})

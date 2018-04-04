@@ -1,5 +1,12 @@
 {
   "copyright_year": "{% now 'utc', '%Y' %}",
-  "copyright_holder": "Association of Universities for Research in Astronomy",
+  "copyright_holder": [
+    "Association of Universities for Research in Astronomy",
+    "California Institute of Technology",
+    "The Board of Trustees of the Leland Stanford Junior University, through SLAC National Accelerator Laboratory",
+    "The Trustees of Princeton University",
+    "University of Illinois Champaign-Urbana",
+    "University of Washington"
+  ],
   "_extensions": ["jinja2_time.TimeExtension"]
 }

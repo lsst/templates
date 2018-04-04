@@ -15,6 +15,8 @@ Because of the broad impact of these templates, a [Request for Comments (RFC)](h
 5. [templatekit](#templatekit)
 6. [FAQ](#faq)
 
+* * *
+
 ## Set up for development
 
 To effectively contribute templates, you'll need to install the [templatekit Python package](#templatekit) that includes helpers for rendering templates, as well as sets dependencies on third-party tools like Cookiecutter and Scons:
@@ -34,6 +36,12 @@ scons
 ```
 
 The [Making a file template](#making-a-file-template) and [Making a project template](#making-a-project-template) sections describe how to add and modify templates.
+
+* * *
+
+[Jump to top 🔝](#contributing-to-lssttemplates)
+
+* * *
 
 ## Making a file template
 
@@ -100,6 +108,12 @@ Remember to include this `SConscript` file's path to the `SConstruct` file at th
 The example file is generated via `scons` and should be committed in the Git repository whenever the template changes.
 The file name of the example comes from the `SConscript`, and the template values are the defaults set in `cookiecutter.json`.
 
+* * *
+
+[Jump to top 🔝](#contributing-to-lssttemplates)
+
+* * *
+
 ## Making a project template
 
 Each project template is its own sub-directory in the `project_templates` root directory.
@@ -110,6 +124,7 @@ The standard components of a project template directory are:
 - [cookiecutter.json](#project-template-cookiecutterjson-file) file.
 - [cookiecutter.project_name](#project-template-cookiecutter-directory) directory.
 - [example](#project-template-example-directory) directory.
+- [hooks](#project-template-hooks-directory) directory (optional).
 
 When you add a new project template, add a link to it from the root `README.md` file.
 
@@ -145,6 +160,79 @@ The only reason to extend this SConscript file is if the template requires addit
 
 Remember to include this `SConscript` file's path in the `SConstruct` file at the root of the repository.
 
+Advanced SConscript topics:
+
+- [Override Cookiecutter variables](#override-cookiecutter-variables)
+- [Building multiple examples](#building-multiple-examples)
+- [Copying a file template into a project template](#copying-a-file-template-into-a-project-template)
+
+#### Override Cookiecutter variables
+
+By default, the `Cookiecutter` builder creates the example using defaults from the [cookiecutter.json](#project-template-cookiecutter-directory) file.
+Sometimes you'll need to override these defaults.
+You can do that by passing a dictionary to the `cookiecutter_context` argument.
+For example:
+
+```python
+env.Cookiecutter(
+    'cookiecutter.json',
+    cookiecutter_context={'package_name': 'example_subpackage'})
+```
+
+In this example, the `package_name` field defined in `cookiecutter.json` is overridden by the value `'example_subpackage'`.
+
+#### Building multiple examples
+
+You may need to create multiple examples for a single project template to demonstrate different configurations.
+You can do this by adding multiple `Cookiecutter` builds to the `SConscript` file, like this:
+
+```python
+from templatekit.builder import cookiecutter_project_builder
+
+env = Environment(BUILDERS={'Cookiecutter': cookiecutter_project_builder})
+
+# First example
+env.Cookiecutter(AlwaysBuild(Dir('example')),
+                 'cookiecutter.json')
+
+# Second example
+env.Cookiecutter(AlwaysBuild(Dir('example_subpackage')),
+                 'cookiecutter.json',
+                 cookiecutter_context={'package_name': 'example_subpackage'})
+```
+
+When you have multiple examples, you need to explicitly state the Scons target (normally the target is implicit, and you only need to pass the source `cookiecutter.json` to the `Cookiecutter` builder).
+You create a target target like this:
+
+```python
+AlwaysBuild(Dir('directory_name'))
+```
+
+The `Dir` call creates a directory node, representing the example's built directory.
+The `AlwaysBuild` call ensures that Scons always builds the example (Scons, and templatekit, can't track the full dependency tree of Cookiecutter projects).
+
+To make the examples different, you'll need to override the default value of at least one of the template variables by passing key-value pairs through the `cookiecutter_context` parameter.
+One variable that you should certainly override is the name of the project (see `'package_name'` in the example above).
+See [Override Cookiecutter variables](#override-cookiecutter-variables) for details.
+
+For an example of a SConscript that builds multiple examples, see the [stack_package template's SConstruct](project_templates/stack_package/SConscript).
+
+#### Copying a file template into a project template
+
+It's possible to compose a project template from one or more file templates.
+When you do this, add a command to the project template's SConscript that copies the file template into the cookiecutter project template.
+This command should be at the top of the SConscript file, before the examples are built (though SCons should recognize that the project depends on the file template and schedule the example builds correctly).
+Here is an example that creates a `LICENSE` file in the cookiecutter project template by copying the source template from `"../../file_templates/license_gplv3/LICENSE.jinja"`:
+```python
+Command(
+    "{{cookiecutter.package_name}}/LICENSE",  # destination
+    "../../file_templates/license_gplv3/LICENSE.jinja",  # source
+    Copy("$TARGET", "$SOURCE"))
+```
+
+The destination and source paths are both relative to the `SConscript` file.
+The `Copy` command shown in the example, including arguments, should be used as-is.
+
 ### Project template cookiecutter.json file
 
 The `cookiecutter.json` file is used by [Cookiecutter](https://cookiecutter.readthedocs.io/en/latest/) to get input from a user and create a project.
@@ -166,6 +254,9 @@ Besides scalar default values, you can instead specify [choice variables](https:
 
 See the [Cookiecutter documentation](https://cookiecutter.readthedocs.io/en/latest/), and other project templates, for more information and examples.
 
+By default, the example uses the default values you provide in `cookiecutter.json`.
+It's also possible to override these defaults, see [Override Cookiecutter variables](#override-cookiecutter-variables).
+
 ### Project template cookiecutter directory
 
 In a cookiecutter project template, both the paths of files and directories, and the files's content, are Jinja2 template variables.
@@ -183,6 +274,24 @@ The template example is generated by `scons`.
 The name of the example directory should ideally be `example`.
 You can set this from the `project_name` field in `cookiecutter.json`, assuming that the template cookiecutter directory is named `{{cookiecutter.project_name}}`.
 Be sure to commit the example files to the Git repository whenever the template changes.
+
+### Project template hooks directory
+
+Cookiecutter can run a script before or after a project is generated.
+This feature is supported for project templates as well.
+Use this feature whenever Jinja templating is insufficient to fully configure a project.
+For example, the [stack_package](project_templates/stack_package) template uses a post-gen hook to add intermediate `__init__.py` files if the Python namespace is more than two levels deep.
+
+Note that the `hooks` directory is entirely optional.
+Only use pre/post-generate hooks if the template requires them.
+
+See the [Cookiecutter documentation on hooks](https://cookiecutter.readthedocs.io/en/latest/advanced/hooks.html) for more information.
+
+* * *
+
+[Jump to top 🔝](#contributing-to-lssttemplates)
+
+* * *
 
 ## Continuous integration
 
@@ -204,6 +313,12 @@ If files have been deleted from the template project, be sure to delete them fro
 
 See the [.travis.yml](.travis.yml) file for more details on how the tests are run.
 
+* * *
+
+[Jump to top 🔝](#contributing-to-lssttemplates)
+
+* * *
+
 ## templatekit
 
 `templatekit` is a Python package, included in the templates repository, that provides helpers for rendering file and project templates (including custom Scons builders).
@@ -213,6 +328,12 @@ To install `templatekit` for development, run `python setup.py develop` from the
 
 You can invoke the unit tests by running `python setup.py test`.
 We use [pytest](https://docs.pytest.org/en/latest/) as the testing framework.
+
+* * *
+
+[Jump to top 🔝](#contributing-to-lssttemplates)
+
+* * *
 
 ## FAQ
 
@@ -242,13 +363,9 @@ By separating files from projects we better document those file templates, and a
 
 It's inevitable that projects (and templates) will duplicate content from other templates.
 For example, Python modules in a project will contain license boilerplate that originates in a template.
-This duplication can cause some maintenance concerns.
-Here are some strategies for dealing with duplicate content:
+Use SCons to copy the file template into the appropriate project templates, see [Copying a file template into a project template](#copying-a-file-template-into-a-project template).
+The [continuous integration](#continuous-integration) service ensures that the file and project templates are kept in sync.
 
-1. Symlink the template Jinja file into the project template.
-   This works if the template is for a whole file, and that template is used by multiple projects.
+* * *
 
-2. Document the dependency so that projects are updated when an underlying template changes.
-   This documentation should appear in the describes of individual files in the project's `README.md`.
-   Link to the template by name so that the dependency is searchable.
-   Maintainers and reviewers should check for template consistency.
+[Jump to top 🔝](#contributing-to-lssttemplates)
