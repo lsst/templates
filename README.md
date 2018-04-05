@@ -57,7 +57,6 @@ Find these templates in the `project_templates/` directory:
 
 - [example_project](project_templates/example_project/)
 - [stack_package](project_templates/stack_package/)
-- [stack_package_legacy](project_templates/stack_package_legacy/)
 
 ## List of file templates
 
