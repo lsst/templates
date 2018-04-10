@@ -1,5 +1,0 @@
-# -*- python -*-
-from lsst.sconsUtils import scripts
-scripts.BasicSConscript.pybind11(['exampleOne',
-                                  'exampleTwo/exampleTwo',
-                                  'exampleThree/exampleThree'], addUnderscore=False)
