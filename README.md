@@ -47,7 +47,7 @@ The `-o` option makes sure the stack package is created next to the `templates/`
 You can get more information about `templatekit` and its commands by running:
 
 ```bash
-templatekit -h`
+templatekit -h
 ```
 
 ## List of project templates
