@@ -19,7 +19,9 @@ version = '0.1.0b1'
 install_requires = [
     'cookiecutter==1.6.0',
     'Jinja2==2.10',
-    'scons==3.0.1'
+    'scons==3.0.1',
+    'click>=6.7,<7.0',
+    'pyperclip>=1.6.0,<1.7.0'
 ]
 
 # Test dependencies
@@ -28,6 +30,12 @@ tests_require = [
     'pytest-flake8==0.9.1',
 ]
 tests_require += install_requires
+
+# Optional dependencies (like for dev)
+extras_require = {
+    # For development environments
+    'dev': tests_require
+}
 
 # Setup-time dependencies
 setup_requires = [
@@ -48,4 +56,8 @@ setup(
     install_requires=install_requires,
     tests_require=tests_require,
     setup_requires=setup_requires,
+    extras_require=extras_require,
+    entry_points={
+        'console_scripts': ['templatekit = templatekit.scripts.main:main']
+    }
 )
