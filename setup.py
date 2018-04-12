@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-package_name = 'lsst-templatekit'
+package_name = 'templatekit'
 description = 'Tookit for rendering LSST project templates.'
 author = 'Association of Universities for Research in Astronomy'
 author_email = 'sqre-admin@lists.lsst.org'
