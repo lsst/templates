@@ -1,3 +1,5 @@
+.. py:currentmodule:: lsst.example.subpackage
+
 .. _lsst.example.subpackage:
 
 #######################
