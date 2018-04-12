@@ -1,3 +1,5 @@
+.. py:currentmodule:: lsst.example.pythononly
+
 .. _lsst.example.pythononly:
 
 #######################

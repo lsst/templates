@@ -1,3 +1,5 @@
+.. py:currentmodule:: {{ cookiecutter.python_module }}
+
 .. _{{ cookiecutter.python_module }}:
 
 {{ "#" * cookiecutter.python_module|length }}

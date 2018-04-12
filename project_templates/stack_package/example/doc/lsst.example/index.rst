@@ -1,3 +1,5 @@
+.. py:currentmodule:: lsst.example
+
 .. _lsst.example:
 
 ############
