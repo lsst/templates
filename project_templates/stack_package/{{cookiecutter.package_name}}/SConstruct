@@ -1,3 +1,9 @@
 # -*- python -*-
 from lsst.sconsUtils import scripts
+
+{%- if cookiecutter.uses_cpp == 'True' %}
 scripts.BasicSConstruct("{{ cookiecutter.package_name }}")
+{%- else %}
+# Python-only package
+scripts.BasicSConstruct("{{ cookiecutter.package_name }}", disableCc=True)
+{%- endif %}
