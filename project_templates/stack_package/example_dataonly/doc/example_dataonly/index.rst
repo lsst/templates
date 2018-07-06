@@ -10,18 +10,25 @@ example_dataonly
 
 The ``example_dataonly`` package provides [...].
 
-Project info
+.. .. _lsst.example.dataonly-using:
+
+.. Using example_dataonly
+.. ======================
+
+.. toctree linking to topics related to using the package's data.
+
+.. .. toctree::
+..    :maxdepth: 1
+
+.. _example_dataonly-contributing:
+
+Contributing
 ============
 
-Repository
-   https://github.com/lsst/example_dataonly
+``lsst.example.dataonly`` is developed at https://github.com/lsst/example_dataonly.
+You can find Jira issues for this module under the `example_dataonly <https://jira.lsstcorp.org/issues/?jql=project%20%3D%20DM%20AND%20component%20%3D%20example_dataonly>`_ component.
 
-JIRA component
-   `example_dataonly <https://jira.lsstcorp.org/issues/?jql=project%20%3D%20DM%20AND%20component%20%3D%20example_dataonly>`_
+.. If there are topics related to developing this module (rather than using it), link to this from a toctree placed here.
 
-Modules
-=======
-
-.. Link to Python module landing pages (same as in manifest.yaml)
-
-- :ref:`lsst.example.dataonly <lsst.example.dataonly>`
+.. .. toctree::
+..    :maxdepth: 1
