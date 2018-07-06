@@ -7,5 +7,6 @@ package: "example_dataonly"
 
 # Name of the static content directories (subdirectories of `_static`).
 # Static content directories are usually named after the package.
-statics:
-  - "_static/example_dataonly"
+# Most packages do not need a static content directory (leave commented out).
+# statics:
+#   - "_static/example_dataonly"
