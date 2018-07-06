@@ -12,7 +12,7 @@ Command(
 
 # Run cookiecutter to generate the 'example' package
 # The explicit target directory, with AlwaysBuild, is needed for Scons to
-# differntiate this build from the other example build below.
+# differentiate this build from the other example build below.
 env = Environment(BUILDERS={'Cookiecutter': cookiecutter_project_builder})
 env.Cookiecutter(AlwaysBuild(Dir('example')),
                  'cookiecutter.json')
@@ -20,7 +20,7 @@ env.Cookiecutter(AlwaysBuild(Dir('example')),
 # Run cookiecutter to generate the 'example_subpackage' package
 # This shows off multi-level namespaces
 # The explicit target directory, with AlwaysBuild, is needed for Scons to
-# differntiate this build from the example build above. We can't use Scons'
+# differentiate this build from the example build above. We can't use Scons'
 # default build caching because we'd have to compute the cookiecutter
 # template anyways.
 env.Cookiecutter(AlwaysBuild(Dir('example_subpackage')),
@@ -30,10 +30,22 @@ env.Cookiecutter(AlwaysBuild(Dir('example_subpackage')),
 # Run cookiecutter to generate the 'example_pythononly' package
 # This shows off a Python-only package (and multi-level namespaces).
 # The explicit target directory, with AlwaysBuild, is needed for Scons to
-# differntiate this build from the example build above. We can't use Scons'
+# differentiate this build from the example build above. We can't use Scons'
 # default build caching because we'd have to compute the cookiecutter
 # template anyways.
 env.Cookiecutter(AlwaysBuild(Dir('example_pythononly')),
                  'cookiecutter.json',
                  cookiecutter_context={'package_name': 'example_pythononly',
                                        'uses_cpp': False})
+
+# Run cookiecutter to generate the 'example_dataonly' package
+# This shows off a Data-only package that has no Python or C++ code.
+# The explicit target directory, with AlwaysBuild, is needed for Scons to
+# differentiate this build from the example build above. We can't use Scons'
+# default build caching because we'd have to compute the cookiecutter
+# template anyways.
+env.Cookiecutter(AlwaysBuild(Dir('example_dataonly')),
+                 'cookiecutter.json',
+                 cookiecutter_context={'package_name': 'example_dataonly',
+                                       'uses_cpp': False,
+                                       'uses_python': False})

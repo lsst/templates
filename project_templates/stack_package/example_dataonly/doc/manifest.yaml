@@ -1,0 +1,11 @@
+# Documentation manifest.
+
+# Package documentation directory (named after the package itself).
+# Only include a package documentation directory if package does not provide
+# any modules.
+package: "example_dataonly"
+
+# Name of the static content directories (subdirectories of `_static`).
+# Static content directories are usually named after the package.
+statics:
+  - "_static/example_dataonly"

@@ -81,15 +81,28 @@ if not uses_cpp:
         print('(post-gen hook) Removing {0} directory'.format(dirname))
         shutil.rmtree(dirname, ignore_errors=True)
 
-# Remove Python directories if cookiecutter.uses_python is False
+# Remove Python-specific directories and files if cookiecutter.uses_python
+# is False
 if not uses_python:
     python_dirnames = (
         'python',
-        os.path.join('doc', python_namespace)
+        os.path.join('doc', python_namespace),
+        'bin.src',
+        'tests',
     )
+    python_filenames = {
+        '.travis.yml',
+        'setup.cfg',
+    }
     for dirname in python_dirnames:
         print('(post-gen hook) Removing {0} directory'.format(dirname))
         shutil.rmtree(dirname, ignore_errors=True)
+    for filename in python_filenames:
+        print('(post-gen hook) Removing {0} file'.format(filename))
+        try:
+            os.remove(filename)
+        except OSError:
+            pass
 
 # Remove the package documentation directory if module documentation
 # directories are available
