@@ -9,5 +9,4 @@ example_subpackage documentation preview
 .. toctree::
    :maxdepth: 1
 
-   example_subpackage/index
    lsst.example.subpackage/index

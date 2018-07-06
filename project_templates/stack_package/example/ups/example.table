@@ -4,10 +4,7 @@
 #   LSST packages such as utils or daf_base.
 # - Any package whose API is used should be listed explicitly
 #   rather than assuming it will be included recursively.
-setupRequired(boost)
-setupRequired(utils)
-setupRequired(pex_exceptions)
-setupRequired(ndarray)
+setupRequired(sconsUtils)
 
 # The following is boilerplate for all packages.
 # See https://dmtn-001.lsst.io for details on LSST_LIBRARY_PATH.

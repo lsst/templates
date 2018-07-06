@@ -11,6 +11,7 @@
   ],
   "github_org": ["lsst", "lsst-dm", "lsst-sims"],
   "uses_cpp": [true, false],
+  "uses_python": [true, false],
   "python_module": "{{ 'lsst.%s' | format(cookiecutter.package_name) | replace('_', '.') }}",
   "python_sub_dirs": "{{ cookiecutter.python_module | replace('.', '/') }}",
   "_extensions": ["jinja2_time.TimeExtension", "templatekit.TemplatekitExtension"]

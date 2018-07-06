@@ -33,6 +33,11 @@ Supported Stack packages are always located in the `lsst` organization.
 If `true` (default), the package is configured to support C++ and pybind11 code.
 If `false`, the generated package is Python-only.
 
+### cookiecutter.uses_python
+
+If `true` (default), the package is configured to support Python code.
+When both `uses_cpp` and `uses_python` are `false`, the generated package is a *data-only package.*
+
 ### cookiecutter.python_module
 
 The package's Python namespace.

@@ -9,5 +9,4 @@ example documentation preview
 .. toctree::
    :maxdepth: 1
 
-   example/index
    lsst.example/index
