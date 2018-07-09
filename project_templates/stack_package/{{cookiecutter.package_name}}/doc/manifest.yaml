@@ -1,11 +1,11 @@
 # Documentation manifest.
 
-{% if cookiecutter.uses_python == 'False' -%}
+{% if cookiecutter.uses_python == 'False' and cookiecutter.uses_cpp == 'False' -%}
 # Package documentation directory (named after the package itself).
 # Only include a package documentation directory if package does not provide
 # any modules.
 package: "{{ cookiecutter.package_name }}"
-{%- else -%}
+{%- elif cookiecutter.uses_python == 'True' -%}
 # List of names of Python modules in this package.
 # For each module there is a corresponding module doc subdirectory.
 modules:

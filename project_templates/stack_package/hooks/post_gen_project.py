@@ -106,7 +106,7 @@ if not uses_python:
 
 # Remove the package documentation directory if module documentation
 # directories are available
-if uses_python:
+if uses_python or uses_cpp:
     package_doc_dirname = os.path.join('doc', package_name)
     print('(post-gen hook) Removing {0} directory'.format(package_doc_dirname))
     shutil.rmtree(package_doc_dirname, ignore_errors=True)
