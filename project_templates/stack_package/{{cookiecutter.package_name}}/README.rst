@@ -6,6 +6,6 @@
 
 .. Add a brief (few sentence) description of what this package provides.
 
-{%- if cookiecutter.uses_python == 'False' %}
+{%- if cookiecutter.uses_python == 'False' and cookiecutter.uses_cpp == 'False' %}
 Package documentation: https://pipelines.lsst.io/packages/{{ cookiecutter.package_name }}.
 {% endif %}

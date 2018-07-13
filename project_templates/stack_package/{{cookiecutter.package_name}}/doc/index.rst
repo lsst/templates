@@ -6,7 +6,7 @@
 
 .. Link the index pages of package and module documentation directions (listed in manifest.yaml).
 
-{% if cookiecutter.uses_python == 'False' -%}
+{% if cookiecutter.uses_python == 'False' and cookiecutter.uses_python == 'False' -%}
 .. toctree::
    :maxdepth: 1
 
