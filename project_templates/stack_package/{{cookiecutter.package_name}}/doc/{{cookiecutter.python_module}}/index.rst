@@ -34,3 +34,5 @@ Python API reference
 ====================
 
 .. automodapi:: {{ cookiecutter.python_module }}
+   :no-main-docstr:
+   :no-inheritance-diagram:

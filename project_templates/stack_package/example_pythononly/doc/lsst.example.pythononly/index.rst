@@ -34,3 +34,5 @@ Python API reference
 ====================
 
 .. automodapi:: lsst.example.pythononly
+   :no-main-docstr:
+   :no-inheritance-diagram:
