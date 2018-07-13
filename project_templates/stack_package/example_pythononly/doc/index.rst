@@ -9,5 +9,4 @@ example_pythononly documentation preview
 .. toctree::
    :maxdepth: 1
 
-   example_pythononly/index
    lsst.example.pythononly/index

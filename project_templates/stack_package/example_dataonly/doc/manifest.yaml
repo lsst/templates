@@ -1,12 +1,12 @@
 # Documentation manifest.
 
-# List of names of Python modules in this package.
-# For each module there is a corresponding module doc subdirectory.
-modules:
-  - "lsst.example.pythononly"
+# Package documentation directory (named after the package itself).
+# Only include a package documentation directory if package does not provide
+# any modules.
+package: "example_dataonly"
 
 # Name of the static content directories (subdirectories of `_static`).
 # Static content directories are usually named after the package.
 # Most packages do not need a static content directory (leave commented out).
 # statics:
-#   - "_static/example_pythononly"
+#   - "_static/example_dataonly"

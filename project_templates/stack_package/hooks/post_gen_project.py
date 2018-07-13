@@ -23,10 +23,13 @@ from templatekit.jinjaext import (
 
 
 # These variables are interpolated by cookiecutter before this hook is run
+package_name = '{{ cookiecutter.package_name }}'
 python_namespace = '{{ cookiecutter.python_module }}'
 python_sub_dirs = '{{ cookiecutter.python_sub_dirs }}'
 uses_cpp = True if ('{{ cookiecutter.uses_cpp }}' is True
                     or '{{ cookiecutter.uses_cpp }}' == 'True') else False
+uses_python = True if ('{{ cookiecutter.uses_python }}' is True
+                       or '{{ cookiecutter.uses_python }}' == 'True') else False  # noqa: E501
 
 python_sub_dir_parts = python_sub_dirs.split('/')
 
@@ -77,3 +80,33 @@ if not uses_cpp:
     for dirname in cpp_dirnames:
         print('(post-gen hook) Removing {0} directory'.format(dirname))
         shutil.rmtree(dirname, ignore_errors=True)
+
+# Remove Python-specific directories and files if cookiecutter.uses_python
+# is False
+if not uses_python:
+    python_dirnames = (
+        'python',
+        os.path.join('doc', python_namespace),
+        'bin.src',
+        'tests',
+    )
+    python_filenames = {
+        '.travis.yml',
+        'setup.cfg',
+    }
+    for dirname in python_dirnames:
+        print('(post-gen hook) Removing {0} directory'.format(dirname))
+        shutil.rmtree(dirname, ignore_errors=True)
+    for filename in python_filenames:
+        print('(post-gen hook) Removing {0} file'.format(filename))
+        try:
+            os.remove(filename)
+        except OSError:
+            pass
+
+# Remove the package documentation directory if module documentation
+# directories are available
+if uses_python or uses_cpp:
+    package_doc_dirname = os.path.join('doc', package_name)
+    print('(post-gen hook) Removing {0} directory'.format(package_doc_dirname))
+    shutil.rmtree(package_doc_dirname, ignore_errors=True)

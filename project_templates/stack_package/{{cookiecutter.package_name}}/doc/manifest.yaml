@@ -1,15 +1,19 @@
 # Documentation manifest.
 
-# Name of this package
-# Also the name of the package documentation subdirectory.
+{% if cookiecutter.uses_python == 'False' and cookiecutter.uses_cpp == 'False' -%}
+# Package documentation directory (named after the package itself).
+# Only include a package documentation directory if package does not provide
+# any modules.
 package: "{{ cookiecutter.package_name }}"
-
+{%- elif cookiecutter.uses_python == 'True' -%}
 # List of names of Python modules in this package.
 # For each module there is a corresponding module doc subdirectory.
 modules:
   - "{{ cookiecutter.python_module }}"
+{%- endif %}
 
 # Name of the static content directories (subdirectories of `_static`).
 # Static content directories are usually named after the package.
-statics:
-  - "_static/{{ cookiecutter.package_name }}"
+# Most packages do not need a static content directory (leave commented out).
+# statics:
+#   - "_static/{{ cookiecutter.package_name }}"

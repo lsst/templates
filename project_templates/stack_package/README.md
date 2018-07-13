@@ -33,6 +33,11 @@ Supported Stack packages are always located in the `lsst` organization.
 If `true` (default), the package is configured to support C++ and pybind11 code.
 If `false`, the generated package is Python-only.
 
+### cookiecutter.uses_python
+
+If `true` (default), the package is configured to support Python code.
+When both `uses_cpp` and `uses_python` are `false`, the generated package is a *data-only package.*
+
 ### cookiecutter.python_module
 
 The package's Python namespace.
@@ -66,6 +71,11 @@ Packages with deep namespaces need [`__init__.py` files](example_subpackage/pyth
 The [example_pythononly](example_pythononly) directory shows a Stack package that only includes Python code (and no C++ sources).
 Such packages don't have `lib`, `include`, and `src` directories.
 Some of the dependencies configured in the [`ups` directory](example_pythononly/ups) are also different.
+
+### example_dataonly/
+
+The [example_dataonly](example_pythononly) directory shows a Stack package that does not include any Python or C++ code.
+This type of package might be used for datasets (see [afwdata](https://github.com/lsst/afwdata) and [verify_metrics](https://github.com/lsst/verify_metrics)).
 
 ## Files
 
@@ -118,10 +128,13 @@ The `bin.src/` directory is where you put Python scripts (including command-line
 
 ### doc/{{cookiecutter.package_name}}/index.rst
 
-Example: [doc/example/index.rst](example/doc/example/index.rst).
+Example: [doc/example/index.rst](example_dataonly/doc/example_dataonly/index.rst).
 
-This is the main documentation page for the *package* (as opposed from the Python module, see below).
-The purpose of this page is to document the Git repository itself, and anything that exists outside the normal codebase.
+This is the **package homepage**.
+Package homepages, and their package documentation directories, are only available for data-only packages.
+Packages with Python code have **module documentation directories** instead (see below).
+
+The purpose of this page is to document the Git repository itself.
 An example use of this package index page (or pages linked from it) is to document datasets in a Git LFS-based data package.
 
 At a minimum, this page should be customized with a description of the package.
@@ -131,9 +144,11 @@ This copy can be shared with the description in the README.
 
 Example: [doc/lsst.example/index.rst](example/doc/lsst.example/index.rst).
 
+This is the **module homepage.**
 This is the main documentation page for the Python module provided by the package.
 Most documentation will be linked through this page.
-Packages that provide multiple Python modules (like `afw`) can have several of these directories, each named after the public module's namespace.
+
+Packages that provide multiple Python modules (like `afw`) can have several of these directories, each named after the module's public namespace.
 
 Separate documentation is forthcoming on how to format this page.
 

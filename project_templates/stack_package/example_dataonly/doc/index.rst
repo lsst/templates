@@ -1,6 +1,6 @@
-########################################
-example_subpackage documentation preview
-########################################
+######################################
+example_dataonly documentation preview
+######################################
 
 .. This page is for local development only. It isn't published to pipelines.lsst.io.
 
@@ -9,4 +9,4 @@ example_subpackage documentation preview
 .. toctree::
    :maxdepth: 1
 
-   lsst.example.subpackage/index
+   example_dataonly/index
