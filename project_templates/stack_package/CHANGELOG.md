@@ -1,5 +1,24 @@
 # Change log
 
+## 2018-07-13
+
+- Deleted the `ups/*.build` file.
+  It turns out that this file is not used by the build system.
+
+- Added `pyList` argument to the `tests/Sconscript` file.
+  This enables auto file detection.
+
+- Updated the `setup.cfg` configuration file.
+  This adds the N806 flake8 exception and the `[tool:pytest]` section.
+
+- Updated the default `automodapi` usage in module documenation homepages.
+
+  - `no-main-docstr` is something we always want to use since the main docstring in `__init__.py` shouldn't be used, in favour of writing topics in the `doc/` directory.
+
+  - Most modules don't have interesting class inheritance, so it makes sense to default to `no-inheritance-diagram`.
+
+([DM-15110](https://jira.lsstcorp.org/browse/DM-15110))
+
 ## 2018-07-06
 
 - Add a `uses_python` configuration in `cookiecutter.json`.
