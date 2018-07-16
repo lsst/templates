@@ -260,13 +260,6 @@ You shouldn't need to modify this file.
 Place all unit test modules in the `tests` directory.
 See the [Python Unit Testing](https://developer.lsst.io/python/testing.html) documentation in the Developer Guide for details.
 
-### ups/{{cookiecutter.package_name}}.build
-
-Example: [ups/example.build](example/ups/example.build).
-
-This file is used by EUPS.
-You shouldn't need to modify it.
-
 ### ups/{{cookiecutter.package_name}}.cfg
 
 Example: [ups/example.cfg](example/ups/example.cfg).
