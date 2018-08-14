@@ -87,6 +87,7 @@ Find these templates in the `file_templates` directory:
 - [stack_license_preamble_cpp](file_templates/stack_license_preamble_cpp)
 - [stack_license_preamble_py](file_templates/stack_license_preamble_py)
 - [stack_license_preamble_txt](file_templates/stack_license_preamble_txt)
+- [task_topic](file_templates/task_topic)
 
 ## Contributions
 
