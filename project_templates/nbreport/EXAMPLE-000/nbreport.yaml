@@ -1,0 +1,4 @@
+handle: EXAMPLE-000
+title: Report title
+git_repo: https://github.com/org/repo
+ipynb: EXAMPLE-000.ipynb

@@ -56,6 +56,7 @@ templatekit -h
 Find these templates in the `project_templates/` directory:
 
 - [example_project](project_templates/example_project/)
+- [nbreport](project_templates/nbreport/)
 - [stack_package](project_templates/stack_package/)
 
 ## List of file templates

@@ -1,0 +1,5 @@
+handle: {{ cookiecutter.handle }}
+title: {{ cookiecutter.title }}
+git_repo: {{ cookiecutter.git_repo }}{% if cookiecutter.git_repo_subdir %}
+git_repo_subdir: {{ cookiecutter.git_repo_subdir }}{% endif %}
+ipynb: {{ cookiecutter.handle }}.ipynb
