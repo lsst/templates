@@ -9,7 +9,7 @@
     "University of Illinois Champaign-Urbana",
     "University of Washington"
   ],
-  "github_org": ["lsst", "lsst-dm", "lsst-sims"],
+  "github_org": ["lsst", "lsst-dm", "lsst-sims", "lsst-ts"],
   "uses_cpp": [true, false],
   "uses_python": [true, false],
   "python_module": "{{ 'lsst.%s' | format(cookiecutter.package_name) | replace('_', '.') }}",
