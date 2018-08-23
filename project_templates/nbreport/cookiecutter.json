@@ -1,0 +1,11 @@
+{
+  "handle": "EXAMPLE-000",
+  "title": "Report title",
+  "git_repo": "https://github.com/org/repo",
+  "git_repo_subdir": "",
+  "_extensions": ["jinja2_time.TimeExtension", "templatekit.TemplatekitExtension"],
+  "_copy_without_render": [
+    "{{cookiecutter.handle}}.ipynb",
+    "cookiecutter.json"
+  ]
+}

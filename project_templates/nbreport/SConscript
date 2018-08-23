@@ -1,0 +1,5 @@
+from templatekit.builder import cookiecutter_project_builder
+
+# Run cookiecutter to generate the 'EXAMPLE-000' report
+env = Environment(BUILDERS={'Cookiecutter': cookiecutter_project_builder})
+env.Cookiecutter(AlwaysBuild(Dir('EXAMPLE-000')), 'cookiecutter.json')
