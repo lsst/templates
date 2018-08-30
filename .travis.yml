@@ -10,4 +10,4 @@ script:
   # Test the examples by rebuilding them and making sure they match the
   # committed state (so that the repo is clean).
   - "scons"
-  - "git diff-files"
+  - "git diff --exit-code"
