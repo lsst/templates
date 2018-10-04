@@ -28,7 +28,7 @@ Contributing
 ``{{ cookiecutter.python_module }}`` is developed at https://github.com/{{ cookiecutter.github_org }}/{{ cookiecutter.package_name }}.
 You can find Jira issues for this module under the `{{ cookiecutter.package_name }} <https://jira.lsstcorp.org/issues/?jql=project%20%3D%20DM%20AND%20component%20%3D%20{{ cookiecutter.package_name }}>`_ component.
 
-.. If there are topics related to developing this module (rather than using it), link to this from a toctree placed here.
+.. If there are topics related to developing this package (rather than using it), link to this from a toctree placed here.
 
 .. .. toctree::
 ..    :maxdepth: 1

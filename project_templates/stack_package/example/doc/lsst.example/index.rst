@@ -28,6 +28,9 @@ You can find Jira issues for this module under the `example <https://jira.lsstco
 
 .. If there are topics related to developing this module (rather than using it), link to this from a toctree placed here.
 
+.. .. toctree::
+..    :maxdepth: 1
+
 .. _lsst.example-pyapi:
 
 Python API reference
