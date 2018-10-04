@@ -74,12 +74,23 @@ if os.path.exists(initial_header_path):
     shutil.move(initial_header_path, new_header_filename)
     print('(post-gen hook) Moved root.h to {}'.format(new_header_filename))
 
-# Remove C++ directories if cookiecutter.uses_cpp is False
 if not uses_cpp:
+    # Remove C++ directories if cookiecutter.uses_cpp is False
     cpp_dirnames = ('lib', 'src', 'include')
     for dirname in cpp_dirnames:
         print('(post-gen hook) Removing {0} directory'.format(dirname))
         shutil.rmtree(dirname, ignore_errors=True)
+
+    # Remove C++ -related documentation files
+    doc_files = [os.path.join('doc', n)
+                 for n in ('SConscript', 'doxygen.conf.in')]
+    for filename in doc_files:
+        print('(post-gen hook) Removing {0} file'.format(filename))
+        try:
+            os.remove(filename)
+        except OSError:
+            print('(post-gen hool) Failed to remove {}'.format(filename))
+            pass
 
 # Remove Python-specific directories and files if cookiecutter.uses_python
 # is False

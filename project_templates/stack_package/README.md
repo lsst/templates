@@ -167,6 +167,8 @@ Example: [doc/doxygen.conf.in](example/doc/doxygen.conf.in).
 This file configures the Doxygen build.
 Per package Doxygen builds are necessary to generate the C++ API reference.
 
+*Only necessary for packages developed in C++.*
+
 ### doc/index.rst
 
 Example: [doc/index.rst](example/doc/index.rst).
@@ -191,6 +193,8 @@ Example: [doc/SConscript](example/doc/SConscript).
 
 Scons (extended by sconsUtils) uses this `SConstruct` file for the Doxygen build.
 You shouldn't need to modify this file.
+
+*Only necessary for packages developed in C++.*
 
 ### examples/SConscript
 

@@ -1,5 +1,9 @@
 # Change log
 
+## 2018-10-04
+
+- `doc/SConscript` and `doc/doxygen.conf.in` are no longer included in packages that don't use C++.
+
 ## 2018-07-13
 
 - Deleted the `ups/*.build` file.
