@@ -8,7 +8,7 @@ The COPYRIGHT file should be placed at the root of a repository.
 **When there is more than one copyright holder,** include each copyright holder on a separate line, along with the years that institution established copyright.
 Support for multiple copyright holders isn't directly part of the Cookiecutter template.
 
-[For more information about the COPYRIGHT file, see the Developer Guide.](https://developer.lsst.io/docs/package_docs.html#copyright)
+[For more information about the COPYRIGHT file, see the Developer Guide.](https://developer.lsst.io/legal/copyright-overview.html)
 
 ## Template variables
 
@@ -21,7 +21,7 @@ For nonconsecutive years, use a comma (``2016, 2018``).
 ### cookiecutter.copyright_holder
 
 Legal name of the institution that claims copyright.
-See the Developer Guide section *[Standard institutional copyrights](https://developer.lsst.io/docs/package_docs.html#standard-institutional-copyrights)* for a list of institution names.
+See the Developer Guide section *[Standard institutional copyrights](https://developer.lsst.io/legal/copyright-overview.html#copyright-holders)* for a list of institution names.
 
 ## Related templates
 
