@@ -1,8 +1,9 @@
 # Change log
 
-## 2018-10-04
+## 2018-10-05
 
 - `doc/SConscript` and `doc/doxygen.conf.in` are no longer included in packages that don't use C++.
+- `conf.py` does not attempt to import a package if it doesn't not use Python.
 
 ## 2018-07-13
 
