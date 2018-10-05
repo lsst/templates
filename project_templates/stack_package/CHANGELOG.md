@@ -1,5 +1,11 @@
 # Change log
 
+## 2018-10-05
+
+- `doc/SConscript` and `doc/doxygen.conf.in` are no longer included in packages that don't use C++.
+- `conf.py` does not attempt to import a package if it doesn't not use Python.
+- The package homepage no longer refers to the (nonexistent) Python module.
+
 ## 2018-07-13
 
 - Deleted the `ups/*.build` file.
