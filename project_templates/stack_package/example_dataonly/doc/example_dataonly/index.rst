@@ -25,7 +25,7 @@ The ``example_dataonly`` package provides [...].
 Contributing
 ============
 
-``lsst.example.dataonly`` is developed at https://github.com/lsst/example_dataonly.
+``example_dataonly`` is developed at https://github.com/lsst/example_dataonly.
 You can find Jira issues for this module under the `example_dataonly <https://jira.lsstcorp.org/issues/?jql=project%20%3D%20DM%20AND%20component%20%3D%20example_dataonly>`_ component.
 
 .. If there are topics related to developing this package (rather than using it), link to this from a toctree placed here.
