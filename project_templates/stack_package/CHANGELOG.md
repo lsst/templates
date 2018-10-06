@@ -5,6 +5,9 @@
 - `doc/SConscript` and `doc/doxygen.conf.in` are no longer included in packages that don't use C++.
 - `conf.py` does not attempt to import a package if it doesn't not use Python.
 - The package homepage no longer refers to the (nonexistent) Python module.
+- The E251 rule exception is no longer included in `setup.cfg` since it is also not adopted by the [Python style guide](https://developer.lsst.io/python/style.html#exceptions-to-pep-8).
+
+([DM-15973](https://jira.lsstcorp.org/browse/DM-15973), [DM-16040](https://jira.lsstcorp.org/browse/DM-16040))
 
 ## 2018-07-13
 
