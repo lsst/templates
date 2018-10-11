@@ -1,0 +1,4 @@
+{
+  "config_class": "ExampleConfig",
+  "config_module": "lsst.example"
+}
