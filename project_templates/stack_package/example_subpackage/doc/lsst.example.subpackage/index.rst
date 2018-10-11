@@ -31,6 +31,37 @@ You can find Jira issues for this module under the `example_subpackage <https://
 .. .. toctree::
 ..    :maxdepth: 1
 
+.. _lsst.example.subpackage-command-line-taskref:
+
+Task reference
+==============
+
+.. _lsst.example.subpackage-command-line-tasks:
+
+Command-line tasks
+------------------
+
+.. lsst-cmdlinetasks::
+   :root: lsst.example.subpackage
+
+.. _lsst.example.subpackage-tasks:
+
+Tasks
+-----
+
+.. lsst-tasks::
+   :root: lsst.example.subpackage
+   :toctree: tasks
+
+.. _lsst.example.subpackage-configs:
+
+Configurations
+--------------
+
+.. lsst-configs::
+   :root: lsst.example.subpackage
+   :toctree: configs
+
 .. _lsst.example.subpackage-pyapi:
 
 Python API reference

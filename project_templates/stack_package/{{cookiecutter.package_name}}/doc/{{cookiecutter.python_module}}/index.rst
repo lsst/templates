@@ -30,6 +30,39 @@ You can find Jira issues for this module under the `{{ cookiecutter.package_name
 
 .. .. toctree::
 ..    :maxdepth: 1
+{%- if cookiecutter.has_tasks == "True" %}
+
+.. _{{ cookiecutter.python_module }}-command-line-taskref:
+
+Task reference
+==============
+
+.. _{{ cookiecutter.python_module }}-command-line-tasks:
+
+Command-line tasks
+------------------
+
+.. lsst-cmdlinetasks::
+   :root: {{ cookiecutter.python_module }}
+
+.. _{{ cookiecutter.python_module }}-tasks:
+
+Tasks
+-----
+
+.. lsst-tasks::
+   :root: {{ cookiecutter.python_module }}
+   :toctree: tasks
+
+.. _{{ cookiecutter.python_module }}-configs:
+
+Configurations
+--------------
+
+.. lsst-configs::
+   :root: {{ cookiecutter.python_module }}
+   :toctree: configs
+{%- endif %}
 
 .. _{{ cookiecutter.python_module }}-pyapi:
 
