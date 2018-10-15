@@ -52,7 +52,7 @@ templatekit -h
 
 ### Common issue: ASCII shell locale
 
-Depending on how your shell is set up, you may get this error when running `templatekit` under Python 3:
+Depending on how your shell is set up, you may get this error when running `templatekit`:
 
 > RuntimeError: Click will abort further execution because Python 3 was configured to use ASCII as encoding for the environment.  Either run this under Python 2 or consult http://click.pocoo.org/python3/ for mitigation steps.
 
@@ -60,11 +60,11 @@ To solve this, you need to set your shell's *locale* to use UTF-8.
 Type these lines into your shell:
 
 ```bash
-   export LC_ALL=en_US.utf-8
-   export LANG=en_US.utf-8
+export LC_ALL=en_US.utf-8
+export LANG=en_US.utf-8
 ```
 
-This will work on macOS. Linux distributions may be different (try C.UTF-8).
+This will work on macOS. Linux distributions may be different (try `C.UTF-8`).
 
 After the locale is set, re-try the `templatekit` command.
 
@@ -82,11 +82,13 @@ Find these templates in the `project_templates/` directory:
 **File templates** are either entire files or snippets you can add to files.
 Find these templates in the `file_templates` directory:
 
+- [config_topic](file_templates/config_topic)
 - [copyright](file_templates/copyright)
 - [license_gplv3](file_templates/license_gplv3)
 - [stack_license_preamble_cpp](file_templates/stack_license_preamble_cpp)
 - [stack_license_preamble_py](file_templates/stack_license_preamble_py)
 - [stack_license_preamble_txt](file_templates/stack_license_preamble_txt)
+- [task_topic](file_templates/task_topic)
 
 ## Contributions
 

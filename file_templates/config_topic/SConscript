@@ -1,0 +1,8 @@
+from templatekit.builder import file_template_builder
+
+
+# Example with defaults
+env = Environment(BUILDERS={'FileTemplate': file_template_builder})
+env.FileTemplate(
+    'lsst.example.ExampleConfig.rst',
+    '{{cookiecutter.config_module}}.{{cookiecutter.config_class}}.rst.jinja')

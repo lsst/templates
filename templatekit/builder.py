@@ -44,7 +44,14 @@ def build_file_template(target, source, env):
     target_path = str(target[0])
     source_path = str(source[0])
 
-    render_and_write_file_template(source_path, target_path)
+    construction_vars = env.Dictionary()
+    if 'cookiecutter_context' in construction_vars:
+        context_overrides = construction_vars['cookiecutter_context']
+    else:
+        context_overrides = None
+
+    render_and_write_file_template(source_path, target_path,
+                                   extra_context=context_overrides)
 
 
 file_template_builder = Builder(action=build_file_template,

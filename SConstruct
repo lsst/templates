@@ -10,4 +10,6 @@ SConscript([
     'file_templates/stack_license_preamble_txt/SConscript',
     'file_templates/stack_license_preamble_py/SConscript',
     'file_templates/stack_license_preamble_cpp/SConscript',
+    'file_templates/task_topic/SConscript',
+    'file_templates/config_topic/SConscript',
 ])

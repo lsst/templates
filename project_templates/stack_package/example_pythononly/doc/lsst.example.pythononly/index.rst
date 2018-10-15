@@ -31,6 +31,37 @@ You can find Jira issues for this module under the `example_pythononly <https://
 .. .. toctree::
 ..    :maxdepth: 1
 
+.. _lsst.example.pythononly-command-line-taskref:
+
+Task reference
+==============
+
+.. _lsst.example.pythononly-command-line-tasks:
+
+Command-line tasks
+------------------
+
+.. lsst-cmdlinetasks::
+   :root: lsst.example.pythononly
+
+.. _lsst.example.pythononly-tasks:
+
+Tasks
+-----
+
+.. lsst-tasks::
+   :root: lsst.example.pythononly
+   :toctree: tasks
+
+.. _lsst.example.pythononly-configs:
+
+Configurations
+--------------
+
+.. lsst-configs::
+   :root: lsst.example.pythononly
+   :toctree: configs
+
 .. _lsst.example.pythononly-pyapi:
 
 Python API reference

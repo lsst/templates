@@ -15,7 +15,8 @@ from jinja2 import FileSystemLoader
 from jinja2.exceptions import TemplateSyntaxError
 
 
-def render_file_template(template_path, use_defaults=False):
+def render_file_template(template_path, use_defaults=False,
+                         extra_context=None):
     """Render a single-file template with Cookiecutter.
 
     Currently this function only renders a file using default values defined
@@ -28,6 +29,12 @@ def render_file_template(template_path, use_defaults=False):
         ``cookecutter.json`` in the same directory as the template file.
         This JSON file is used to define a provide defaults for the template's
         variables.
+    use_defaults : `bool`, optional
+        Disables Sphinx from interactively prompting for context variables, if
+        `True`.
+    extra_context : `dict`, optional
+        Optional dictionary of key-value pairs that override defaults in the
+        ``cookiecutter.json`` file.
 
     Returns
     -------
@@ -42,6 +49,9 @@ def render_file_template(template_path, use_defaults=False):
     context_file = os.path.join(template_dir, 'cookiecutter.json')
     context = generate_context(context_file=context_file)
     context['cookiecutter'] = prompt_for_config(context, use_defaults)
+
+    if extra_context is not None:
+        context['cookiecutter'].update(extra_context)
 
     # Jinja2 template rendering environment
     env = StrictEnvironment(
@@ -62,7 +72,8 @@ def render_file_template(template_path, use_defaults=False):
     return rendered_text
 
 
-def render_and_write_file_template(template_path, output_path):
+def render_and_write_file_template(template_path, output_path,
+                                   extra_context=None):
     """Render a single-file template and write it to the filesystem.
 
     Parameters
@@ -71,6 +82,9 @@ def render_and_write_file_template(template_path, output_path):
         Path to the file template.
     output_path : `str`
         Path to write the rendered file.
+    extra_context : `dict`, optional
+        Optional dictionary of key-value pairs that override defaults in the
+        ``cookiecutter.json`` file.
 
     See also
     --------
@@ -78,7 +92,8 @@ def render_and_write_file_template(template_path, output_path):
     """
     logger = logging.getLogger(__name__)
 
-    rendered_text = render_file_template(template_path, use_defaults=True)
+    rendered_text = render_file_template(template_path, use_defaults=True,
+                                         extra_context=extra_context)
 
     logger.debug('Writing rendered file to {}'.format(output_path))
     with io.open(output_path, 'w', encoding='utf-8') as fh:

@@ -1,5 +1,12 @@
 # Change log
 
+## 2018-10-10
+
+- New "Task reference" section in the module homepages.
+  The `has_tasks` configuration controls whether the "Task reference" section is included or not.
+
+[DM-15422](https://jira.lsstcorp.org/browse/DM-15422)
+
 ## 2018-10-05
 
 - `doc/SConscript` and `doc/doxygen.conf.in` are no longer included in packages that don't use C++.

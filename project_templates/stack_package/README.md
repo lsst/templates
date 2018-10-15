@@ -33,6 +33,13 @@ Supported Stack packages are always located in the `lsst` organization.
 If `true` (default), the package is configured to support C++ and pybind11 code.
 If `false`, the generated package is Python-only.
 
+### cookiecutter.has_tasks
+
+If `true` (default), a "Task reference" section is added to the module homepage.
+Packages that don't provide Tasks or Config classes can skip this section.
+
+To learn more about these topic pages, see the [Task topic page](../../file_templates/task_topic) and [Config topic page](../../file_templates/config_topic).
+
 ### cookiecutter.uses_python
 
 If `true` (default), the package is configured to support Python code.
