@@ -14,7 +14,7 @@
 ``{{ cookiecutter.task_class }}`` is available as a :ref:`command-line task <pipe-tasks-command-line-tasks>`, :command:`{{ cookiecutter.script_name }}`.
 {%- endif %}
 
-.. _{{ cookiecutter.task_class}}-summary:
+.. _{{ cookiecutter.task_module }}.{{ cookiecutter.task_class}}-summary:
 
 Processing summary
 ==================
@@ -31,7 +31,7 @@ Processing summary
 #. Stores those results in this last step. (FIXME)
 {%- if cookiecutter.script_name|length > 0 %}
 
-.. {{ cookiecutter.task_class}}-cli:
+.. {{ cookiecutter.task_module }}.{{ cookiecutter.task_class}}-cli:
 
 {{ cookiecutter.script_name }} command-line interface
 {{ "=" * (cookiecutter.script_name|length + 23) }}
@@ -55,7 +55,7 @@ Key options:
    See :ref:`command-line-task-argument-reference` for details and additional options.
 {%- endif %}
 
-.. _{{ cookiecutter.task_class }}-api:
+.. _{{ cookiecutter.task_module }}.{{ cookiecutter.task_class }}-api:
 
 Python API summary
 ==================
@@ -63,7 +63,7 @@ Python API summary
 .. lsst-task-api-summary:: {{ cookiecutter.task_module }}.{{ cookiecutter.task_class }}
 {%- if cookiecutter.script_name|length > 0 %}
 
-.. _{{ cookiecutter.task_class }}-butler:
+.. _{{ cookiecutter.task_module }}.{{ cookiecutter.task_class }}-butler:
 
 Butler datasets
 ===============
@@ -71,7 +71,7 @@ Butler datasets
 When run as the ``{{ cookiecutter.script_name }}`` command-line task, or directly through the `~{{ cookiecutter.task_module}}.{{ cookiecutter.task_class }}.runDataRef` method, ``{{ cookiecutter.task_class }}`` obtains datasets from the input Butler data repository and persists outputs to the output Butler data repository.
 Note that configurations for ``{{ cookiecutter.task_class }}``, and its subtasks, affect what datasets are persisted and what their content is.
 
-.. _{{ cookiecutter.task_class }}-butler-inputs:
+.. _{{ cookiecutter.task_module }}.{{ cookiecutter.task_class }}-butler-inputs:
 
 Input datasets
 --------------
@@ -79,7 +79,7 @@ Input datasets
 ``fixmeDatasetName``
     Brief description of the dataset.
 
-.. _{{ cookiecutter.task_class }}-butler-outputs:
+.. _{{ cookiecutter.task_module }}.{{ cookiecutter.task_class }}-butler-outputs:
 
 Output datasets
 ---------------
@@ -88,21 +88,21 @@ Output datasets
     Brief description of this output dataset.
 {% endif %}
 
-.. _{{ cookiecutter.task_class }}-subtasks:
+.. _{{ cookiecutter.task_module }}.{{ cookiecutter.task_class }}-subtasks:
 
 Retargetable subtasks
 =====================
 
 .. lsst-task-config-subtasks:: lsst.pipe.tasks.processCcd.ProcessCcdTask
 
-.. _{{ cookiecutter.task_class }}-configs:
+.. _{{ cookiecutter.task_module }}.{{ cookiecutter.task_class }}-configs:
 
 Configuration fields
 ====================
 
 .. lsst-task-config-fields:: lsst.pipe.tasks.processCcd.ProcessCcdTask
 
-.. _{{ cookiecutter.task_class }}-examples:
+.. _{{ cookiecutter.task_module }}.{{ cookiecutter.task_class }}-examples:
 
 Examples
 ========
@@ -112,7 +112,7 @@ Examples
 .. (such as one from a command-line context and another that uses the Python API)
 .. you can separate each example into a different subsection for clarity.
 
-.. _{{ cookiecutter.task_class }}-debug:
+.. _{{ cookiecutter.task_module }}.{{ cookiecutter.task_class }}-debug:
 
 Debugging
 =========

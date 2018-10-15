@@ -11,7 +11,7 @@ ExampleTask
 .. If the task consumes or creates datasets, name those datasets here.
 .. If there are many datasets, name the ones that people use more frequently.
 
-.. _ExampleTask-summary:
+.. _lsst.example.ExampleTask-summary:
 
 Processing summary
 ==================
@@ -27,28 +27,28 @@ Processing summary
 
 #. Stores those results in this last step. (FIXME)
 
-.. _ExampleTask-api:
+.. _lsst.example.ExampleTask-api:
 
 Python API summary
 ==================
 
 .. lsst-task-api-summary:: lsst.example.ExampleTask
 
-.. _ExampleTask-subtasks:
+.. _lsst.example.ExampleTask-subtasks:
 
 Retargetable subtasks
 =====================
 
 .. lsst-task-config-subtasks:: lsst.pipe.tasks.processCcd.ProcessCcdTask
 
-.. _ExampleTask-configs:
+.. _lsst.example.ExampleTask-configs:
 
 Configuration fields
 ====================
 
 .. lsst-task-config-fields:: lsst.pipe.tasks.processCcd.ProcessCcdTask
 
-.. _ExampleTask-examples:
+.. _lsst.example.ExampleTask-examples:
 
 Examples
 ========
@@ -58,7 +58,7 @@ Examples
 .. (such as one from a command-line context and another that uses the Python API)
 .. you can separate each example into a different subsection for clarity.
 
-.. _ExampleTask-debug:
+.. _lsst.example.ExampleTask-debug:
 
 Debugging
 =========
