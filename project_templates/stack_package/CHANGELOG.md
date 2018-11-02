@@ -1,5 +1,9 @@
 # Change log
 
+## 2018-11-02
+
+- Added `bin/` and `.coverage` to `.gitignore`.
+
 ## 2018-10-10
 
 - New "Task reference" section in the module homepages.
