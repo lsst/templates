@@ -3,6 +3,9 @@
 ## 2018-11-02
 
 - Added `bin/` and `.coverage` to `.gitignore`.
+- Added `base` as a default EUPS dependency.
+  This prevents packages that have not other dependencies from having errors about getting `lsstimport`.
+  Packages that add high-level dependencies can drop the explicit dependency on `base`.
 
 ## 2018-10-10
 
