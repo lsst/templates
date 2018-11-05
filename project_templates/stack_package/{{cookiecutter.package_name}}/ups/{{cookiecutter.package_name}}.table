@@ -6,7 +6,10 @@
 #   rather than assuming it will be included recursively.
 # - The base package provides lsstimport. You can remove this explicit
 #   dependency if this package also declares higher-level dependencies.
+# - The utils package supports unit tests. This dependency can be removed
+#   if the package doesn't directly use its APIs in tests.
 setupRequired(base)
+setupRequired(utils)
 setupRequired(sconsUtils)
 
 # The following is boilerplate for all packages.

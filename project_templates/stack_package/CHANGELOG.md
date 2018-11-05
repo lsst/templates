@@ -1,11 +1,14 @@
 # Change log
 
-## 2018-11-02
+## 2018-11-05
 
 - Added `bin/` and `.coverage` to `.gitignore`.
 - Added `base` as a default EUPS dependency.
   This prevents packages that have not other dependencies from having errors about getting `lsstimport`.
   Packages that add high-level dependencies can drop the explicit dependency on `base`.
+- Also add `utils` as a default EUPS dependency since it is necessary for unit tests, in most cases.
+
+[DM-16437](https://jira.lsstcorp.org/browse/DM-16437)
 
 ## 2018-10-10
 
