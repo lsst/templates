@@ -1,5 +1,18 @@
 # Change log
 
+## 2018-11-05
+
+- Added `bin/` and `.coverage` to `.gitignore`.
+- Added `base` as a default EUPS dependency.
+  This prevents packages that have not other dependencies from having errors about getting `lsstimport`.
+  Packages that add high-level dependencies can drop the explicit dependency on `base`.
+- Also add `utils` as a default EUPS dependency since it is necessary for unit tests, in most cases.
+- Marked W504 (line break after binary operator) as an ignored Flake8 rule.
+  This rule was introduced by pycodestyle 2.4.0, but is not part of the [DM Python Style Guide](https://developer.lsst.io/python/style.html).
+  See the post [Changes to baseline software versions](https://community.lsst.org/t/changes-to-baseline-software-versions/3366).
+
+[DM-16437](https://jira.lsstcorp.org/browse/DM-16437)
+
 ## 2018-10-10
 
 - New "Task reference" section in the module homepages.
