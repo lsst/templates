@@ -11,6 +11,11 @@
 
 - Removed the `base` package dependency since `lsstimport` is not longer used.
 
+- Removed the `utils` package as a default dependency, reversing the change from 2018-11-05.
+  Developers should add the `utils` dependency if their code uses it (for example, in tests).
+
+[DM-17155](https://jira.lsstcorp.org/browse/DM-16437)
+
 ## 2018-11-05
 
 - Added `bin/` and `.coverage` to `.gitignore`.

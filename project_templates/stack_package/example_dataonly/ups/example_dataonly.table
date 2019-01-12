@@ -4,7 +4,6 @@
 #   low-level LSST packages.
 # - Any package whose API is used should be listed explicitly
 #   rather than assuming it will be included recursively.
-setupRequired(utils)
 setupRequired(sconsUtils)
 
 # The following is boilerplate for all packages.
