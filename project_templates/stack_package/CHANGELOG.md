@@ -1,5 +1,16 @@
 # Change log
 
+## 2019-01-11
+
+- Eliminated intermediate `__init__.py` files.
+  In Python 3, `__init__.py` files are no longer needed to establish a package.
+  This also means that the `pkgutil.extend_path` method call is no longer needed.
+  Nor is the lsstimport package from the "base" EUPS package.
+
+  The template still keeps the `__init__.py` of the module itself; this file is still commonly used for establishing public namespaces so it's good to keep it in the template.
+
+- Removed the `base` package dependency since `lsstimport` is not longer used.
+
 ## 2018-11-05
 
 - Added `bin/` and `.coverage` to `.gitignore`.

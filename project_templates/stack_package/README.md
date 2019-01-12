@@ -71,7 +71,6 @@ The [example](example) directory is a Stack package created using only the templ
 ### example_subpackage/
 
 The [example_subpackage](example_subpackage) directory shows a Stack package with a three-level Python namespace (`lsst.example.subpackage`).
-Packages with deep namespaces need [`__init__.py` files](example_subpackage/python/lsst/example/__init__.py) at each level that extend the namespace.
 
 ### example_pythononly/
 
@@ -232,21 +231,11 @@ Example: [lib/SConscript](example/lib/SConscript).
 Scons (extended by sconsUtils) uses this `SConstruct` file.
 You shouldn't need to modify this file.
 
-### `python/lsst/__init__.py`
-
-Example: [`python/lsst/__init__.py`](example/python/lsst/__init__.py).
-
-This `__init__`.py file extends the `lsst` Python namespace for this package's Python modules.
-You shouldn't modify this file.
-
-Packages that provide a root Python namespace that is three or more layers deep need to include a copy of this `__init__.py` file at each intermediate namespace level.
-For an example, see [`example_subpackage/python/lsst/example/__init__.py`](example_subpackage/python/lsst/example/__init__.py).
-
 ### `python/{{cookiecutter.python_namespace}}/__init__.py`
 
 Example: [`python/lsst/example/__init__.py`](example/python/lsst/example/__init__.py).
 
-This `__init__.py` file defines the root of the Python namespace provided by this package (and does not use `pkgutils` to extend the namespace further).
+This `__init__.py` file defines the root of the Python namespace provided by this package.
 
 At a minimum, this `__init__.py` imports objects from the `version.py` module created by `sconsUtils` at build time.
 It's also customary to import objects from other modules here to craft the public API that users import.

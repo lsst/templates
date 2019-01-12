@@ -1,14 +1,11 @@
 # List EUPS dependencies of this package here
 # - Common third-party packages (boost, python, doxygen) and low-level
-#   LSST packages can be assumed to be recursively included by
-#   LSST packages such as utils or daf_base.
+#   LSST packages can be assumed to be recursively included by other
+#   low-level LSST packages.
 # - Any package whose API is used should be listed explicitly
 #   rather than assuming it will be included recursively.
-# - The base package provides lsstimport. You can remove this explicit
-#   dependency if this package also declares higher-level dependencies.
 # - The utils package supports unit tests. This dependency can be removed
 #   if the package doesn't directly use its APIs in tests.
-setupRequired(base)
 setupRequired(utils)
 setupRequired(sconsUtils)
 
