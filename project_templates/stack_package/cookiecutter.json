@@ -1,5 +1,9 @@
 {
   "package_name": "example",
+  "stack_name": [
+    "LSST Science Pipelines",
+    "None"
+  ],
   "copyright_year": "{% now 'utc', '%Y' %}",
   "copyright_holder": [
     "Association of Universities for Research in Astronomy",

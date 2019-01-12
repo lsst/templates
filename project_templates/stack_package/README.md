@@ -12,6 +12,15 @@ For more documentation about developing packages, see the [DM Stack](https://dev
 EUPS package name.
 This is the name of the repository and the directory.
 
+### cookiecutter.stack_name
+
+The name of the EUPS stack that this package is part of (if at all).
+This variable determines the layout of the `doc/` directory and seed content for the README.
+Options are:
+
+- "LSST Science Pipelines" — documentation for the package is expected to be published at https://pipelines.lsst.io.
+- "None" — the package is not part of an EUPS stack. In this case, the documentation is structured so that it can be deployed to its own site.
+
 ### cookiecutter.copyright_year
 
 The year, or years that the named institution made contributions.
@@ -95,6 +104,13 @@ Some of the dependencies configured in the [`ups` directory](example_pythononly/
 
 The [example_dataonly](example_pythononly) directory shows a Stack package that does not include any Python or C++ code.
 This type of package might be used for datasets (see [afwdata](https://github.com/lsst/afwdata) and [verify_metrics](https://github.com/lsst/verify_metrics)).
+
+### example_standalone/
+
+The [example_standalone](example_standalone) directory shows a package that does not belong to an integrated stack by setting [cookiecutter.stack_name](#cookiecutterstack_name) to ``"None"``.
+Principally, this means that its documentation is designed to be deployed alone, to its own site, rather than a site like https://pipelines.lsst.io.
+This example also demonstrates setting [cookiecutter.base_package](#cookiecutterbase_package) to ``"sconsUtils"``.
+This type of package is commonly used by LSST Telescope & Site.
 
 ## Files
 
