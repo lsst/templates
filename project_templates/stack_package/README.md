@@ -28,6 +28,15 @@ If you need to assign a copyright to a different institution, you can modify the
 GitHub organization where the repository is located.
 Supported Stack packages are always located in the `lsst` organization.
 
+### cookiecutter.base_package
+
+This is the default EUPS dependency.
+Besides itself, this base package also implicitly provides common third-party dependencies.
+The choices are:
+
+- [base](https://github.com/lsst/base): used by the LSST Science Pipelines. This is the default.
+- [sconsUtils](https://github.com/lsst/sconsUtils): used by Telescope & Site and other stacks that don't need all the features of `base`.
+
 ### cookiecutter.uses_cpp
 
 If `true` (default), the package is configured to support C++ and pybind11 code.
@@ -275,3 +284,6 @@ Example: [ups/example.table](example/ups/example.table).
 
 EUPS uses this file to establish dependencies of this package to other EUPS-distributed package.
 When you import an API from another Stack package, make sure it is listed in this table file.
+
+By convention, a "base" package is responsible for implicitly including common-third party packages, like Python itself.
+The [cookiecutter.base_package](#cookiecutterbase_package) variable defines this base package.

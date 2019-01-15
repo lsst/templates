@@ -9,7 +9,9 @@
 
   The template still keeps the `__init__.py` of the module itself; this file is still commonly used for establishing public namespaces so it's good to keep it in the template.
 
-- Removed the `base` package dependency since `lsstimport` is not longer used.
+- Added a new cookiecutter variable, `cookiecutter.base_package`.
+  This selects the default package.
+  Science Pipelines packages should use `base` as the base package (the effective outcome of [RFC-52](https://jira.lsstcorp.org/browse/RFC-52)), while other stacks that don't need `base` can use `sconsUtils`.
 
 - Removed the `utils` package as a default dependency, reversing the change from 2018-11-05.
   Developers should add the `utils` dependency if their code uses it (for example, in tests).
