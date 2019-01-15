@@ -25,6 +25,7 @@ The default is the current year.
 Legal name of the institution that claims copyright.
 The choice list covers all DM institutions.
 If you need to assign a copyright to a different institution, you can modify the search-and-replace after the package is created.
+For more details, see [Managing license and copyright in Stack packages](https://developer.lsst.io/stack/license-and-copyright.html).
 
 ### cookiecutter.github_org
 
@@ -102,7 +103,7 @@ This type of package might be used for datasets (see [afwdata](https://github.co
 Example: [COPYRIGHT](example/COPYRIGHT).
 
 Record copyright claims in this file, one line per institution.
-See the [copyright](../../file_templates/copyright) template.
+See the [copyright](../../file_templates/copyright) template and [Managing license and copyright in Stack packages](https://developer.lsst.io/stack/license-and-copyright.html).
 
 ### LICENSE
 
@@ -110,6 +111,7 @@ Example: [LICENSE](example/LICENSE).
 
 The license for all DM Stack package is GPL v3.0 (see the [license_gplv3](../../file_templates/license_gplv3) template).
 The license should not be modified.
+See [Managing license and copyright in Stack packages](https://developer.lsst.io/stack/license-and-copyright.html).
 
 ### README.rst
 
@@ -125,14 +127,14 @@ Put the bulk of the documentation in the `doc/` directory.
 
 Example: [SConstruct](example/SConstruct).
 
-Scons (extended by sconsUtils) uses this `SConstruct` file.
+Scons (extended by [sconsUtils](https://github.com/lsst/sconsUtils)) uses this `SConstruct` file.
 The only customization is the package name argument for the `lsst.sconsUtils.scripts.BasicSConstruct` builder.
 
 ### setup.cfg
 
 Example: [setup.cfg](example/setup.cfg).
 
-Python utilities, like the flake8 linter, use `setup.cfg` for configuration.
+Python utilities, like [pytest](https://pytest.readthedocs.io/en/latest/) and [flake8](http://flake8.pycqa.org/en/latest/), use `setup.cfg` for configuration.
 This file is generally standardized across all packages and shouldn't be customized.
 
 ### bin.src/SConscript
@@ -158,17 +160,19 @@ An example use of this package index page (or pages linked from it) is to docume
 At a minimum, this page should be customized with a description of the package.
 This copy can be shared with the description in the README.
 
+See the [Package homepage topic type](https://developer.lsst.io/stack/package-homepage-topic-type.html) for more information.
+
 ### doc/{{cookiecutter.python_module}}/index.rst
 
 Example: [doc/lsst.example/index.rst](example/doc/lsst.example/index.rst).
 
 This is the **module homepage.**
 This is the main documentation page for the Python module provided by the package.
-Most documentation will be linked through this page.
+Most documentation is linked through this page.
 
 Packages that provide multiple Python modules (like `afw`) can have several of these directories, each named after the module's public namespace.
 
-Separate documentation is forthcoming on how to format this page.
+See the [Module homepage topic type](https://developer.lsst.io/stack/module-homepage-topic-type.html) for more information.
 
 ### doc/conf.py
 
@@ -176,7 +180,9 @@ Example: [doc/conf.py](example/doc/conf.py).
 
 This `conf.py` file is only used for single-package documentation builds during development.
 You shouldn't modify this file beyond the basic templated customization.
-If you need to modify the Sphinx configuration, post a message in the #dm-docs Slack channel so it can be included in [documenteer](https://github.com/lsst-sqre/documenteer).
+If you need to modify the Sphinx configuration, post a message in the [#dm-docs](https://lsstc.slack.com/archives/dm-docs) Slack channel so it can be included in [documenteer](https://github.com/lsst-sqre/documenteer).
+
+See [Layout of the doc/ directory](https://developer.lsst.io/stack/layout-of-doc-directory.html) for more information.
 
 ### doc/doxygen.conf.in
 
@@ -187,6 +193,8 @@ Per package Doxygen builds are necessary to generate the C++ API reference.
 
 *Only necessary for packages developed in C++.*
 
+See [Layout of the doc/ directory](https://developer.lsst.io/stack/layout-of-doc-directory.html) for more information.
+
 ### doc/index.rst
 
 Example: [doc/index.rst](example/doc/index.rst).
@@ -194,6 +202,8 @@ Example: [doc/index.rst](example/doc/index.rst).
 This file is the root page for single-package documentation builds.
 It is not used at all for the published site (https://pipelines.lsst.io).
 This page's `toctree` should link to the `index.rst` files at the root of both the package and Python module documentation directories.
+
+See [Layout of the doc/ directory](https://developer.lsst.io/stack/layout-of-doc-directory.html) for more information.
 
 ### doc/manifest.yaml
 
@@ -203,7 +213,7 @@ This YAML file is used by the Sphinx documentation build tool (included in the [
 It defines what package and Python module documentation directories this package provides.
 The Cookiecutter template should configure this file for you out-of-the box.
 
-Separate documentation is forthcoming on how to use this file.
+See [Layout of the doc/ directory](https://developer.lsst.io/stack/layout-of-doc-directory.html) for more information.
 
 ### doc/SConscript
 
