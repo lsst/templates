@@ -2,6 +2,9 @@
 
 **LSST DM EUPS Stack package.**
 
+This template generates an LSST Stack package, which is part of the `lsst` namespace in Python and C++, is managed by [EUPS](https://github.com/RobertLuptonTheGood/eups), and is built by [SCons](https://scons.org) (with LSST's [sconsUtils](https://github.com/lsst/sconsUtils)).
+For more documentation about developing packages, see the [DM Stack](https://developer.lsst.io/#part-dm-stack) section of the Developer Guide.
+
 ## Template variables
 
 ### cookiecutter.package_name
