@@ -1,5 +1,23 @@
 # Change log
 
+## 2019-01-11
+
+- Eliminated intermediate `__init__.py` files.
+  In Python 3, `__init__.py` files are no longer needed to establish a package.
+  This also means that the `pkgutil.extend_path` method call is no longer needed.
+  Nor is the lsstimport package from the "base" EUPS package.
+
+  The template still keeps the `__init__.py` of the module itself; this file is still commonly used for establishing public namespaces so it's good to keep it in the template.
+
+- Added a new cookiecutter variable, `cookiecutter.base_package`.
+  This selects the default package.
+  Science Pipelines packages should use `base` as the base package (the effective outcome of [RFC-52](https://jira.lsstcorp.org/browse/RFC-52)), while other stacks that don't need `base` can use `sconsUtils`.
+
+- Removed the `utils` package as a default dependency, reversing the change from 2018-11-05.
+  Developers should add the `utils` dependency if their code uses it (for example, in tests).
+
+[DM-17155](https://jira.lsstcorp.org/browse/DM-16437)
+
 ## 2018-11-05
 
 - Added `bin/` and `.coverage` to `.gitignore`.
