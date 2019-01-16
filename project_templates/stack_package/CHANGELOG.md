@@ -1,5 +1,20 @@
 # Change log
 
+## 2019-01-15
+
+- Added a new template variable, `cookiecutter.stack_name`.
+  This identifies what "stack" the package is part of, if at all.
+  The current default is "LSST Science Pipelines," whose packages have documentation published at https://pipelines.lsst.io.
+  If `cookiecutter.stack_name` is set to "None" then the package is considered to stand alone.
+  In that case, the `doc/` directory is rearranged to support a standalone documentation site for the package.
+
+- Added an `example_standalone/` package that demonstrates `cookiecutter.stack_name=="None"` and `cookiecutter.base_package=="sconsUtils"`.
+  This example should be close to a typical Telescope & Site package starting point.
+
+- Fixed an issue with the `cookiecutter.base_package` variable (the `sconsUtils` option was misspelled as `setupUtils`).
+
+[DM-17191](https://jira.lsstcorp.org/browse/DM-17191)
+
 ## 2019-01-11
 
 - Eliminated intermediate `__init__.py` files.
@@ -16,7 +31,7 @@
 - Removed the `utils` package as a default dependency, reversing the change from 2018-11-05.
   Developers should add the `utils` dependency if their code uses it (for example, in tests).
 
-[DM-17155](https://jira.lsstcorp.org/browse/DM-16437)
+[DM-17155](https://jira.lsstcorp.org/browse/DM-17155)
 
 ## 2018-11-05
 
@@ -58,7 +73,7 @@
 - Updated the `setup.cfg` configuration file.
   This adds the N806 flake8 exception and the `[tool:pytest]` section.
 
-- Updated the default `automodapi` usage in module documenation homepages.
+- Updated the default `automodapi` usage in module documentation homepages.
 
   - `no-main-docstr` is something we always want to use since the main docstring in `__init__.py` shouldn't be used, in favour of writing topics in the `doc/` directory.
 

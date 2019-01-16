@@ -9,6 +9,11 @@ Key functionality is:
 1. Move ``include/root.h`` to its proper subdirectory and name.
 
 2. Remove C++ directories if ``cookiecutter.uses_cpp`` is False.
+
+3. Remove Python-specific directories if ``cookiecutter.uses_python`` is False.
+
+4. If The package is not part of a Stack, re-arrange the package's
+   documentation so that it can be deployed standalone.
 """
 import os
 import shutil
@@ -20,6 +25,7 @@ from templatekit.jinjaext import (
 
 # These variables are interpolated by cookiecutter before this hook is run
 package_name = '{{ cookiecutter.package_name }}'
+stack_name = '{{ cookiecutter.stack_name }}'
 python_namespace = '{{ cookiecutter.python_module }}'
 python_sub_dirs = '{{ cookiecutter.python_sub_dirs }}'
 uses_cpp = True if ('{{ cookiecutter.uses_cpp }}' is True
@@ -92,3 +98,26 @@ if uses_python or uses_cpp:
     package_doc_dirname = os.path.join('doc', package_name)
     print('(post-gen hook) Removing {0} directory'.format(package_doc_dirname))
     shutil.rmtree(package_doc_dirname, ignore_errors=True)
+
+# If the package is not part of a stack, then make either its package or
+# module documentation directory the homepage at the root of doc/ for
+# standalone deployment.
+if stack_name == "None":
+    root_path = os.path.join('doc', 'index.rst')
+    if uses_python or uses_cpp:
+        # Use the module documentation directory as the root
+        new_root_path = os.path.join('doc', python_namespace, 'index.rst')
+        print('(post-gen hook) Creating a standalone doc directory '
+              'with the module homepage.')
+    else:
+        # Use the package documentation directory as the root
+        new_root_path = os.path.join('doc', package_name, 'index.rst')
+        print('(post-gen hook) Creating a standalone doc directory '
+              'with the package homepage.')
+
+    # Replace the original root with the new one
+    os.remove(root_path)
+    os.rename(new_root_path, root_path)
+
+    # Delete either the original module or package documentation directory
+    shutil.rmtree(os.path.dirname(new_root_path), ignore_errors=True)

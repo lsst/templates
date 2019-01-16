@@ -1,5 +1,9 @@
 {
   "package_name": "example",
+  "stack_name": [
+    "LSST Science Pipelines",
+    "None"
+  ],
   "copyright_year": "{% now 'utc', '%Y' %}",
   "copyright_holder": [
     "Association of Universities for Research in Astronomy",
@@ -12,7 +16,7 @@
   "github_org": ["lsst", "lsst-dm", "lsst-sims", "lsst-ts"],
   "base_package": [
     "base",
-    "setupUtils"
+    "sconsUtils"
   ],
   "uses_cpp": [true, false],
   "uses_python": [true, false],

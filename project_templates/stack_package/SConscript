@@ -49,3 +49,15 @@ env.Cookiecutter(AlwaysBuild(Dir('example_dataonly')),
                  cookiecutter_context={'package_name': 'example_dataonly',
                                        'uses_cpp': False,
                                        'uses_python': False})
+
+# Run cookiecutter to generate the 'example_standalone' package.
+# This shows off a package that doesn't belong to a stack like the LSST
+# Science Pipelines. Consequently, it's doc directory is set up to be
+# deployed as a single-package documentation site. Additionally, this example
+# also shows off `sconsUtils` as the base package.
+env.Cookiecutter(AlwaysBuild(Dir('example_standalone')),
+                 'cookiecutter.json',
+                 cookiecutter_context={'package_name': 'example_standalone',
+                                       'stack_name': 'None',
+                                       'base_package': 'setupUtils',
+                                       'uses_cpp': False})
