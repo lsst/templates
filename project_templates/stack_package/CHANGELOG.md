@@ -11,6 +11,8 @@
 - Added an `example_standalone/` package that demonstrates `cookiecutter.stack_name=="None"` and `cookiecutter.base_package=="sconsUtils"`.
   This example should be close to a typical Telescope & Site package starting point.
 
+- Fixed an issue with the `cookiecutter.base_package` variable (the `sconsUtils` option was misspelled as `setupUtils`).
+
 [DM-17191](https://jira.lsstcorp.org/browse/DM-17191)
 
 ## 2019-01-11
