@@ -1,0 +1,8 @@
+name: "Plain text"
+group: "Source license preambles"
+dialog_title: "Create a preamble"
+dialog_fields:
+  - key: "package_name"
+    label: "EUPS package name"
+    hint: "Name of the EUPS package and/or Git repository."
+    component: "text"
