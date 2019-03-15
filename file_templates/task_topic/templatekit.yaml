@@ -14,3 +14,4 @@ dialog_fields:
     label: "Command-line script"
     hint: "Name of the command-line task, or blank if none."
     component: "text"
+    optional: True
