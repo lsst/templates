@@ -82,3 +82,9 @@ Cookiecutter will automatically populate the current year.
 
 The initial copyright holder.
 See [Copyrights for LSST DM work and the COPYRIGHT file](https://developer.lsst.io/legal/copyright-overview.html) for more information.
+
+## Examples
+
+### testn-000/
+
+The [testn-000](testn-000) directory is an example of a technote generated from the template defaults.

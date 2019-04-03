@@ -5,6 +5,7 @@ SConscript([
     'project_templates/example_project/SConscript',
     'project_templates/stack_package/SConscript',
     'project_templates/nbreport/SConscript',
+    'project_templates/technote_rst/SConscript',
     'file_templates/copyright/SConscript',
     'file_templates/license_gplv3/SConscript',
     'file_templates/stack_license_preamble_txt/SConscript',
