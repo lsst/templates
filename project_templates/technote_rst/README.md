@@ -112,6 +112,13 @@ Example: [conf.py](testn-000/conf.py).
 The Sphinx configuration file.
 The basic Sphinx configuration comes our Documenteer package, but you can append the [typical configuration variables](http://www.sphinx-doc.org/en/master/usage/configuration.html) to the end of that ``conf.py`` to customize the Sphinx build.
 
+### COPYRIGHT
+
+Example: [COPYRIGHT](testn-000/COPYRIGHT).
+
+Record copyright claims in this file, one line per institution.
+See the [copyright](../copyright) template and [Copyrights for LSST DM work and the COPYRIGHT file](https://developer.lsst.io/legal/copyright-overview.html).
+
 ### index.py
 
 Example: [index.rst](testn-000/index.rst).

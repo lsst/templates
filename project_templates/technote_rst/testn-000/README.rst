@@ -71,12 +71,6 @@ You can update them to the current `lsst-texmf`_ versions with::
 
 Add new bibliography items to the ``local.bib`` file in the root directory (and later add them to `lsst-texmf`_).
 
-****
-
-Copyright 2019 Association of Universities for Research in Astronomy
-
-This work is licensed under the Creative Commons Attribution 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/.
-
 .. _Sphinx: http://sphinx-doc.org
 .. _DM reStructuredText Style Guide: https://developer.lsst.io/restructuredtext/style.html
 .. _this repo: ./index.rst
