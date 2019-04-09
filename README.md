@@ -13,7 +13,7 @@ Clone this repository and install the `templatekit` app:
 ```bash
 git clone https://github.com/lsst/templates
 cd templates
-pip install .
+pip install -r requirements.txt
 ```
 
 List the templates in this repository:
