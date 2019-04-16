@@ -1,0 +1,63 @@
+\documentclass[{{ cookiecutter.org }},authoryear,toc]{lsstdoc}
+% lsstdoc documentation: https://lsst-texmf.lsst.io/lsstdoc.html
+
+\input{meta}
+
+% Package imports go here.
+
+% Local commands go here.
+
+% To add a short-form title:
+% \title[Short title]{Title}
+\title{ {{- cookiecutter.title -}} }
+
+% Optional subtitle
+% \setDocSubtitle{A subtitle}
+
+{% raw -%}
+\author{%{%- endraw %}
+{{ cookiecutter.first_author }}
+}
+
+\setDocRef{ {{- cookiecutter.series.upper() -}}-{{- cookiecutter.serial_number -}} }
+\setDocUpstreamLocation{\url{https://github.com/{{ cookiecutter.github_org }}/{{ cookiecutter.series.lower()}}-{{ cookiecutter.serial_number -}} }}
+
+\date{\vcsDate}
+
+% Optional: name of the document's curator
+% \setDocCurator{The Curator of this Document}
+
+{% raw -%}
+\setDocAbstract{%{%- endraw %}
+{{ cookiecutter.abstract }}
+}
+
+% Change history defined here.
+% Order: oldest first.
+% Fields: VERSION, DATE, DESCRIPTION, OWNER NAME.
+% See LPM-51 for version number policy.
+{% raw -%}
+\setDocChangeRecord{%{%- endraw %}
+  \addtohist{1}{YYYY-MM-DD}{Unreleased.}{ {{- cookiecutter.first_author -}} }
+}
+
+\begin{document}
+
+% Create the title page.
+% Switch to \maketitle if you want the title page and table of contents
+\mkshorttitle
+
+% ADD CONTENT HERE
+% You can also use the \input command to include several content files.
+
+\appendix
+% Include all the relevant bib files.
+% https://lsst-texmf.lsst.io/lsstdoc.html#bibliographies
+\section{References} \label{sec:bib}
+\bibliography{local,lsst,lsst-dm,refs_ads,refs,books}
+
+% Make sure lsst-texmf/bin/generateAcronyms.py is in your path
+\section{Acronyms} \label{sec:acronyms}
+\input{acronyms.tex}
+
+\end{document}
