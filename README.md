@@ -6,6 +6,14 @@ Use the `templatekit` command line app to start a new file or project from these
 Refer to these templates when creating new projects (such as stack packages) and when adding new files to existing repositories.
 We're continuously updating these templates with our adopted standards and best practices.
 
+## Contents
+
+- [Getting started](#getting-started)
+- [List of project templates](#list-of-project-templates)
+- [List of file templates](#list-of-file-templates)
+- [Contributions](#contributions)
+- [Troubleshooting](#troubleshooting)
+
 ## Getting started
 
 Clone this repository and install the `templatekit` app:
