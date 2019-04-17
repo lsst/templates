@@ -17,17 +17,17 @@ doc_title: '{{ cookiecutter.title }}'
 
 # Author names, ordered as a list. Each author name should be formatted as 'First Last'
 authors:
-    - '{{ cookiecutter.first_author }}'
+  - '{{ cookiecutter.first_author }}'
 
 # Current document revision date, YYYY-MM-DD
 # Only set this field if you need to manually fix the revision date;
 # the revision date is obtained from the HEAD Git commit otherwise.
 # last_revised: 'YYYY-MM-DD'
 
-# Version. Use Semvar, e.g., 1.0, including .dev, as necessary
-# This version string should correspond to the git tag when the document is published on Zenodo
-# If left commented out, the current Git branch is used instead
-# version: '1.0'
+# Version. Use semantic versioning, e.g., 1.0.0, including .dev, as necessary.
+# This version string should correspond to the git tag when the document is
+# published on Zenodo. If left commented out, the current Git branch is used
+# instead version: '1.0.0'
 
 # Digital Object Identifier (DOI). Uncomment if available.
 # Keep this DOI updated as new releases are pushed to Zenodo
