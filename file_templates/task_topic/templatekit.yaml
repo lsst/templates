@@ -1,0 +1,17 @@
+name: "Task topic"
+group: "Science Pipelines documentation"
+dialog_title: "Create a task topic"
+dialog_fields:
+  - key: "task_class"
+    label: "Task class name"
+    hint: "Name of the Python class."
+    component: "text"
+  - key: "task_module"
+    label: "Module name"
+    hint: "Namespace of the actual module containing the task class."
+    component: "text"
+  - key: "script_name"
+    label: "Command-line script"
+    hint: "Name of the command-line task, or blank if none."
+    component: "text"
+    optional: True

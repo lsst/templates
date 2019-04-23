@@ -6,6 +6,14 @@ Use the `templatekit` command line app to start a new file or project from these
 Refer to these templates when creating new projects (such as stack packages) and when adding new files to existing repositories.
 We're continuously updating these templates with our adopted standards and best practices.
 
+## Contents
+
+- [Getting started](#getting-started)
+- [List of project templates](#list-of-project-templates)
+- [List of file templates](#list-of-file-templates)
+- [Contributions](#contributions)
+- [Troubleshooting](#troubleshooting)
+
 ## Getting started
 
 Clone this repository and install the `templatekit` app:
@@ -13,7 +21,7 @@ Clone this repository and install the `templatekit` app:
 ```bash
 git clone https://github.com/lsst/templates
 cd templates
-pip install .
+pip install -r requirements.txt
 ```
 
 List the templates in this repository:
@@ -50,23 +58,7 @@ You can get more information about `templatekit` and its commands by running:
 templatekit -h
 ```
 
-### Common issue: ASCII shell locale
-
-Depending on how your shell is set up, you may get this error when running `templatekit`:
-
-> RuntimeError: Click will abort further execution because Python 3 was configured to use ASCII as encoding for the environment.  Either run this under Python 2 or consult http://click.pocoo.org/python3/ for mitigation steps.
-
-To solve this, you need to set your shell's *locale* to use UTF-8.
-Type these lines into your shell:
-
-```bash
-export LC_ALL=en_US.utf-8
-export LANG=en_US.utf-8
-```
-
-This will work on macOS. Linux distributions may be different (try `C.UTF-8`).
-
-After the locale is set, re-try the `templatekit` command.
+See [Troubleshooting](#troubleshooting) for solutions to common issues.
 
 ## List of project templates
 
@@ -93,3 +85,28 @@ Find these templates in the `file_templates` directory:
 ## Contributions
 
 See the [CONTRIBUTING.md](CONTRIBUTING.md) file for guidance on adding and maintaining templates in this repository.
+
+## Troubleshooting
+
+### ASCII shell encoding
+
+Depending on how your shell is set up, you may get this error when running `templatekit`:
+
+> RuntimeError: Click will abort further execution because Python 3 was configured to use ASCII as encoding for the environment.  Either run this under Python 2 or consult http://click.pocoo.org/python3/ for mitigation steps.
+
+To solve this, you need to set your shell's *locale* to use UTF-8.
+For example, type these lines into your shell and add them to a start-up file such as ``.bashrc``:
+
+```bash
+export LC_ALL=en_US.utf-8
+export LANG=en_US.utf-8
+```
+
+After the locale is set, re-try the `templatekit` command.
+
+Keep in mind that different platforms have different locales.
+To find available UTF-8 locales on your platform, run:
+
+```bash
+locale -a
+```

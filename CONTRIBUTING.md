@@ -24,7 +24,7 @@ To effectively contribute templates, you'll need to install the [templatekit Pyt
 ```bash
 git clone https://github.com/lsst/templates
 cd templates
-python setup.py install
+pip install -r requirements.txt
 ```
 
 *It's a good idea to do this in an isolated Python virtual environment.*

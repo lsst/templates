@@ -1,0 +1,12 @@
+name: "Config topic"
+group: "Science Pipelines documentation"
+dialog_title: "Create a config topic"
+dialog_fields:
+  - key: "config_class"
+    label: "Config class name"
+    hint: "Name of the Python class."
+    component: "text"
+  - key: "config_module"
+    label: "Module name"
+    hint: "Namespace of the actual module containing the config class."
+    component: "text"

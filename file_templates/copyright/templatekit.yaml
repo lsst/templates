@@ -1,0 +1,6 @@
+name: "COPYRIGHT file"
+dialog_title: "Create a COPYRIGHT"
+dialog_fields:
+  - label: "Copyright holder"
+    key: "copyright_holder"
+    component: "select"

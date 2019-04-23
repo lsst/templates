@@ -36,7 +36,7 @@ env.Cookiecutter(AlwaysBuild(Dir('example_subpackage')),
 env.Cookiecutter(AlwaysBuild(Dir('example_pythononly')),
                  'cookiecutter.json',
                  cookiecutter_context={'package_name': 'example_pythononly',
-                                       'uses_cpp': False})
+                                       'uses_cpp': 'False'})
 
 # Run cookiecutter to generate the 'example_dataonly' package
 # This shows off a Data-only package that has no Python or C++ code.
@@ -47,8 +47,8 @@ env.Cookiecutter(AlwaysBuild(Dir('example_pythononly')),
 env.Cookiecutter(AlwaysBuild(Dir('example_dataonly')),
                  'cookiecutter.json',
                  cookiecutter_context={'package_name': 'example_dataonly',
-                                       'uses_cpp': False,
-                                       'uses_python': False})
+                                       'uses_cpp': 'False',
+                                       'uses_python': 'False'})
 
 # Run cookiecutter to generate the 'example_standalone' package.
 # This shows off a package that doesn't belong to a stack like the LSST
@@ -60,4 +60,4 @@ env.Cookiecutter(AlwaysBuild(Dir('example_standalone')),
                  cookiecutter_context={'package_name': 'example_standalone',
                                        'stack_name': 'None',
                                        'base_package': 'setupUtils',
-                                       'uses_cpp': False})
+                                       'uses_cpp': 'False'})
