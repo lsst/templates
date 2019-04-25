@@ -23,11 +23,13 @@ Once the technote repository is generated you can add additional authors to the 
 The identifier of the technote series.
 Choose the series that fits the document's purpose or aligns with the organization creating the document:
 
-- ``SQR`` for SQuaRE technical notes. See [SQR-000](https://sqr-000.lsst.io).
-- ``DMTN`` for Data Management technical notes. See [DMTN-000](https://dmtn-000.lsst.io).
-- ``SMTN`` for Simulations Group technical notes. See [SMTN-000](https://smtn-000.lsst.io).
-- ``SITCOMTN`` for Systems Integration, Testing, and Commissioning notes.
-- ``TESTN`` for testing the technical system. *These notes may be purged at any time.*
+- `DMTN` for Data Management technical notes. See [DMTN-000](https://dmtn-000.lsst.io).
+- `OPSTN` for LSST Operations technical notes.
+- `PSTN` for Project Science Team technical notes.
+- `SMTN` for Simulations Group technical notes. See [SMTN-000](https://smtn-000.lsst.io).
+- `SITCOMTN` for Systems Integration, Testing, and Commissioning notes.
+- `SQR` for SQuaRE technical notes. See [SQR-000](https://sqr-000.lsst.io).
+- `TESTN` for testing the technical system. *These notes may be purged at any time.*
 
 ### cookiecutter.serial_number
 
@@ -48,11 +50,12 @@ Cookiecutter will automatically format this for you based on the [series](#cooki
 The GitHub organization where this technote resides.
 Choose a GitHub organization that matches the [series](#cookiecutter_series):
 
-- ``lsst-dm`` for the DM DMTN series
-- ``lsst-sqre`` for the SQuaRE SQR series
-- ``lsst-sims`` for the Simulations Group's SMTN series
-- ``lsst-sitcom`` for the SITCOMTN series.
-- ``lsst-sqre-testing`` for the TESTTN series.
+- `lsst-dm` for the DM DMTN series.
+- `lsst-ops` for the OPSTN series.
+- `lsst-sims` for the Simulations Group's SMTN series.
+- `lsst-sitcom` for the SITCOMTN series.
+- `lsst-sqre` for the SQuaRE SQR series.
+- `lsst-sqre-testing` for the TESTN series.
 
 ### cookiecutter.github_namespace
 

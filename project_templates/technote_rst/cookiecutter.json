@@ -2,18 +2,23 @@
   "first_author": "First Last",
   "series": [
     "DMTN",
-    "SITCOMTN",
+    "OPSTN",
+    "PSTN",
     "SMTN",
+    "SITCOMTN",
     "SQR",
-    "TESTN"],
+    "TESTN"
+  ],
   "serial_number": "000",
   "title": "Document Title",
   "repo_name": "{{ cookiecutter.series.lower() }}-{{ cookiecutter.serial_number }}",
   "github_org": [
     "lsst-dm",
-    "lsst-sqre",
+    "lsst-ops",
+    "lsst-pst",
     "lsst-sims",
     "lsst-sitcom",
+    "lsst-sqre",
     "lsst-sqre-testing"
   ],
   "github_namespace": "{{ cookiecutter.github_org }}/{{ cookiecutter.repo_name }}",
