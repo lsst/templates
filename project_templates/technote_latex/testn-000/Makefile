@@ -13,7 +13,7 @@ endif
 
 TEXMFHOME = lsst-texmf/texmf
 
-$(DOCNAME).pdf: $(tex) meta.tex
+$(DOCNAME).pdf: $(tex) meta.tex local.bib
 	xelatex $(DOCNAME)
 	bibtex $(DOCNAME)
 	xelatex $(DOCNAME)
