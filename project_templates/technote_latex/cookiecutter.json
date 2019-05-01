@@ -1,5 +1,12 @@
 {
-  "first_author": "First Last",
+  "org": [
+    "DM",
+    "OPS",
+    "PMO",
+    "PST",
+    "SE",
+    "TS"
+  ],
   "series": [
     "DMTN",
     "OPSTN",
@@ -10,8 +17,6 @@
     "TESTN"
   ],
   "serial_number": "000",
-  "title": "Document Title",
-  "repo_name": "{{ cookiecutter.series.lower() }}-{{ cookiecutter.serial_number }}",
   "github_org": [
     "lsst-dm",
     "lsst-ops",
@@ -21,10 +26,9 @@
     "lsst-sqre",
     "lsst-sqre-testing"
   ],
-  "github_namespace": "{{ cookiecutter.github_org }}/{{ cookiecutter.repo_name }}",
-  "docushare_url": "",
-  "url": "https://{{ cookiecutter.series.lower() }}-{{ cookiecutter.serial_number }}.lsst.io",
-  "description": "A short description of this document",
+  "title": "Document Title",
+  "first_author": "First Last",
+  "abstract": "Abstract text.",
   "copyright_year": "{% now 'utc', '%Y' %}",
   "copyright_holder": [
     "Association of Universities for Research in Astronomy",

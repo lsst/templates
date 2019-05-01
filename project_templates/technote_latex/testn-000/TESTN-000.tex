@@ -1,0 +1,59 @@
+\documentclass[DM,authoryear,toc]{lsstdoc}
+% lsstdoc documentation: https://lsst-texmf.lsst.io/lsstdoc.html
+
+\input{meta}
+
+% Package imports go here.
+
+% Local commands go here.
+
+% To add a short-form title:
+% \title[Short title]{Title}
+\title{Document Title}
+
+% Optional subtitle
+% \setDocSubtitle{A subtitle}
+
+\author{%
+First Last
+}
+
+\setDocRef{TESTN-000}
+\setDocUpstreamLocation{\url{https://github.com/lsst-dm/testn-000}}
+
+\date{\vcsDate}
+
+% Optional: name of the document's curator
+% \setDocCurator{The Curator of this Document}
+
+\setDocAbstract{%
+Abstract text.
+}
+
+% Change history defined here.
+% Order: oldest first.
+% Fields: VERSION, DATE, DESCRIPTION, OWNER NAME.
+% See LPM-51 for version number policy.
+\setDocChangeRecord{%
+  \addtohist{1}{YYYY-MM-DD}{Unreleased.}{First Last}
+}
+
+\begin{document}
+
+% Create the title page.
+\maketitle
+
+% ADD CONTENT HERE
+% You can also use the \input command to include several content files.
+
+\appendix
+% Include all the relevant bib files.
+% https://lsst-texmf.lsst.io/lsstdoc.html#bibliographies
+\section{References} \label{sec:bib}
+\bibliography{local,lsst,lsst-dm,refs_ads,refs,books}
+
+% Make sure lsst-texmf/bin/generateAcronyms.py is in your path
+\section{Acronyms} \label{sec:acronyms}
+\input{acronyms.tex}
+
+\end{document}
