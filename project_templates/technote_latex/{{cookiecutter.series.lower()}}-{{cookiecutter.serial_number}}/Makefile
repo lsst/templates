@@ -11,7 +11,7 @@ ifneq "$(GITSTATUS)" ""
 	GITDIRTY = -dirty
 endif
 
-TEXMFHOME = lsst-texmf/texmf
+export TEXMFHOME ?= lsst-texmf/texmf
 
 $(DOCNAME).pdf: $(tex) meta.tex local.bib
 	xelatex $(DOCNAME)
