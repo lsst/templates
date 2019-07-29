@@ -1,5 +1,9 @@
 # Change log
 
+## 2019-07-29
+
+- Add support for the ITTN technote series for LSST IT.
+
 ## 2019-04-29
 
 This LaTeX document template is roughly based on the [`document` template](https://github.com/lsst/lsst-texmf/tree/master/templates/document) in the lsst-texmf repo, however it's customized in several ways to become a dedicated technote template:
