@@ -9,6 +9,7 @@
   ],
   "series": [
     "DMTN",
+    "ITTN",
     "OPSTN",
     "PSTN",
     "SMTN",
@@ -19,6 +20,7 @@
   "serial_number": "000",
   "github_org": [
     "lsst-dm",
+    "LSST-IT",
     "lsst-ops",
     "lsst-pst",
     "lsst-sims",

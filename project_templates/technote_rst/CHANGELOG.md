@@ -1,5 +1,9 @@
 # Change log
 
+## 2019-07-29
+
+- Add support for the ITTN technote series for LSST IT.
+
 ## 2019-04-17
 
 - Ported from the [lsst-technote-bootstrap](https://github.com/lsst-sqre/lsst-technote-bootstrap) repository.

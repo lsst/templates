@@ -2,6 +2,7 @@
   "first_author": "First Last",
   "series": [
     "DMTN",
+    "ITTN",
     "OPSTN",
     "PSTN",
     "SMTN",
@@ -14,6 +15,7 @@
   "repo_name": "{{ cookiecutter.series.lower() }}-{{ cookiecutter.serial_number }}",
   "github_org": [
     "lsst-dm",
+    "LSST-IT",
     "lsst-ops",
     "lsst-pst",
     "lsst-sims",
