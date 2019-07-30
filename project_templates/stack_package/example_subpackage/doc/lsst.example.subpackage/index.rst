@@ -62,7 +62,17 @@ Configurations
    :root: lsst.example.subpackage
    :toctree: configs
 
-.. _lsst.example.subpackage-pyapi:
+.. .. _lsst.example.subpackage-scripts:
+
+.. Script reference
+.. ================
+
+.. .. TODO: Add an item to this toctree for each script reference topic in the scripts subdirectory.
+
+.. .. toctree::
+..    :maxdepth: 1
+
+.. .. _lsst.example.subpackage-pyapi:
 
 Python API reference
 ====================

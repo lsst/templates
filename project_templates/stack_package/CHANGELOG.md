@@ -1,5 +1,11 @@
 # Change log
 
+## 2019-07-30
+
+- Added a "Script reference" section to link to script topic pages (see [script_topic](../../file_templates/script_topic) and [argparse_script_topic](../../file_templates/argparse_script_topic)).
+
+[DM-20821](https://jira.lsstcorp.org/browse/DM-20821)
+
 ## 2019-01-15
 
 - Added a new template variable, `cookiecutter.stack_name`.

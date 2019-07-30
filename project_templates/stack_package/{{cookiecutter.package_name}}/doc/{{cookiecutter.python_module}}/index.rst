@@ -64,7 +64,17 @@ Configurations
    :toctree: configs
 {%- endif %}
 
-.. _{{ cookiecutter.python_module }}-pyapi:
+.. .. _{{ cookiecutter.python_module}}-scripts:
+
+.. Script reference
+.. ================
+
+.. .. TODO: Add an item to this toctree for each script reference topic in the scripts subdirectory.
+
+.. .. toctree::
+..    :maxdepth: 1
+
+.. .. _{{ cookiecutter.python_module }}-pyapi:
 
 Python API reference
 ====================

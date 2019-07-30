@@ -62,7 +62,17 @@ Configurations
    :root: lsst.example
    :toctree: configs
 
-.. _lsst.example-pyapi:
+.. .. _lsst.example-scripts:
+
+.. Script reference
+.. ================
+
+.. .. TODO: Add an item to this toctree for each script reference topic in the scripts subdirectory.
+
+.. .. toctree::
+..    :maxdepth: 1
+
+.. .. _lsst.example-pyapi:
 
 Python API reference
 ====================
