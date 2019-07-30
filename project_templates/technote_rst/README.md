@@ -107,7 +107,7 @@ See the README of the generated technote repository for information on how to up
 
 Example: [.travis.yml](testn-000/.travis.yml).
 
-The [Travis CI](https://travis-ci.org) configuration file.
+The [Travis CI](https://travis-ci.com) configuration file.
 CI is triggered whenever a technote is pushed to GitHub, and is responsible for deploying the technote to GitHub.
 
 ### conf.py

@@ -295,7 +295,7 @@ See the [Cookiecutter documentation on hooks](https://cookiecutter.readthedocs.i
 
 ## Continuous integration
 
-[Travis CI](https://travis-ci.org/lsst/templates) tests the repository when you push to GitHub.
+[Travis CI](https://travis-ci.com/lsst/templates) tests the repository when you push to GitHub.
 The tests have two roles:
 
 1. Ensure that the Cookiecutter templates are renderable.
