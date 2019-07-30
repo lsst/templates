@@ -76,6 +76,7 @@ Find these templates in the `project_templates/` directory:
 **File templates** are either entire files or snippets you can add to files.
 Find these templates in the `file_templates` directory:
 
+- [argparse_script_topic](file_templates/argparse_script_topic)
 - [config_topic](file_templates/config_topic)
 - [copyright](file_templates/copyright)
 - [license_gplv3](file_templates/license_gplv3)
