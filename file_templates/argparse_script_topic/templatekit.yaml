@@ -1,0 +1,12 @@
+name: "Script topic (argparse)"
+group: "Science Pipelines documentation"
+dialog_title: "Create a script topic"
+dialog_fields:
+  - key: "script_module"
+    label: "Module name"
+    hint: "Namespace of the module containing the ArgumentParser constructor."
+    component: "text"
+  - key: "script_name"
+    label: "Script name"
+    hint: "Name of the command-line executable."
+    component: "text"
