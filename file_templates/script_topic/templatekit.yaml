@@ -4,6 +4,5 @@ dialog_title: "Create a script topic"
 dialog_fields:
   - key: "script_name"
     label: "Command-line script"
-    hint: "Name of the command-line task, or blank if none."
+    hint: "Name of the command-line executable."
     component: "text"
-    optional: True
