@@ -14,30 +14,16 @@ endif
 export TEXMFHOME ?= lsst-texmf/texmf
 
 $(DOCNAME).pdf: $(tex) meta.tex local.bib
-	xelatex $(DOCNAME)
-	bibtex $(DOCNAME)
-	xelatex $(DOCNAME)
-	bibtex $(DOCNAME)
-	xelatex $(DOCNAME)
-	xelatex $(DOCNAME)
+	latexmk -bibtex -xelatex -f $(DOCNAME)
 
 acronyms.tex: $(tex) myacronyms.txt
 	$(TEXMFHOME)/../bin/generateAcronyms.py $(tex)
 
 .PHONY: clean
 clean:
-	rm -f $(DOCNAME).aux
+	latexmk -c
 	rm -f $(DOCNAME).bbl
-	rm -f $(DOCNAME).blg
-	rm -f $(DOCNAME).glg
-	rm -f $(DOCNAME).glo
-	rm -f $(DOCNAME).gls
-	rm -f $(DOCNAME).ist
-	rm -f $(DOCNAME).log
-	rm -f $(DOCNAME).out
 	rm -f $(DOCNAME).pdf
-	rm -f $(DOCNAME).rec
-	rm -f $(DOCNAME).toc
 	rm -f meta.tex
 
 .FORCE:
