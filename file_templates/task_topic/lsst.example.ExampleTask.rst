@@ -39,14 +39,14 @@ Python API summary
 Retargetable subtasks
 =====================
 
-.. lsst-task-config-subtasks:: lsst.pipe.tasks.processCcd.ProcessCcdTask
+.. lsst-task-config-subtasks:: lsst.example.ExampleTask
 
 .. _lsst.example.ExampleTask-configs:
 
 Configuration fields
 ====================
 
-.. lsst-task-config-fields:: lsst.pipe.tasks.processCcd.ProcessCcdTask
+.. lsst-task-config-fields:: lsst.example.ExampleTask
 
 .. _lsst.example.ExampleTask-examples:
 

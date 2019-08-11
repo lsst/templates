@@ -88,14 +88,14 @@ Output datasets
 Retargetable subtasks
 =====================
 
-.. lsst-task-config-subtasks:: lsst.pipe.tasks.processCcd.ProcessCcdTask
+.. lsst-task-config-subtasks:: lsst.example.ExampleCmdLineTask
 
 .. _lsst.example.ExampleCmdLineTask-configs:
 
 Configuration fields
 ====================
 
-.. lsst-task-config-fields:: lsst.pipe.tasks.processCcd.ProcessCcdTask
+.. lsst-task-config-fields:: lsst.example.ExampleCmdLineTask
 
 .. _lsst.example.ExampleCmdLineTask-examples:
 
