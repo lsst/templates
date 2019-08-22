@@ -15,6 +15,7 @@
     "SMTN",
     "SITCOMTN",
     "SQR",
+    "TSTN",
     "TESTN"
   ],
   "serial_number": "000",
@@ -26,6 +27,7 @@
     "lsst-sims",
     "lsst-sitcom",
     "lsst-sqre",
+    "lsst-ts",
     "lsst-sqre-testing"
   ],
   "title": "Document Title",
