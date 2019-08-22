@@ -30,6 +30,7 @@ Choose the series that fits the document's purpose or aligns with the organizati
 - `SMTN` for Simulations Group technical notes. See [SMTN-000](https://smtn-000.lsst.io).
 - `SITCOMTN` for Systems Integration, Testing, and Commissioning notes.
 - `SQR` for SQuaRE technical notes. See [SQR-000](https://sqr-000.lsst.io).
+- `TSTN` for Telescope & Site technical notes.
 - `TESTN` for testing the technical system. *These notes may be purged at any time.*
 
 ### cookiecutter.serial_number
@@ -57,6 +58,7 @@ Choose a GitHub organization that matches the [series](#cookiecutter_series):
 - `lsst-sims` for the Simulations Group's SMTN series.
 - `lsst-sitcom` for the SITCOMTN series.
 - `lsst-sqre` for the SQuaRE SQR series.
+- `lsst-tstn` for the TSTN series.
 - `lsst-sqre-testing` for the TESTN series.
 
 ### cookiecutter.github_namespace

@@ -8,6 +8,7 @@
     "SMTN",
     "SITCOMTN",
     "SQR",
+    "TSTN",
     "TESTN"
   ],
   "serial_number": "000",
@@ -21,6 +22,7 @@
     "lsst-sims",
     "lsst-sitcom",
     "lsst-sqre",
+    "lsst-tstn",
     "lsst-sqre-testing"
   ],
   "github_namespace": "{{ cookiecutter.github_org }}/{{ cookiecutter.repo_name }}",

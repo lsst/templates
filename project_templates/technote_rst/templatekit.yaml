@@ -40,6 +40,11 @@ dialog_fields:
         presets:
           series: "SQR"
           github_org: "lsst-sqre"
+      - label: "TSTN"
+        value: "tstn"
+        presets:
+          series: "tstn"
+          github_org: "lsst-tstn"
       - label: "Test"
         value: "test"
         presets:

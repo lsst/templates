@@ -1,5 +1,9 @@
 # Change log
 
+## 2019-08-26
+
+- Add support for the Telescope & Site technote series (TSTN).
+
 ## 2019-08-09
 
 - Adopt latexmk for building the PDF and for doing most of the cleanup.

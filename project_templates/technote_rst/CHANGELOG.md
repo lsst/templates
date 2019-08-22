@@ -1,5 +1,9 @@
 # Change log
 
+## 2019-08-26
+
+- Add support for the Telescope & Site technote series (TSTN).
+
 ## 2019-07-29
 
 - Add support for the ITTN technote series for LSST IT.
