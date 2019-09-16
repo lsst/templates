@@ -8,7 +8,6 @@
 % Local commands go here.
 
 % To add a short-form title:
-% \title[Short title]{Title}
 \title{ {{- cookiecutter.title -}} }
 
 % Optional subtitle
@@ -40,6 +39,9 @@
 \setDocChangeRecord{%{%- endraw %}
   \addtohist{1}{YYYY-MM-DD}{Unreleased.}{ {{- cookiecutter.first_author -}} }
 }
+
+%Frequently for a TechNote we do not want a title page  ucomment this to remove the title page and changelog
+%\setDocCompact{true}
 
 \begin{document}
 
