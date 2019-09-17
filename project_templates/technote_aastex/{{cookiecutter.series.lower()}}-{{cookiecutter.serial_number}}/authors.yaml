@@ -1,0 +1,4 @@
+
+{% raw -%}
+ - {{ cookiecutter.first_author }}
+
