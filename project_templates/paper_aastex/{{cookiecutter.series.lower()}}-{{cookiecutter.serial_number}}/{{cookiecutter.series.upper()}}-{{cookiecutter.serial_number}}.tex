@@ -1,0 +1,39 @@
+\documentclass[modern]{aastex62}
+
+% lsstdoc documentation: https://lsst-texmf.lsst.io/lsstdoc.html
+\input{meta}
+
+% Package imports go here.
+
+% Local commands go here.
+
+\title{ {{- cookiecutter.title -}} }
+
+
+\newcommand{\docRef}{set the Reference with {$\backslash$}setDocRef}
+\newcommand{\setDocRef}[1]{
+   \renewcommand{\docRef}{#1}
+}
+\newcommand{\docRef}{ {{- cookiecutter.series.upper() -}}-{{- cookiecutter.serial_number -}} }
+\setDocUpstreamLocation{\url{https://github.com/{{ cookiecutter.github_org }}/{{ cookiecutter.series.lower()}}-{{ cookiecutter.serial_number -}} }}
+
+
+\begin{document}
+\input{authors}
+\date{\today}
+\input{abstract}
+% Create the title page.
+\maketitle
+\input{body}
+
+\appendix
+% Include all the relevant bib files.
+% https://lsst-texmf.lsst.io/lsstdoc.html#bibliographies
+\section{References} \label{sec:bib}
+\bibliography{local,lsst,lsst-dm,refs_ads,refs,books}
+
+% Make sure lsst-texmf/bin/generateAcronyms.py is in your path
+\section{Acronyms} \label{sec:acronyms}
+\input{acronyms.tex}
+
+\end{document}
