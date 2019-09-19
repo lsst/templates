@@ -329,18 +329,11 @@ Behind the scenes, `templatekit` uses [Jinja](http://jinja.pocoo.org) and [Cooki
 To install `templatekit` for development, run
 
 ```bash
-pip install -e ".[dev]"
+pip3 install -e templatekit 
 ```
 
-from the root of the repository.
-
-You can invoke the unit tests by running
-
-```bash
-python setup.py test
-```
-
-We use [pytest](https://docs.pytest.org/en/latest/) as the testing framework.
+You have already done this if you ran pip install requirements.txt. 
+See the [README.md](README) for example usage of the tempatekit. 
 
 * * *
 
