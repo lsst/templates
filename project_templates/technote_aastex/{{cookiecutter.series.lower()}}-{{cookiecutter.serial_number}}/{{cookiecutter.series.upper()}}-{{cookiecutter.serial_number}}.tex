@@ -7,7 +7,6 @@
 
 % Local commands go here.
 
-\title{ {{- cookiecutter.title -}} }
 
 
 \newcommand{\docRef}{ {{- cookiecutter.series.upper() -}}-{{- cookiecutter.serial_number -}} }
@@ -17,9 +16,12 @@
 \begin{document}
 \input{authors}
 \date{\today}
+\title{ {{- cookiecutter.title -}} }
+ \hypersetup{pdftitle={\@title}, pdfauthor={\@author}, pdfkeywords={\@keywords}}
+
+
 \input{abstract}
-% Create the title page.
-\maketitle
+
 \input{body}
 
 \appendix
