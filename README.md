@@ -69,6 +69,7 @@ Find these templates in the `project_templates/` directory:
 - [nbreport](project_templates/nbreport/)
 - [stack_package](project_templates/stack_package/)
 - [technote_latex](project_templates/technote_latex/)
+- [technote_aastex](project_templates/technote_aastex/)
 - [technote_rst](project_templates/technote_rst/)
 
 ## List of file templates
