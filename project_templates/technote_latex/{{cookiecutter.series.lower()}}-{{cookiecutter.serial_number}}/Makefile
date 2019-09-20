@@ -23,7 +23,7 @@ acronyms.tex: $(tex) myacronyms.txt
 
 # If you want a glossary you must manually run generateAcronyms.py  -gu to put the \gls in your files.
 aglossary.tex :$(tex) myacronyms.txt
-        generateAcronyms.py  -g $(tex)
+	generateAcronyms.py  -g $(tex)
 
 
 .PHONY: clean
