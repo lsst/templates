@@ -20,6 +20,7 @@ For now to make this simpler we assume Papers are DMTN or PSTN.
 
 - `DMTN` for Data Management technical notes. 
 - `PSTN` for Project Science Team technical notes.
+- `TESTN` for testing the system. *These notes may be purged at any time.*
 
 ### cookiecutter.serial_number
 
@@ -33,6 +34,7 @@ Choose a GitHub organization that matches the [series](#cookiecutter_series):
 
 - `lsst-dm` for the  DMTN series.
 - `lsst-pst` for the PSTN series.
+- `lsst-sqre-testing` for the TESTN series.
 
 ### cookiecutter.title
 
@@ -64,7 +66,7 @@ See [Copyrights for LSST DM work and the COPYRIGHT file](https://developer.lsst.
 
 ### testn-000/
 
-The [testn-000](testn-000) directory is an example of a LaTeX-formatted technote.
+The [testn-000](testn-000) directory is an example of a AASTeX-formatted technote.
 
 ## Files
 
