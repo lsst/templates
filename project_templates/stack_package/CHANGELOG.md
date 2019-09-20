@@ -1,5 +1,11 @@
 # Change log
 
+## 2019-09-20
+
+- Added support for the https://github.com/lsst/lsst-verification-and-validation GitHub organization.
+
+[DM-21376](https://jira.lsstcorp.org/browse/DM-21376)
+
 ## 2019-07-30
 
 - Added a "Script reference" section to link to script topic pages (see [script_topic](../../file_templates/script_topic) and [argparse_script_topic](../../file_templates/argparse_script_topic)).
