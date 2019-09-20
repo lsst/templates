@@ -13,7 +13,14 @@
     "University of Illinois Board of Trustees",
     "University of Washington"
   ],
-  "github_org": ["lsst", "lsst-dm", "lsst-sims", "lsst-ts", "lsst-sqre", "lsst-sqre-testing"],
+  "github_org": [
+    "lsst",
+    "lsst-dm",
+    "lsst-sims",
+    "lsst-ts",
+    "lsst-sqre",
+    "lsst-sqre-testing",
+    "lsst-verification-and-validation"],
   "base_package": [
     "base",
     "sconsUtils"
