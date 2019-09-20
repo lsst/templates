@@ -7,7 +7,10 @@ python:
   - '3.7'
 before_install:
   - "pip install 'lander>=0.1.0,<0.2'"
+  - "pip install pyyaml"  # for db2authors.py
 script:
+  # Pre-build authors.tex using the Travis CI Python
+  - "make authors.tex"
   # Compile PDF using containerized lsst-texmf
   - "docker run --rm -v `pwd`:/workspace -w /workspace lsstsqre/lsst-texmf:latest sh -c 'make'"
   # Deploy website. See https://github.com/lsst-sqre/lander for CLI options
