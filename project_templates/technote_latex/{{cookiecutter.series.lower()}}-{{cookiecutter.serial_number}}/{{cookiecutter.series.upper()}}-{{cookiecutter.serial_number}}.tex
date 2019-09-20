@@ -6,6 +6,10 @@
 
 % Local commands go here.
 
+%If you want glossaries
+%\input{aglossary.tex}
+%\makeglossaries
+
 \title{ {{- cookiecutter.title -}} }
 
 % Optional subtitle
@@ -58,5 +62,11 @@
 % Make sure lsst-texmf/bin/generateAcronyms.py is in your path
 \section{Acronyms} \label{sec:acronyms}
 \input{acronyms.tex}
+% If you want glossary uncomment below -- comment out the two lines above
+%\printglossaries
+
+
+
+
 
 \end{document}
