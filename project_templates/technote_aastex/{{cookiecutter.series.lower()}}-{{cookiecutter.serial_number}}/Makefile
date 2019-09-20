@@ -11,7 +11,7 @@ ifneq "$(GITSTATUS)" ""
 	GITDIRTY = -dirty
 endif
 
-export TEXMFHOME ?= lsst-texmf/texmf
+export TEXMFHOME = lsst-texmf/texmf
 
 $(DOCNAME).pdf: $(tex) meta.tex local.bib authors.tex acronyms.tex
 	latexmk -bibtex -xelatex -f $(DOCNAME)
@@ -21,7 +21,7 @@ acronyms.tex: $(tex) myacronyms.txt
 	$(TEXMFHOME)/../bin/generateAcronyms.py -t "DM" $(tex)
 
 authors.tex:  authors.yaml
-	$(TEXMFHOME)/../bin/db2authors.py authors.yaml > authors.tex 
+	python3 $(TEXMFHOME)/../bin/db2authors.py > authors.tex 
 
 .PHONY: clean
 clean:

@@ -1,9 +1,9 @@
 # technote_aastex
 
-**LSST technical note repository, formatted as LaTeX (aastex class).**
+**LSST technical note repository, formatted as a AASTeX paper preprint.**
 
-This template generates a new paper repository based on aastex.
-This uses the bib files from the lsst-texmf setup.
+This template generates a new paper repository based on [AASTeX](https://journals.aas.org/aastexguide/).
+This template also uses bib and author metadata from [lsst-texmf](https://lsst-texmf.lsst.io).
 See [Technotes for stand-alone technical documentation in the Developer Guide](https://developer.lsst.io/project-docs/technotes.html).
 
 ## Template variables
@@ -38,12 +38,12 @@ Choose a GitHub organization that matches the [series](#cookiecutter_series):
 
 The title of the technote.
 
-### cookiecutter.first_author
+### cookiecutter.author_id
 
-The ID  of the first author, the IDs of authors may be found in the 
-[https://github.com/lsst/lsst-texmf/blob/master/etc/authordb.yaml](authorsdb.yaml) - this contains all LSST authors.
-Additional authors can be added later in the authors.yaml file.
-The file authors.tex is generated from the list of author codes in authors.yaml. 
+The ID of the first author.
+Author IDs may be found in the [https://github.com/lsst/lsst-texmf/blob/master/etc/authordb.yaml](authorsdb.yaml) file in lsst-texmf - this YAML database contains all LSST authors.
+Additional authors can be added later in the `authors.yaml` file.
+The file `authors.tex` is generated from the list of author codes in `authors.yaml`. 
 
 ### cookiecutter.abstract
 
@@ -98,9 +98,11 @@ Example: [acronyms.tex](testn-000/acronyms.tex).
 This file is generated and updated by the `make acronyms.tex` command.
 
 ## authors.tex
-The file authors.tex is generated from the list of author codes in authors.yaml. 
 
-This file is generated and updated by the `make authors.tex` command.
+Example: [authors.tex](testn-000/authors.tex).
+
+The file `authors.tex` is generated from the list of author codes in `authors.yaml`.
+This file is normally generated through the regular `make` command, but can also be regenerated individually by running `make authors.tex`.
 
 ### COPYRIGHT
 
@@ -133,6 +135,7 @@ The built-in targets are:
   This command is used by the CI environment that pushes the PDF to LSST the Docs (lsst.io).
   See the [.travis.yml](#travisyml) file.
 - `make acronyms.tex`: regenerates the [acronyms.tex](#acronymstex) file.
+- `make authors.tex`: regenerates the [authors.tex](#authorstex) file.
 
 Add additional make targets to do preprocessing steps (such as running a Python script to generate tables or figures).
 
@@ -176,4 +179,4 @@ Example: [TESTN-000.tex](testn-000/TESTN-000.tex)
 This file contains the content of the technote itself.
 Either write directly in this file, or use the `\input` command to include content from other files.
 
-For more information about writing a LaTeX document with the `lsstdoc` class file, see [Using the lsstdoc document class](https://lsst-texmf.lsst.io/lsstdoc.html).
+For more information about writing a LaTeX document with the `aastex` class file, see the [AASTeX Author Guide](https://journals.aas.org/aastexguide/).
