@@ -1,6 +1,6 @@
-name: "Paper (aastex)"
+name: "Technote (AASTeX)"
 group: "Documents"
-dialog_title: "Create a paper  "
+dialog_title: "Create a paper"
 dialog_fields:
   - key: "title"
     label: "Paper title"
