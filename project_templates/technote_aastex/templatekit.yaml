@@ -12,6 +12,11 @@ dialog_fields:
     hint: "You can use LaTeX here."
     component: "textarea"
     placeholder: ""
+  - key: "first_author"
+    label: "First author's ID"
+    hint: "ID is a key from lsst-texmf's authors.yaml (http://ls.st/uyr)"
+    component: "text"
+    placeholder: ""
   - label: "Series"
     component: "select"
     preset_options:
