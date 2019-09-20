@@ -319,23 +319,6 @@ See the [.travis.yml](.travis.yml) file for more details on how the tests are ru
 
 * * *
 
-## templatekit
-
-`templatekit` is a Python package, included in the templates repository, that provides the infrastructure to render templates.
-Users generally use the `templatekit` command line app (implemented with [Click](http://click.pocoo.org/5/)).
-The Scons pipeline uses `templatekit`'s Python APIs directly.
-Behind the scenes, `templatekit` uses [Jinja](http://jinja.pocoo.org) and [Cookiecutter](https://cookiecutter.readthedocs.io) to render templates.
-
-To install `templatekit` for development, run
-
-```bash
-pip3 install -e templatekit 
-```
-
-You have already done this if you ran pip install requirements.txt. 
-See the [README.md](README) for example usage of the tempatekit. 
-
-* * *
 
 [Jump to top 🔝](#contributing-to-lssttemplates)
 
