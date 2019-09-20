@@ -1,9 +1,9 @@
-# technote_latex
+# technote_aastex
 
 **LSST technical note repository, formatted as LaTeX (aastex class).**
 
 This template generates a new paper repository based on aastex.
-This uses the bib files from the lsst-texmf setrup.
+This uses the bib files from the lsst-texmf setup.
 See [Technotes for stand-alone technical documentation in the Developer Guide](https://developer.lsst.io/project-docs/technotes.html).
 
 ## Template variables
@@ -14,7 +14,7 @@ The organization responsible for the document.
 
 ### cookiecutter.series
 
-The identifier of the technote series which will be used ot name the repo
+The identifier of the technote series which will be used to name the repo
 Choose the series that fits the document's purpose or aligns with the organization creating the document.
 For now to make this simpler we assume Papers are DMTN or PSTN. 
 
@@ -40,7 +40,7 @@ The title of the technote.
 
 ### cookiecutter.first_author
 
-The id  of the first author, the ids of authos may be foud in the 
+The ID  of the first author, the IDs of authors may be found in the 
 [https://github.com/lsst/lsst-texmf/blob/master/etc/authordb.yaml](authorsdb.yaml) - this contains all LSST authors.
 Additional authors can be added later in the authors.yaml file.
 The file authors.tex is generated from the list of author codes in authors.yaml. 
