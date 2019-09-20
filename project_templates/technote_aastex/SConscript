@@ -6,4 +6,4 @@ env.Cookiecutter(AlwaysBuild(Dir('TESTN-000')),
                  'cookiecutter.json',
                  cookiecutter_context={'series': 'TESTN',
                                        'github_org': 'lsst-dm',
-                                       'first_author': 'omullanew'})
+                                       'author_id': 'omullanew'})

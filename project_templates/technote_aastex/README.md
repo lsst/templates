@@ -38,7 +38,7 @@ Choose a GitHub organization that matches the [series](#cookiecutter_series):
 
 The title of the technote.
 
-### cookiecutter.first_author
+### cookiecutter.author_id
 
 The ID of the first author.
 Author IDs may be found in the [https://github.com/lsst/lsst-texmf/blob/master/etc/authordb.yaml](authorsdb.yaml) file in lsst-texmf - this YAML database contains all LSST authors.

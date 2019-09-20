@@ -17,7 +17,7 @@
 
   ],
   "title": "Document Title",
-  "first_author": "code from lsst-texmf/etc/authorsdb.yaml",
+  "author_id": "ID from lsst-texmf/etc/authorsdb.yaml",
   "abstract": "Abstract text.",
   "copyright_year": "{% now 'utc', '%Y' %}",
   "copyright_holder": [
