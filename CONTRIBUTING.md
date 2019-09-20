@@ -320,9 +320,6 @@ See the [.travis.yml](.travis.yml) file for more details on how the tests are ru
 * * *
 
 
-[Jump to top 🔝](#contributing-to-lssttemplates)
-
-* * *
 
 ## FAQ
 
