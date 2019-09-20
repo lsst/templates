@@ -16,8 +16,9 @@ export TEXMFHOME ?= lsst-texmf/texmf
 $(DOCNAME).pdf: $(tex) meta.tex local.bib
 	latexmk -bibtex -xelatex -f $(DOCNAME)
 
+#Acronym tool allows for selection of acronyms based on tags - you may want more than DM
 acronyms.tex: $(tex) myacronyms.txt
-	$(TEXMFHOME)/../bin/generateAcronyms.py $(tex)
+	$(TEXMFHOME)/../bin/generateAcronyms.py -t "DM" $(tex)
 
 .PHONY: clean
 clean:

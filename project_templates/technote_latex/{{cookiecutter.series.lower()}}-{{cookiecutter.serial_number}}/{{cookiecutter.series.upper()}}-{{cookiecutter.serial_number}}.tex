@@ -1,14 +1,11 @@
 \documentclass[{{ cookiecutter.org }},authoryear,toc]{lsstdoc}
 % lsstdoc documentation: https://lsst-texmf.lsst.io/lsstdoc.html
-
 \input{meta}
 
 % Package imports go here.
 
 % Local commands go here.
 
-% To add a short-form title:
-% \title[Short title]{Title}
 \title{ {{- cookiecutter.title -}} }
 
 % Optional subtitle
@@ -40,6 +37,9 @@
 \setDocChangeRecord{%{%- endraw %}
   \addtohist{1}{YYYY-MM-DD}{Unreleased.}{ {{- cookiecutter.first_author -}} }
 }
+
+% Frequently for a technote we do not want a title page  uncomment this to remove the title page and changelog.
+%\setDocCompact{true}
 
 \begin{document}
 

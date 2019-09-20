@@ -1,9 +1,9 @@
-# technote_latex
+# technote_aastex
 
-**LSST technical note repository, formatted as LaTeX (lsstdoc class).**
+**LSST technical note repository, formatted as LaTeX (aastex class).**
 
-This template generates a new technical note (technote) repository based on LaTeX (specifically the `lsstdoc` class).
-LSST technotes, in general, let you document technical designs, proposals, product overviews, results of prototyping experiments, and other types of documentation that doesn't fit in either the change-controlled document tree, or in user documentation.
+This template generates a new paper repository based on aastex.
+This uses the bib files from the lsst-texmf setup.
 See [Technotes for stand-alone technical documentation in the Developer Guide](https://developer.lsst.io/project-docs/technotes.html).
 
 ## Template variables
@@ -11,22 +11,15 @@ See [Technotes for stand-alone technical documentation in the Developer Guide](h
 ### cookiecutter.org
 
 The organization responsible for the document.
-This is used as an argument for the `lsstdoc` class.
 
 ### cookiecutter.series
 
-The identifier of the technote series.
-Choose the series that fits the document's purpose or aligns with the organization creating the document:
+The identifier of the technote series which will be used to name the repo
+Choose the series that fits the document's purpose or aligns with the organization creating the document.
+For now to make this simpler we assume Papers are DMTN or PSTN. 
 
-- `DMTN` for Data Management technical notes. See [DMTN-000](https://dmtn-000.lsst.io).
-- `ITTN` for LSST IT technical notes.
-- `OPSTN` for LSST Operations technical notes.
+- `DMTN` for Data Management technical notes. 
 - `PSTN` for Project Science Team technical notes.
-- `SMTN` for Simulations Group technical notes. See [SMTN-000](https://smtn-000.lsst.io).
-- `SITCOMTN` for Systems Integration, Testing, and Commissioning notes.
-- `SQR` for SQuaRE technical notes. See [SQR-000](https://sqr-000.lsst.io).
-- `TSTN` for Telescope & Site technical notes.
-- `TESTN` for testing the technical system. *These notes may be purged at any time.*
 
 ### cookiecutter.serial_number
 
@@ -38,15 +31,8 @@ If you are creating a technical note manually with this template, see the [Creat
 The GitHub organization where this technote resides.
 Choose a GitHub organization that matches the [series](#cookiecutter_series):
 
-- `lsst-dm` for the DMTN series.
-- `LSST-IT` for the ITTN series.
-- `lsst-ops` for the OPSTN series.
+- `lsst-dm` for the  DMTN series.
 - `lsst-pst` for the PSTN series.
-- `lsst-sims` for the Simulations Group's SMTN series.
-- `lsst-sitcom` for the SITCOMTN series.
-- `lsst-sqre` for the SQuaRE SQR series.
-- `lsst-sqre-testing` for the TESTN series.
-- `lsst-tstn` for the TSTN series.
 
 ### cookiecutter.title
 
@@ -54,8 +40,10 @@ The title of the technote.
 
 ### cookiecutter.first_author
 
-The name of the first author, formatted as `First Last`.
-Additional authors can be added later in the LaTeX source itself.
+The ID  of the first author, the IDs of authors may be found in the 
+[https://github.com/lsst/lsst-texmf/blob/master/etc/authordb.yaml](authorsdb.yaml) - this contains all LSST authors.
+Additional authors can be added later in the authors.yaml file.
+The file authors.tex is generated from the list of author codes in authors.yaml. 
 
 ### cookiecutter.abstract
 
@@ -108,6 +96,11 @@ For more information about using the CI environment, see the [Travis CI document
 Example: [acronyms.tex](testn-000/acronyms.tex).
 
 This file is generated and updated by the `make acronyms.tex` command.
+
+## authors.tex
+The file authors.tex is generated from the list of author codes in authors.yaml. 
+
+This file is generated and updated by the `make authors.tex` command.
 
 ### COPYRIGHT
 
