@@ -5,12 +5,16 @@
   ],
   "series": [
     "DMTN",
-    "PSTN"
+    "PSTN",
+    "TSTN",
+    "TESTN"
   ],
   "serial_number": "000",
   "github_org": [
     "lsst-dm",
-    "lsst-pst"
+    "lsst-pst",
+    "lsst-sqre-testing"
+
   ],
   "title": "Document Title",
   "first_author": "code from lsst-texmf/etc/authorsdb.yaml",

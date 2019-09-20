@@ -27,6 +27,18 @@ dialog_fields:
           series: "PSTN"
           github_org: "lsst-pst"
           org: "PST"
+      - label: "TSTN"
+        value: "tstn"
+        presets:
+          series: "TSTN"
+          github_org: "lsst-tstn"
+          org: "DM"
+      - label: "Test"
+        value: "test"
+        presets:
+          series: "TESTN"
+          github_org: "lsst-sqre-testing"
+          org: "DM"
   - label: "Initial copyright holder"
     key: "copyright_holder"
     component: "select"
