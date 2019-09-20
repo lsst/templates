@@ -32,6 +32,7 @@
     "*.bib",
     "*acron*",
     "aastex62.cls",
+    "yahapj.bst",
     "body.tex"
   ],
   "_extensions": [
