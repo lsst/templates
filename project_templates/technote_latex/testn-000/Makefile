@@ -16,9 +16,9 @@ export TEXMFHOME ?= lsst-texmf/texmf
 # Add aglossary.tex as a dependancy here if you want a glossary
 $(DOCNAME).pdf: $(tex) meta.tex local.bib
 	latexmk -bibtex -xelatex -f $(DOCNAME)
-%	makeglossaries $(DOCNAME)      
-%	xelatex $(SRC)
-% For glossary uncomment the 2 lines abouve
+#	makeglossaries $(DOCNAME)      
+#	xelatex $(SRC)
+# For glossary uncomment the 2 lines abouve
 
 
 # Acronym tool allows for selection of acronyms based on tags - you may want more than DM
