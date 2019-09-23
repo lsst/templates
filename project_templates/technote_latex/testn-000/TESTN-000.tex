@@ -6,6 +6,10 @@
 
 % Local commands go here.
 
+%If you want glossaries
+%\input{aglossary.tex}
+%\makeglossaries
+
 \title{Document Title}
 
 % Optional subtitle
@@ -35,13 +39,13 @@ Abstract text.
   \addtohist{1}{YYYY-MM-DD}{Unreleased.}{First Last}
 }
 
-% Frequently for a technote we do not want a title page  uncomment this to remove the title page and changelog.
-%\setDocCompact{true}
 
 \begin{document}
 
 % Create the title page.
 \maketitle
+% Frequently for a technote we do not want a title page  uncomment this to remove the title page and changelog.
+% use \mkshorttitle to remove the extra pages
 
 % ADD CONTENT HERE
 % You can also use the \input command to include several content files.
@@ -55,5 +59,11 @@ Abstract text.
 % Make sure lsst-texmf/bin/generateAcronyms.py is in your path
 \section{Acronyms} \label{sec:acronyms}
 \input{acronyms.tex}
+% If you want glossary uncomment below -- comment out the two lines above
+%\printglossaries
+
+
+
+
 
 \end{document}
