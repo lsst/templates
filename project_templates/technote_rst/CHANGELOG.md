@@ -1,5 +1,10 @@
 # Change log
 
+## 2019-10-08
+
+- Template variables that are inserted into `metadata.yaml` are now fully escaped.
+  This means that titles, authors, and descriptions can have characters like single and double quotes, and backslashes.
+
 ## 2019-08-26
 
 - Add support for the Telescope & Site technote series (TSTN).

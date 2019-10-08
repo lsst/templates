@@ -42,6 +42,7 @@
     "*.bib"
   ],
   "_extensions": [
-    "jinja2_time.TimeExtension"
+    "jinja2_time.TimeExtension",
+    "templatekit.TemplatekitExtension"
   ]
 }
