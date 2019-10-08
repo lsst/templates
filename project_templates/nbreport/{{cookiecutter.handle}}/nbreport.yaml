@@ -1,5 +1,5 @@
-handle: {{ cookiecutter.handle }}
-title: {{ cookiecutter.title }}
+handle: "{{ cookiecutter.handle | escape_yaml_doublequoted }}"
+title: "{{ cookiecutter.title | escape_yaml_doublequoted }}"
 git_repo: {{ cookiecutter.git_repo }}{% if cookiecutter.git_repo_subdir %}
-git_repo_subdir: {{ cookiecutter.git_repo_subdir }}{% endif %}
-ipynb: {{ cookiecutter.handle }}.ipynb
+git_repo_subdir: "{{ cookiecutter.git_repo_subdir | escape_yaml_doublequoted }}"{% endif %}
+ipynb: "{{ cookiecutter.handle | escape_yaml_doublequoted }}.ipynb"

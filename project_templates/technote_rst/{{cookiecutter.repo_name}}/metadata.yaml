@@ -3,21 +3,21 @@
 # document in git and kept up to date.
 
 # The series identifier. E.g. SQR, DMTN, SMTN, LDM, LSE, etc.
-series: '{{ cookiecutter.series }}'
+series: "{{ cookiecutter.series | escape_yaml_doublequoted }}"
 
 # Document number, as a string. It should be three digits, padded with leading zeros
-serial_number: '{{ cookiecutter.serial_number }}'
+serial_number: "{{ cookiecutter.serial_number | escape_yaml_doublequoted }}"
 
 # Serial number of the document. E.g. SQR-001
 # NOTE: this field is *planned* for deprecation
-doc_id: '{{ cookiecutter.series }}-{{ cookiecutter.serial_number }}'
+doc_id: "{{ cookiecutter.series | escape_yaml_doublequoted }}-{{ cookiecutter.serial_number | escape_yaml_doublequoted }}"
 
 # Title of the document, without the series/serial designation
-doc_title: '{{ cookiecutter.title }}'
+doc_title: "{{ cookiecutter.title | escape_yaml_doublequoted }}"
 
 # Author names, ordered as a list. Each author name should be formatted as 'First Last'
 authors:
-  - '{{ cookiecutter.first_author }}'
+  - "{{ cookiecutter.first_author | escape_yaml_doublequoted }}"
 
 # Current document revision date, YYYY-MM-DD
 # Only set this field if you need to manually fix the revision date;
@@ -34,10 +34,10 @@ authors:
 # doi: 10.5281/zenodo.#####
 
 # Copyright statement
-copyright: '{{ cookiecutter.copyright_year }}, {{ cookiecutter.copyright_holder }}'
+copyright: "{{ cookiecutter.copyright_year | escape_yaml_doublequoted }}, {{ cookiecutter.copyright_holder | escape_yaml_doublequoted }}"
 
 # Description. A short, 1-2 sentence statemement used by document indices.
-description: '{{ cookiecutter.description }}'
+description: "{{ cookiecutter.description | escape_yaml_doublequoted }}"
 
 # Abstract, if available
 # abstract: >
@@ -47,11 +47,11 @@ description: '{{ cookiecutter.description }}'
 #           You can have multiple paragraphs too.
 
 # URL where this document is published by Read the Docs. e.g. http://sqr-001.lsst.codes
-url: '{{ cookiecutter.url }}'
+url: "{{ cookiecutter.url | escape_yaml_doublequoted }}"
 
 # LSST Docushare URL, if authoritative versions of this are are stored there.
 # Leave as an empty string or comment out this key if there is no Docushare URL.
-docushare_url: '{{ cookiecutter.docushare_url }}'
+docushare_url: "{{ cookiecutter.docushare_url | escape_yaml_doublequoted }}"
 
 # GitHub repo URL
-github_url: 'https://github.com/{{ cookiecutter.github_namespace }}'
+github_url: "https://github.com/{{ cookiecutter.github_namespace | escape_yaml_doublequoted }}"
