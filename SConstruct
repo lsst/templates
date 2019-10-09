@@ -2,7 +2,6 @@ from templatekit.builder import file_template_builder
 
 
 SConscript([
-    'project_templates/example_project/SConscript',
     'project_templates/stack_package/SConscript',
     'project_templates/nbreport/SConscript',
     'project_templates/technote_rst/SConscript',

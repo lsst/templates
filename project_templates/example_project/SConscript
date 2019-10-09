@@ -1,5 +1,0 @@
-from templatekit.builder import cookiecutter_project_builder
-
-
-env = Environment(BUILDERS={'Cookiecutter': cookiecutter_project_builder})
-env.Cookiecutter('cookiecutter.json')
