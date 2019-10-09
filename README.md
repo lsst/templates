@@ -65,7 +65,6 @@ See [Troubleshooting](#troubleshooting) for solutions to common issues.
 **Project templates** have multiple files and are intended to bootstrap new Git repositories.
 Find these templates in the `project_templates/` directory:
 
-- [example_project](project_templates/example_project/)
 - [nbreport](project_templates/nbreport/)
 - [stack_package](project_templates/stack_package/)
 - [technote_aastex](project_templates/technote_aastex/)

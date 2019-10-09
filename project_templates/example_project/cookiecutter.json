@@ -1,8 +1,0 @@
-{
-  "project_name": "example",
-  "copyright_year": "{% now 'utc', '%Y' %}",
-  "copyright_holder": "Association of Universities for Research in Astronomy",
-  "file_name": "demo_file",
-  "_extensions": ["jinja2_time.TimeExtension"]
-}
-
