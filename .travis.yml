@@ -1,11 +1,11 @@
 sudo: false
+dist: xenial
 language: python
 python:
-  - "3.6"
+  - "3.7.1"
 install:
   - "pip install -r requirements.txt"
 script:
-  # Test the examples by rebuilding them and making sure they match the
-  # committed state (so that the repo is clean).
-  - "scons"
-  - "git diff --exit-code"
+  # The check command rebuilds all examples scons and ensures that generated
+  # examples match the committed state.
+  - "templatekit check"
