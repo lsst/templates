@@ -1,4 +1,4 @@
 # -*- python -*-
 from lsst.sconsUtils import scripts
 # Python-only package
-scripts.BasicSConstruct("example_pythononly", disableCc=True)
+scripts.BasicSConstruct("example_pythononly", disableCc=True, noCfgFile=True)

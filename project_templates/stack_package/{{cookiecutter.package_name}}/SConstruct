@@ -5,5 +5,5 @@ from lsst.sconsUtils import scripts
 scripts.BasicSConstruct("{{ cookiecutter.package_name }}")
 {%- else %}
 # Python-only package
-scripts.BasicSConstruct("{{ cookiecutter.package_name }}", disableCc=True)
+scripts.BasicSConstruct("{{ cookiecutter.package_name }}", disableCc=True, noCfgFile=True)
 {%- endif %}

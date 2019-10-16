@@ -1,5 +1,14 @@
 # Change log
 
+## 2019-10-10
+
+Packages that don't use C++ are now one file simpler:
+
+- No `ups/*.cfg` file for non-C++ packages.
+- The `SConstruct` file for non-C++ packages includes the `noCfgFile=True` argument.
+
+[DM-21718](https://jira.lsstcorp.org/browse/DM-21718)
+
 ## 2019-09-20
 
 - Added support for the https://github.com/lsst/lsst-verification-and-validation GitHub organization.

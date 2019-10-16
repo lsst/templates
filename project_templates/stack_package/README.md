@@ -307,6 +307,8 @@ Packages that compile C++ may need to customize the dependencies listed here.
 
 See documentation in sconsUtils for details.
 
+This file is only present for packages developed with C++.
+
 ### ups/{{cookiecutter.package_name}}.table
 
 Example: [ups/example.table](example/ups/example.table).
