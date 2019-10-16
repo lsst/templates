@@ -49,7 +49,7 @@ if os.path.exists(initial_header_path):
     if os.path.exists(new_header_filename):
         os.remove(new_header_filename)
     shutil.move(initial_header_path, new_header_filename)
-    print('(post-gen hook) Moved root.h to {}'.format(new_header_filename))
+    print('(post-gen hook) Moved root.h to {new_header_filename}')
 
 if not uses_cpp:
     # Remove C++ directories if cookiecutter.uses_cpp is False
@@ -84,10 +84,10 @@ if not uses_python:
         'setup.cfg',
     }
     for dirname in python_dirnames:
-        print('(post-gen hook) Removing {0} directory'.format(dirname))
+        print(f'(post-gen hook) Removing {dirname} directory')
         shutil.rmtree(dirname, ignore_errors=True)
     for filename in python_filenames:
-        print('(post-gen hook) Removing {0} file'.format(filename))
+        print(f'(post-gen hook) Removing {filename} file')
         try:
             os.remove(filename)
         except OSError:
@@ -97,7 +97,7 @@ if not uses_python:
 # directories are available
 if uses_python or uses_cpp:
     package_doc_dirname = os.path.join('doc', package_name)
-    print('(post-gen hook) Removing {0} directory'.format(package_doc_dirname))
+    print(f'(post-gen hook) Removing {package_doc_dirname} directory')
     shutil.rmtree(package_doc_dirname, ignore_errors=True)
 
 # If the package is not part of a stack, then make either its package or
