@@ -1,5 +1,9 @@
 # Change log
 
+## 2019-10-21
+
+- Fix support for the TSTN series.
+
 ## 2019-10-08
 
 - Template variables that are inserted into `metadata.yaml` are now fully escaped.
