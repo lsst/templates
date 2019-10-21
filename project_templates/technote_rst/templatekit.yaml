@@ -43,7 +43,7 @@ dialog_fields:
       - label: "TSTN"
         value: "tstn"
         presets:
-          series: "tstn"
+          series: "TSTN"
           github_org: "lsst-tstn"
       - label: "Test"
         value: "test"
