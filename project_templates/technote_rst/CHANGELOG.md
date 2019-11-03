@@ -1,5 +1,9 @@
 # Change log
 
+## 2019-11-03
+
+- Update to the current versions of Documenteer, >=0.5.4, <0.6.
+
 ## 2019-10-21
 
 - Fix support for the TSTN series.
