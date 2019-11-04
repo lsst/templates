@@ -24,6 +24,7 @@ dialog_fields:
               uses_python: "True"
               has_tasks: "False"
               uses_cpp: "False"
+              uses_dds: "False"
           - label: "Pipelines Python + Tasks"
             presets:
               stack_name: "LSST Science Pipelines"
@@ -31,6 +32,7 @@ dialog_fields:
               uses_python: "True"
               has_tasks: "False"
               uses_cpp: "False"
+              uses_dds: "False"
           - label: "Pipelines C++ + Python + Tasks"
             presets:
               stack_name: "LSST Science Pipelines"
@@ -38,6 +40,7 @@ dialog_fields:
               uses_python: "True"
               has_tasks: "True"
               uses_cpp: "True"
+              uses_dds: "False"
           - label: "Pipelines C++ + Python"
             presets:
               stack_name: "LSST Science Pipelines"
@@ -45,6 +48,7 @@ dialog_fields:
               uses_python: "True"
               has_tasks: "False"
               uses_cpp: "True"
+              uses_dds: "False"
           - label: "Pipelines C++"
             presets:
               stack_name: "LSST Science Pipelines"
@@ -52,6 +56,7 @@ dialog_fields:
               uses_python: "False"
               has_tasks: "False"
               uses_cpp: "True"
+              uses_dds: "False"
       - group_label: "Standalone"
         options:
           - label: "Standalone Python"
@@ -61,6 +66,7 @@ dialog_fields:
               uses_python: "True"
               has_tasks: "False"
               uses_cpp: "False"
+              uses_dds: "False"
           - label: "Standalone Python + Tasks"
             presets:
               stack_name: "None"
@@ -68,6 +74,7 @@ dialog_fields:
               uses_python: "True"
               has_tasks: "False"
               uses_cpp: "False"
+              uses_dds: "False"
           - label: "Standalone C++ + Python + Tasks"
             presets:
               stack_name: "None"
@@ -75,6 +82,7 @@ dialog_fields:
               uses_python: "sconsUtils"
               has_tasks: "True"
               uses_cpp: "True"
+              uses_dds: "False"
           - label: "Standalone C++ + Python"
             presets:
               stack_name: "None"
@@ -82,6 +90,7 @@ dialog_fields:
               uses_python: "True"
               has_tasks: "False"
               uses_cpp: "True"
+              uses_dds: "False"
           - label: "Standalone C++"
             presets:
               stack_name: "None"
@@ -89,3 +98,46 @@ dialog_fields:
               uses_python: "False"
               has_tasks: "False"
               uses_cpp: "True"
+              uses_dds: "False"
+      - group_label: "DDS Package"
+        options:
+          - label: "DDS Python"
+            presets:
+              stack_name: "None"
+              base_package: "sconsUtils"
+              uses_python: "True"
+              has_tasks: "False"
+              uses_cpp: "False"
+              uses_dds: "True"
+          - label: "DDS Python + Tasks"
+            presets:
+              stack_name: "None"
+              base_package: "sconsUtils"
+              uses_python: "True"
+              has_tasks: "False"
+              uses_cpp: "False"
+              uses_dds: "True"
+          - label: "DDS C++ + Python + Tasks"
+            presets:
+              stack_name: "None"
+              base_package: "base"
+              uses_python: "sconsUtils"
+              has_tasks: "True"
+              uses_cpp: "True"
+              uses_dds: "True"
+          - label: "DDS C++ + Python"
+            presets:
+              stack_name: "None"
+              base_package: "sconsUtils"
+              uses_python: "True"
+              has_tasks: "False"
+              uses_cpp: "True"
+              uses_dds: "True"
+          - label: "DDS C++"
+            presets:
+              stack_name: "None"
+              base_package: "sconsUtils"
+              uses_python: "False"
+              has_tasks: "False"
+              uses_cpp: "True"
+              uses_dds: "True"

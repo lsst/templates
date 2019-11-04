@@ -1,3 +1,12 @@
-# -*- python -*-
-from lsst.sconsUtils import scripts
-scripts.BasicSConscript.tests(pyList=[])
+# -*- python -*-{% if cookiecutter.uses_dds == 'True' %}
+import os
+from lsst.sconsUtils import env, scripts
+{% else %}
+from lsst.sconsUtils import scripts{%- endif %}
+scripts.BasicSConscript.tests(pyList=[]){% if cookiecutter.uses_dds == 'True' %}
+
+for name in ("OSPL_URI", "OPENSPLICE_LOC", "ADLINK_LICENSE"):
+    val = os.environ.get(name)
+    if val is not None:
+        env.AppendENVPath(name, val)
+{%- endif %}

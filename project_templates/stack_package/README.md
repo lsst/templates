@@ -62,6 +62,12 @@ Packages that don't provide Tasks or Config classes can skip this section.
 
 To learn more about these topic pages, see the [Task topic page](../../file_templates/task_topic) and [Config topic page](../../file_templates/config_topic).
 
+### cookiecutter.uses_dds
+
+If `True` (default), the `tests/SConscript` file is customized to add the `OSPL_URI`, `OPENSPLICE_LOC`, and `ADLINK_LICENSE` environment variables to the `PATH` in the SCons environment.
+
+See the [tests/SConscript](example_dds/tests/SConscript) file in the `example_dds` directory as an example of this setting in use.
+
 ### cookiecutter.uses_python
 
 If `true` (default), the package is configured to support Python code.
@@ -110,7 +116,11 @@ This type of package might be used for datasets (see [afwdata](https://github.co
 The [example_standalone](example_standalone) directory shows a package that does not belong to an integrated stack by setting [cookiecutter.stack_name](#cookiecutterstack_name) to ``"None"``.
 Principally, this means that its documentation is designed to be deployed alone, to its own site, rather than a site like https://pipelines.lsst.io.
 This example also demonstrates setting [cookiecutter.base_package](#cookiecutterbase_package) to ``"sconsUtils"``.
-This type of package is commonly used by LSST Telescope & Site.
+
+### example_dds/
+
+The [example_dds](example_dds) directory shows a package with the [uses_dds](#cookiecutteruses_dds) variable enabled.
+The [tests/SConscript](#testssconscript) file in this example is specifically configured for tests that work with OpenSplice DDS (common for LSST Telescope & Site packages).
 
 ## Files
 
@@ -297,6 +307,9 @@ You shouldn't need to modify this file.
 
 Place all unit test modules in the `tests` directory.
 See the [Python Unit Testing](https://developer.lsst.io/python/testing.html) documentation in the Developer Guide for details.
+
+With the [uses_dds](#cookiecutteruses_dds) variable, you can further customize this file for packages that work with OpenSplice DDS.
+See the [tests/SConscript file in example_dds](example_dds/tests/SConscript).
 
 ### ups/{{cookiecutter.package_name}}.cfg
 
