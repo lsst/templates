@@ -1,5 +1,13 @@
 # Change log
 
+## 2019-11-04
+
+Added a new `uses_dds` Cookiecutter variable.
+When enabled, this variable adds a block to the `tests/SConscript` file that adds the contents of the  `OSPL_URI`, `OPENSPLICE_LOC`, and `ADLINK_LICENSE` environment variables to the PATH of the SCons environment.
+These are necessary for T&S packages that work with OpenSplice DDS (the base technology used by SAL).
+
+Slack-based users can trigger this variable by selecting a "DDS Package" item from the flavor menu.
+
 ## 2019-10-10
 
 Packages that don't use C++ are now one file simpler:

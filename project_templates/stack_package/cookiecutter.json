@@ -28,6 +28,7 @@
   "uses_cpp": ["True", "False"],
   "uses_python": ["True", "False"],
   "has_tasks": ["True", "False"],
+  "uses_dds": ["True", "False"],
   "python_module": "{{ 'lsst.%s' | format(cookiecutter.package_name) | replace('_', '.') }}",
   "python_sub_dirs": "{{ cookiecutter.python_module | replace('.', '/') }}",
   "_extensions": ["jinja2_time.TimeExtension", "templatekit.TemplatekitExtension"]

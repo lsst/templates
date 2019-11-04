@@ -1,0 +1,10 @@
+# -*- python -*-
+import os
+from lsst.sconsUtils import env, scripts
+
+scripts.BasicSConscript.tests(pyList=[])
+
+for name in ("OSPL_URI", "OPENSPLICE_LOC", "ADLINK_LICENSE"):
+    val = os.environ.get(name)
+    if val is not None:
+        env.AppendENVPath(name, val)

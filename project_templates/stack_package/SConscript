@@ -15,7 +15,8 @@ Command(
 # differentiate this build from the other example build below.
 env = Environment(BUILDERS={'Cookiecutter': cookiecutter_project_builder})
 env.Cookiecutter(AlwaysBuild(Dir('example')),
-                 'cookiecutter.json')
+                 'cookiecutter.json',
+                 cookiecutter_context={'uses_dds': 'False'})
 
 # Run cookiecutter to generate the 'example_subpackage' package
 # This shows off multi-level namespaces
@@ -25,7 +26,8 @@ env.Cookiecutter(AlwaysBuild(Dir('example')),
 # template anyways.
 env.Cookiecutter(AlwaysBuild(Dir('example_subpackage')),
                  'cookiecutter.json',
-                 cookiecutter_context={'package_name': 'example_subpackage'})
+                 cookiecutter_context={'package_name': 'example_subpackage',
+                                       'uses_dds': 'False'})
 
 # Run cookiecutter to generate the 'example_pythononly' package
 # This shows off a Python-only package (and multi-level namespaces).
@@ -36,7 +38,8 @@ env.Cookiecutter(AlwaysBuild(Dir('example_subpackage')),
 env.Cookiecutter(AlwaysBuild(Dir('example_pythononly')),
                  'cookiecutter.json',
                  cookiecutter_context={'package_name': 'example_pythononly',
-                                       'uses_cpp': 'False'})
+                                       'uses_cpp': 'False',
+                                       'uses_dds': 'False'})
 
 # Run cookiecutter to generate the 'example_dataonly' package
 # This shows off a Data-only package that has no Python or C++ code.
@@ -48,7 +51,8 @@ env.Cookiecutter(AlwaysBuild(Dir('example_dataonly')),
                  'cookiecutter.json',
                  cookiecutter_context={'package_name': 'example_dataonly',
                                        'uses_cpp': 'False',
-                                       'uses_python': 'False'})
+                                       'uses_python': 'False',
+                                       'uses_dds': 'False'})
 
 # Run cookiecutter to generate the 'example_standalone' package.
 # This shows off a package that doesn't belong to a stack like the LSST
@@ -60,4 +64,18 @@ env.Cookiecutter(AlwaysBuild(Dir('example_standalone')),
                  cookiecutter_context={'package_name': 'example_standalone',
                                        'stack_name': 'None',
                                        'base_package': 'setupUtils',
-                                       'uses_cpp': 'False'})
+                                       'uses_cpp': 'False',
+                                       'uses_dds': 'False'})
+
+# Run cookiecutter to generate the 'example_dds' package.
+# This shows off a package that's meant to work with OpenSplice DDS system
+# (Telescope & Site). This package has a customized tests/SConscript file.
+# This example follows the "DDS Python" preset in templatekit.yaml.
+env.Cookiecutter(AlwaysBuild(Dir('example_dds')),
+                 'cookiecutter.json',
+                 cookiecutter_context={'package_name': 'example_dds',
+                                       'stack_name': 'None',
+                                       'base_package': 'setupUtils',
+                                       'uses_cpp': 'False',
+                                       'uses_dds': 'True',
+                                       'uses_tasks': 'False'})
