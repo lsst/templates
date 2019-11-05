@@ -21,7 +21,7 @@
   "abstract": "Abstract text.",
   "copyright_year": "{% now 'utc', '%Y' %}",
   "copyright_holder": [
-    "Association of Universities for Research in Astronomy",
+    "Association of Universities for Research in Astronomy, Inc. (AURA)",
     "California Institute of Technology",
     "The Board of Trustees of the Leland Stanford Junior University, through SLAC National Accelerator Laboratory",
     "The Trustees of Princeton University",
