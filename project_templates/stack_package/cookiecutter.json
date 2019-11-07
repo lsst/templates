@@ -18,6 +18,7 @@
     "lsst-dm",
     "lsst-sims",
     "lsst-ts",
+    "lsst-sitcom",
     "lsst-sqre",
     "lsst-sqre-testing",
     "lsst-verification-and-validation"],
