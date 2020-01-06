@@ -36,6 +36,14 @@ You can find Jira issues for this module under the `example_pythononly <https://
 Task reference
 ==============
 
+.. _lsst.example.pythononly-pipeline-tasks:
+
+Pipeline tasks
+--------------
+
+.. lsst-pipelinetasks::
+   :root: lsst.example.pythononly
+
 .. _lsst.example.pythononly-command-line-tasks:
 
 Command-line tasks

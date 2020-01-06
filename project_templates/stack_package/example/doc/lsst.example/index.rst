@@ -36,6 +36,14 @@ You can find Jira issues for this module under the `example <https://jira.lsstco
 Task reference
 ==============
 
+.. _lsst.example-pipeline-tasks:
+
+Pipeline tasks
+--------------
+
+.. lsst-pipelinetasks::
+   :root: lsst.example
+
 .. _lsst.example-command-line-tasks:
 
 Command-line tasks

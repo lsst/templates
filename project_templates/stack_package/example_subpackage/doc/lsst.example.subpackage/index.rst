@@ -36,6 +36,14 @@ You can find Jira issues for this module under the `example_subpackage <https://
 Task reference
 ==============
 
+.. _lsst.example.subpackage-pipeline-tasks:
+
+Pipeline tasks
+--------------
+
+.. lsst-pipelinetasks::
+   :root: lsst.example.subpackage
+
 .. _lsst.example.subpackage-command-line-tasks:
 
 Command-line tasks
