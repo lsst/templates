@@ -19,17 +19,21 @@ lsst.example.pythononly
 ..    :maxdepth: 1
 
 .. _lsst.example.pythononly-contributing:
+.. _lsst.example.pythononly-dev:
 
-Contributing
-============
+Design and development
+======================
 
 ``lsst.example.pythononly`` is developed at https://github.com/lsst/example_pythononly.
 You can find Jira issues for this module under the `example_pythononly <https://jira.lsstcorp.org/issues/?jql=project%20%3D%20DM%20AND%20component%20%3D%20example_pythononly>`_ component.
 
 .. If there are topics related to developing this module (rather than using it), link to this from a toctree placed here.
+.. All design and development pages must be maintained in a "dev" subdirectory.
 
 .. .. toctree::
 ..    :maxdepth: 1
+..
+..    dev/page
 
 .. _lsst.example.pythononly-command-line-taskref:
 

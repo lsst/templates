@@ -1,5 +1,13 @@
 # Change log
 
+## 2020-01-07
+
+- Rename the "Contributing" section of the module homepage to "Design and development."
+  This section can be used more broadly to contain documentation oriented to internal developers.
+  Pages linked from this section should be contained in a subdirectory named `dev`.
+
+[DM-21228](https://jira.lsstcorp.org/browse/DM-21228)
+
 ## 2020-01-06
 
 - Add a "Pipeline tasks" section to the module homepage template.
