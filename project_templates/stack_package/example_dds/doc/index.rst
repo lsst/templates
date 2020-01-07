@@ -36,6 +36,14 @@ You can find Jira issues for this module under the `example_dds <https://jira.ls
 Task reference
 ==============
 
+.. _lsst.example.dds-pipeline-tasks:
+
+Pipeline tasks
+--------------
+
+.. lsst-pipelinetasks::
+   :root: lsst.example.dds
+
 .. _lsst.example.dds-command-line-tasks:
 
 Command-line tasks

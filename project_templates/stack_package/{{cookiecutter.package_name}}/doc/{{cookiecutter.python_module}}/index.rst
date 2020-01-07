@@ -37,6 +37,14 @@ You can find Jira issues for this module under the `{{ cookiecutter.package_name
 Task reference
 ==============
 
+.. _{{ cookiecutter.python_module }}-pipeline-tasks:
+
+Pipeline tasks
+--------------
+
+.. lsst-pipelinetasks::
+   :root: {{ cookiecutter.python_module }}
+
 .. _{{ cookiecutter.python_module }}-command-line-tasks:
 
 Command-line tasks

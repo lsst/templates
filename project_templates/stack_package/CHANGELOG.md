@@ -1,5 +1,11 @@
 # Change log
 
+## 2020-01-06
+
+- Add a "Pipeline tasks" section to the module homepage template.
+
+[DM-22520](https://jira.lsstcorp.org/browse/DM-22520)
+
 ## 2019-11-07
 
 Added support for the [lsst-sitcom](https://github.com/lsst-sitcom) GitHub organization.
