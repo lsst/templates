@@ -19,17 +19,21 @@ lsst.example.standalone
 ..    :maxdepth: 1
 
 .. _lsst.example.standalone-contributing:
+.. _lsst.example.standalone-dev:
 
-Contributing
-============
+Design and development
+======================
 
 ``lsst.example.standalone`` is developed at https://github.com/lsst/example_standalone.
 You can find Jira issues for this module under the `example_standalone <https://jira.lsstcorp.org/issues/?jql=project%20%3D%20DM%20AND%20component%20%3D%20example_standalone>`_ component.
 
 .. If there are topics related to developing this module (rather than using it), link to this from a toctree placed here.
+.. All design and development pages must be maintained in a "dev" subdirectory.
 
 .. .. toctree::
 ..    :maxdepth: 1
+..
+..    dev/page
 
 .. _lsst.example.standalone-command-line-taskref:
 

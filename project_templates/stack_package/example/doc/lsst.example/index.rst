@@ -19,17 +19,21 @@ lsst.example
 ..    :maxdepth: 1
 
 .. _lsst.example-contributing:
+.. _lsst.example-dev:
 
-Contributing
-============
+Design and development
+======================
 
 ``lsst.example`` is developed at https://github.com/lsst/example.
 You can find Jira issues for this module under the `example <https://jira.lsstcorp.org/issues/?jql=project%20%3D%20DM%20AND%20component%20%3D%20example>`_ component.
 
 .. If there are topics related to developing this module (rather than using it), link to this from a toctree placed here.
+.. All design and development pages must be maintained in a "dev" subdirectory.
 
 .. .. toctree::
 ..    :maxdepth: 1
+..
+..    dev/page
 
 .. _lsst.example-command-line-taskref:
 

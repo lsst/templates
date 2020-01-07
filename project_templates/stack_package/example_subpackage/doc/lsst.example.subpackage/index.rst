@@ -19,17 +19,21 @@ lsst.example.subpackage
 ..    :maxdepth: 1
 
 .. _lsst.example.subpackage-contributing:
+.. _lsst.example.subpackage-dev:
 
-Contributing
-============
+Design and development
+======================
 
 ``lsst.example.subpackage`` is developed at https://github.com/lsst/example_subpackage.
 You can find Jira issues for this module under the `example_subpackage <https://jira.lsstcorp.org/issues/?jql=project%20%3D%20DM%20AND%20component%20%3D%20example_subpackage>`_ component.
 
 .. If there are topics related to developing this module (rather than using it), link to this from a toctree placed here.
+.. All design and development pages must be maintained in a "dev" subdirectory.
 
 .. .. toctree::
 ..    :maxdepth: 1
+..
+..    dev/page
 
 .. _lsst.example.subpackage-command-line-taskref:
 

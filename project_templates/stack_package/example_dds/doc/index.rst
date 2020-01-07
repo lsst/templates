@@ -19,17 +19,21 @@ lsst.example.dds
 ..    :maxdepth: 1
 
 .. _lsst.example.dds-contributing:
+.. _lsst.example.dds-dev:
 
-Contributing
-============
+Design and development
+======================
 
 ``lsst.example.dds`` is developed at https://github.com/lsst/example_dds.
 You can find Jira issues for this module under the `example_dds <https://jira.lsstcorp.org/issues/?jql=project%20%3D%20DM%20AND%20component%20%3D%20example_dds>`_ component.
 
 .. If there are topics related to developing this module (rather than using it), link to this from a toctree placed here.
+.. All design and development pages must be maintained in a "dev" subdirectory.
 
 .. .. toctree::
 ..    :maxdepth: 1
+..
+..    dev/page
 
 .. _lsst.example.dds-command-line-taskref:
 

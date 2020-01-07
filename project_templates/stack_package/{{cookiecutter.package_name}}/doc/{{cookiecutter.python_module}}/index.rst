@@ -19,17 +19,21 @@
 ..    :maxdepth: 1
 
 .. _{{ cookiecutter.python_module }}-contributing:
+.. _{{ cookiecutter.python_module }}-dev:
 
-Contributing
-============
+Design and development
+======================
 
 ``{{ cookiecutter.python_module }}`` is developed at https://github.com/{{ cookiecutter.github_org }}/{{ cookiecutter.package_name }}.
 You can find Jira issues for this module under the `{{ cookiecutter.package_name }} <https://jira.lsstcorp.org/issues/?jql=project%20%3D%20DM%20AND%20component%20%3D%20{{ cookiecutter.package_name }}>`_ component.
 
 .. If there are topics related to developing this module (rather than using it), link to this from a toctree placed here.
+.. All design and development pages must be maintained in a "dev" subdirectory.
 
 .. .. toctree::
 ..    :maxdepth: 1
+..
+..    dev/page
 {%- if cookiecutter.has_tasks == "True" %}
 
 .. _{{ cookiecutter.python_module }}-command-line-taskref:
