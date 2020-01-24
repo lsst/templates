@@ -1,5 +1,12 @@
 # Change log
 
+## 2020-01-24
+
+- Update the Flake8 exceptions list in `setup.cfg` to replace `W504` with `W503`.
+  See [RFC-650](https://jira.lsstcorp.org/browse/RFC-650) for background.
+
+[DM-23181](https://jira.lsstcorp.org/browse/DM-23181)
+
 ## 2020-01-06
 
 - Add a "Pipeline tasks" section to the module homepage template.
