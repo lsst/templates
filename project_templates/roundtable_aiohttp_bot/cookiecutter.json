@@ -1,0 +1,18 @@
+{
+  "repo_name": "example",
+  "package_name": "{{ cookiecutter.repo_name | lower | replace('-', '') | replace('_', '') | replace('.', '') }}",
+  "copyright_year": "{% now 'utc', '%Y' %}",
+  "copyright_holder": [
+    "Association of Universities for Research in Astronomy, Inc. (AURA)",
+    "California Institute of Technology",
+    "The Board of Trustees of the Leland Stanford Junior University, through SLAC National Accelerator Laboratory",
+    "The Trustees of Princeton University",
+    "University of Illinois Board of Trustees",
+    "University of Washington"
+  ],
+  "github_org": [
+    "lsst-sqre",
+    "lsst-sqre-testing"
+  ],
+  "_extensions": ["jinja2_time.TimeExtension", "templatekit.TemplatekitExtension"]
+}
