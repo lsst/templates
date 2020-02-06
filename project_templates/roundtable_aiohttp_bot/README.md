@@ -26,6 +26,11 @@ This is the name of the GitHub repository.
 This is the name of the bot's Python package.
 By default, it is normalized from `repo_name`.
 
+### cookiecutter.summary
+
+A one-sentence summary of the bot.
+This is used as the GitHub repository summary, and repeated in the README and various aspects of the bot's packaging.
+
 ### cookiecutter.copyright_year
 
 The year, or years that the named institution made contributions.
