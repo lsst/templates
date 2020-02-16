@@ -8,3 +8,4 @@
 --index-url https://pypi.python.org/simple/
 
 aiohttp[speedups]
+importlib_metadata
