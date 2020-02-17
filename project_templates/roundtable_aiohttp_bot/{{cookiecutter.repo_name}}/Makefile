@@ -11,6 +11,8 @@ update-deps:
 init:
 	pip install --editable .
 	pip install --upgrade -r requirements/main.txt -r requirements/dev.txt
+	rm -rf .tox
+	pre-commit install
 
 .PHONY: update
 update: update-deps init

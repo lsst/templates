@@ -7,3 +7,75 @@ requires = [
 build-backend = 'setuptools.build_meta'
 
 [tool.setuptools_scm]
+
+[tool.tox]
+legacy_tox_ini = """
+[tox]
+envlist = py37,coverage-report,typing,lint
+isolated_build = True
+
+[testenv]
+description = Run pytest against {envname}.
+deps =
+    -r{toxinidir}/requirements/main.txt
+    -r{toxinidir}/requirements/dev.txt
+commands =
+    coverage run -m pytest {posargs}
+
+[testenv:coverage-report]
+description = Compile coverage from each test run.
+skip_install = true
+deps = coverage[toml]>=5.0.2
+depends =
+    py37
+commands =
+    coverage combine
+    coverage report
+
+[testenv:typing]
+description = Run mypy.
+commands =
+    mypy src/example
+
+[testenv:lint]
+description = Lint codebase by running pre-commit (Black, isort, Flake8).
+skip_install = true
+deps =
+    pre-commit
+commands = pre-commit run --all-files
+"""
+
+[tool.coverage.run]
+parallel = true
+branch = true
+source = ["example"]
+
+[tool.coverage.paths]
+source = ["src", ".tox/*/site-packages"]
+
+[tool.coverage.report]
+show_missing = true
+
+[tool.black]
+line-length = 79
+target-version = ['py37']
+exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | build
+  | dist
+)/
+'''
+# Use single-quoted strings so TOML treats the string like a Python r-string
+# Multi-line strings are implicitly treated by black as regular expressions
+
+[tool.isort]
+multi_line_output = 3
+known_first_party = "example"
+known_third_party = ["aiohttp", "safir", "setuptools", "structlog"]
+skip = ["docs/conf.py"]
