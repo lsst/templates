@@ -43,6 +43,11 @@ skip_install = true
 deps =
     pre-commit
 commands = pre-commit run --all-files
+
+[testenv:run]
+description = Run the development server with auto-reload for code changes.
+usedevelop = true
+commands = adev runserver --app-factory create_app src/example/app.py
 """
 
 [tool.coverage.run]

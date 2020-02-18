@@ -13,3 +13,4 @@ flake8
 mypy
 pytest
 pytest-aiohttp
+aiohttp-devtools
