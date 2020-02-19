@@ -10,3 +10,4 @@
 git+git://github.com/lsst-sqre/safir@tickets/DM-23355#egg=safir
 aiohttp[speedups]
 importlib_metadata
+click
