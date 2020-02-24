@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ cookiecutter.package_name }}
+data:
+  # These configurations are injected as environment variables into the
+  # app container.
+  SAFIR_NAME: "{{ cookiecutter.package_name }}"
+  SAFIR_PROFILE: "production"
+  SAFIR_LOGGER: "{{ cookiecutter.package_name }}"
+  SAFIR_LOG_LEVEL: "INFO"

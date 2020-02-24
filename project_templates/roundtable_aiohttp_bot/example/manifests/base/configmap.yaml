@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: example
+data:
+  # These configurations are injected as environment variables into the
+  # app container.
+  SAFIR_NAME: "example"
+  SAFIR_PROFILE: "production"
+  SAFIR_LOGGER: "example"
+  SAFIR_LOG_LEVEL: "INFO"
