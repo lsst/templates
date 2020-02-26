@@ -1,8 +1,8 @@
 # roundtable_aiohttp_bot
 
-**Develop an aiohttp-based bot, hosted on SQuaRE's Roundtable platform.**
+**Develop an aiohttp-based bot (built with [Safir](https://safir.lsst.io])), hosted on SQuaRE's Roundtable platform.**
 
-This templates builds a bot that can be deployed on [Roundtable](https://roundtable.lsst.io), SQuaRE's Kubernetes-based service platform.
+This template builds a bot that can be deployed on [Roundtable](https://roundtable.lsst.io), SQuaRE's Kubernetes-based service platform.
 Bots can take many forms and functions:
 
 - A bot might have an HTTP API.
@@ -12,6 +12,9 @@ Bots can take many forms and functions:
 - A bot can do some combination of all of the above.
 
 This template, in particular, gets you started building a Python-based bot with the [aiohttp.web](https://docs.aiohttp.org/en/stable/web.html) framework.
+The template uses SQuaRE's [Safir](https://safir.lsst.io) framework to help you build the application and integrate with Roundtable's features.
+
+To learn how to configure and develop an application using this template, see the tutorial [Creating an app from the template](https://safir.lsst.io/set-up-from-template.html).
 Once you've created the template, feel free to develop and customize your application as you require.
 Aside from needing to be Kubernetes-deployable, Roundtable doesn't require completely homogeneous app structures.
 
