@@ -1,0 +1,15 @@
+# Editable runtime dependencies (equivalent to install_requires)
+# Add direct runtime dependencies here, as well as implicit dependencies
+# with constrained versions.
+#
+# After editing, update requirements/main.txt by running:
+#     make update-deps
+
+--index-url https://pypi.python.org/simple/
+
+safir
+aiohttp
+aiodns
+cchardet
+importlib_metadata
+click

@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ cookiecutter.package_name }}
+  labels:
+    app: {{ cookiecutter.package_name }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: {{ cookiecutter.package_name }}
+  template:
+    metadata:
+      labels:
+        name: {{ cookiecutter.package_name }}
+    spec:
+      containers:
+        - name: app
+          imagePullPolicy: "Always"
+          # Use images field in a Kustomization to regularly set/update image tag
+          image: "lsstsqre/{{ cookiecutter.package_name }}"
+          ports:
+            - containerPort: 8080
+              name: app
+          envFrom:
+            - configMapRef:
+                name: {{ cookiecutter.package_name }}

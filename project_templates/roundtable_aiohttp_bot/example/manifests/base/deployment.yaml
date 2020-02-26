@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: example
+  labels:
+    app: example
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: example
+  template:
+    metadata:
+      labels:
+        name: example
+    spec:
+      containers:
+        - name: app
+          imagePullPolicy: "Always"
+          # Use images field in a Kustomization to regularly set/update image tag
+          image: "lsstsqre/example"
+          ports:
+            - containerPort: 8080
+              name: app
+          envFrom:
+            - configMapRef:
+                name: example

@@ -66,6 +66,7 @@ See [Troubleshooting](#troubleshooting) for solutions to common issues.
 Find these templates in the `project_templates/` directory:
 
 - [nbreport](project_templates/nbreport/)
+- [roundtable_aiohttp_bot](project_templates/nbreport/)
 - [stack_package](project_templates/stack_package/)
 - [technote_aastex](project_templates/technote_aastex/)
 - [technote_latex](project_templates/technote_latex/)
