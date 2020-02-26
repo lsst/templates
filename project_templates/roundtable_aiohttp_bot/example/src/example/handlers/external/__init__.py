@@ -4,4 +4,4 @@
 
 __all__ = ["get_index"]
 
-from .index import get_index
+from example.handlers.external.index import get_index

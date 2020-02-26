@@ -4,4 +4,4 @@
 
 __all__ = ["get_index"]
 
-from .index import get_index
+from {{ cookiecutter.package_name }}.handlers.external.index import get_index
