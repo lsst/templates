@@ -17,7 +17,8 @@ spec:
       containers:
         - name: app
           imagePullPolicy: "Always"
-          image: "lsstsqre/{{ cookiecutter.package_name }}:latest"
+          # Use images field in a Kustomization to regularly set/update image tag
+          image: "lsstsqre/{{ cookiecutter.package_name }}"
           ports:
             - containerPort: 8080
               name: app
