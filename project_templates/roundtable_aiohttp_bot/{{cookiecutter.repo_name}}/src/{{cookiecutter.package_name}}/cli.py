@@ -1,5 +1,4 @@
-"""Administrative command-line interface.
-"""
+"""Administrative command-line interface."""
 
 __all__ = ["main", "help", "run"]
 
@@ -31,8 +30,7 @@ def main(ctx: click.Context) -> None:
 @click.argument("topic", default=None, required=False, nargs=1)
 @click.pass_context
 def help(ctx: click.Context, topic: Union[None, str], **kw: Any) -> None:
-    """Show help for any command.
-    """
+    """Show help for any command."""
     # The help command implementation is taken from
     # https://www.burgundywall.com/post/having-click-help-subcommand
     if topic is None:
@@ -47,7 +45,6 @@ def help(ctx: click.Context, topic: Union[None, str], **kw: Any) -> None:
 )
 @click.pass_context
 def run(ctx: click.Context, port: int) -> None:
-    """Run the application (for production).
-    """
+    """Run the application (for production)."""
     app = create_app()
     run_app(app, port=port)

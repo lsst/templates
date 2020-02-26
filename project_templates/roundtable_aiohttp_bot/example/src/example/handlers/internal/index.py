@@ -1,5 +1,4 @@
-"""Handlers for the app's root, ``/``.
-"""
+"""Handlers for the app's root, ``/``."""
 
 __all__ = ["get_index"]
 

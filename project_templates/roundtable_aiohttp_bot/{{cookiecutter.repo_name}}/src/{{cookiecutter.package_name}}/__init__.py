@@ -1,5 +1,4 @@
-"""The {{ cookiecutter.package_name }} service.
-"""
+"""The {{ cookiecutter.package_name }} service."""
 
 __all__ = ["__version__", "metadata"]
 
@@ -12,8 +11,7 @@ else:
 
 
 __version__: str
-"""The application version string of (PEP 440 / SemVer compatible).
-"""
+"""The application version string of (PEP 440 / SemVer compatible)."""
 
 try:
     __version__ = version(__name__)

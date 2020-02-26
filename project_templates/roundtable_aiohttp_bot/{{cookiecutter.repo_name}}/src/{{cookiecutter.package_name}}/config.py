@@ -1,5 +1,4 @@
-"""Configuration definition.
-"""
+"""Configuration definition."""
 
 __all__ = ["Configuration"]
 
@@ -9,8 +8,7 @@ from dataclasses import dataclass
 
 @dataclass
 class Configuration:
-    """Configuration for {{ cookiecutter.package_name }}.
-    """
+    """Configuration for {{ cookiecutter.package_name }}."""
 
     name: str = os.getenv("SAFIR_NAME", "{{ cookiecutter.package_name }}")
     """The application's name, which doubles as the root HTTP endpoint path.

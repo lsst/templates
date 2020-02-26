@@ -12,8 +12,7 @@ if TYPE_CHECKING:
 
 
 async def test_get_index(aiohttp_client: TestClient) -> None:
-    """Test GET /
-    """
+    """Test GET /"""
     app = create_app()
     client = await aiohttp_client(app)
 

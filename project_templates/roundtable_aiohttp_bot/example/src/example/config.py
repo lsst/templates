@@ -1,5 +1,4 @@
-"""Configuration definition.
-"""
+"""Configuration definition."""
 
 __all__ = ["Configuration"]
 
@@ -9,8 +8,7 @@ from dataclasses import dataclass
 
 @dataclass
 class Configuration:
-    """Configuration for example.
-    """
+    """Configuration for example."""
 
     name: str = os.getenv("SAFIR_NAME", "example")
     """The application's name, which doubles as the root HTTP endpoint path.

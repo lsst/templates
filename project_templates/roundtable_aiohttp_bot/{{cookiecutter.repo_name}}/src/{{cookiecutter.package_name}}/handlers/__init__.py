@@ -1,5 +1,4 @@
-"""API route tables.
-"""
+"""HTTP API route tables."""
 
 __all__ = ["internal_routes", "routes", "init_internal_routes", "init_routes"]
 
@@ -15,8 +14,7 @@ are prefixed with the application name.
 """
 
 routes = web.RouteTableDef()
-"""Routes for the public API that serves from '/<api_name>/'.
-"""
+"""Routes for the public API that serves from '/<api_name>/'."""
 
 
 def init_external_routes() -> web.RouteTableDef:

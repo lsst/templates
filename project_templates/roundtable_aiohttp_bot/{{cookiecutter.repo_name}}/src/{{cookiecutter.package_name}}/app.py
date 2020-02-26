@@ -1,5 +1,4 @@
-"""The main application definition for {{ cookiecutter.package_name }} service.
-"""
+"""The main application definition for {{ cookiecutter.package_name }} service."""
 
 __all__ = ["create_app"]
 
@@ -14,8 +13,7 @@ from {{ cookiecutter.package_name }}.handlers import init_external_routes, init_
 
 
 def create_app() -> web.Application:
-    """Create and configure the aiohttp.web application.
-    """
+    """Create and configure the aiohttp.web application."""
     config = Configuration()
     configure_logging(
         profile=config.profile,
@@ -39,6 +37,5 @@ def create_app() -> web.Application:
 
 
 def setup_middleware(app: web.Application) -> None:
-    """Add middleware to the application.
-    """
+    """Add middleware to the application."""
     app.middlewares.append(bind_logger)
