@@ -24,7 +24,7 @@ def init_external_routes() -> web.RouteTableDef:
     served at ``/<api_name>/``.
     """
     # Import handlers so that they are registered with the routes table via
-    # decorators.
+    # decorators. This isn't a global import to avoid circular dependencies.
     import example.handlers.external  # noqa: F401
 
     return routes
@@ -35,7 +35,7 @@ def init_internal_routes() -> web.RouteTableDef:
     ones publicly available).
     """
     # Import handlers so that they are registered with the routes table via
-    # decorators.
+    # decorators. This isn't a global import to avoid circular dependencies.
     import example.handlers.internal  # noqa: F401
 
     return internal_routes
