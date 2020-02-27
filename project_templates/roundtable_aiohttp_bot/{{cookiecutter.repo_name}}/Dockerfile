@@ -10,9 +10,6 @@
 # install-image
 #   Installs the app into the virtual environment.
 # runtime-image
-#   - Updates system packages using the scripts/install-runtime-packages.sh
-#     script (this technique prevents the apt-get cache from being added to the
-#     Docker layers).
 #   - Copies the virtual environment into place.
 #   - Runs a non-root user.
 #   - Sets up the entrypoint and port.
