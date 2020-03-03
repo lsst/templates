@@ -5,7 +5,7 @@ __all__ = ["internal_routes", "routes", "init_internal_routes", "init_routes"]
 from aiohttp import web
 
 internal_routes = web.RouteTableDef()
-"""Routes for the root application that serves from '/'
+"""Routes for the root application that serves from ``/``
 
 Application-specific routes don't get attached here. In practice, only routes
 for metrics and health checks get attached to this table. Attach public APIs
@@ -14,7 +14,7 @@ are prefixed with the application name.
 """
 
 routes = web.RouteTableDef()
-"""Routes for the public API that serves from '/<api_name>/'."""
+"""Routes for the public API that serves from ``/<api_name>/``."""
 
 
 def init_external_routes() -> web.RouteTableDef:
