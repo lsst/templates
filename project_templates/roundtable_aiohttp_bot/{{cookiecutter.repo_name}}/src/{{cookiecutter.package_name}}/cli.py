@@ -33,10 +33,14 @@ def help(ctx: click.Context, topic: Union[None, str], **kw: Any) -> None:
     """Show help for any command."""
     # The help command implementation is taken from
     # https://www.burgundywall.com/post/having-click-help-subcommand
-    if topic is None:
-        click.echo(ctx.parent.get_help())
+    if topic:
+        if topic in main.commands:
+            click.echo(main.commands[topic].get_help(ctx))
+        else:
+            raise click.UsageError(f"Unknown help topic {topic}", ctx)
     else:
-        click.echo(main.commands[topic].get_help(ctx))  # type: ignore
+        assert ctx.parent
+        click.echo(ctx.parent.get_help())
 
 
 @main.command()
