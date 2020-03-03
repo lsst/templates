@@ -1,6 +1,6 @@
 {
-  "repo_name": "example",
-  "package_name": "{{ cookiecutter.repo_name | lower | replace('-', '') | replace('_', '') | replace('.', '') }}",
+  "name": "example",
+  "package_name": "{{ cookiecutter.name | lower | replace('-', '') | replace('_', '') | replace('.', '') }}",
   "summary": "Short one-sentence summary of the bot",
   "copyright_year": "{% now 'utc', '%Y' %}",
   "copyright_holder": [

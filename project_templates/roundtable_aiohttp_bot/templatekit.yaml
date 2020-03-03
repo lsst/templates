@@ -2,7 +2,7 @@ name: "Roundtable bot (aiohttp)"
 group: "SQuaRE Roundtable"
 dialog_title: "Create a bot"
 dialog_fields:
-  - key: "repo_name"
+  - key: "name"
     label: "Repository name"
     hint: "Name of the Git repository."
     component: "text"

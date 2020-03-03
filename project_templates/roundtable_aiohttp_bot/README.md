@@ -20,7 +20,7 @@ Aside from needing to be Kubernetes-deployable, Roundtable doesn't require compl
 
 ## Template variables
 
-### cookiecutter.repo_name
+### cookiecutter.name
 
 This is the name of the GitHub repository.
 
