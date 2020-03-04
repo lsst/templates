@@ -93,6 +93,6 @@ exclude = '''
 [tool.isort]
 include_trailing_comma = true
 multi_line_output = 3
-known_first_party = "{{ cookiecutter.package_name }}"
+known_first_party = ["{{ cookiecutter.package_name }}", "tests"]
 known_third_party = ["aiohttp", "click", "safir", "setuptools"]
 skip = ["docs/conf.py"]
