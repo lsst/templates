@@ -18,12 +18,12 @@ def create_app() -> web.Application:
     configure_logging(
         profile=config.profile,
         log_level=config.log_level,
-        name=config.logger_name
+        name=config.logger_name,
     )
 
     root_app = web.Application()
     root_app["safir/config"] = config
-    setup_metadata(package_name={{ cookiecutter.package_name }}, app=root_app)
+    setup_metadata(package_name="{{ cookiecutter.package_name }}", app=root_app)
     setup_middleware(root_app)
     root_app.add_routes(init_internal_routes())
     root_app.cleanup_ctx.append(init_http_session)
