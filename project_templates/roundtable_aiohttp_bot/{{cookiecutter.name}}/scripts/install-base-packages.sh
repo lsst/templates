@@ -13,6 +13,9 @@
 # details.
 set -euo pipefail
 
+# Display each command as it's run.
+set -x
+
 # Tell apt-get we're never going to be able to give manual
 # feedback:
 export DEBIAN_FRONTEND=noninteractive
