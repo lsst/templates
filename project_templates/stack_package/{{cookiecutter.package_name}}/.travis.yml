@@ -4,6 +4,6 @@ matrix:
   include:
     - python: '3.6'
       install:
-        - 'pip install flake8'
+        - 'pip install -r <(curl project_templates/stack_package/{{cookiecutter.package_name}}/.travis.yml)'
       script:
         - flake8
