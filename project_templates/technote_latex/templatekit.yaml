@@ -27,13 +27,12 @@ dialog_fields:
           series: "ITTN"
           github_org: "LSST-IT"
           org: "PMO"
-      # Enable this feature if sqrbot can be added to the lsst-ops org.
-      # - label: "OPSTN"
-      #   value: "OPSTN"
-      #   presets:
-      #     series: "OPSTN"
-      #     github_org: "lsst-ops"
-      #     org: "ops"
+      - label: "OPSTN"
+        value: "OPSTN"
+        presets:
+          series: "OPSTN"
+          github_org: "rubin-observatory"
+          org: "ops"
       - label: "PSTN"
         value: "PSTN"
         presets:

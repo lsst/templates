@@ -25,6 +25,11 @@ dialog_fields:
         presets:
           series: "ITTN"
           github_org: "LSST-IT"
+      - label: "OPSTN"
+        value: "opstn"
+        presets:
+          series: "OPSTN"
+          github_org: "rubin-observatory"
       - label: "SITCOMTN"
         value: "sitcomtn"
         presets:

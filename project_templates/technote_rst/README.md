@@ -54,7 +54,7 @@ Choose a GitHub organization that matches the [series](#cookiecutter_series):
 
 - `lsst-dm` for the DM DMTN series.
 - `LSST-IT` for the ITTN series.
-- `lsst-ops` for the OPSTN series.
+- `rubin-observatory` for the OPSTN series.
 - `lsst-sims` for the Simulations Group's SMTN series.
 - `lsst-sitcom` for the SITCOMTN series.
 - `lsst-sqre` for the SQuaRE SQR series.
