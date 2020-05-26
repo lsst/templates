@@ -2,7 +2,7 @@
 
 ## 2020-05-25
 
-- Add support for the OPSTN technote series.
+- Add support for the RTN technote series for operations.
 
 ## 2019-11-03
 
