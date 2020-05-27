@@ -20,7 +20,7 @@ Choose the series that fits the document's purpose or aligns with the organizati
 
 - `DMTN` for Data Management technical notes. See [DMTN-000](https://dmtn-000.lsst.io).
 - `ITTN` for LSST IT technical notes.
-- `RTN` for Rubin Operations technical notes. Regardless of department.
+- `RTN` for Rubin Observatory operations technical notes (all departments).
 - `PSTN` for Project Science Team technical notes.
 - `SMTN` for Simulations Group technical notes. See [SMTN-000](https://smtn-000.lsst.io).
 - `SITCOMTN` for Systems Integration, Testing, and Commissioning notes.
