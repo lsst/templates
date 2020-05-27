@@ -20,7 +20,7 @@ Choose the series that fits the document's purpose or aligns with the organizati
 
 - `DMTN` for Data Management technical notes. See [DMTN-000](https://dmtn-000.lsst.io).
 - `ITTN` for LSST IT technical notes.
-- `OPSTN` for LSST Operations technical notes.
+- `RTN` for Rubin Observatory operations technical notes (all departments).
 - `PSTN` for Project Science Team technical notes.
 - `SMTN` for Simulations Group technical notes. See [SMTN-000](https://smtn-000.lsst.io).
 - `SITCOMTN` for Systems Integration, Testing, and Commissioning notes.
@@ -40,7 +40,7 @@ Choose a GitHub organization that matches the [series](#cookiecutter_series):
 
 - `lsst-dm` for the DMTN series.
 - `LSST-IT` for the ITTN series.
-- `lsst-ops` for the OPSTN series.
+- `rubin-observatory` for the RTN series.
 - `lsst-pst` for the PSTN series.
 - `lsst-sims` for the Simulations Group's SMTN series.
 - `lsst-sitcom` for the SITCOMTN series.

@@ -10,7 +10,7 @@
   "series": [
     "DMTN",
     "ITTN",
-    "OPSTN",
+    "RTN",
     "PSTN",
     "SMTN",
     "SITCOMTN",
@@ -22,7 +22,7 @@
   "github_org": [
     "lsst-dm",
     "LSST-IT",
-    "lsst-ops",
+    "rubin-observatory",
     "lsst-pst",
     "lsst-sims",
     "lsst-sitcom",

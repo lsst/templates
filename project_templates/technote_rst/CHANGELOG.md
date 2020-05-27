@@ -1,5 +1,9 @@
 # Change log
 
+## 2020-05-25
+
+- Add support for the RTN technote series for operations.
+
 ## 2019-11-03
 
 - Update to the current versions of Documenteer, >=0.5.4, <0.6.
