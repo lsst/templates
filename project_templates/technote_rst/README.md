@@ -53,7 +53,7 @@ The GitHub organization where this technote resides.
 Choose a GitHub organization that matches the [series](#cookiecutter_series):
 
 - `lsst-dm` for the DM DMTN series.
-- `LSST-IT` for the ITTN series.
+- `lsst-it` for the ITTN series.
 - `rubin-observatory` for the RTN series.
 - `lsst-sims` for the Simulations Group's SMTN series.
 - `lsst-sitcom` for the SITCOMTN series.

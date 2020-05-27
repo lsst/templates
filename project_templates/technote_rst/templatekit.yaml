@@ -24,7 +24,7 @@ dialog_fields:
         value: "ittn"
         presets:
           series: "ITTN"
-          github_org: "LSST-IT"
+          github_org: "lsst-it"
       - label: "RTN"
         value: "rtn"
         presets:
