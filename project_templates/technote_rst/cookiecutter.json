@@ -16,7 +16,7 @@
   "repo_name": "{{ cookiecutter.series.lower() }}-{{ cookiecutter.serial_number }}",
   "github_org": [
     "lsst-dm",
-    "LSST-IT",
+    "lsst-it",
     "rubin-observatory",
     "lsst-pst",
     "lsst-sims",
