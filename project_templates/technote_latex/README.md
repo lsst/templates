@@ -87,21 +87,21 @@ Example: [.gitignore](testn-000/.gitignore).
 The gitignore file ignores the built PDF product (which is persisted on LSST the Docs), as well as intermediate LaTeX build files (including `meta.tex`).
 The `acronyms.tex` file is not ignored so that `make acronyms.tex` does not need to be run for every document build.
 
-## .travis.yml
+## .github/workflows/ci.yaml
 
-Example: [.travis.yml](testn-000/.travis.yml).
+Example: [.github/workflows/ci.yaml](testn-000/.github/workflows/ci.yaml).
 
-The Travis CI configuration file.
+The GitHub Actions workflow file.
 You shouldn't have to modify this file unless you have a novel preprocessing build step (see below).
 
-**Tip:** Travis CI provides a flexible Python environment.
-It's likely easier to run preprocessing scripts directly from the Travis CI environment, rather than within the lsst-texmf Docker container:
+**Tip:** GitHub Actions provides a flexible Python environment.
+It's likely easier to run preprocessing scripts directly from the GitHub actions environment, rather than within the lsst-texmf Docker container:
 
-- Install additional Python dependencies in the `install` phase of the `.travis.yml` file.
-- Add bash command for the preprocessing steps to the `script` list of the `.travis.yml` file, before the `docker run` command.
-- Structure your `Makefile` so that files built in advance in the Travis CI environment are automatically used as-is by the `docker run` command.
+- Install additional Python dependencies in the `Python install` step.
+- Add additional bash commands for preprocessing steps to run before the `docker run` step.
+- Structure your `Makefile` so that files built in advance in the GitHub actions environment are automatically used as-is by the `docker run` command.
 
-For more information about using the CI environment, see the [Travis CI documentation](https://docs.travis-ci.com).
+For more information about using the CI environment, see the [GitHub actions workflow documentation](https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions).
 
 ## acronyms.tex
 
