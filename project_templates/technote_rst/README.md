@@ -98,19 +98,19 @@ The [testn-000](testn-000) directory is an example of a technote generated from 
 
 ## Files
 
+### .github/workflows/ci.yaml
+
+Example: [.github/workflows/ci.yaml](testn-000/.github/workflows/ci.yaml).
+
+The [GitHub Actions](https://help.github.com/en/actions) configuration file.
+CI is triggered whenever a technote is pushed to GitHub, and is responsible for deploying the technote to LSST the Docs.
+
 ### lsstbib/
 
 Example: [lsstbib](testn-000/lsstbib).
 
 This directory contains local copies of LSST BibTeX files that are maintained in [lsst-texmf](https://github.com/lsst/lsst-texmf).
 See the README of the generated technote repository for information on how to update these BibTeX files during the lifetime of a technote.
-
-### .travis.yml
-
-Example: [.travis.yml](testn-000/.travis.yml).
-
-The [Travis CI](https://travis-ci.com) configuration file.
-CI is triggered whenever a technote is pushed to GitHub, and is responsible for deploying the technote to GitHub.
 
 ### conf.py
 
@@ -159,9 +159,7 @@ See the [Updating bibliographies](https://lsst-texmf.lsst.io/developer.html#upda
 
 Example: [Makefile](testn-000/Makefile).
 
-The Makefile runs the local Sphinx build for authors on their local machines, and is also used by Travis CI (see [.travis.yml](testn-000/.travis.yml)).
-
-See ``make help`` for available targets.
+The Makefile runs the local Sphinx build for authors on their local machines, and is also used by the continous integration build (see [.github/workflows/ci.yaml](testn-000/.github/workflows/ci.yaml)).
 
 ### metadata.yaml
 
