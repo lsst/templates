@@ -28,5 +28,8 @@ jobs:
           make html
 
       - name: Upload
+        env:
+          LTD_PASSWORD: {% raw %}${{ secrets.LTD_PASSWORD }}{% endraw %}
+          LTD_USERNAME: {% raw %}${{ secrets.LTD_USERNAME }}{% endraw %}
         run: |
           ltd upload --gh --dir _build/html --product {{ cookiecutter.series.lower() }}-{{ cookiecutter.serial_number }}
