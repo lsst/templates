@@ -1,0 +1,35 @@
+name: CI
+
+"on": [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 # full history for metadata
+          submodules: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+
+      - name: Python install
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install "lander<2.0.0"
+
+      - name: TeX build
+        run: |
+          docker run --rm -v `pwd`:/workspace -w /workspace lsstsqre/lsst-texmf:latest sh -c 'make'
+
+      - name: Landing page upload
+        if: {% raw %}${{ github.event_name == 'push' }}{% endraw %}
+        env:
+          LTD_PASSWORD: {% raw %}${{ secrets.LTD_PASSWORD }}{% endraw %}
+          LTD_USERNAME: {% raw %}${{ secrets.LTD_USERNAME }}{% endraw %}
+        run: |
+          lander --upload --pdf {{ cookiecutter.series }}-{{ cookiecutter.serial_number }}.pdf --lsstdoc {{ cookiecutter.series }}-{{ cookiecutter.serial_number }}.tex --ltd-product {{ cookiecutter.series.lower() }}-{{ cookiecutter.serial_number }}

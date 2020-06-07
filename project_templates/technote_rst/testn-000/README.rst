@@ -2,6 +2,8 @@
    :target: https://testn-000.lsst.io
 .. image:: https://travis-ci.com/lsst-dm/testn-000.svg
    :target: https://travis-ci.com/lsst-dm/testn-000
+.. image:: https://github.com/lsst-dm/testn-000/workflows/CI/badge.svg
+   :target: https://github.com/lsst-dm/testn-000/actions/
 ..
   Uncomment this section and modify the DOI strings to include a Zenodo DOI badge in the README
   .. image:: https://zenodo.org/badge/doi/10.5281/zenodo.#####.svg
@@ -21,7 +23,7 @@ A short description of this document
 - Publication URL: https://testn-000.lsst.io
 - Alternative editions: https://testn-000.lsst.io/v
 - GitHub repository: https://github.com/lsst-dm/testn-000
-- Build system: https://travis-ci.com/lsst-dm/testn-000
+- Build system: https://github.com/lsst-dm/testn-000/actions/
 
 
 Build this technical note

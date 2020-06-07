@@ -1,5 +1,9 @@
 # Change log
 
+## 2020-06-04
+
+- Switch to GitHub Actions for continuous integration and deployment, replacing Travis CI.
+
 ## 2020-05-25
 
 - Add support for the RTN technote series for operations.

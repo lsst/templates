@@ -2,6 +2,8 @@
    :target: {{ cookiecutter.url }}
 .. image:: https://travis-ci.com/{{ cookiecutter.github_namespace }}.svg
    :target: https://travis-ci.com/{{ cookiecutter.github_namespace }}
+.. image:: https://github.com/{{ cookiecutter.github_namespace }}/workflows/CI/badge.svg
+   :target: https://github.com/{{ cookiecutter.github_namespace }}/actions/
 ..
   Uncomment this section and modify the DOI strings to include a Zenodo DOI badge in the README
   .. image:: https://zenodo.org/badge/doi/10.5281/zenodo.#####.svg
@@ -21,7 +23,7 @@
 - Publication URL: {{ cookiecutter.url }}
 - Alternative editions: {{ cookiecutter.url }}/v
 - GitHub repository: https://github.com/{{ cookiecutter.github_namespace }}
-- Build system: https://travis-ci.com/{{ cookiecutter.github_namespace }}
+- Build system: https://github.com/{{ cookiecutter.github_namespace }}/actions/
 {% if cookiecutter.docushare_url|length > 0 %}
 - LSST Docushare: {{ cookiecutter.docushare_url }}.
 {% endif %}
