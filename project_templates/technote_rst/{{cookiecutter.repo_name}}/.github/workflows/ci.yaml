@@ -28,6 +28,7 @@ jobs:
           make html
 
       - name: Upload
+        if: {% raw %}${{ github.event_name == 'push' }}{% endraw %}
         env:
           LTD_PASSWORD: {% raw %}${{ secrets.LTD_PASSWORD }}{% endraw %}
           LTD_USERNAME: {% raw %}${{ secrets.LTD_USERNAME }}{% endraw %}
