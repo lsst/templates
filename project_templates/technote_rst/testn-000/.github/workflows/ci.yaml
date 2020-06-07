@@ -28,5 +28,9 @@ jobs:
           make html
 
       - name: Upload
+        if: ${{ github.event_name == 'push' }}
+        env:
+          LTD_PASSWORD: ${{ secrets.LTD_PASSWORD }}
+          LTD_USERNAME: ${{ secrets.LTD_USERNAME }}
         run: |
           ltd upload --gh --dir _build/html --product testn-000
