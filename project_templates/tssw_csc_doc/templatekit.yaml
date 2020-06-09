@@ -1,0 +1,6 @@
+name: "TSSW doc folder"
+dialog: "Create a TSSW doc folder"
+fields:
+    - key: doc
+    - key: csc_name
+    - key: csc_repo_name
