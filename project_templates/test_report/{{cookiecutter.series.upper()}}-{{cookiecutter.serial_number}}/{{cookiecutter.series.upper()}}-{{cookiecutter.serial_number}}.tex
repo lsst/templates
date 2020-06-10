@@ -1,0 +1,32 @@
+\documentclass[DM,lsstdraft,toc]{lsstdoc}
+\usepackage{geometry}
+\usepackage{longtable,booktabs}
+\usepackage{enumitem}
+\usepackage{arydshln}
+
+\input{meta.tex}
+
+\providecommand{\tightlist}{
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\begin{document}
+
+\def\milestoneName{ {{- cookiecutter.title -}} }
+\def\milestoneId{ {{- cookiecutter.plan -}} }
+\def\product{Data Management}
+
+\setDocCompact{true}
+
+\title{ {{- cookiecutter.plan }} {{ cookiecutter.title }} Test Plan and Report}
+\setDocRef{\lsstDocType-\lsstDocNum}
+\date{\vcsdate}
+\author{ {{- cookiecutter.author -}} }
+
+\input{history_and_info.tex}
+
+\setDocAbstract{
+This is a stub test report created from a template.
+The content is being prepared.
+}
+
+\end{document}

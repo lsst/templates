@@ -1,0 +1,3 @@
+#!/bin/bash
+docsteady --version
+docsteady generate-tpr {{ cookiecutter.plan }} {{ cookiecutter.series }}-{{ cookiecutter.serial_number }}.tex --trace true

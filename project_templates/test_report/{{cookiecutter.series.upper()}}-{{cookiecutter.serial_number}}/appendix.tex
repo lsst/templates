@@ -1,0 +1,10 @@
+{% raw %}
+\newpage
+\appendix
+% Make sure lsst-texmf/bin/generateAcronyms.py is in your path
+\section{Acronyms used in this document}\label{sec:acronyms}
+\input{acronyms.tex}
+
+\newpage
+{% endraw %}
+\input{ {{- cookiecutter.series }}-{{ cookiecutter.serial_number }}.appendix.tex}
