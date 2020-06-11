@@ -1,0 +1,35 @@
+{
+  "handle": "",
+  "series": "",
+  "serial_number": "",
+  "github_org": [
+    "rubin-observatory",
+    "lsst-dm",
+    "lsst-it",
+    "lsst-pst",
+    "lsst-sitcom",
+    "lsst-sims",
+    "lsst-sqre",
+    "lsst-tstn",
+    "lsst-sqre-testing"
+  ],
+  "lsstdoc_org": [
+    "OPS",
+    "DM",
+    "PMO",
+    "PST",
+    "SE",
+    "TS"
+  ],
+  "title": "Document Title",
+  "author": "First Author",
+  "date": "{%- now 'utc', '%Y-%m-%d' -%}",
+  "_copy_without_render": [
+    "*.bib"
+  ],
+  "_extensions": [
+    "jinja2_time.TimeExtension"
+  ]
+}
+
+

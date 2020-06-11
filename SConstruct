@@ -8,6 +8,7 @@ SConscript([
     'project_templates/technote_latex/SConscript',
     'project_templates/technote_aastex/SConscript',
     'project_templates/test_report/SConscript',
+    'project_templates/latex_lsstdoc/SConscript',
     'project_templates/roundtable_aiohttp_bot/SConscript',
     'file_templates/copyright/SConscript',
     'file_templates/license_gplv3/SConscript',
