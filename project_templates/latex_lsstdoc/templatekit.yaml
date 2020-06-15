@@ -1,0 +1,61 @@
+name: "lsstdoc (LaTeX)"
+group: "Documents"
+dialog_title: "Create an lsstdoc"
+dialog_fields:
+  - key: "title"
+    label: "Document title"
+    placeholder: ""
+    hint: "Don't include the handle."
+    component: "textarea"
+  - key: "handle"
+    label: "Handle"
+    hint: "The handle is assigned by DocuShare. Example: ABC-123."
+    component: "text"
+  - label: "GitHub organization"
+    component: "select"
+    preset_options:
+      - label: "rubin-observatory"
+        value: "rubin-observatory"
+        presets:
+          github_org: "rubin-observatory"
+          lsstdoc_org: "ops"
+      - label: "lsst-dm"
+        value: "lsst-dm"
+        presets:
+          github_org: "lsst-dm"
+          lsstdoc_org: "dm"
+      - label: "lsst-it"
+        value: "lsst-it"
+        presets:
+          github_org: "lsst-it"
+          lsstdoc_org: "PMO"
+      - label: "lsst-pst"
+        value: "lsst-pst"
+        presets:
+          github_org: "lsst-pst"
+          lsstdoc_org: "PST"
+      - label: "lsst-sitcom"
+        value: "lsst-sitcomtn"
+        presets:
+          github_org: "lsst-sitcom"
+          lsstdoc_org: "SE"
+      - label: "lsst-sims"
+        value: "lsst-sims"
+        presets:
+          github_org: "lsst-sims"
+          lsstdoc_org: "SE"
+      - label: "lsst-sqre"
+        value: "lsst-sqre"
+        presets:
+          github_org: "lsst-sqre"
+          lsstdoc_org: "DM"
+      - label: "lsst-tstn"
+        value: "lsst-tstn"
+        presets:
+          github_org: "lsst-tstn"
+          lsstdoc_org: "TS"
+      - label: "Test"
+        value: "test"
+        presets:
+          github_org: "lsst-sqre-testing"
+          lsstdoc_org: "DM"
