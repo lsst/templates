@@ -1,11 +1,11 @@
-name: "Test Report (LaTeX)"
+name: "Test Report (lsstdoc LaTeX)"
 group: "Documents"
 dialog_title: "Create a test report"
 dialog_fields:
   - key: "title"
     label: "Milestone"
     placeholder: ""
-    hint: "Don't include milestone ID/plan."
+    hint: "Used in the repo README, description and in the title alongside the milestone ID. Don't include the milestone ID/plan."
     component: "textarea"
   - key: "plan"
     label: "Milestone ID/plan"
