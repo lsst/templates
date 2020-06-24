@@ -35,7 +35,7 @@ Clean built files::
 Updating acronyms
 -----------------
 
-A table of the technote's acronyms and their definitions are maintained in the `acronyms.tex` file, which is committed as part of this repository.
+A table of the technote's acronyms and their definitions are maintained in the ``acronyms.tex`` file, which is committed as part of this repository.
 To update the acronyms table in ``acronyms.tex``::
 
     make acronyms.tex
