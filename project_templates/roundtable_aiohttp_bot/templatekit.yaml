@@ -1,5 +1,5 @@
-name: "Roundtable bot (aiohttp)"
-group: "SQuaRE Roundtable"
+name: "Roundtable bot (Safir / aiohttp)"
+group: "SQuaRE"
 dialog_title: "Create a bot"
 dialog_fields:
   - key: "name"
