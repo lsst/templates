@@ -1,4 +1,4 @@
-name: "Change-controlled document (lsstdoc LaTeX)"
+name: "Change-controlled doc (lsstdoc LaTeX)"
 group: "Documents"
 dialog_title: "New lsstdoc LaTeX doc"
 dialog_fields:
