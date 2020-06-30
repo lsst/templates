@@ -39,6 +39,6 @@ The milestone ID or test plan (e.g. LVV-P73).
 
 ## Examples
 
-### testn-000/
+### TESTTR-0/
 
 The [TESTTR-0](TESTTR-000) directory is an example of test report.

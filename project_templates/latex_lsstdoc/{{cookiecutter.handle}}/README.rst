@@ -1,4 +1,4 @@
-.. image:: https://img.shields.io/badge/{{ cookiecutter.handle.lower() }}-lsst.io-brightgreen.svg
+.. image:: https://img.shields.io/badge/{{ cookiecutter.handle.lower()|replace("-", "--") }}-lsst.io-brightgreen.svg
    :target: https://{{ cookiecutter.handle.lower() }}.lsst.io
 .. image:: https://github.com/{{ cookiecutter.github_org }}/{{ cookiecutter.handle }}/workflows/CI/badge.svg
    :target: https://github.com/{{ cookiecutter.github_org }}/{{ cookiecutter.handle }}/actions/
@@ -35,7 +35,7 @@ Clean built files::
 Updating acronyms
 -----------------
 
-A table of the technote's acronyms and their definitions are maintained in the `acronyms.tex` file, which is committed as part of this repository.
+A table of the technote's acronyms and their definitions are maintained in the ``acronyms.tex`` file, which is committed as part of this repository.
 To update the acronyms table in ``acronyms.tex``::
 
     make acronyms.tex

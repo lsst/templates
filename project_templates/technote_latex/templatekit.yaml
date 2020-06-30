@@ -1,4 +1,4 @@
-name: "Technote (LaTeX)"
+name: "Technote (lsstdoc LaTeX)"
 group: "Documents"
 dialog_title: "Create a LaTeX technote"
 dialog_fields:

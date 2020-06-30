@@ -1,6 +1,6 @@
-name: "lsstdoc (LaTeX)"
+name: "Change-controlled doc (lsstdoc LaTeX)"
 group: "Documents"
-dialog_title: "Create an lsstdoc"
+dialog_title: "New lsstdoc LaTeX doc"
 dialog_fields:
   - key: "title"
     label: "Document title"
@@ -9,7 +9,8 @@ dialog_fields:
     component: "textarea"
   - key: "handle"
     label: "Handle"
-    hint: "The handle is assigned by DocuShare. Example: ABC-123."
+    hint: "As assigned by DocuShare. Use a technote template for technote handles."
+    placeholder: "e.g.: LDM-151"
     component: "text"
   - label: "GitHub organization"
     component: "select"

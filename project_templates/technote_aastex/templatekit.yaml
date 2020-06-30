@@ -1,4 +1,4 @@
-name: "Technote (AASTeX)"
+name: "Technote (AASTeX LaTeX)"
 group: "Documents"
 dialog_title: "Create a paper"
 dialog_fields:

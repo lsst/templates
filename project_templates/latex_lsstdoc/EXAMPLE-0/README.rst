@@ -1,4 +1,4 @@
-.. image:: https://img.shields.io/badge/example-0-lsst.io-brightgreen.svg
+.. image:: https://img.shields.io/badge/example--0-lsst.io-brightgreen.svg
    :target: https://example-0.lsst.io
 .. image:: https://github.com/lsst-dm/EXAMPLE-0/workflows/CI/badge.svg
    :target: https://github.com/lsst-dm/EXAMPLE-0/actions/
@@ -35,7 +35,7 @@ Clean built files::
 Updating acronyms
 -----------------
 
-A table of the technote's acronyms and their definitions are maintained in the `acronyms.tex` file, which is committed as part of this repository.
+A table of the technote's acronyms and their definitions are maintained in the ``acronyms.tex`` file, which is committed as part of this repository.
 To update the acronyms table in ``acronyms.tex``::
 
     make acronyms.tex
