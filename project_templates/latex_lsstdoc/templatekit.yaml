@@ -20,6 +20,11 @@ dialog_fields:
         presets:
           github_org: "rubin-observatory"
           lsstdoc_org: "ops"
+      - label: "lsst"
+        value: "lsst"
+        presets:
+          github_org: "lsst"
+          lsstdoc_org: "dm"
       - label: "lsst-dm"
         value: "lsst-dm"
         presets:
