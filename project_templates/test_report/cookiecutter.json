@@ -1,11 +1,13 @@
 {
   "series": [
     "DMTR",
+    "SCTR",
     "TESTTR"
   ],
   "serial_number": "0",
   "github_org": [
     "lsst-dm",
+    "lsst-sitcom",
     "lsst-sqre-testing"
   ],
   "title": "Document Title",
