@@ -24,6 +24,11 @@ dialog_fields:
         presets:
           series: "DMTR"
           github_org: "lsst-dm"
+      - label: "SCTR"
+        value: "SCTR"
+        presets:
+          series: "SCTR"
+          github_org: "lsst-sitcom"
       - label: "Test"
         value: "test"
         presets:

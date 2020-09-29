@@ -13,7 +13,8 @@ Before using this template, the report's handle must be reserved in DocuShare.
 
 The document's series:
 
-- `DMTR` is the handle for test reports.
+- `DMTR` is the handle for DM test reports.
+- `SCTR` is the handle for SITCOM test reports.
 - `TESTTR` is a handle for testing the template.
 
 ### cookiecutter.serial_number
