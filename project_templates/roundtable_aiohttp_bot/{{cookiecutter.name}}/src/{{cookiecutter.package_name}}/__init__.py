@@ -11,7 +11,7 @@ else:
 
 
 __version__: str
-"""The application version string of (PEP 440 / SemVer compatible)."""
+"""The application version string (PEP 440 / SemVer compatible)."""
 
 try:
     __version__ = version(__name__)

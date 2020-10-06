@@ -1,4 +1,4 @@
-"""The main application definition for {{ cookiecutter.package_name }} service."""
+"""The main application factory for the {{ cookiecutter.package_name }} service."""
 
 __all__ = ["create_app"]
 
