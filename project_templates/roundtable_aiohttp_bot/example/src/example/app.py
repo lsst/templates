@@ -1,4 +1,4 @@
-"""The main application definition for example service."""
+"""The main application factory for the example service."""
 
 __all__ = ["create_app"]
 

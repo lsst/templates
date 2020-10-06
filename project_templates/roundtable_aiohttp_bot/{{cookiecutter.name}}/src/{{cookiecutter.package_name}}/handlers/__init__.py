@@ -1,6 +1,6 @@
 """HTTP API route tables."""
 
-__all__ = ["internal_routes", "routes", "init_internal_routes", "init_routes"]
+__all__ = ["internal_routes", "routes", "init_internal_routes"]
 
 from aiohttp import web
 
