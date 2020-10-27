@@ -22,6 +22,9 @@ RUN ./install-base-packages.sh
 
 FROM base-image AS dependencies-image
 
+# Install build-essential in case any Python packages require a compiler.
+RUN apt-get install build-essential
+
 # Create a Python virtual environment
 ENV VIRTUAL_ENV=/opt/venv
 RUN python -m venv $VIRTUAL_ENV
