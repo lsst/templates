@@ -78,9 +78,9 @@ if not uses_python:
         os.path.join('doc', python_namespace),
         'bin.src',
         'tests',
+        '.github',
     )
     python_filenames = {
-        '.travis.yml',
         'setup.cfg',
     }
     for dirname in python_dirnames:
