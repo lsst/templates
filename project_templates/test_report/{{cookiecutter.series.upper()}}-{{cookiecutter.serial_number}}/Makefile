@@ -26,11 +26,12 @@ $(JOBNAME).pdf: $(DOCNAME).tex meta.tex acronyms.tex
 meta.tex: Makefile .FORCE
 	rm -f $@
 	touch $@
-	echo '% GENERATED FILE -- edit this in the Makefile' >>$@
-	/bin/echo '\newcommand{\lsstDocType}{$(DOCTYPE)}' >>$@
-	/bin/echo '\newcommand{\lsstDocNum}{$(DOCNUMBER)}' >>$@
-	/bin/echo '\newcommand{\vcsrevision}{$(GITVERSION)$(GITDIRTY)}' >>$@
-	/bin/echo '\newcommand{\vcsdate}{$(GITDATE)}' >>$@
+	printf '%% GENERATED FILE -- edit this in the Makefile\n' >>$@
+	printf '\\newcommand{\\lsstDocType}{$(DOCTYPE)}\n' >>$@
+	printf '\\newcommand{\\lsstDocNum}{$(DOCNUMBER)}\n' >>$@
+	printf '\\newcommand{\\vcsRevision}{$(GITVERSION)$(GITDIRTY)}\n' >>$@
+	printf '\\newcommand{\\vcsDate}{$(GITDATE)}\n' >>$@
+
 
 
 #Traditional acronyms are better in this document
