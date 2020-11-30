@@ -33,8 +33,7 @@ aglossary.tex :$(tex) myacronyms.txt
 .PHONY: clean
 clean:
 	latexmk -c
-	rm -f $(DOCNAME).bbl
-	rm -f $(DOCNAME).pdf
+	rm -f $(DOCNAME).{bbl,glsdefs,pdf}
 	rm -f meta.tex
 
 .FORCE:
@@ -42,8 +41,8 @@ clean:
 meta.tex: Makefile .FORCE
 	rm -f $@
 	touch $@
-	echo '% GENERATED FILE -- edit this in the Makefile' >>$@
-	/bin/echo '\newcommand{\lsstDocType}{$(DOCTYPE)}' >>$@
-	/bin/echo '\newcommand{\lsstDocNum}{$(DOCNUMBER)}' >>$@
-	/bin/echo '\newcommand{\vcsRevision}{$(GITVERSION)$(GITDIRTY)}' >>$@
-	/bin/echo '\newcommand{\vcsDate}{$(GITDATE)}' >>$@
+	printf '%% GENERATED FILE -- edit this in the Makefile\n' >>$@
+	printf '\\newcommand{\\lsstDocType}{$(DOCTYPE)}\n' >>$@
+	printf '\\newcommand{\\lsstDocNum}{$(DOCNUMBER)}\n' >>$@
+	printf '\\newcommand{\\vcsRevision}{$(GITVERSION)$(GITDIRTY)}\n' >>$@
+	printf '\\newcommand{\\vcsDate}{$(GITDATE)}\n' >>$@
