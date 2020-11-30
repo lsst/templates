@@ -33,8 +33,7 @@ aglossary.tex :$(tex) myacronyms.txt
 .PHONY: clean
 clean:
 	latexmk -c
-	rm -f $(DOCNAME).bbl
-	rm -f $(DOCNAME).pdf
+	rm -f $(DOCNAME).{bbl,glsdefs,pdf}
 	rm -f meta.tex
 
 .FORCE:
