@@ -14,13 +14,17 @@
 #   - Runs a non-root user.
 #   - Sets up the entrypoint and port.
 
-FROM python:3.7-slim-buster AS base-image
+FROM python:3.9-slim-buster AS base-image
 
 # Update system packages
 COPY scripts/install-base-packages.sh .
-RUN ./install-base-packages.sh
+RUN ./install-base-packages.sh && rm ./install-base-packages.sh
 
 FROM base-image AS dependencies-image
+
+# Install system packages only needed for building dependencies.
+COPY scripts/install-dependency-packages.sh .
+RUN ./install-dependency-packages.sh
 
 # Create a Python virtual environment
 ENV VIRTUAL_ENV=/opt/venv
