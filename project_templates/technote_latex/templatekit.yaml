@@ -31,7 +31,7 @@ dialog_fields:
         value: "rtn"
         presets:
           series: "RTN"
-          github_org: "rubin-observatory"
+          github_org: "lsst"
           org: "ops"
       - label: "PSTN"
         value: "PSTN"
