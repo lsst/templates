@@ -20,9 +20,9 @@
   ],
   "serial_number": "000",
   "github_org": [
+    "lsst",
     "lsst-dm",
     "lsst-it",
-    "rubin-observatory",
     "lsst-pst",
     "lsst-sims",
     "lsst-sitcom",

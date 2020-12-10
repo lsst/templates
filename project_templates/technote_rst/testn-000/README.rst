@@ -1,7 +1,7 @@
 .. image:: https://img.shields.io/badge/testn--000-lsst.io-brightgreen.svg
    :target: https://testn-000.lsst.io
-.. image:: https://github.com/lsst-dm/testn-000/workflows/CI/badge.svg
-   :target: https://github.com/lsst-dm/testn-000/actions/
+.. image:: https://github.com/lsst/testn-000/workflows/CI/badge.svg
+   :target: https://github.com/lsst/testn-000/actions/
 ..
   Uncomment this section and modify the DOI strings to include a Zenodo DOI badge in the README
   .. image:: https://zenodo.org/badge/doi/10.5281/zenodo.#####.svg
@@ -20,8 +20,8 @@ A short description of this document
 
 - Publication URL: https://testn-000.lsst.io
 - Alternative editions: https://testn-000.lsst.io/v
-- GitHub repository: https://github.com/lsst-dm/testn-000
-- Build system: https://github.com/lsst-dm/testn-000/actions/
+- GitHub repository: https://github.com/lsst/testn-000
+- Build system: https://github.com/lsst/testn-000/actions/
 
 
 Build this technical note
@@ -31,7 +31,7 @@ You can clone this repository and build the technote locally with `Sphinx`_:
 
 .. code-block:: bash
 
-   git clone https://github.com/lsst-dm/testn-000
+   git clone https://github.com/lsst/testn-000
    cd testn-000
    pip install -r requirements.txt
    make html
@@ -52,7 +52,7 @@ The `DM reStructuredText Style Guide`_ is a good resource for how we write reStr
 Remember that images and other types of assets should be stored in the ``_static/`` directory of this repository.
 See ``_static/README.rst`` for more information.
 
-The published technote at https://testn-000.lsst.io will be automatically rebuilt whenever you push your changes to the ``master`` branch on `GitHub <https://github.com/lsst-dm/testn-000>`_.
+The published technote at https://testn-000.lsst.io will be automatically rebuilt whenever you push your changes to the ``master`` branch on `GitHub <https://github.com/lsst/testn-000>`_.
 
 Updating metadata
 =================
