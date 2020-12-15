@@ -26,10 +26,6 @@ apt-get update
 # Install security updates:
 apt-get -y upgrade
 
-# Install build-essential because sometimes Python dependencies need to build
-# C modules, particularly when upgrading to newer Python versions.
-apt-get -y install --no-install-recommends build-essential
-
 # Example of installing a new package, without unnecessary packages:
 apt-get -y install --no-install-recommends git
 
