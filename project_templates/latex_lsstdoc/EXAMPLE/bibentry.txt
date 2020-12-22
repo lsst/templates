@@ -1,0 +1,9 @@
+% bibentry template for lsst.bib in https://github.com/lsst/lsst-texmf/blob/master/texmf/bibtex/bib/lsst.bib
+
+@DocuShare{EXAMPLE,
+   author = { First Author },
+    title = {Document Title},
+     year = 2020,
+    month = Dec,
+   handle = {EXAMPLE},
+      url = {https://example-.lsst.io } }
