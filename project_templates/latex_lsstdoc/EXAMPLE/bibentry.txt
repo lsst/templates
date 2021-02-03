@@ -3,7 +3,7 @@
 @DocuShare{EXAMPLE,
    author = { First Author },
     title = {Document Title},
-     year = 2020,
-    month = Dec,
+     year = 2021,
+    month = Feb,
    handle = {EXAMPLE},
       url = {https://example-.lsst.io } }
