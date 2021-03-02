@@ -14,6 +14,7 @@ spec:
       labels:
         name: {{ cookiecutter.package_name }}
     spec:
+      automountServiceAccountToken: false
       containers:
         - name: app
           imagePullPolicy: "Always"
@@ -25,3 +26,13 @@ spec:
           envFrom:
             - configMapRef:
                 name: {{ cookiecutter.package_name }}
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - all
+            readOnlyRootFilesystem: true
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1000
+        runAsGroup: 1000
