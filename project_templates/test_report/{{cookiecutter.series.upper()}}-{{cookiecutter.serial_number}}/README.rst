@@ -8,3 +8,5 @@
 {{ "#" * (cookiecutter.series|length + cookiecutter.serial_number|length + 1) }}
 
 {{ cookiecutter.title }}
+
+To regenerate from Jira use the github action "docgen from Jira" on your branch. 

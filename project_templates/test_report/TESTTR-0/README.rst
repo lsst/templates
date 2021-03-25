@@ -8,3 +8,5 @@ TESTTR-0
 ########
 
 Document Title
+
+To regenerate from Jira use the github action "docgen from Jira" on your branch. 
