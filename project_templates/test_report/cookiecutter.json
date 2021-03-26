@@ -4,6 +4,15 @@
     "SCTR",
     "TESTTR"
   ],
+  "namespace": [
+    "DM",
+    "CAM",
+    "EPO",
+    "OCS",
+    "OPS",
+    "PSE",
+    "T&S"
+  ],
   "serial_number": "0",
   "github_org": [
     "lsst-dm",
