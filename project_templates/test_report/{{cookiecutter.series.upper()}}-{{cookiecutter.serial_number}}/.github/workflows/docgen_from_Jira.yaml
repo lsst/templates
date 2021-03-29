@@ -32,7 +32,7 @@ jobs:
           JIRA_PASSWORD: {% raw %}${{ secrets.JIRA_PASSWORD }} {% endraw %}
         run: |
           source ${CONDA}/bin/activate docsteady-env
-          docsteady generate-tpr --namespace {{ cookiecutter.namespace }} {{ cookiecutter.plan }}  {{ cookiecutter.series }}-{{ cookiecutter.serial_number }}.tex
+          docsteady  --namespace {{ cookiecutter.namespace }} generate-tpr {{ cookiecutter.plan }}  {{ cookiecutter.series }}-{{ cookiecutter.serial_number }}.tex
         shell: bash
  
       - name: Create commit
