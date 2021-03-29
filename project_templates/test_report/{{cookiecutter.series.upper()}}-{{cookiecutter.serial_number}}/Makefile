@@ -1,4 +1,6 @@
 DOCTYPE = {{ cookiecutter.series }}
+NAMESPACE = {{ cookiecutter.namespace }}
+PLAN = {{ cookiecutter.plan }}
 DOCNUMBER = {{ cookiecutter.serial_number }}
 DOCNAME = $(DOCTYPE)-$(DOCNUMBER)
 JOBNAME = $(DOCNAME)
@@ -32,6 +34,9 @@ meta.tex: Makefile .FORCE
 	printf '\\newcommand{\\vcsRevision}{$(GITVERSION)$(GITDIRTY)}\n' >>$@
 	printf '\\newcommand{\\vcsDate}{$(GITDATE)}\n' >>$@
 
+
+generate: .FORCE
+	docsteady --namespace $(NAMESPACE) generate-tpr $(PLAN) $(DOCNAME).tex
 
 
 #Traditional acronyms are better in this document

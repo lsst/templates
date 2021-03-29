@@ -1,0 +1,59 @@
+name: docgen from Jira
+on: workflow_dispatch
+
+jobs:
+   generate:
+     runs-on: ubuntu-latest
+     steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0 # full history for metadata
+          submodules: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+
+      - name: Python install
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install "lander<2.0.0"
+
+      - name: condaenv
+        run: |
+          conda init bash
+          conda create --name docsteady-env docsteady -c lsst-dm -c conda-forge
+        shell: bash
+
+      - name: docugen
+        env:
+          JIRA_USER: {% raw %}${{ secrets.JIRA_USER }} {% endraw %}
+          JIRA_PASSWORD: {% raw %}${{ secrets.JIRA_PASSWORD }} {% endraw %}
+        run: |
+          source ${CONDA}/bin/activate docsteady-env
+          docsteady generate-tpr --namespace {{ cookiecutter.namespace }} {{ cookiecutter.plan }}  {{ cookiecutter.series }}-{{ cookiecutter.serial_number }}.tex
+        shell: bash
+ 
+      - name: Create commit
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git commit -m "Update from JIRA." {{ cookiecutter.series }}-{{ cookiecutter.serial_number }}.tex 
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v1
+        with:
+          username: sqrereadonly
+          password: {% raw %}${{ secrets.DOCKERHUB_SQREREADONLY_TOKEN }}{% endraw %}
+
+      - name: TeX build
+        run: |
+          docker run --rm -v `pwd`:/workspace -w /workspace lsstsqre/lsst-texmf:latest sh -c 'make'
+
+      - name: Landing page upload
+        env:
+          LTD_PASSWORD: {% raw %}${{ secrets.LTD_PASSWORD }}{% endraw %}
+          LTD_USERNAME: {% raw %}${{ secrets.LTD_USERNAME }}{% endraw %}
+        run: |
+          lander --upload --pdf {{ cookiecutter.series }}-{{ cookiecutter.serial_number }}.pdf --lsstdoc {{ cookiecutter.series }}-{{ cookiecutter.serial_number }}.tex --ltd-product {{ cookiecutter.series.lower() }}-{{ cookiecutter.serial_number }}

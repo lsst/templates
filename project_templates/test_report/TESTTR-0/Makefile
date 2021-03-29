@@ -1,4 +1,6 @@
 DOCTYPE = TESTTR
+NAMESPACE = DM
+PLAN = LVV-P73
 DOCNUMBER = 0
 DOCNAME = $(DOCTYPE)-$(DOCNUMBER)
 JOBNAME = $(DOCNAME)
@@ -32,6 +34,9 @@ meta.tex: Makefile .FORCE
 	printf '\\newcommand{\\vcsRevision}{$(GITVERSION)$(GITDIRTY)}\n' >>$@
 	printf '\\newcommand{\\vcsDate}{$(GITDATE)}\n' >>$@
 
+
+generate: .FORCE
+	docsteady --namespace $(NAMESPACE) generate-tpr $(PLAN) $(DOCNAME).tex
 
 
 #Traditional acronyms are better in this document
