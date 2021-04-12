@@ -295,7 +295,7 @@ See the [Cookiecutter documentation on hooks](https://cookiecutter.readthedocs.i
 
 ## Continuous integration
 
-[Travis CI](https://travis-ci.com/lsst/templates) tests the repository when you push to GitHub.
+GitHub Actions tests the repository when you push to GitHub.
 The tests have two roles:
 
 1. Ensure that the Cookiecutter templates are renderable.
@@ -305,13 +305,13 @@ This is done by running `scons` from the root of the templates repository.
 The root `SConscript` file invokes the individual `SConscript` files of each template.
 In turn, these `SConscript` files render the template using the defaults in the template's `cookiecutter.json` file.
 
-If Travis CI detects an unclean state in the template Git repository after running `scons`, it marks the commit as a failure.
+If GitHub Actions detects an unclean state in the template Git repository after running `scons`, it marks the commit as a failure.
 This is because an unclean Git state implies that the examples aren't reproducible from the template.
 
 If this happens, run `scons` locally and commit the rendered example.
 If files have been deleted from the template project, be sure to delete them from the rendered example as well.
 
-See the [.travis.yml](.travis.yml) file for more details on how the tests are run.
+See the [CI](./.github/workflows/ci.yaml) file for more details on how the tests are run.
 
 * * *
 
