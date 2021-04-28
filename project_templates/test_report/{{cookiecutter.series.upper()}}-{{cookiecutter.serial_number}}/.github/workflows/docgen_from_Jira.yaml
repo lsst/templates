@@ -39,7 +39,8 @@ jobs:
         run: |
           git config user.name $GITHUB_ACTOR
           git config user.email $GITHUB_ACTOR@users.noreply.github.com
-          git commit -m "Update from JIRA." {{ cookiecutter.series }}-{{ cookiecutter.serial_number }}.tex 
+          git add attachments jira_imgs
+          git commit -am "Update from JIRA." 
           git push
 
       - name: Login to Docker Hub
