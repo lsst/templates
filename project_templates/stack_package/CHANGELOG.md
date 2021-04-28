@@ -1,5 +1,11 @@
 # Change log
 
+## 2021-04-28
+
+- Switch package Sphinx configuration from `documenteer.sphinxconfig.stackconf` to `documenteer.conf.pipelinespkg` (available in Documenteer 0.6).
+
+[DM-29889](https://jira.lsstcorp.org/browse/DM-29889)
+
 ## 2020-01-24
 
 - Update the Flake8 exceptions list in `setup.cfg` to replace `W504` with `W503`.
