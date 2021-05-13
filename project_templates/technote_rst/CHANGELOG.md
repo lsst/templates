@@ -1,5 +1,9 @@
 # Change log
 
+## 2021-05-13
+
+- The `.gitattributes` file now helps suppress the vendored bibtex files from [GitHub pull requests and linguist stats](https://docs.github.com/en/github/administering-a-repository/customizing-how-changed-files-appear-on-github).
+
 ## 2020-12-10
 
 - The RTN technote series is now hosted in the "lsst" GitHub organization.
