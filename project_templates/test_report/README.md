@@ -3,7 +3,7 @@
 **Test report template, formatted LaTeX (lsstdoc class), and compatible with [docsteady](https://github.com/lsst-dm/docsteady).**
 
 Use this template to seed a GitHub repository for generating a test report that's built by GitHub Actions and published with LSST the Docs.
-Use [docsteady](https://github.com/lsst-dm/docsteady) to replace the stub tex file with test report content.
+Use [docsteady](https://github.com/lsst-dm/docsteady) to replace the stub tex file with test report content from Jira.
 
 Before using this template, the report's handle must be reserved in DocuShare.
 
@@ -42,4 +42,4 @@ The milestone ID or test plan (e.g. LVV-P73).
 
 ### TESTTR-0/
 
-The [TESTTR-0](TESTTR-0) directory is an example of test report.
+The [TESTTR-0](TESTTR-0) directory is an example of a test report.
