@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "{{ cookiecutter.package_name }}"
+  labels:
+    app.kubernetes.io/name: "{{ cookiecutter.name }}"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: "{{ cookiecutter.name }}"
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: "{{ cookiecutter.name }}"
+    spec:
+      automountServiceAccountToken: false
+      containers:
+        - name: app
+          imagePullPolicy: "IfNotPresent"
+          # Use images field in a Kustomization to set/update image tag
+          image: "lsstsqre/{{ cookiecutter.package_name }}"
+          ports:
+            - containerPort: 8080
+              name: "app"
+          envFrom:
+            - configMapRef:
+                name: "{{ cookiecutter.package_name }}"
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - "all"
+            readOnlyRootFilesystem: true
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1000
+        runAsGroup: 1000
