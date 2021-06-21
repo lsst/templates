@@ -1,12 +1,12 @@
-"""Metadata models for example."""
+"""Models for example."""
 
 from pydantic import BaseModel, Field
 from safir.metadata import Metadata as SafirMetadata
 
-__all__ = ["Metadata"]
+__all__ = ["Index"]
 
 
-class Metadata(BaseModel):
+class Index(BaseModel):
     """Metadata returned by the external root URL of the application.
 
     Notes

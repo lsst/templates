@@ -6,7 +6,7 @@ from safir.metadata import get_metadata
 from structlog.stdlib import BoundLogger
 
 from ..config import config
-from ..models.metadata import Metadata
+from ..models import Index
 
 __all__ = ["get_index", "external_router"]
 
@@ -20,13 +20,13 @@ external_router = APIRouter()
         "Document the top-level API here. By default it only returns metadata"
         " about the application."
     ),
-    response_model=Metadata,
+    response_model=Index,
     response_model_exclude_none=True,
     summary="Application metadata",
 )
 async def get_index(
     logger: BoundLogger = Depends(logger_dependency),
-) -> Metadata:
+) -> Index:
     """GET ``/example/`` (the app's external root).
 
     Customize this handler to return whatever the top-level resource of your
@@ -47,4 +47,4 @@ async def get_index(
         package_name="example",
         application_name=config.name,
     )
-    return Metadata(metadata=metadata)
+    return Index(metadata=metadata)
