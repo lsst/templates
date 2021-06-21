@@ -17,3 +17,7 @@ dialog_fields:
   - label: "Initial copyright holder"
     key: "copyright_holder"
     component: "select"
+  - label: "Deployed with Helm"
+    key: "uses_helm"
+    hint: "Select True if the application will be deployed using Helm."
+    component: "select"
