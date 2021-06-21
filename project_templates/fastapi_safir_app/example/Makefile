@@ -17,4 +17,4 @@ update: update-deps init
 
 .PHONY: run
 run:
-	uvicorn example.main:app --reload
+	tox -e run

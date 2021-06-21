@@ -17,4 +17,4 @@ update: update-deps init
 
 .PHONY: run
 run:
-	uvicorn {{ cookiecutter.package_name }}.main:app --reload
+	tox -e run
