@@ -9,7 +9,6 @@
 
 asgi-lifespan
 coverage[toml]
-flake8
 httpx
 mypy
 pre-commit
