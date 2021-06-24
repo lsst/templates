@@ -5,7 +5,7 @@
 # After editing, update requirements/main.txt by running:
 #     make update-deps
 
-safir
+safir<2
 aiohttp
 aiodns
 cchardet

@@ -5,9 +5,11 @@
 # After editing, update requirements/main.txt by running:
 #     make update-deps
 
-safir<2
-aiohttp
-aiodns
-cchardet
-importlib_metadata
-click
+# These dependencies are for fastapi including some optional features.
+fastapi
+gunicorn
+starlette
+uvicorn[standard]
+
+# Other dependencies.
+safir
