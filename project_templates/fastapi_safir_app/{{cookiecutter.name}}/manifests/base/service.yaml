@@ -11,4 +11,4 @@ spec:
       port: 8080
       targetPort: "app"
   selector:
-    name: "{{ cookiecutter.package_name }}"
+    app.kubernetes.io/name: "{{ cookiecutter.package_name }}"
