@@ -49,6 +49,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
       - name: Define the Docker tag
         id: vars

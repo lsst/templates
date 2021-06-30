@@ -43,8 +43,8 @@ FROM dependencies-image AS install-image
 # Use the virtualenv
 ENV PATH="/opt/venv/bin:$PATH"
 
-COPY . /app
-WORKDIR /app
+COPY . /workdir
+WORKDIR /workdir
 RUN pip install --no-cache-dir .
 
 FROM base-image AS runtime-image
