@@ -34,7 +34,7 @@ app = FastAPI()
 # interface definition and documentation URLs under the external URL.
 _subapp = FastAPI(
     title="example",
-    description="Short one-sentence summary of the app",
+    description=metadata("example").get("Summary", ""),
     version=metadata("example").get("Version", "0.0.0"),
 )
 _subapp.include_router(external_router)
