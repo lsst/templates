@@ -32,7 +32,7 @@ async def get_index(
     Customize this handler to return whatever the top-level resource of your
     application should return. For example, consider listing key API URLs.
     When doing so, also change or customize the response model in
-    {{ cookiecutter.package_name }}.models.metadata.
+    `{{ cookiecutter.package_name }}.models.Index`.
 
     By convention, the root of the external API includes a field called
     ``metadata`` that provides the same Safir-generated metadata as the
