@@ -34,8 +34,8 @@ app = FastAPI()
 # interface definition and documentation URLs under the external URL.
 _subapp = FastAPI(
     title="{{ cookiecutter.name }}",
-    description=metadata("{{ cookiecutter.package_name }}").get("Summary", ""),
-    version=metadata("{{ cookiecutter.package_name }}").get("Version", "0.0.0"),
+    description=metadata("{{ cookiecutter.name }}").get("Summary", ""),
+    version=metadata("{{ cookiecutter.name }}").get("Version", "0.0.0"),
 )
 _subapp.include_router(external_router)
 
