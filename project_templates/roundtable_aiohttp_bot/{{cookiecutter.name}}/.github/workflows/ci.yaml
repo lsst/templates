@@ -22,8 +22,9 @@ jobs:
     strategy:
       matrix:
         python:
-          - 3.8
-          - 3.9
+          - "3.8"
+          - "3.9"
+          - "3.10"
 
     steps:
       - uses: actions/checkout@v2
@@ -34,7 +35,7 @@ jobs:
           python-version: {{ "${{ matrix.python }}" }}
 
       - name: Run pre-commit
-        uses: pre-commit/action@v2.0.0
+        uses: pre-commit/action@v2.0.3
 
       - name: Install tox
         run: pip install tox
@@ -68,10 +69,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
       - name: Define the Docker tag
         id: vars
-        run: echo ::set-output name=tag::$(scripts/docker-tag.sh "$GITHUB_REF")
+        run: echo ::set-output name=tag::$(scripts/docker-tag.sh)
 
       - name: Print the tag
         id: print
