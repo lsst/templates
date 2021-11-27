@@ -1,6 +1,6 @@
 # lsstbib
 
-This directory contains local copies of LSST's common LaTeX bibliographies from [lsst-texmf](https://github.com/lsst/lsst-texmf/tree/master/texmf/bibtex/bib).
+This directory contains local copies of LSST's common LaTeX bibliographies from [lsst-texmf](https://github.com/lsst/lsst-texmf/tree/main/texmf/bibtex/bib).
 The recommended way to update these files is with (from the root technote directory):
 
 ```

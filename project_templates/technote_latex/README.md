@@ -147,7 +147,7 @@ Add additional make targets to do preprocessing steps (such as running a Python 
 
 Example: [Makefile](testn-000/Makefile).
 
-List acronyms in this file that are not found in lsst-texmf's [lsstacronyms.txt](https://github.com/lsst/lsst-texmf/blob/master/etc/lsstacronyms.txt) or [glossary.txt](https://github.com/lsst/lsst-texmf/blob/master/etc/glossary.txt), or that have multiple definitions (put the one you want in the local `myacronyms.txt` file).
+List acronyms in this file that are not found in lsst-texmf's [lsstacronyms.txt](https://github.com/lsst/lsst-texmf/blob/main/etc/lsstacronyms.txt) or [glossary.txt](https://github.com/lsst/lsst-texmf/blob/main/etc/glossary.txt), or that have multiple definitions (put the one you want in the local `myacronyms.txt` file).
 
 The format for each line of this file is:
 
