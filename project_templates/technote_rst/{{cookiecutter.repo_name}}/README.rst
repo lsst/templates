@@ -54,7 +54,7 @@ The `DM reStructuredText Style Guide`_ is a good resource for how we write reStr
 Remember that images and other types of assets should be stored in the ``_static/`` directory of this repository.
 See ``_static/README.rst`` for more information.
 
-The published technote at {{ cookiecutter.url }} will be automatically rebuilt whenever you push your changes to the ``master`` branch on `GitHub <https://github.com/{{ cookiecutter.github_namespace }}>`_.
+The published technote at {{ cookiecutter.url }} will be automatically rebuilt whenever you push your changes to the ``main`` branch on `GitHub <https://github.com/{{ cookiecutter.github_namespace }}>`_.
 
 Updating metadata
 =================

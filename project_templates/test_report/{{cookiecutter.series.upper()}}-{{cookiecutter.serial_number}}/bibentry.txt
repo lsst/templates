@@ -1,4 +1,4 @@
-% bibentry template for lsst.bib in https://github.com/lsst/lsst-texmf/blob/master/texmf/bibtex/bib/lsst.bib
+% bibentry template for lsst.bib in https://github.com/lsst/lsst-texmf/blob/main/texmf/bibtex/bib/lsst.bib
 
 @DocuShare{ {{- cookiecutter.series.upper() -}}-{{- cookiecutter.serial_number -}},
    author = { {{ cookiecutter.author }} },

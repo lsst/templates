@@ -31,7 +31,7 @@ Updated the AURA copyright to "Association of Universities for Research in Astro
 
 ## 2019-04-29
 
-This LaTeX document template is roughly based on the [`document` template](https://github.com/lsst/lsst-texmf/tree/master/templates/document) in the lsst-texmf repo, however it's customized in several ways to become a dedicated technote template:
+This LaTeX document template is roughly based on the [`document` template](https://github.com/lsst/lsst-texmf/tree/main/templates/document) in the lsst-texmf repo, however it's customized in several ways to become a dedicated technote template:
 
 - The lsstdoc class invocation is simplified to _not_ add a draft watermark and to always use author-year citations.
   Change-controlled documents use numbered citations and initially use the lsstdraft watermark too.

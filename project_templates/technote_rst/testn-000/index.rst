@@ -42,7 +42,7 @@
 
 .. sectnum::
 
-.. TODO: Delete the note below before merging new content to the master branch.
+.. TODO: Delete the note below before merging new content to the main branch.
 
 .. note::
 
