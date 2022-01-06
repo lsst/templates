@@ -32,6 +32,12 @@ dialog_fields:
           series: "PSTN"
           github_org: "lsst-pst"
           org: "PST"
+      - label: "SMTN"
+        value: "smtn"
+        presets:
+          series: "SMTN"
+          github_org: "lsst-sims"
+          org: "SE"
       - label: "TSTN"
         value: "tstn"
         presets:
