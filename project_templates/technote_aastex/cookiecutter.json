@@ -1,11 +1,13 @@
 {
   "org": [
     "DM",
-    "PST"
+    "PST",
+    "SE"
   ],
   "series": [
     "DMTN",
     "PSTN",
+    "SMTN",
     "TSTN",
     "TESTN"
   ],
@@ -13,6 +15,7 @@
   "github_org": [
     "lsst-dm",
     "lsst-pst",
+    "lsst-sims",
     "lsst-sqre-testing"
 
   ],
