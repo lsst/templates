@@ -53,3 +53,18 @@ include_trailing_comma = true
 multi_line_output = 3
 known_first_party = ["example", "tests"]
 skip = ["docs/conf.py"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "strict"
+# The python_files setting is not for test detection (pytest will pick up any
+# test files named *_test.py without this setting) but to enable special
+# assert processing in any non-test supporting files under tests.  We
+# conventionally put test support functions under tests.support and may
+# sometimes use assert in test fixtures in conftest.py, and pytest only
+# enables magical assert processing (showing a full diff on assert failures
+# with complex data structures rather than only the assert message) in files
+# listed in python_files.
+python_files = [
+    "tests/*.py",
+    "tests/*/*.py"
+]
