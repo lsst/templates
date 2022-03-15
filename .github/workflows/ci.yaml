@@ -1,6 +1,19 @@
 name: CI
 
-on: [push]
+"on":
+  push:
+    branches-ignore:
+      # These should always correspond to pull requests, so ignore them for
+      # the push trigger and let them be triggered by the pull_request
+      # trigger, avoiding running the workflow twice.  This is a minor
+      # optimization so there's no need to ensure this is comprehensive.
+      - "dependabot/**"
+      - "renovate/**"
+      - "tickets/**"
+      - "u/**"
+    tags:
+      - "*"
+  pull_request: {}
 
 jobs:
   test:
@@ -9,8 +22,9 @@ jobs:
     strategy:
       matrix:
         python:
-          - 3.8
-          - 3.9
+          - "3.8"
+          - "3.9"
+          - "3.10"
 
     steps:
       - uses: actions/checkout@v2
@@ -27,14 +41,16 @@ jobs:
       - name: Check templates
         run: templatekit check
 
+      # Test TeX builds only with the latest Python version, since they're
+      # fairly heavy-weight and the Python version shouldn't matter.
       - name: Login to Docker Hub
         uses: docker/login-action@v1
         with:
           username: sqrereadonly
           password: ${{ secrets.DOCKERHUB_SQREREADONLY_TOKEN }}
-
+        if: matrix.python == '3.10'
 
       - name: Check tex builds
         run: |
           docker run --rm -v `pwd`:/workspace -w /workspace lsstsqre/lsst-texmf:latest sh -c './testTexDocs.sh'
-
+        if: matrix.python == '3.10'
