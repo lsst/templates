@@ -65,6 +65,7 @@ See [Troubleshooting](#troubleshooting) for solutions to common issues.
 **Project templates** have multiple files and are intended to bootstrap new Git repositories.
 Find these templates in the `project_templates/` directory:
 
+- [fastapi_safir_app](project_templates/fastapi_safir_app/)
 - [latex_lsstdoc](project_templates/latex_lsstdoc/)
 - [nbreport](project_templates/nbreport/)
 - [roundtable_aiohttp_bot](project_templates/roundtable_aiohttp_bot/)
