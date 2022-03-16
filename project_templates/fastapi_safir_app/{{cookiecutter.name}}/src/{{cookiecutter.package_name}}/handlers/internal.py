@@ -1,7 +1,7 @@
 """Internal HTTP handlers that serve relative to the root path, ``/``.
 
 These handlers aren't externally visible since the app is available at a path,
-``/{{ cookiecutter.name }}``. See `{{ cookiecutter.package_name }}.handlers.external` for
+``/{{ cookiecutter.name | lower }}``. See `{{ cookiecutter.package_name }}.handlers.external` for
 the external endpoint handlers.
 
 These handlers should be used for monitoring, health checks, internal status,

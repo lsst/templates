@@ -1,4 +1,4 @@
-"""Handlers for the app's external root, ``/{{ cookiecutter.package_name }}/``."""
+"""Handlers for the app's external root, ``/{{ cookiecutter.name | lower }}/``."""
 
 from fastapi import APIRouter, Depends
 from safir.dependencies.logger import logger_dependency
@@ -27,7 +27,7 @@ external_router = APIRouter()
 async def get_index(
     logger: BoundLogger = Depends(logger_dependency),
 ) -> Index:
-    """GET ``/{{ cookiecutter.package_name }}/`` (the app's external root).
+    """GET ``/{{ cookiecutter.name | lower }}/`` (the app's external root).
 
     Customize this handler to return whatever the top-level resource of your
     application should return. For example, consider listing key API URLs.

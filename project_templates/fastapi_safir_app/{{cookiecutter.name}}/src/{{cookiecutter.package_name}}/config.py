@@ -12,7 +12,7 @@ __all__ = ["Configuration", "config"]
 class Configuration:
     """Configuration for {{ cookiecutter.package_name }}."""
 
-    name: str = os.getenv("SAFIR_NAME", "{{ cookiecutter.package_name }}")
+    name: str = os.getenv("SAFIR_NAME", "{{ cookiecutter.name | lower }}")
     """The application's name, which doubles as the root HTTP endpoint path.
 
     Set with the ``SAFIR_NAME`` environment variable.

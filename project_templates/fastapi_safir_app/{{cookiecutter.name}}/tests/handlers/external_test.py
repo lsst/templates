@@ -10,8 +10,8 @@ from {{ cookiecutter.package_name }}.config import config
 
 @pytest.mark.asyncio
 async def test_get_index(client: AsyncClient) -> None:
-    """Test ``GET /{{ cookiecutter.package_name }}/``"""
-    response = await client.get("/{{ cookiecutter.package_name }}/")
+    """Test ``GET /{{ cookiecutter.name | lower }}/``"""
+    response = await client.get("/{{ cookiecutter.name | lower }}/")
     assert response.status_code == 200
     data = response.json()
     metadata = data["metadata"]
