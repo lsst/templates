@@ -27,21 +27,19 @@ configure_logging(
     name=config.logger_name,
 )
 
-app = FastAPI()
-"""The main FastAPI application for example."""
-
-# Define the external routes in a subapp so that it will serve its own OpenAPI
-# interface definition and documentation URLs under the external URL.
-_subapp = FastAPI(
+app = FastAPI(
     title="example",
     description=metadata("example").get("Summary", ""),
     version=metadata("example").get("Version", "0.0.0"),
+    openapi_url=f"/{config.name}/openapi.json",
+    docs_url=f"/{config.name}/docs",
+    redoc_url=f"/{config.name}/redoc",
 )
-_subapp.include_router(external_router)
+"""The main FastAPI application for example."""
 
-# Attach the internal routes and subapp to the main application.
+# Attach the routers.
 app.include_router(internal_router)
-app.mount(f"/{config.name}", _subapp)
+app.include_router(external_router, prefix=f"/{config.name}")
 
 
 @app.on_event("startup")
