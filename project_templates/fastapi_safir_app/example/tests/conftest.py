@@ -2,18 +2,14 @@
 
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import AsyncIterator
 
 import pytest_asyncio
 from asgi_lifespan import LifespanManager
+from fastapi import FastAPI
 from httpx import AsyncClient
 
 from example import main
-
-if TYPE_CHECKING:
-    from typing import AsyncIterator
-
-    from fastapi import FastAPI
 
 
 @pytest_asyncio.fixture
