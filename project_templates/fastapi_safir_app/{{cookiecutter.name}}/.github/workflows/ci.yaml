@@ -101,7 +101,7 @@ jobs:
           context: .
           push: true
           tags: |
-            lsstsqre/{{ cookiecutter.package_name }}:{{ "${{ steps.vars.outputs.tag }}" }}
-            ghcr.io/lsst-sqre/{{ cookiecutter.package_name }}:{{ "${{ steps.vars.outputs.tag }}" }}
+            lsstsqre/{{ cookiecutter.name | lower }}:{{ "${{ steps.vars.outputs.tag }}" }}
+            ghcr.io/lsst-sqre/{{ cookiecutter.name | lower }}:{{ "${{ steps.vars.outputs.tag }}" }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
