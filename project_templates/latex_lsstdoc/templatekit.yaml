@@ -15,21 +15,16 @@ dialog_fields:
   - label: "GitHub organization"
     component: "select"
     preset_options:
-      - label: "rubin-observatory"
-        value: "rubin-observatory"
-        presets:
-          github_org: "rubin-observatory"
-          lsstdoc_org: "ops"
       - label: "lsst"
         value: "lsst"
         presets:
           github_org: "lsst"
-          lsstdoc_org: "dm"
+          lsstdoc_org: "DM"
       - label: "lsst-dm"
         value: "lsst-dm"
         presets:
           github_org: "lsst-dm"
-          lsstdoc_org: "dm"
+          lsstdoc_org: "DM"
       - label: "lsst-it"
         value: "lsst-it"
         presets:
