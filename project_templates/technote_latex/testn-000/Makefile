@@ -17,7 +17,7 @@ export TEXMFHOME ?= lsst-texmf/texmf
 $(DOCNAME).pdf: $(tex) meta.tex local.bib acronyms.tex
 	latexmk -bibtex -xelatex -f $(DOCNAME)
 #	makeglossaries $(DOCNAME)
-#	xelatex $(SRC)
+#	xelatex $(DOCNAME)
 # For glossary uncomment the 2 lines above
 
 
