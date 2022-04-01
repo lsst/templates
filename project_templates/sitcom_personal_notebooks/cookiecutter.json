@@ -1,0 +1,20 @@
+{
+  "username": "username",
+  "repo_name": "notebooks_{{ cookiecutter.username }}",
+  "github_org": "lsst-sitcom",
+  "copyright_year": "{% now 'utc', '%Y' %}",
+  "copyright_holder": [
+    "Association of Universities for Research in Astronomy, Inc. (AURA)",
+    "Brookhaven Science Associates, LLC",
+    "California Institute of Technology",
+    "Fermi Research Alliance, LLC",
+    "The Board of Trustees of the Leland Stanford Junior University, through SLAC National Accelerator Laboratory",
+    "The Trustees of Princeton University",
+    "University of Illinois Board of Trustees",
+    "University of Washington"
+  ],
+  "_extensions": [
+    "jinja2_time.TimeExtension",
+    "templatekit.TemplatekitExtension"
+  ]
+}

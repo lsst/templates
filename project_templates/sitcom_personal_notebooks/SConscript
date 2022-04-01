@@ -1,0 +1,9 @@
+from templatekit.builder import cookiecutter_project_builder
+
+# Run cookiecutter to generate the 'notebooks_example' repo
+env = Environment(BUILDERS={'Cookiecutter': cookiecutter_project_builder})
+env.Cookiecutter(
+    AlwaysBuild(Dir('notebooks_example')),
+    'cookiecutter.json',
+    cookiecutter_context={'username': 'example'}
+)
