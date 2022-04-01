@@ -17,23 +17,40 @@ Because of the broad impact of these templates, a [Request for Comments (RFC)](h
 
 * * *
 
-## Set up for development
+## Development primer
 
-To effectively contribute templates, you'll need to install the [templatekit Python package](#templatekit) that includes helpers for rendering templates, as well as sets dependencies on third-party tools like Cookiecutter and Scons:
+### Clone the repository
 
 ```bash
 git clone https://github.com/lsst/templates
 cd templates
+```
+
+### Install Python dependencies
+
+To effectively contribute templates, you'll need to install the [templatekit Python package](#templatekit) that includes helpers for rendering templates, as well as sets dependencies on third-party tools like Cookiecutter and Scons:
+
+```bash
 pip install -r requirements.txt
 ```
 
 *It's a good idea to do this in an isolated Python virtual environment.*
 
-To regenerate the examples, type:
+### Rendering examples
+
+The key 
+The templates project includes one or more examples for each project.
+These examples are committed in Git, along with the source templates.
+The reason for this is to provide in-repository documentation for how a template works, and to ensure that this documentation is consistent with the template.
+
+Whenever you modify a template during development, you **must** re-render the example outputs and include them in your Git commits.
+To re-render examples, run SCons in your shell:
 
 ```bash
 scons
 ```
+
+### Next steps
 
 The [Making a file template](#making-a-file-template) and [Making a project template](#making-a-project-template) sections describe how to add and modify templates.
 
