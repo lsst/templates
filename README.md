@@ -18,7 +18,7 @@ To contribute new templates, or to update existing ones, see the [contributing g
 - [Contributions](#contributions)
 - [Troubleshooting](#troubleshooting)
 
-## List of project templates
+## Project templates
 
 **Project templates** have multiple files and are intended to bootstrap new Git repositories.
 Find these templates in the `project_templates/` directory:
@@ -34,7 +34,7 @@ Find these templates in the `project_templates/` directory:
 - [technote_rst](project_templates/technote_rst/)
 - [test_report](project_templates/test_report/)
 
-## List of file templates
+## File templates
 
 **File templates** are either entire files or snippets you can add to files.
 Find these templates in the `file_templates` directory:
