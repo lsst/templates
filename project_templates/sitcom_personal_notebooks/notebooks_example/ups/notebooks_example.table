@@ -1,0 +1,10 @@
+# List EUPS dependencies of this package here
+# - Common third-party packages (boost, python, doxygen) and low-level
+#   LSST packages can be assumed to be recursively included by low-level
+#   LSST packages such as utils or daf_base.
+# - Any package whose API is used should be listed explicitly
+#   rather than assuming it will be included recursively.
+
+# The following is boilerplate for all packages.
+# See https://dmtn-001.lsst.io for details on LSST_LIBRARY_PATH.
+envPrepend(PYTHONPATH, ${PRODUCT_DIR}/python)
