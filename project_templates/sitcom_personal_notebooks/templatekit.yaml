@@ -1,10 +1,10 @@
 name: "Personal Notebooks"
 group: "SIT-Com"
-dialog_title: "Create a SIT-Com notebooks repo"
+dialog_title: "SIT-Com notebooks repo"
 dialog_fields:
   - key: "username"
     label: "User name"
-    hint: "The owner of this repository."
+    hint: "The owner of this repository (should match the project user name)."
     component: "text"
   - label: "Copyright holder"
     key: "copyright_holder"
