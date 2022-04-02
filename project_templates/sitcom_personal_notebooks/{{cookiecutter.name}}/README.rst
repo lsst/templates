@@ -26,7 +26,7 @@ If a user wishes to develop their own support methods, this repo must be setup p
 
 One way to setup this repo is to add the following to the ``~/notebooks/.user_setups`` file::
 
-    setup -j notebooks_{{ cookiecutter.username }} -r ~/develop/notebooks_{{ cookiecutter.username }}
+    setup -j {{ cookiecutter.name }} -r ~/develop/{{ cookiecutter.name }}
 
 Tests
 =====

@@ -1,6 +1,6 @@
 {
   "username": "username",
-  "repo_name": "notebooks_{{ cookiecutter.username }}",
+  "name": "notebooks_{{ cookiecutter.username }}",
   "github_org": ["lsst-sitcom"],
   "copyright_year": "{% now 'utc', '%Y' %}",
   "copyright_holder": [
