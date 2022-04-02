@@ -9,3 +9,7 @@ dialog_fields:
   - label: "Copyright holder"
     key: "copyright_holder"
     component: "select"
+  - key: "github_org"
+    label: "GitHub organization"
+    hint: "The repo will be created in this GitHub organization."
+    component: "select"
