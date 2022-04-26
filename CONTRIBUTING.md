@@ -38,7 +38,6 @@ pip install -r requirements.txt
 
 ### Rendering examples
 
-The key 
 The templates project includes one or more examples for each project.
 These examples are committed in Git, along with the source templates.
 The reason for this is to provide in-repository documentation for how a template works, and to ensure that this documentation is consistent with the template.
