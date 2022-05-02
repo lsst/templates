@@ -7,7 +7,7 @@ constructed when this module is loaded and is not deferred until a function is
 called.
 """
 
-from importlib.metadata import metadata
+from importlib.metadata import metadata, version
 
 from fastapi import FastAPI
 from safir.dependencies.http_client import http_client_dependency
@@ -29,8 +29,8 @@ configure_logging(
 
 app = FastAPI(
     title="{{ cookiecutter.name }}",
-    description=metadata("{{ cookiecutter.name }}").get("Summary", ""),
-    version=metadata("{{ cookiecutter.name }}").get("Version", "0.0.0"),
+    description=metadata("{{ cookiecutter.name }}")["Summary"],
+    version=version("{{ cookiecutter.name }}"),
     openapi_url=f"/{config.name}/openapi.json",
     docs_url=f"/{config.name}/docs",
     redoc_url=f"/{config.name}/redoc",
