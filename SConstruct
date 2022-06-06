@@ -9,7 +9,6 @@ SConscript([
     'project_templates/technote_aastex/SConscript',
     'project_templates/test_report/SConscript',
     'project_templates/latex_lsstdoc/SConscript',
-    'project_templates/roundtable_aiohttp_bot/SConscript',
     'project_templates/fastapi_safir_app/SConscript',
     'project_templates/sitcom_personal_notebooks/SConscript',
     'file_templates/copyright/SConscript',
