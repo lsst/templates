@@ -25,6 +25,12 @@ dialog_fields:
         presets:
           series: "ITTN"
           github_org: "lsst-it"
+      - label: "PSTN"
+        value: "PSTN"
+        presets:
+          series: "PSTN"
+          github_org: "lsst-pst"
+          org: "PST"
       - label: "RTN"
         value: "rtn"
         presets:
