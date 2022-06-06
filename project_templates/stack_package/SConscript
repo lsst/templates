@@ -63,7 +63,7 @@ env.Cookiecutter(AlwaysBuild(Dir('example_standalone')),
                  'cookiecutter.json',
                  cookiecutter_context={'package_name': 'example_standalone',
                                        'stack_name': 'None',
-                                       'base_package': 'setupUtils',
+                                       'base_package': 'sconsUtils',
                                        'uses_cpp': 'False',
                                        'uses_dds': 'False'})
 
@@ -75,7 +75,7 @@ env.Cookiecutter(AlwaysBuild(Dir('example_dds')),
                  'cookiecutter.json',
                  cookiecutter_context={'package_name': 'example_dds',
                                        'stack_name': 'None',
-                                       'base_package': 'setupUtils',
+                                       'base_package': 'sconsUtils',
                                        'uses_cpp': 'False',
                                        'uses_dds': 'True',
                                        'uses_tasks': 'False'})
