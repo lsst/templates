@@ -38,8 +38,7 @@
     "*.bib",
     "*acron*",
     "*.py",
-    "asp2014.sty",
-    "asp2014.bst",
+    "spie*",
     ".gitignore",
     "body.tex"
   ],

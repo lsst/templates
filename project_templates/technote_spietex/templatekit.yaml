@@ -1,4 +1,4 @@
-name: "Technote (ADASS LaTeX)"
+name: "Technote (SPIE LaTeX)"
 group: "Documents"
 dialog_title: "Create a paper"
 dialog_fields:

@@ -1,8 +1,6 @@
-# technote_adasstex
+pie
+**LSST technical note repository, formatted as an SPIE  paper preprint.**
 
-**LSST technical note repository, formatted as an ADASS paper preprint.**
-
-This template generates a new paper repository based on [ADASSTex](https://www.adass.org/instructions.html).
 This template also uses bib and author metadata from [lsst-texmf](https://lsst-texmf.lsst.io).
 See [Technotes for stand-alone technical documentation in the Developer Guide](https://developer.lsst.io/project-docs/technotes.html).
 
@@ -178,4 +176,5 @@ Example: [TESTN-000.tex](testn-000/TESTN-000.tex)
 
 This file contains the content of the technote itself.
 Either write directly in this file, or use the `\input` command to include content from other files.
+
 
