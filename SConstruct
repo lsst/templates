@@ -12,6 +12,7 @@ SConscript([
     'project_templates/test_report/SConscript',
     'project_templates/latex_lsstdoc/SConscript',
     'project_templates/fastapi_safir_app/SConscript',
+    'project_templates/square_pypi_package/SConscript',
     'project_templates/sitcom_personal_notebooks/SConscript',
     'file_templates/copyright/SConscript',
     'file_templates/license_gplv3/SConscript',

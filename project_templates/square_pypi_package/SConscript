@@ -1,0 +1,10 @@
+from templatekit.builder import cookiecutter_project_builder
+
+# Run cookiecutter to generate the 'example' package.
+# The explicit target directory, with AlwaysBuild, is needed for Scons to
+# differentiate this build from the other example build below.
+env = Environment(BUILDERS={'Cookiecutter': cookiecutter_project_builder})
+env.Cookiecutter(
+    AlwaysBuild(Dir('example')),
+    'cookiecutter.json'
+)
