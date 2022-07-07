@@ -1,0 +1,49 @@
+{
+  "org": [
+    "DM",
+    "PST",
+    "SE"
+  ],
+  "series": [
+    "DMTN",
+    "PSTN",
+    "SMTN",
+    "TSTN",
+    "ITTN",
+    "TESTN"
+  ],
+  "serial_number": "000",
+  "github_org": [
+    "lsst-dm",
+    "lsst-pst",
+    "lsst-sims",
+    "lsst-sqre-testing"
+
+  ],
+  "title": "Document Title",
+  "author_id": "ID from lsst-texmf/etc/authorsdb.yaml",
+  "abstract": "Abstract text.",
+  "copyright_year": "{% now 'utc', '%Y' %}",
+  "copyright_holder": [
+    "Association of Universities for Research in Astronomy, Inc. (AURA)",
+    "Brookhaven Science Associates, LLC",
+    "California Institute of Technology",
+    "Fermi Research Alliance, LLC",
+    "The Board of Trustees of the Leland Stanford Junior University, through SLAC National Accelerator Laboratory",
+    "The Trustees of Princeton University",
+    "University of Illinois Board of Trustees",
+    "University of Washington"
+  ],
+  "_copy_without_render": [
+    "*.bib",
+    "*acron*",
+    "*.py",
+    "asp2014.sty",
+    "asp2014.bst",
+    ".gitignore",
+    "body.tex"
+  ],
+  "_extensions": [
+    "jinja2_time.TimeExtension"
+  ]
+}

@@ -1,0 +1,58 @@
+
+\documentclass[]{spie}
+
+% Package imports go here.
+\renewcommand{\baselinestretch}{1.0} % Change to 1.65 for double spacing
+
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{longtable}
+
+% Local commands go here.
+\newcommand{\aj}{AJ}
+\newcommand{\apj}{ApJ}
+\newcommand{\apjs}{ApJS}
+\newcommand{\procspie}{Proc.\ SPIE}
+\newcommand{\pasj}{PASJ}
+% lsstdoc documentation: https://lsst-texmf.lsst.io/lsstdoc.html
+\input{meta}
+
+% Package imports go here.
+
+% Local commands go here.
+
+% See ASPmanual2010.pdf 2.1.4  and ManuscriptInstructions.pdf for more details
+%\markboth{auth}{short title}
+
+
+\newcommand{\docRef}{ {{- cookiecutter.series.upper() -}}-{{- cookiecutter.serial_number -}} }
+\newcommand{\docUpstreamLocation}{\url{https://github.com/{{ cookiecutter.github_org }}/{{ cookiecutter.series.lower()}}-{{ cookiecutter.serial_number -}} }}
+
+
+\begin{document}
+\input{authors}
+\date{\today}
+\title{ {{- cookiecutter.title -}} }
+\hypersetup{pdftitle={\@title}, pdfauthor={\@author}, pdfkeywords={\@keywords}}
+
+\input{abstract}
+
+\input{body}
+
+\appendix
+% Include all the relevant bib files.
+% https://lsst-texmf.lsst.io/lsstdoc.html#bibliographies
+\section{References} \label{sec:bib}
+\bibliographystyle{spiebib}
+\bibliography{local,lsst,lsst-dm,refs_ads,refs,books}
+
+% Make sure lsst-texmf/bin/generateAcronyms.py is in your path
+\section{Acronyms} \label{sec:acronyms}
+\input{acronyms.tex}
+\noindent {\tiny This material or work is supported in part by the National Science Foundation through Cooperative Agreement AST-1258333 and Cooperative Support Agreement AST1836783 managed by the Association of Universities for Research in Astronomy (AURA), and the Department of Energy under Contract No. DE-AC02-76SF00515 with the SLAC National Accelerator Laboratory managed by Stanford University.
+}
+
+\end{document}

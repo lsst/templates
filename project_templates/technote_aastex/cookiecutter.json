@@ -38,6 +38,7 @@
     "*acron*",
     "aastex62.cls",
     "yahapj.bst",
+    ".gitignore",
     "body.tex"
   ],
   "_extensions": [

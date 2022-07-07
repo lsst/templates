@@ -7,6 +7,8 @@ SConscript([
     'project_templates/technote_rst/SConscript',
     'project_templates/technote_latex/SConscript',
     'project_templates/technote_aastex/SConscript',
+    'project_templates/technote_adasstex/SConscript',
+    'project_templates/technote_spietex/SConscript',
     'project_templates/test_report/SConscript',
     'project_templates/latex_lsstdoc/SConscript',
     'project_templates/fastapi_safir_app/SConscript',
