@@ -39,5 +39,5 @@ jobs:
         uses: lsst-sqre/run-tox@v1
         with:
           python-version: "3.10"
-          tox-envs: "docs,doc-linkcheck"
+          tox-envs: "docs,docs-linkcheck"
           use-cache: false
