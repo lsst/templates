@@ -73,7 +73,7 @@ jobs:
       # version clutter in the docs and failures when a PR doesn't have access
       # to secrets.
       - name: Upload to LSST the Docs
-        run: lsst-sqre/ltd-upload@v1
+        uses: lsst-sqre/ltd-upload@v1
         with:
           project: "{{- cookiecutter.pypi_name -}}"
           dir: "docs/_build/html"
