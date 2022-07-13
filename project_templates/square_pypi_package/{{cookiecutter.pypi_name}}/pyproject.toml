@@ -57,8 +57,8 @@ add_select = [
 ]
 
 [tool.isort]
-include_trailing_comma = true
-multi_line_output = 3
+profile = "black"
+line_length = 79
 known_first_party = ["{{cookiecutter.module_name}}", "tests"]
 skip = ["docs/conf.py"]
 
