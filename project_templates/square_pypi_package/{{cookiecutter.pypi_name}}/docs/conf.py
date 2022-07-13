@@ -183,7 +183,7 @@ todo_include_todos = False
 # https://myst-parser.readthedocs.io/en/latest/syntax/optional.html
 
 myst_enable_extensions = [
-    # "amsmath",
+    "amsmath",
     "colon_fence",
     "deflist",
     "dollarmath",
