@@ -5,7 +5,6 @@ import example
 
 rst_epilog = """
 
-.. _arq: https://arq-docs.helpmanual.io
 .. _mypy: http://www.mypy-lang.org
 .. _pre-commit: https://pre-commit.com
 .. _pytest: https://docs.pytest.org/en/latest/
@@ -137,7 +136,7 @@ napoleon_use_admonition_for_examples = False
 napoleon_use_admonition_for_notes = False
 napoleon_use_admonition_for_references = False
 napoleon_use_ivar = False
-napoleon_use_keyword = True  # TODO
+napoleon_use_keyword = True
 napoleon_use_param = True
 napoleon_use_rtype = True
 
