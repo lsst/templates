@@ -1,12 +1,67 @@
+[project]
+# https://packaging.python.org/en/latest/specifications/declaring-project-metadata/
+name = "{{cookiecutter.pypi_name}}"
+description = "{{cookiecutter.description}}"
+license = {file = "LICENSE"}
+readme= "README.md"
+keywords = [
+    "rubin",
+    "lsst",
+]
+# https://pypi.org/classifiers/
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Intended Audience :: Developers",
+    "Natural Language :: English",
+    "Operating System :: POSIX",
+    "Typing :: Typed",
+]
+requires-python = ">=3.8"
+dependencies = []
+dynamic = ["version"]
+
+[project.optional-dependencies]
+dev = [
+    # Testing
+    "coverage[toml]",
+    "pytest",
+    "pytest-asyncio",
+    "pre-commit",
+    "mypy",
+    # Documentation
+    "sphinx",
+    "documenteer",
+    "lsst-sphinx-bootstrap-theme",
+    "sphinx-prompt",
+    "sphinx-automodapi",
+    "myst-parser",
+    "markdown-it-py[linkify]",
+]
+
+[project.urls]
+# Homepage = "https://{{cookiecutter.pypi_name}}.lsst.io"
+Source = "https://github.com/lsst-sqre/{{cookiecutter.pypi_name}}"
+
 [build-system]
 requires = [
-  "setuptools>=42",
-  "wheel",
-  "setuptools_scm[toml]>=3.4"
+    "setuptools>=61",
+    "wheel",
+    "setuptools_scm[toml]>=6.2"
 ]
-build-backend = 'setuptools.build_meta'
+build-backend = "setuptools.build_meta"
 
 [tool.setuptools_scm]
+
+[tool.setuptools.packages.find]
+# https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html
+where = ["src"]
+include = ["{{cookiecutter.module_name}}*"]
 
 [tool.coverage.run]
 parallel = true
@@ -32,7 +87,7 @@ exclude_lines = [
 
 [tool.black]
 line-length = 79
-target-version = ['py38']
+target-version = ["py38"]
 exclude = '''
 /(
     \.eggs
