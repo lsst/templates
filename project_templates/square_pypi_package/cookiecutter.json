@@ -13,6 +13,8 @@
   ],
   "github_org": [
     "lsst-sqre",
+    "lsst-dm",
+    "lsst",
     "lsst-sqre-testing"
   ],
   "_extensions": ["jinja2_time.TimeExtension", "templatekit.TemplatekitExtension"]
