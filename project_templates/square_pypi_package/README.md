@@ -7,7 +7,7 @@ Technologies:
 - setuptools for packaging
 - setuptools_scm for version string management
 - Tox for development task orchestration
-- Pre-commit for routing linting, with black, isort, and flake8
+- Pre-commit for linting, with black, isort, flake8, and more
 - Pytest for unit testing
 - Mypy for type checking
 - GitHub Actions for continuous integration and releases
