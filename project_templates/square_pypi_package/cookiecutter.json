@@ -1,0 +1,21 @@
+{
+  "pypi_name": "example",
+  "module_name": "{{ cookiecutter.pypi_name | lower | replace('-', '') | replace('_', '') | replace('.', '') }}",
+  "description": "Short one-sentence description of the package",
+  "copyright_year": "{% now 'utc', '%Y' %}",
+  "copyright_holder": [
+    "Association of Universities for Research in Astronomy, Inc. (AURA)",
+    "California Institute of Technology",
+    "The Board of Trustees of the Leland Stanford Junior University, through SLAC National Accelerator Laboratory",
+    "The Trustees of Princeton University",
+    "University of Illinois Board of Trustees",
+    "University of Washington"
+  ],
+  "github_org": [
+    "lsst-sqre",
+    "lsst-dm",
+    "lsst",
+    "lsst-sqre-testing"
+  ],
+  "_extensions": ["jinja2_time.TimeExtension", "templatekit.TemplatekitExtension"]
+}

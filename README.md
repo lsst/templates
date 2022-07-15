@@ -29,6 +29,7 @@ Find these templates in the `project_templates/` directory:
 - [roundtable_aiohttp_bot](project_templates/roundtable_aiohttp_bot/)
 - [sitcom_personal_notebooks](project_templates/sitcom_personal_notebooks/)
 - [stack_package](project_templates/stack_package/)
+- [square_pypi_package](project_templates/square_pypi_package/)
 - [technote_aastex](project_templates/technote_aastex/)
 - [technote_latex](project_templates/technote_latex/)
 - [technote_rst](project_templates/technote_rst/)
