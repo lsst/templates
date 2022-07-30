@@ -38,4 +38,4 @@ jobs:
           LTD_PASSWORD: ${{ secrets.LTD_PASSWORD }}
           LTD_USERNAME: ${{ secrets.LTD_USERNAME }}
         run: |
-          lander --upload --pdf TESTTR-0.pdf --lsstdoc TESTTR-0.tex --ltd-product testtr-0
+          lander --upload --pdf TESTTR-0.pdf --lsstdoc TESTTR-0.tex --ltd-product testtr-0 --extra-download  testtr-0plan.pdf

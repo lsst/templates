@@ -34,13 +34,13 @@ jobs:
           source ${CONDA}/bin/activate docsteady-env
           docsteady  --namespace {{ cookiecutter.namespace }} generate-tpr {{ cookiecutter.plan }}  {{ cookiecutter.series }}-{{ cookiecutter.serial_number }}.tex
         shell: bash
- 
+
       - name: Create commit
         run: |
           git config user.name $GITHUB_ACTOR
           git config user.email $GITHUB_ACTOR@users.noreply.github.com
           git add attachments jira_imgs
-          git commit -am "Update from JIRA." 
+          git commit -am "Update from JIRA."
           git push
 
       - name: Login to Docker Hub
@@ -58,4 +58,4 @@ jobs:
           LTD_PASSWORD: {% raw %}${{ secrets.LTD_PASSWORD }}{% endraw %}
           LTD_USERNAME: {% raw %}${{ secrets.LTD_USERNAME }}{% endraw %}
         run: |
-          lander --upload --pdf {{ cookiecutter.series }}-{{ cookiecutter.serial_number }}.pdf --lsstdoc {{ cookiecutter.series }}-{{ cookiecutter.serial_number }}.tex --ltd-product {{ cookiecutter.series.lower() }}-{{ cookiecutter.serial_number }}
+          lander --upload --pdf {{ cookiecutter.series }}-{{ cookiecutter.serial_number }}.pdf --lsstdoc {{ cookiecutter.series }}-{{ cookiecutter.serial_number }}.tex --ltd-product {{ cookiecutter.series.lower() }}-{{ cookiecutter.serial_number }} --extra-download {{ cookiecutter.series.lower() }}-{{ cookiecutter.serial_number }}plan.pdf
