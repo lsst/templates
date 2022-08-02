@@ -4,6 +4,6 @@
    author = { First Author },
     title = {Document Title},
      year = 2022,
-    month = Jul,
+    month = Aug,
    handle = {EXAMPLE-0},
       url = {https://example-0-0.lsst.io } }
