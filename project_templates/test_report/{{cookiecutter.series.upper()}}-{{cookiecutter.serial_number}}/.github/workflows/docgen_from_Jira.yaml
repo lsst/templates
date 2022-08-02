@@ -58,4 +58,4 @@ jobs:
           LTD_PASSWORD: {% raw %}${{ secrets.LTD_PASSWORD }}{% endraw %}
           LTD_USERNAME: {% raw %}${{ secrets.LTD_USERNAME }}{% endraw %}
         run: |
-          lander --upload --pdf {{ cookiecutter.series }}-{{ cookiecutter.serial_number }}.pdf --lsstdoc {{ cookiecutter.series }}-{{ cookiecutter.serial_number }}.tex --ltd-product {{ cookiecutter.series.lower() }}-{{ cookiecutter.serial_number }} --extra-download {{ cookiecutter.series.lower() }}-{{ cookiecutter.serial_number }}plan.pdf
+          lander --upload --pdf {{ cookiecutter.series }}-{{ cookiecutter.serial_number }}.pdf --lsstdoc {{ cookiecutter.series }}-{{ cookiecutter.serial_number }}.tex --ltd-product {{ cookiecutter.series.lower() }}-{{ cookiecutter.serial_number }} --extra-download {{ cookiecutter.series.lower() }}-{{ cookiecutter.serial_number }}-plan.pdf

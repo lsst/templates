@@ -3,7 +3,7 @@ NAMESPACE = {{ cookiecutter.namespace }}
 PLAN = {{ cookiecutter.plan }}
 DOCNUMBER = {{ cookiecutter.serial_number }}
 DOCNAME = $(DOCTYPE)-$(DOCNUMBER)
-DOCNAMEP = $(DOCNAME)plan
+DOCNAMEP = $(DOCNAME)-plan
 TEX = $(filter-out $(wildcard *acronyms.tex) , $(wildcard *.tex))
 
 export TEXMFHOME ?= lsst-texmf/texmf

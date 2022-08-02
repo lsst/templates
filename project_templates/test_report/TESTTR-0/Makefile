@@ -3,7 +3,7 @@ NAMESPACE = DM
 PLAN = LVV-P73
 DOCNUMBER = 0
 DOCNAME = $(DOCTYPE)-$(DOCNUMBER)
-DOCNAMEP = $(DOCNAME)plan
+DOCNAMEP = $(DOCNAME)-plan
 TEX = $(filter-out $(wildcard *acronyms.tex) , $(wildcard *.tex))
 
 export TEXMFHOME ?= lsst-texmf/texmf
