@@ -3,7 +3,7 @@ NAMESPACE = {{ cookiecutter.namespace }}
 PLAN = {{ cookiecutter.plan }}
 DOCNUMBER = {{ cookiecutter.serial_number }}
 DOCNAME = $(DOCTYPE)-$(DOCNUMBER)
-JOBNAME = $(DOCNAME)
+DOCNAMEP = $(DOCNAME)-plan
 TEX = $(filter-out $(wildcard *acronyms.tex) , $(wildcard *.tex))
 
 export TEXMFHOME ?= lsst-texmf/texmf
@@ -16,12 +16,15 @@ ifneq "$(GITSTATUS)" ""
 	GITDIRTY = -dirty
 endif
 
-$(JOBNAME).pdf: $(DOCNAME).tex meta.tex acronyms.tex
-	xelatex -jobname=$(JOBNAME) $(DOCNAME)
-	bibtex $(JOBNAME)
-	xelatex -jobname=$(JOBNAME) $(DOCNAME)
-	xelatex -jobname=$(JOBNAME) $(DOCNAME)
-	xelatex -jobname=$(JOBNAME) $(DOCNAME)
+all:  $(DOCNAME).pdf $(DOCNAMEP).pdf
+
+%.pdf: %.tex meta.tex acronyms.tex
+	xelatex $<
+	bibtex $(basename $<)
+	xelatex $<
+	xelatex $<
+	xelatex $<
+
 
 .FORCE:
 

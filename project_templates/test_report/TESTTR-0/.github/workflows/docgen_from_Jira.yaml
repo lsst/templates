@@ -34,13 +34,13 @@ jobs:
           source ${CONDA}/bin/activate docsteady-env
           docsteady  --namespace DM generate-tpr LVV-P73  TESTTR-0.tex
         shell: bash
- 
+
       - name: Create commit
         run: |
           git config user.name $GITHUB_ACTOR
           git config user.email $GITHUB_ACTOR@users.noreply.github.com
           git add attachments jira_imgs
-          git commit -am "Update from JIRA." 
+          git commit -am "Update from JIRA."
           git push
 
       - name: Login to Docker Hub
@@ -58,4 +58,4 @@ jobs:
           LTD_PASSWORD: ${{ secrets.LTD_PASSWORD }}
           LTD_USERNAME: ${{ secrets.LTD_USERNAME }}
         run: |
-          lander --upload --pdf TESTTR-0.pdf --lsstdoc TESTTR-0.tex --ltd-product testtr-0
+          lander --upload --pdf TESTTR-0.pdf --lsstdoc TESTTR-0.tex --ltd-product testtr-0 --extra-download testtr-0-plan.pdf

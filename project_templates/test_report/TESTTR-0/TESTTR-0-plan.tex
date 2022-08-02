@@ -1,0 +1,44 @@
+\documentclass[DM,lsstdraft,toc]{lsstdoc}
+\usepackage{geometry}
+\usepackage{longtable,booktabs}
+\usepackage{enumitem}
+\usepackage{arydshln}
+
+\input{meta.tex}
+
+\providecommand{\tightlist}{
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\begin{document}
+
+\def\milestoneName{Document Title}
+\def\milestoneId{LVV-P73}
+\def\product{Data Management}
+
+\setDocCompact{true}
+
+\title{LVV-P73 Document Title Test Plan }
+\setDocRef{\lsstDocType-\lsstDocNum}
+\date{\vcsDate}
+\author{First Author}
+
+\input{history_and_info.tex}
+
+\setDocAbstract{
+This is a stub test report created from a template.
+The content is being prepared.
+}
+
+\maketitle
+
+\section{Introduction}
+Use the GitHub Actions workflow ``docgen from Jira'' to generate this document's content from Jira.
+
+\subsection{References}
+\label{sect:references}
+\renewcommand{\refname}{}
+\bibliography{lsst,refs,books,refs_ads,local}
+
+
+\input{appendix}
+\end{document}
