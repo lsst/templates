@@ -16,7 +16,23 @@ name: CI
   pull_request: {}
 
 jobs:
+  lint:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Run pre-commit
+        uses: pre-commit/action@v3.0.0
+
   test:
+
     runs-on: ubuntu-latest
 
     strategy:
@@ -28,34 +44,16 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - name: Run tox
+        uses: lsst-sqre/run-tox@v1
         with:
           python-version: {{ "${{ matrix.python }}" }}
-
-      - name: Run pre-commit
-        uses: pre-commit/action@v2.0.3
-
-      - name: Install tox
-        run: pip install tox
-
-      - name: Cache tox environments
-        id: cache-tox
-        uses: actions/cache@v3
-        with:
-          path: .tox
-          # requirements/*.txt and pyproject.toml have versioning info
-          # that would impact the tox environment.
-          key: {{ "tox-${{ matrix.python }}-${{ hashFiles('requirements/*.txt') }}-${{ hashFiles('pyproject.toml') }}" }}
-          restore-keys: |
-            {{ "tox-${{ matrix.python }}-${{ hashFiles('requirements/*.txt') }}-" }}
-
-      - name: Run tox
-        run: tox -e py,coverage-report,typing
+          tox-envs: "py,coverage-report,typing"
 
   build:
+
     runs-on: ubuntu-latest
-    needs: [test]
+    needs: [lint, test]
 
     # Only do Docker builds of tagged releases and pull requests from ticket
     # branches.  This will still trigger on pull requests from untrusted
