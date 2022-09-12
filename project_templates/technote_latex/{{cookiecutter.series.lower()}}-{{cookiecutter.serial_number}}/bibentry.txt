@@ -1,9 +1,0 @@
-% bibentry template for lsst.bib in https://github.com/lsst/lsst-texmf/blob/main/texmf/bibtex/bib/lsst.bib
-
-@DocuShare{ {{- cookiecutter.series.upper() -}}-{{- cookiecutter.serial_number -}},
-   author = { {{ cookiecutter.first_author }} },
-    title = { {{- cookiecutter.title -}} },
-     year = {% now 'local', '%Y' %},
-    month = {% now 'local', '%b' %},
-   handle = { {{- cookiecutter.series.upper() -}}-{{- cookiecutter.serial_number -}} },
-      url = {https://{{- cookiecutter.series.lower() -}}-{{- cookiecutter.serial_number -}}.lsst.io } }
