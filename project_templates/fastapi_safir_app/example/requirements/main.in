@@ -11,4 +11,4 @@ starlette
 uvicorn[standard]
 
 # Other dependencies.
-safir
+safir>=3.3.0
