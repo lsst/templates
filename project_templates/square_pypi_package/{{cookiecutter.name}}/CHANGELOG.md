@@ -4,4 +4,4 @@
 
 ## Unreleased
 
-- First release of {{cookiecutter.pypi_name}}
+- First release of {{cookiecutter.name}}

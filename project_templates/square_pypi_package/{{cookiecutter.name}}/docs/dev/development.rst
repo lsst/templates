@@ -2,17 +2,17 @@
 Development guide
 #################
 
-This page provides procedures and guidelines for developing and contributing to {{cookiecutter.pypi_name}}.
+This page provides procedures and guidelines for developing and contributing to {{cookiecutter.name}}.
 
 Scope of contributions
 ======================
 
-{{cookiecutter.pypi_name}} is an open source package, meaning that you can contribute to {{cookiecutter.pypi_name}} itself, or fork {{cookiecutter.pypi_name}} for your own purposes.
+{{cookiecutter.name}} is an open source package, meaning that you can contribute to {{cookiecutter.name}} itself, or fork {{cookiecutter.name}} for your own purposes.
 
-Since {{cookiecutter.pypi_name}} is intended for internal use by Rubin Observatory, community contributions can only be accepted if they align with Rubin Observatory's aims.
+Since {{cookiecutter.name}} is intended for internal use by Rubin Observatory, community contributions can only be accepted if they align with Rubin Observatory's aims.
 For that reason, it's a good idea to propose changes with a new `GitHub issue`_ before investing time in making a pull request.
 
-{{cookiecutter.pypi_name}} is developed by the Rubin Observatory SQuaRE team.
+{{cookiecutter.name}} is developed by the Rubin Observatory SQuaRE team.
 
 .. _GitHub issue: https://github.com/lsst-sqre/safir/issues/new
 
@@ -21,17 +21,17 @@ For that reason, it's a good idea to propose changes with a new `GitHub issue`_ 
 Setting up a local development environment
 ==========================================
 
-To develop {{cookiecutter.pypi_name}}, create a virtual environment with your method of choice (like virtualenvwrapper) and then clone or fork, and install:
+To develop {{cookiecutter.name}}, create a virtual environment with your method of choice (like virtualenvwrapper) and then clone or fork, and install:
 
 .. code-block:: sh
 
-   git clone https://github.com/lsst-sqre/{{cookiecutter.pypi_name}}.git
-   cd {{cookiecutter.pypi_name}}
+   git clone https://github.com/lsst-sqre/{{cookiecutter.name}}.git
+   cd {{cookiecutter.name}}
    make init
 
 This init step does three things:
 
-1. Installs {{cookiecutter.pypi_name}} in an editable mode with its "dev" extra that includes test and documentation dependencies.
+1. Installs {{cookiecutter.name}} in an editable mode with its "dev" extra that includes test and documentation dependencies.
 2. Installs pre-commit and tox.
 3. Installs the pre-commit hooks.
 

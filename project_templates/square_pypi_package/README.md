@@ -15,7 +15,7 @@ Technologies:
 
 ## Template variables
 
-### cookiecutter.pypi_name
+### cookiecutter.name
 
 This is the name of the Python package on PyPI and also the name of the GitHub repository.
 Formatting tips:

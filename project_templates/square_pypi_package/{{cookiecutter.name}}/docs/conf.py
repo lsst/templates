@@ -1,5 +1,5 @@
 import lsst_sphinx_bootstrap_theme
-import {{cookiecutter.pypi_name}}
+import {{cookiecutter.name}}
 
 # Common links and substitutions =============================================
 
@@ -39,14 +39,14 @@ source_suffix = {
 root_doc = "index"
 
 # General information about the project.
-project = "{{cookiecutter.pypi_name}}"
+project = "{{cookiecutter.name}}"
 copyright = (
     "{{cookiecutter.copyright_year}} "
     "{{cookiecutter.copyright_holder}}"
 )
 author = "Rubin Observatory"
 
-version = {{cookiecutter.pypi_name}}.__version__
+version = {{cookiecutter.name}}.__version__
 release = version
 
 # List of patterns, relative to source directory, that match files and
