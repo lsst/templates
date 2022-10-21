@@ -76,9 +76,9 @@ To see a listing of test environments, run:
 
 To run a specific test or list of tests, you can add test file names (and any other pytest_ options) after ``--`` when executing the ``py`` tox environment.
 .. For example:
-.. 
+..
 .. .. code-block:: sh
-.. 
+..
 ..    tox -e py -- tests/database_test.py
 
 .. _dev-build-docs:
