@@ -1,3 +1,6 @@
+:og:description: Short one-sentence description of the package
+:html_theme.sidebar_secondary.remove:
+
 #######
 example
 #######
@@ -12,18 +15,10 @@ Install example from PyPI:
 
 example is developed on GitHub at https://github.com/lsst-sqre/example.
 
-User guide
-==========
-
 .. toctree::
+   :hidden:
 
-   changelog
-   api
-
-Development guide
-=================
-
-.. toctree::
-
-   dev/development
-   dev/release
+   User guide <user-guide/index>
+   API <api>
+   Change log <changelog>
+   Contributing <dev/index>

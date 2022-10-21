@@ -1,0 +1,16 @@
+[project]
+title = "{{cookiecutter.name}}"
+copyright = "{{cookiecutter.copyright_year}} {{cookiecutter.copyright_holder}}"
+
+[project.python]
+package = "{{cookiecutter.name}}"
+
+[sphinx]
+rst_epilog_file = "_rst_epilog.rst"
+disable_primary_sidebars = [
+    "index",
+    "changelog",
+]
+
+[sphinx.intersphinx.projects]
+python = "https://docs.python.org/3/"

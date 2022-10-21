@@ -1,3 +1,6 @@
+:og:description: {{ cookiecutter.description }}
+:html_theme.sidebar_secondary.remove:
+
 {{ "#" * cookiecutter.name|length }}
 {{ cookiecutter.name }}
 {{ "#" * cookiecutter.name|length }}
@@ -12,18 +15,10 @@ Install {{ cookiecutter.name }} from PyPI:
 
 {{ cookiecutter.name }} is developed on GitHub at https://github.com/{{cookiecutter.github_org}}/{{cookiecutter.name}}.
 
-User guide
-==========
-
 .. toctree::
+   :hidden:
 
-   changelog
-   api
-
-Development guide
-=================
-
-.. toctree::
-
-   dev/development
-   dev/release
+   User guide <user-guide/index>
+   API <api>
+   Change log <changelog>
+   Contributing <dev/index>

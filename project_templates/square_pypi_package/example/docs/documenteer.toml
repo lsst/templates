@@ -1,0 +1,16 @@
+[project]
+title = "example"
+copyright = "2022 Association of Universities for Research in Astronomy, Inc. (AURA)"
+
+[project.python]
+package = "example"
+
+[sphinx]
+rst_epilog_file = "_rst_epilog.rst"
+disable_primary_sidebars = [
+    "index",
+    "changelog",
+]
+
+[sphinx.intersphinx.projects]
+python = "https://docs.python.org/3/"
