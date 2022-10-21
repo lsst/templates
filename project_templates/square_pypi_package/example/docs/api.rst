@@ -5,3 +5,4 @@ Python API reference
 ####################
 
 .. automodapi:: example
+   :include-all-objects:
