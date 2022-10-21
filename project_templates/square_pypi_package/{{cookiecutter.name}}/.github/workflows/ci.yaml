@@ -75,7 +75,7 @@ jobs:
       - name: Upload to LSST the Docs
         uses: lsst-sqre/ltd-upload@v1
         with:
-          project: "{{- cookiecutter.pypi_name -}}"
+          project: "{{- cookiecutter.name -}}"
           dir: "docs/_build/html"
           username: {{ "${{ secrets.LTD_USERNAME }}" }}
           password: {{ "${{ secrets.LTD_PASSWORD }}" }}

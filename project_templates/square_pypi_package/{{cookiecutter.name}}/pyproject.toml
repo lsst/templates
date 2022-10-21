@@ -1,6 +1,6 @@
 [project]
 # https://packaging.python.org/en/latest/specifications/declaring-project-metadata/
-name = "{{cookiecutter.pypi_name}}"
+name = "{{cookiecutter.name}}"
 description = "{{cookiecutter.description}}"
 license = {file = "LICENSE"}
 readme= "README.md"
@@ -35,18 +35,12 @@ dev = [
     "pre-commit",
     "mypy",
     # Documentation
-    "sphinx",
-    "documenteer",
-    "lsst-sphinx-bootstrap-theme",
-    "sphinx-prompt",
-    "sphinx-automodapi",
-    "myst-parser",
-    "markdown-it-py[linkify]",
+    "documenteer[guide]",
 ]
 
 [project.urls]
-# Homepage = "https://{{cookiecutter.pypi_name}}.lsst.io"
-Source = "https://github.com/lsst-sqre/{{cookiecutter.pypi_name}}"
+Homepage = "https://{{cookiecutter.name}}.lsst.io"
+Source = "https://github.com/{{cookiecutter.github_org}}/{{cookiecutter.name}}"
 
 [build-system]
 requires = [

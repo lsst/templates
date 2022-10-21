@@ -35,17 +35,11 @@ dev = [
     "pre-commit",
     "mypy",
     # Documentation
-    "sphinx",
-    "documenteer",
-    "lsst-sphinx-bootstrap-theme",
-    "sphinx-prompt",
-    "sphinx-automodapi",
-    "myst-parser",
-    "markdown-it-py[linkify]",
+    "documenteer[guide]",
 ]
 
 [project.urls]
-# Homepage = "https://example.lsst.io"
+Homepage = "https://example.lsst.io"
 Source = "https://github.com/lsst-sqre/example"
 
 [build-system]

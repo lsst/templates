@@ -2,15 +2,15 @@
 Release procedure
 #################
 
-This page gives an overview of how {{cookiecutter.pypi_name}} releases are made.
+This page gives an overview of how {{cookiecutter.name}} releases are made.
 This information is only useful for maintainers.
 
-{{cookiecutter.pypi_name}}'s releases are largely automated through GitHub Actions (see the `ci.yaml`_ workflow file for details).
+{{cookiecutter.name}}'s releases are largely automated through GitHub Actions (see the `ci.yaml`_ workflow file for details).
 When a semantic version tag is pushed to GitHub, `Safir is released to PyPI`_ with that version.
 Similarly, documentation is built and pushed for each version (see https://safir.lsst.io/v).
 
-.. _`Safir is released to PyPI`: https://pypi.org/project/{{cookiecutter.pypi_name}}/
-.. _`ci.yaml`: https://github.com/lsst-sqre/{{cookiecutter.pypi_name}}/blob/main/.github/workflows/ci.yaml
+.. _`Safir is released to PyPI`: https://pypi.org/project/{{cookiecutter.name}}/
+.. _`ci.yaml`: https://github.com/lsst-sqre/{{cookiecutter.name}}/blob/main/.github/workflows/ci.yaml
 
 .. _regular-release:
 
@@ -50,7 +50,7 @@ In particular, **don't** prefix the tag with ``v``.
 
 .. _setuptools_scm: https://github.com/pypa/setuptools_scm
 
-The `ci.yaml`_ GitHub Actions workflow uploads the new release to PyPI and documentation to https://{{cookiecutter.pypi_name}}.lsst.io.
+The `ci.yaml`_ GitHub Actions workflow uploads the new release to PyPI and documentation to https://{{cookiecutter.name}}.lsst.io.
 
 .. _backport-release:
 

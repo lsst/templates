@@ -1,6 +1,6 @@
 {
-  "pypi_name": "example",
-  "module_name": "{{ cookiecutter.pypi_name | lower | replace('-', '') | replace('_', '') | replace('.', '') }}",
+  "name": "example",
+  "module_name": "{{ cookiecutter.name | lower | replace('-', '') | replace('_', '') | replace('.', '') }}",
   "description": "Short one-sentence description of the package",
   "copyright_year": "{% now 'utc', '%Y' %}",
   "copyright_holder": [

@@ -2,7 +2,7 @@ name: "SQuaRE PyPI Package"
 group: "SQuaRE"
 dialog_title: "Create a Python package"
 dialog_fields:
-  - key: "pypi_name"
+  - key: "name"
     label: "PyPI package name"
     hint: "Should be lower-case and a single word or hyphen-separated words."
     component: "text"
