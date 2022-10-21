@@ -101,31 +101,28 @@ The built documentation is located in the :file:`docs/_build/html` directory.
 Updating the change log
 =======================
 
-Each pull request should update the change log (:file:`CHANGELOG.rst`).
+Each pull request should update the change log (:file:`CHANGELOG.md`).
 Add a description of new features and fixes as list items under a section at the top of the change log called "Unreleased:"
 
-.. code-block:: rst
+.. code-block:: md
 
-   Unreleased
-   ----------
+   ## Unreleased
 
    - Description of the feature or fix.
 
-If the next version is known (because Safir's main branch is being prepared for a new major or minor version), the section may contain that version information:
+If the next version is known (because example's main branch is being prepared for a new major or minor version), the section may contain that version information:
 
-.. code-block:: rst
+.. code-block:: md
 
-   X.Y.0 (unreleased)
-   ------------------
+   ## X.Y.0 (unreleased)
 
    - Description of the feature or fix.
 
 If the exact version and release date is known (:doc:`because a release is being prepared <release>`), the section header is formatted as:
 
-.. code-block:: rst
+.. code-block:: md
 
-   X.Y.0 (YYYY-MM-DD)
-   ------------------
+   ## X.Y.0 (YYYY-MM-DD)
 
    - Description of the feature or fix.
 

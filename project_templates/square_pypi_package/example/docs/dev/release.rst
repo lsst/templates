@@ -6,10 +6,10 @@ This page gives an overview of how example releases are made.
 This information is only useful for maintainers.
 
 example's releases are largely automated through GitHub Actions (see the `ci.yaml`_ workflow file for details).
-When a semantic version tag is pushed to GitHub, `Safir is released to PyPI`_ with that version.
+When a semantic version tag is pushed to GitHub, `example is released to PyPI`_ with that version.
 Similarly, documentation is built and pushed for each version (see https://safir.lsst.io/v).
 
-.. _`Safir is released to PyPI`: https://pypi.org/project/example/
+.. _`example is released to PyPI`: https://pypi.org/project/example/
 .. _`ci.yaml`: https://github.com/lsst-sqre/example/blob/main/.github/workflows/ci.yaml
 
 .. _regular-release:
@@ -33,7 +33,7 @@ In particular, replace the "Unreleased" section headline with the semantic versi
 See :ref:`dev-change-log` in the *Developer guide* for details.
 
 2. GitHub release and tag
-------------------
+-------------------------
 
 Use `GitHub's Release feature <https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository>`__ to create releases and their corresponding Git tags.
 
@@ -45,7 +45,7 @@ Use `GitHub's Release feature <https://docs.github.com/en/repositories/releasing
 3. Fill in the release notes, copied from the release notes.
    You can use GitHub's change log feature to additionally generate a list of PRs included in the release.
 
-The tag **must** follow the :pep:`440` specification since Safir uses setuptools_scm_ to set version metadata based on Git tags.
+The tag **must** follow the :pep:`440` specification since example uses setuptools_scm_ to set version metadata based on Git tags.
 In particular, **don't** prefix the tag with ``v``.
 
 .. _setuptools_scm: https://github.com/pypa/setuptools_scm
