@@ -1,7 +1,7 @@
 .. image:: https://img.shields.io/badge/testn--000-lsst.io-brightgreen.svg
    :target: https://testn-000.lsst.io
-.. image:: https://travis-ci.com/lsst-dm/testn-000.svg
-   :target: https://travis-ci.com/lsst-dm/testn-000
+.. image:: https://github.com/lsst-dm/testn-000/workflows/CI/badge.svg
+   :target: https://github.com/lsst-dm/testn-000/actions/
 
 ##############
 Document Title
