@@ -44,14 +44,6 @@ Pipeline tasks
 .. lsst-pipelinetasks::
    :root: lsst.example.standalone
 
-.. _lsst.example.standalone-command-line-tasks:
-
-Command-line tasks
-------------------
-
-.. lsst-cmdlinetasks::
-   :root: lsst.example.standalone
-
 .. _lsst.example.standalone-tasks:
 
 Tasks

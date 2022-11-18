@@ -44,14 +44,6 @@ Pipeline tasks
 .. lsst-pipelinetasks::
    :root: lsst.example.dds
 
-.. _lsst.example.dds-command-line-tasks:
-
-Command-line tasks
-------------------
-
-.. lsst-cmdlinetasks::
-   :root: lsst.example.dds
-
 .. _lsst.example.dds-tasks:
 
 Tasks

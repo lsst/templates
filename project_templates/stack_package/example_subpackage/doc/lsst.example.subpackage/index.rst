@@ -44,14 +44,6 @@ Pipeline tasks
 .. lsst-pipelinetasks::
    :root: lsst.example.subpackage
 
-.. _lsst.example.subpackage-command-line-tasks:
-
-Command-line tasks
-------------------
-
-.. lsst-cmdlinetasks::
-   :root: lsst.example.subpackage
-
 .. _lsst.example.subpackage-tasks:
 
 Tasks

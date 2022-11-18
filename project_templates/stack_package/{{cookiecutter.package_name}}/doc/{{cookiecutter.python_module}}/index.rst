@@ -45,14 +45,6 @@ Pipeline tasks
 .. lsst-pipelinetasks::
    :root: {{ cookiecutter.python_module }}
 
-.. _{{ cookiecutter.python_module }}-command-line-tasks:
-
-Command-line tasks
-------------------
-
-.. lsst-cmdlinetasks::
-   :root: {{ cookiecutter.python_module }}
-
 .. _{{ cookiecutter.python_module }}-tasks:
 
 Tasks
