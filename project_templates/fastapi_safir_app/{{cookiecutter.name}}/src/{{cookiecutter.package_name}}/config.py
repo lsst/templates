@@ -24,12 +24,6 @@ class Configuration(BaseSettings):
         env="SAFIR_PROFILE",
     )
 
-    logger_name: str = Field(
-        "{{ cookiecutter.package_name }}",
-        title="Root name of application's logger",
-        env="SAFIR_LOGGER",
-    )
-
     log_level: LogLevel = Field(
         LogLevel.INFO,
         title="Log level of the application's logger",
