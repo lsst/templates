@@ -44,14 +44,6 @@ Pipeline tasks
 .. lsst-pipelinetasks::
    :root: lsst.example.pythononly
 
-.. _lsst.example.pythononly-command-line-tasks:
-
-Command-line tasks
-------------------
-
-.. lsst-cmdlinetasks::
-   :root: lsst.example.pythononly
-
 .. _lsst.example.pythononly-tasks:
 
 Tasks

@@ -5,11 +5,5 @@ from templatekit.builder import file_template_builder
 env = Environment(BUILDERS={'FileTemplate': file_template_builder})
 env.FileTemplate(
     'lsst.example.ExampleTask.rst',
-    '{{cookiecutter.task_module}}.{{cookiecutter.task_class}}.rst.jinja')
-
-# Example for a lsst.pipe.task.CmdLineTask topic
-env.FileTemplate(
-    'lsst.example.ExampleCmdLineTask.rst',
-    '{{cookiecutter.task_module}}.{{cookiecutter.task_class}}.rst.jinja',
-    cookiecutter_context={'task_class': 'ExampleCmdLineTask',
-                          'script_name': 'exampleCmdLineTask.py'})
+    '{{cookiecutter.task_module}}.{{cookiecutter.task_class}}.rst.jinja'
+)

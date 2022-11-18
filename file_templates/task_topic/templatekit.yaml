@@ -10,8 +10,3 @@ dialog_fields:
     label: "Module name"
     hint: "Namespace of the actual module containing the task class."
     component: "text"
-  - key: "script_name"
-    label: "Command-line script"
-    hint: "Name of the command-line task, or blank if none."
-    component: "text"
-    optional: True

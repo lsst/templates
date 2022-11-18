@@ -22,13 +22,6 @@ For example: `ProcessCcdTask`.
 The Python module containing the task class.
 For example: `lsst.pipe.tasks.processCcd`.
 
-### cookiecutter.script_name
-
-If the task is a command-line task, this variable is the name of task's executable script.
-For example: `processCcd.py`.
-
-If the task isn't a command-line task, leave this variable as an empty string (the default).
-
 ## Examples
 
 This file template has multiple examples that demonstrate different configurations.
@@ -36,10 +29,6 @@ This file template has multiple examples that demonstrate different configuratio
 ### lsst.example.ExampleTask.rst
 
 [lsst.example.ExampleTask.rst](lsst.example.ExampleTask.rst) is a minimal example of a task topic for a regular Task class.
-
-### lsst.example.ExampleCmdLineTask.rst
-
-[lsst.example.ExampleTask.rst](lsst.example.ExampleTask.rst) is a minimal example of a task topic for a command-line task, where the `script_name` variable is set.
 
 ## Related templates
 
