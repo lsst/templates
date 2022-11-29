@@ -2,39 +2,33 @@
 
 from __future__ import annotations
 
-import os
-from dataclasses import dataclass
+from pydantic import BaseSettings, Field
+from safir.logging import LogLevel, Profile
 
 __all__ = ["Configuration", "config"]
 
 
-@dataclass
-class Configuration:
+class Configuration(BaseSettings):
     """Configuration for {{ cookiecutter.package_name }}."""
 
-    name: str = os.getenv("SAFIR_NAME", "{{ cookiecutter.name | lower }}")
-    """The application's name, which doubles as the root HTTP endpoint path.
+    name: str = Field(
+        "{{ cookiecutter.name | lower }}",
+        title="Name of application",
+        description="Doubles as the root HTTP endpoint path.",
+        env="SAFIR_NAME",
+    )
 
-    Set with the ``SAFIR_NAME`` environment variable.
-    """
+    profile: Profile = Field(
+        Profile.development,
+        title="Application logging profile",
+        env="SAFIR_PROFILE",
+    )
 
-    profile: str = os.getenv("SAFIR_PROFILE", "development")
-    """Application run profile: "development" or "production".
-
-    Set with the ``SAFIR_PROFILE`` environment variable.
-    """
-
-    logger_name: str = os.getenv("SAFIR_LOGGER", "{{ cookiecutter.package_name }}")
-    """The root name of the application's logger.
-
-    Set with the ``SAFIR_LOGGER`` environment variable.
-    """
-
-    log_level: str = os.getenv("SAFIR_LOG_LEVEL", "INFO")
-    """The log level of the application's logger.
-
-    Set with the ``SAFIR_LOG_LEVEL`` environment variable.
-    """
+    log_level: LogLevel = Field(
+        LogLevel.INFO,
+        title="Log level of the application's logger",
+        env="SAFIR_LOG_LEVEL",
+    )
 
 
 config = Configuration()
