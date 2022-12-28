@@ -250,16 +250,6 @@ You shouldn't need to modify this file.
 
 *Only necessary for packages developed in C++.*
 
-### examples/SConscript
-
-Example: [examples/SConscript](example/examples/SConscript).
-
-Scons (extended by sconsUtils) uses this `SConstruct` file.
-You shouldn't need to modify this file.
-
-You can put example Python modules in this `examples` directory.
-Keep in mind that these examples aren't tested by continuous integration and we may change our usage of the examples directory in the future.
-
 ### include/root.h
 
 Example: [include/lsst/example.h](example/include/lsst/example.h)
