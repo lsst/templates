@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: "{{ cookiecutter.package_name }}"
+  name: "{{ cookiecutter.module_name }}"
   labels:
     app.kubernetes.io/name: "{{ cookiecutter.name }}"
 spec:
   ports:
-    - name: "{{ cookiecutter.package_name }}-http"
+    - name: "{{ cookiecutter.module_name }}-http"
       protocol: "TCP"
       port: 8080
       targetPort: "app"
   selector:
-    app.kubernetes.io/name: "{{ cookiecutter.package_name }}"
+    app.kubernetes.io/name: "{{ cookiecutter.module_name }}"

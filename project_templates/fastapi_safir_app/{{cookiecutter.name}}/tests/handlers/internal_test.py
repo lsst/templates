@@ -1,11 +1,11 @@
-"""Tests for the {{ cookiecutter.package_name }}.handlers.internal module and routes."""
+"""Tests for the {{ cookiecutter.module_name }}.handlers.internal module and routes."""
 
 from __future__ import annotations
 
 import pytest
 from httpx import AsyncClient
 
-from {{ cookiecutter.package_name }}.config import config
+from {{ cookiecutter.module_name }}.config import config
 
 
 @pytest.mark.asyncio

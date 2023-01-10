@@ -65,4 +65,4 @@ USER appuser
 EXPOSE 8080
 
 # Run the application.
-CMD ["uvicorn", "{{ cookiecutter.package_name }}.main:app", "--host", "0.0.0.0", "--port", "8080"]
+CMD ["uvicorn", "{{ cookiecutter.module_name }}.main:app", "--host", "0.0.0.0", "--port", "8080"]

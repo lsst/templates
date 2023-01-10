@@ -1,6 +1,6 @@
 {
   "name": "example",
-  "package_name": "{{ cookiecutter.name | lower | replace('-', '') | replace('_', '') | replace('.', '') }}",
+  "module_name": "{{ cookiecutter.name | lower | replace('-', '') | replace('_', '') | replace('.', '') }}",
   "summary": "Short one-sentence summary of the app",
   "copyright_year": "{% now 'utc', '%Y' %}",
   "copyright_holder": [

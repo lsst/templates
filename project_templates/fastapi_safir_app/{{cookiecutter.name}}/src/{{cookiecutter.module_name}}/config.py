@@ -9,7 +9,7 @@ __all__ = ["Configuration", "config"]
 
 
 class Configuration(BaseSettings):
-    """Configuration for {{ cookiecutter.package_name }}."""
+    """Configuration for {{ cookiecutter.name }}."""
 
     name: str = Field(
         "{{ cookiecutter.name | lower }}",

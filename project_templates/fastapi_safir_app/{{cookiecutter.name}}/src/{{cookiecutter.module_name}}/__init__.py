@@ -1,4 +1,4 @@
-"""The {{ cookiecutter.package_name }} service."""
+"""The {{ cookiecutter.name }} service."""
 
 __all__ = ["__version__"]
 
