@@ -17,3 +17,5 @@ version.py
 .eggs
 .pytest_cache
 *.egg-info
+.venv
+venv
