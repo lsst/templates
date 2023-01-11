@@ -1,17 +1,46 @@
-[build-system]
-requires = [
-    "setuptools>=42",
-    "wheel",
-    "setuptools_scm[toml]>=3.4"
+[project]
+# https://packaging.python.org/en/latest/specifications/declaring-project-metadata/
+name = "{{cookiecutter.name}}"
+description = "{{cookiecutter.summary}}"
+license = { file = "LICENSE" }
+readme = "README.md"
+keywords = ["rubin", "lsst"]
+# https://pypi.org/classifiers/
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Intended Audience :: Developers",
+    "Natural Language :: English",
+    "Operating System :: POSIX",
+    "Typing :: Typed",
 ]
-build-backend = 'setuptools.build_meta'
+requires-python = ">=3.8"
+# Use requirements/main.in for runtime dependencies instead.
+dependencies = []
+dynamic = ["version"]
+
+[project.scripts]
+{{cookiecutter.name}} = "{{cookiecutter.module_name}}.cli:main"
+
+[project.urls]
+Homepage = "https://{{cookiecutter.name}}.lsst.io"
+Source = "https://github.com/{{cookiecutter.github_org}}/{{cookiecutter.name}}"
+
+[build-system]
+requires = ["setuptools>=61", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
 
 [tool.setuptools_scm]
 
 [tool.coverage.run]
 parallel = true
 branch = true
-source = ["{{ cookiecutter.package_name }}"]
+source = ["{{ cookiecutter.module_name }}"]
 
 [tool.coverage.paths]
 source = ["src", ".tox/*/site-packages"]
@@ -27,7 +56,7 @@ exclude_lines = [
     "raise NotImplementedError",
     "if 0:",
     "if __name__ == .__main__.:",
-    "if TYPE_CHECKING:"
+    "if TYPE_CHECKING:",
 ]
 
 [tool.black]
@@ -49,9 +78,9 @@ exclude = '''
 # Multi-line strings are implicitly treated by black as regular expressions
 
 [tool.isort]
-include_trailing_comma = true
-multi_line_output = 3
-known_first_party = ["{{ cookiecutter.package_name }}", "tests"]
+profile = "black"
+line_length = 79
+known_first_party = ["{{cookiecutter.module_name}}", "tests"]
 skip = ["docs/conf.py"]
 
 [tool.pytest.ini_options]
@@ -64,7 +93,16 @@ asyncio_mode = "strict"
 # enables magical assert processing (showing a full diff on assert failures
 # with complex data structures rather than only the assert message) in files
 # listed in python_files.
-python_files = [
-    "tests/*.py",
-    "tests/*/*.py"
-]
+python_files = ["tests/*.py", "tests/*/*.py"]
+
+[tool.mypy]
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+ignore_missing_imports = true
+local_partial_types = true
+no_implicit_reexport = true
+strict_equality = true
+warn_redundant_casts = true
+warn_unreachable = true
+warn_unused_ignores = true
+# plugins =

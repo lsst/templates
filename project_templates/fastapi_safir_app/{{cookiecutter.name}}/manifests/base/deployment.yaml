@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: "{{ cookiecutter.package_name }}"
+  name: "{{ cookiecutter.module_name }}"
   labels:
     app.kubernetes.io/name: "{{ cookiecutter.name }}"
 spec:
@@ -25,7 +25,7 @@ spec:
               name: "app"
           envFrom:
             - configMapRef:
-                name: "{{ cookiecutter.package_name }}"
+                name: "{{ cookiecutter.module_name }}"
           securityContext:
             allowPrivilegeEscalation: false
             capabilities:

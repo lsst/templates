@@ -24,7 +24,7 @@ __all__ = ["app", "config"]
 configure_logging(
     profile=config.profile,
     log_level=config.log_level,
-    name="{{ cookiecutter.package_name }}",
+    name="{{ cookiecutter.module_name }}",
 )
 configure_uvicorn_logging(config.log_level)
 
