@@ -11,15 +11,13 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
     "Intended Audience :: Developers",
     "Natural Language :: English",
     "Operating System :: POSIX",
     "Typing :: Typed",
 ]
-requires-python = ">=3.8"
+requires-python = ">=3.11"
 # Use requirements/main.in for runtime dependencies instead.
 dependencies = []
 dynamic = ["version"]
@@ -61,7 +59,7 @@ exclude_lines = [
 
 [tool.black]
 line-length = 79
-target-version = ['py38']
+target-version = ["py311"]
 exclude = '''
 /(
     \.eggs
@@ -101,6 +99,7 @@ disallow_incomplete_defs = true
 ignore_missing_imports = true
 local_partial_types = true
 no_implicit_reexport = true
+show_error_codes = true
 strict_equality = true
 warn_redundant_casts = true
 warn_unreachable = true
