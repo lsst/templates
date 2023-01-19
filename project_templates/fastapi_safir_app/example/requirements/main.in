@@ -1,3 +1,5 @@
+# -*- conf -*-
+#
 # Editable runtime dependencies (equivalent to install_requires)
 # Add direct runtime dependencies here, as well as implicit dependencies
 # with constrained versions.
