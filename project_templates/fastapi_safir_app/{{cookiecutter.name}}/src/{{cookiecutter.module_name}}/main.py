@@ -42,10 +42,8 @@ app = FastAPI(
 app.include_router(internal_router)
 app.include_router(external_router, prefix=f"/{config.name}")
 
-
-@app.on_event("startup")
-async def startup_event() -> None:
-    app.add_middleware(XForwardedMiddleware)
+# Add middleware.
+app.add_middleware(XForwardedMiddleware)
 
 
 @app.on_event("shutdown")
