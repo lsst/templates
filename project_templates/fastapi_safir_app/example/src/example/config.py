@@ -14,8 +14,13 @@ class Configuration(BaseSettings):
     name: str = Field(
         "example",
         title="Name of application",
-        description="Doubles as the root HTTP endpoint path.",
         env="SAFIR_NAME",
+    )
+
+    path_prefix: str = Field(
+        "/example",
+        title="URL prefix for application",
+        env="SAFIR_PATH_PREFIX",
     )
 
     profile: Profile = Field(

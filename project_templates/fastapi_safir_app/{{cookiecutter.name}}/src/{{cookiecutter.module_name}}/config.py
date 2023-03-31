@@ -12,10 +12,15 @@ class Configuration(BaseSettings):
     """Configuration for {{ cookiecutter.name }}."""
 
     name: str = Field(
-        "{{ cookiecutter.name | lower }}",
+        "{{ cookiecutter.name }}",
         title="Name of application",
-        description="Doubles as the root HTTP endpoint path.",
         env="SAFIR_NAME",
+    )
+
+    path_prefix: str = Field(
+        "/{{ cookiecutter.name | lower }}",
+        title="URL prefix for application",
+        env="SAFIR_PATH_PREFIX",
     )
 
     profile: Profile = Field(

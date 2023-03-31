@@ -23,10 +23,10 @@ dependencies = []
 dynamic = ["version"]
 
 [project.scripts]
-{{cookiecutter.name}} = "{{cookiecutter.module_name}}.cli:main"
+{{cookiecutter.name | lower}} = "{{cookiecutter.module_name}}.cli:main"
 
 [project.urls]
-Homepage = "https://{{cookiecutter.name}}.lsst.io"
+Homepage = "https://{{cookiecutter.name | lower}}.lsst.io"
 Source = "https://github.com/{{cookiecutter.github_org}}/{{cookiecutter.name}}"
 
 [build-system]
