@@ -32,15 +32,15 @@ app = FastAPI(
     title="example",
     description=metadata("example")["Summary"],
     version=version("example"),
-    openapi_url=f"/{config.name}/openapi.json",
-    docs_url=f"/{config.name}/docs",
-    redoc_url=f"/{config.name}/redoc",
+    openapi_url=f"/{config.path_prefix}/openapi.json",
+    docs_url=f"/{config.path_prefix}/docs",
+    redoc_url=f"/{config.path_prefix}/redoc",
 )
 """The main FastAPI application for example."""
 
 # Attach the routers.
 app.include_router(internal_router)
-app.include_router(external_router, prefix=f"/{config.name}")
+app.include_router(external_router, prefix=f"/{config.path_prefix}")
 
 # Add middleware.
 app.add_middleware(XForwardedMiddleware)
