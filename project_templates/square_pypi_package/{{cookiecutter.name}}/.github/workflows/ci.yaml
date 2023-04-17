@@ -1,6 +1,8 @@
 name: Python CI
 
 "on":
+  merge_request: {}
+  pull_request: {}
   push:
     branches-ignore:
       # These should always correspond to pull requests, so ignore them for
@@ -8,12 +10,12 @@ name: Python CI
       # trigger, avoiding running the workflow twice.  This is a minor
       # optimization so there's no need to ensure this is comprehensive.
       - "dependabot/**"
+      - "gh-readonly-queue/**"
       - "renovate/**"
       - "tickets/**"
       - "u/**"
     tags:
       - "*"
-  pull_request: {}
 
 jobs:
   lint:
@@ -80,8 +82,9 @@ jobs:
           username: {{ "${{ secrets.LTD_USERNAME }}" }}
           password: {{ "${{ secrets.LTD_PASSWORD }}" }}
         if: >
-          github.event_name != 'pull_request'
-          || startsWith(github.head_ref, 'tickets/')
+          github.event_name != 'merge_group'
+          && (github.event_name != 'pull_request'
+              || startsWith(github.head_ref, 'tickets/'))
 
   pypi:
 
