@@ -25,7 +25,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.10"
+          python-version: "3.11"
 
       - name: Run pre-commit
         uses: pre-commit/action@v3.0.0
@@ -37,9 +37,7 @@ jobs:
     strategy:
       matrix:
         python:
-          - "3.8"
-          - "3.9"
-          - "3.10"
+          - "3.11"
 
     steps:
       - uses: actions/checkout@v3
@@ -65,7 +63,7 @@ jobs:
       - name: Run tox
         uses: lsst-sqre/run-tox@v1
         with:
-          python-version: "3.10"
+          python-version: "3.11"
           tox-envs: "docs"
           # Add docs-linkcheck when the docs and PyPI package are published
           # tox-envs: "docs,docs-linkcheck"
