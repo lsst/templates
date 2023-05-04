@@ -40,7 +40,7 @@ app = FastAPI(
 
 # Attach the routers.
 app.include_router(internal_router)
-app.include_router(external_router, prefix=f"/{config.path_prefix}")
+app.include_router(external_router, prefix=f"{config.path_prefix}")
 
 # Add middleware.
 app.add_middleware(XForwardedMiddleware)
