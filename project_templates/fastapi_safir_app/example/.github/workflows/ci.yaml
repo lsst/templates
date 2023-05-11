@@ -21,6 +21,7 @@ jobs:
   lint:
 
     runs-on: ubuntu-latest
+    timeout-minutes: 5
 
     steps:
       - uses: actions/checkout@v3
@@ -36,6 +37,7 @@ jobs:
   test:
 
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     strategy:
       matrix:
@@ -55,6 +57,7 @@ jobs:
 
     runs-on: ubuntu-latest
     needs: [lint, test]
+    timeout-minutes: 10
 
     # Only do Docker builds of tagged releases and pull requests from ticket
     # branches.  This will still trigger on pull requests from untrusted
