@@ -11,13 +11,12 @@ name: Periodic CI
 jobs:
   test:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     strategy:
       matrix:
         python:
-          - "3.8"
-          - "3.9"
-          - "3.10"
+          - "3.11"
 
     steps:
       - uses: actions/checkout@v3
@@ -31,6 +30,7 @@ jobs:
 
   docs:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     steps:
       - uses: actions/checkout@v3
@@ -38,12 +38,13 @@ jobs:
       - name: Build docs in tox
         uses: lsst-sqre/run-tox@v1
         with:
-          python-version: "3.10"
+          python-version: "3.11"
           tox-envs: "docs,docs-linkcheck"
           use-cache: false
 
   pypi:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     steps:
       - uses: actions/checkout@v3
@@ -54,5 +55,5 @@ jobs:
         uses: lsst-sqre/build-and-publish-to-pypi@v1
         with:
           pypi-token: ""
-          python-version: "3.10"
+          python-version: "3.11"
           upload: false
