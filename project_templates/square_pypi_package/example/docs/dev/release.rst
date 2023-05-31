@@ -7,7 +7,7 @@ This information is only useful for maintainers.
 
 example's releases are largely automated through GitHub Actions (see the `ci.yaml`_ workflow file for details).
 When a semantic version tag is pushed to GitHub, `example is released to PyPI`_ with that version.
-Similarly, documentation is built and pushed for each version (see https://safir.lsst.io/v).
+Similarly, documentation is built and pushed for each version (see https://example.lsst.io/v).
 
 .. _`example is released to PyPI`: https://pypi.org/project/example/
 .. _`ci.yaml`: https://github.com/lsst-sqre/example/blob/main/.github/workflows/ci.yaml

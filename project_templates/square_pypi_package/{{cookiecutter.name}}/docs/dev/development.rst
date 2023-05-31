@@ -14,7 +14,7 @@ For that reason, it's a good idea to propose changes with a new `GitHub issue`_ 
 
 {{cookiecutter.name}} is developed by the Rubin Observatory SQuaRE team.
 
-.. _GitHub issue: https://github.com/lsst-sqre/safir/issues/new
+.. _GitHub issue: https://github.com/{{cookiecutter.github_org}}/{{cookiecutter.name}}/issues/new
 
 .. _dev-environment:
 
@@ -25,7 +25,7 @@ To develop {{cookiecutter.name}}, create a virtual environment with your method 
 
 .. code-block:: sh
 
-   git clone https://github.com/lsst-sqre/{{cookiecutter.name}}.git
+   git clone https://github.com/{{cookiecutter.github_org}}/{{cookiecutter.name}}.git
    cd {{cookiecutter.name}}
    make init
 

@@ -14,7 +14,7 @@ For that reason, it's a good idea to propose changes with a new `GitHub issue`_ 
 
 example is developed by the Rubin Observatory SQuaRE team.
 
-.. _GitHub issue: https://github.com/lsst-sqre/safir/issues/new
+.. _GitHub issue: https://github.com/lsst-sqre/example/issues/new
 
 .. _dev-environment:
 

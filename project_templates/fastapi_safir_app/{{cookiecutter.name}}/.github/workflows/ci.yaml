@@ -98,6 +98,6 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/lsst-sqre/{{ cookiecutter.name | lower }}:{{ "${{ steps.vars.outputs.tag }}" }}
+            ghcr.io/{{ cookiecutter.github_org }}/{{ cookiecutter.name | lower }}:{{ "${{ steps.vars.outputs.tag }}" }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
