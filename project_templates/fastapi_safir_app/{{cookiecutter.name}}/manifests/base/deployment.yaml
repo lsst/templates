@@ -19,7 +19,7 @@ spec:
         - name: app
           imagePullPolicy: "IfNotPresent"
           # Use images field in a Kustomization to set/update image tag
-          image: "ghcr.io/lsst-sqre/{{ cookiecutter.name | lower }}"
+          image: "ghcr.io/{{ cookiecutter.github_org }}/{{ cookiecutter.name | lower }}"
           ports:
             - containerPort: 8080
               name: "app"

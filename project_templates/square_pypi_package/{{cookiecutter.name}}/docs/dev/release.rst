@@ -7,10 +7,10 @@ This information is only useful for maintainers.
 
 {{cookiecutter.name}}'s releases are largely automated through GitHub Actions (see the `ci.yaml`_ workflow file for details).
 When a semantic version tag is pushed to GitHub, `{{cookiecutter.name}} is released to PyPI`_ with that version.
-Similarly, documentation is built and pushed for each version (see https://safir.lsst.io/v).
+Similarly, documentation is built and pushed for each version (see https://{{cookiecutter.name}}.lsst.io/v).
 
 .. _`{{cookiecutter.name}} is released to PyPI`: https://pypi.org/project/{{cookiecutter.name}}/
-.. _`ci.yaml`: https://github.com/lsst-sqre/{{cookiecutter.name}}/blob/main/.github/workflows/ci.yaml
+.. _`ci.yaml`: https://github.com/{{cookiecutter.github_org}}/{{cookiecutter.name}}/blob/main/.github/workflows/ci.yaml
 
 .. _regular-release:
 
