@@ -24,16 +24,25 @@ dialog_fields:
         presets:
           series: "DMTR"
           github_org: "lsst-dm"
+          namespace: "DM"
+      - label: "PSTR"
+        value: "PSTR"
+        presets:
+          series: "PSTR"
+          github_org: "lsst-pstn"
+          namespace: "PST"
       - label: "SCTR"
         value: "SCTR"
         presets:
           series: "SCTR"
           github_org: "lsst-sitcom"
+          namespace: "SE"
       - label: "Test"
         value: "test"
         presets:
           series: "TESTTR"
           github_org: "lsst-sqre-testing"
+          namespace: "DM"
   - key: "serial_number"
     label: "Document number"
     placeholder: "0"
