@@ -1,32 +1,12 @@
 {
-  "series": [
-    "DMTR",
-    "SCTR",
-    "TESTTR"
-  ],
-  "namespace": [
-    "DM",
-    "CAM",
-    "EPO",
-    "OCS",
-    "OPS",
-    "PSE",
-    "T&S"
-  ],
+  "series": ["DMTR", "PSTR", "SCTR", "TESTTR"],
+  "namespace": ["DM", "CAM", "EPO", "OCS", "OPS", "PSE", "T&S"],
   "serial_number": "0",
-  "github_org": [
-    "lsst-dm",
-    "lsst-sitcom",
-    "lsst-sqre-testing"
-  ],
+  "github_org": ["lsst-dm", "lsst-pst", "lsst-sitcom", "lsst-sqre-testing"],
   "title": "Document Title",
   "author": "First Author",
   "plan": "LVV-P73",
   "date": "{%- now 'utc', '%Y-%m-%d' -%}",
-  "_copy_without_render": [
-    "*.bib"
-  ],
-  "_extensions": [
-    "jinja2_time.TimeExtension"
-  ]
+  "_copy_without_render": ["*.bib"],
+  "_extensions": ["jinja2_time.TimeExtension"]
 }
