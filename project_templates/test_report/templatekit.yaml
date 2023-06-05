@@ -29,7 +29,7 @@ dialog_fields:
         value: "PSTR"
         presets:
           series: "PSTR"
-          github_org: "lsst-pstn"
+          github_org: "lsst-pst"
           namespace: "PST"
       - label: "SCTR"
         value: "SCTR"
