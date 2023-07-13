@@ -51,6 +51,19 @@ jobs:
           python-version: ${{ matrix.python }}
           tox-envs: "py,coverage-report,typing"
 
+  dependencies:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: lsst-sqre/run-neophile@v1
+        with:
+          python-version: "3.11"
+          mode: check
+          types: python
+
   build:
     runs-on: ubuntu-latest
     needs: [lint, test]
