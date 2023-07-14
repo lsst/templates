@@ -1,0 +1,50 @@
+# This is a separate run of the Python test suite that runs from a schedule,
+# doesn't cache the tox environment, and updates pinned dependencies first.
+# The purpose is to test compatibility with the latest versions of
+# dependencies.
+
+name: Periodic CI
+
+"on":
+  schedule:
+    - cron: "0 12 * * 1"
+  workflow_dispatch: {}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    strategy:
+      matrix:
+        python:
+          - "3.11"
+
+    steps:
+      - uses: actions/checkout@v3
+
+      # Use the oldest supported version of Python to update dependencies,
+      # not the matrixed Python version, since this accurately reflects
+      # how dependencies should later be updated.
+      - name: Run neophile
+        uses: lsst-sqre/run-neophile@v1
+        with:
+          python-version: "3.11"
+          mode: update
+
+      - name: Run tests in tox
+        uses: lsst-sqre/run-tox@v1
+        with:
+          python-version: ${{ matrix.python }}
+          tox-envs: "lint,typing,py"
+          use-cache: false
+
+      - name: Report status
+        if: always()
+        uses: ravsamhq/notify-slack-action@v2
+        with:
+          status: ${{ job.status }}
+          notify_when: "failure"
+          notification_title: "Periodic test for {repo} failed"
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_ALERT_WEBHOOK }}
