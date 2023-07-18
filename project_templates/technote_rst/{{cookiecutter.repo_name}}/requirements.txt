@@ -1,1 +1,1 @@
-documenteer[technote]
+documenteer[technote]<1

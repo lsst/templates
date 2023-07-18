@@ -33,7 +33,7 @@ dev = [
     "pre-commit",
     "mypy",
     # Documentation
-    "documenteer[guide]",
+    "documenteer[guide]<1",
 ]
 
 [project.urls]
