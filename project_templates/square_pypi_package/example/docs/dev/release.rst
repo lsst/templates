@@ -26,11 +26,28 @@ Release tags are semantic version identifiers following the :pep:`440` specifica
 1. Change log and documentation
 -------------------------------
 
-Each PR should include updates to the change log.
-If the change log or documentation needs additional updates, now is the time to make those changes through the regular branch-and-PR development method against the ``main`` branch.
+Change log messages for each release are accumulated using scriv_.
+See :ref:`dev-change-log` in the *Developer guide* for more details.
 
-In particular, replace the "Unreleased" section headline with the semantic version and date.
-See :ref:`dev-change-log` in the *Developer guide* for details.
+When it comes time to make the release, there should be a collection of change log fragments in :file:`changelog.d`.
+Those fragments will make up the change log for the new release.
+
+Review those fragments to determine the version number of the next release.
+Safir follows semver_, so follow its rules to pick the next version:
+
+.. rst-class:: compact
+
+- If there are any backward-incompatible changes, incremeent the major version number and set the other numbers to 0.
+- If there are any new features, increment the minor version number and set the patch version to 0.
+- Otherwise, increment the patch version number.
+
+Then, run ``scriv collect --version <version>`` specifying the version number you decided on.
+This will delete the fragment files and collect them into :file:`CHANGELOG.md` under an entry for the new release.
+Review that entry and edit it as needed (proofread, change the order to put more important things first, etc.).
+scriv will put blank lines between entries from different files.
+You may wish to remove those blank lines to ensure consistent formatting by various Markdown parsers.
+
+Finally, create a PR from those changes and merge it before continuing with the release process.
 
 2. GitHub release and tag
 -------------------------
@@ -75,7 +92,7 @@ If the release branch doesn't already exist, check out the latest patch for that
 Developing on a release branch
 ------------------------------
 
-Once a release branch exists, it becomes the "master" branch for patches of that major-minor version.
+Once a release branch exists, it becomes the "main" branch for patches of that major-minor version.
 Pull requests should be based on, and merged into, the release branch.
 
 If the development on the release branch is a backport of commits on the ``main`` branch, use ``git cherry-pick`` to copy those commits into a new pull request against the release branch.

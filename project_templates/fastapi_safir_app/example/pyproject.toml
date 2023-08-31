@@ -207,3 +207,16 @@ classmethod-decorators = [
 
 [tool.ruff.pydocstyle]
 convention = "numpy"
+
+[tool.scriv]
+categories = [
+    "Backwards-incompatible changes",
+    "New features",
+    "Bug fixes",
+    "Other changes",
+]
+entry_title_template = "{{ version }} ({{ date.strftime('%Y-%m-%d') }})"
+format = "md"
+md_header_level = "2"
+new_fragment_template = "file:changelog.d/_template.md.jinja"
+skip_fragments = "_template.md.jinja"
