@@ -9,6 +9,7 @@
 
 -c main.txt
 
+# Testing
 asgi-lifespan
 coverage[toml]
 httpx
@@ -18,3 +19,6 @@ pydantic
 pytest
 pytest-asyncio
 pytest-cov
+
+# Documentation
+scriv

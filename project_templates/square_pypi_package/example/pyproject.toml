@@ -34,6 +34,7 @@ dev = [
     "mypy",
     # Documentation
     "documenteer[guide]<1",
+    "scriv",
 ]
 
 [project.urls]
