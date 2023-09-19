@@ -101,30 +101,29 @@ The built documentation is located in the :file:`docs/_build/html` directory.
 Updating the change log
 =======================
 
-Each pull request should update the change log (:file:`CHANGELOG.md`).
-Add a description of new features and fixes as list items under a section at the top of the change log called "Unreleased:"
+example uses scriv_ to maintain its change log.
 
-.. code-block:: md
+When preparing a pull request, run :command:`scriv create`.
+This will create a change log fragment in :file:`changelog.d`.
+Edit that fragment, removing the sections that do not apply and adding entries fo this pull request.
+You can pass the ``--edit`` flag to :command:`scriv create` to open the created fragment automatically in an editor.
 
-   ## Unreleased
+Change log entries use the following sections:
 
-   - Description of the feature or fix.
+.. rst-class:: compact
 
-If the next version is known (because example's main branch is being prepared for a new major or minor version), the section may contain that version information:
+- **Backward-incompatible changes**
+- **New features**
+- **Bug fixes**
+- **Other changes** (for minor, patch-level changes that are not bug fixes, such as logging formatting changes or updates to the documentation)
 
-.. code-block:: md
+These entries will eventually be cut and pasted into the release description for the next release, so the Markdown for the change descriptions should be compatible with GitHub's Markdown conventions for the release description.
+Specifically:
 
-   ## X.Y.0 (unreleased)
-
-   - Description of the feature or fix.
-
-If the exact version and release date is known (:doc:`because a release is being prepared <release>`), the section header is formatted as:
-
-.. code-block:: md
-
-   ## X.Y.0 (YYYY-MM-DD)
-
-   - Description of the feature or fix.
+- Each bullet point should be entirely on one line, even if it contains multiple sentences.
+  This is an exception to the normal documentation convention of a newline after each sentence.
+  Unfortunately, GitHub interprets those newlines as hard line breaks, so they would result in an ugly release description.
+- Avoid using too much complex markup, such as nested bullet lists, since the formatting in the GitHub release description may not be what you expect and manually editing it is tedious.
 
 .. _style-guide:
 
