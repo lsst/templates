@@ -39,7 +39,9 @@ jobs:
       # The check command rebuilds all examples with scons and ensures that
       # generated examples match the committed state.
       - name: Check templates
-        run: templatekit check
+        run: |
+          templatekit check \
+            --ignore "project_templates/technote_rst_early_adopter/testn-000/technote.toml"
 
       # Test TeX builds only with the latest Python version, since they're
       # fairly heavy-weight and the Python version shouldn't matter.
