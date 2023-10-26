@@ -1,0 +1,17 @@
+[technote]
+id = "TESTN-000"
+series_id = "TESTN"
+canonical_url = "https://testn-000.lsst.io"
+github_url = "https://github.com/lsst/testn-000"
+github_default_branch = "main"
+date_created = "2023-10-26T18:55:28Z"
+
+[[technote.authors]]
+name = { name = "First Last" }
+# orcid = "https://orcid.org/..."
+# affiliations = [
+#     { name = "Rubin Observatory", ror = "https://ror.org/048g3cy84" }
+# ]
+
+[technote.status]
+state = "draft"
