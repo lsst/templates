@@ -1,0 +1,17 @@
+[technote]
+id = "{{ cookiecutter.series | escape_yaml_doublequoted }}-{{ cookiecutter.serial_number | escape_yaml_doublequoted }}"
+series_id = "{{ cookiecutter.series | escape_yaml_doublequoted }}"
+canonical_url = "{{ cookiecutter.url | escape_yaml_doublequoted }}"
+github_url = "https://github.com/{{ cookiecutter.github_namespace | escape_yaml_doublequoted }}"
+github_default_branch = "main"
+date_created = "{% now 'utc', '%Y-%m-%dT%H:%M:%SZ' %}"
+
+[[technote.authors]]
+name = { name = "{{ cookiecutter.first_author }}" }
+# orcid = "https://orcid.org/..."
+# affiliations = [
+#     { name = "Rubin Observatory", ror = "https://ror.org/048g3cy84" }
+# ]
+
+[technote.status]
+state = "draft"

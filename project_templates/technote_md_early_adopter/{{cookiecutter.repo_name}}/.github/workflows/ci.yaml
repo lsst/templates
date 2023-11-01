@@ -1,0 +1,12 @@
+name: CI
+
+'on': [push, pull_request, workflow_dispatch]
+
+jobs:
+  call-workflow:
+    uses: lsst-sqre/rubin-sphinx-technote-workflows/.github/workflows/ci.yaml@v1
+    with:
+      handle: {{ cookiecutter.series.lower() }}-{{ cookiecutter.serial_number }}
+    secrets:
+      ltd_username: {% raw %}${{ secrets.LTD_USERNAME }}{% endraw %}
+      ltd_password: {% raw %}${{ secrets.LTD_PASSWORD }}{% endraw %}
