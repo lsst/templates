@@ -41,7 +41,8 @@ jobs:
       - name: Check templates
         run: |
           templatekit check \
-            --ignore "project_templates/technote_rst_early_adopter/testn-000/technote.toml"
+            --ignore "project_templates/technote_rst_early_adopter/testn-000/technote.toml" \
+            --ignore "project_templates/technote_md_early_adopter/testn-000/technote.toml"
 
       # Test TeX builds only with the latest Python version, since they're
       # fairly heavy-weight and the Python version shouldn't matter.
