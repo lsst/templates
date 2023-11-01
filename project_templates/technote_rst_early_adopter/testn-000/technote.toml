@@ -4,7 +4,7 @@ series_id = "TESTN"
 canonical_url = "https://testn-000.lsst.io"
 github_url = "https://github.com/lsst/testn-000"
 github_default_branch = "main"
-date_created = "2023-11-01T14:18:02Z"
+date_created = "2023-11-01T14:56:03Z"
 
 [[technote.authors]]
 name = { name = "First Last" }
