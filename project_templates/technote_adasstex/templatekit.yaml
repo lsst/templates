@@ -38,6 +38,12 @@ dialog_fields:
           series: "SMTN"
           github_org: "lsst-sims"
           org: "SE"
+      - label: "SQR"
+        value: "sqr"
+        presets:
+          series: "SQR"
+          github_org: "lsst-sqre"
+          org: "DM"
       - label: "TSTN"
         value: "tstn"
         presets:
