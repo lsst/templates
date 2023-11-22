@@ -1,5 +1,5 @@
 {
-  "first_author": "First Last",
+  "author_id": "ID from lsst-texmf/etc/authordb.yaml",
   "series": [
     "DMTN",
     "ITTN",
@@ -40,6 +40,12 @@
     "University of Illinois Board of Trustees",
     "University of Washington"
   ],
+  "first_author_given": "",
+  "first_author_family": "",
+  "first_author_orcid": "",
+  "first_author_affil_name": "",
+  "first_author_affil_internal_id": "",
+  "first_author_affil_address": "",
   "_copy_without_render": [
     "*.bib"
   ],

@@ -5,5 +5,14 @@ env = Environment(BUILDERS={"Cookiecutter": cookiecutter_project_builder})
 env.Cookiecutter(
     AlwaysBuild(Dir("TESTN-000")),
     "cookiecutter.json",
-    cookiecutter_context={"series": "TESTN"},
+    cookiecutter_context={
+        "series": "TESTN",
+        "first_author_given": "First",
+        "first_author_family": "Author",
+        "first_author_orcid": "https://orcid.org/0000-0003-3001-676X",
+        "first_author_author_id": "test",
+        "first_author_affil_name": "Rubin Observatory",
+        "first_author_affil_internal_id": "RubinObs",
+        "first_author_affil_address": ("950 N. Cherry Ave., Tucson, AZ 85719, USA",),
+    },
 )

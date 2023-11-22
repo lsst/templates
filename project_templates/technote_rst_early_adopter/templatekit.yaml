@@ -12,6 +12,11 @@ dialog_fields:
     hint: "You can use reStructuredText here."
     component: "textarea"
     placeholder: ""
+  - key: "author_id"
+    label: "First author's ID"
+    hint: "ID is a key from lsst-texmf's authordb.yaml (http://ls.st/uyr)"
+    component: "text"
+    placeholder: ""
   - label: "Series"
     component: "select"
     preset_options:
