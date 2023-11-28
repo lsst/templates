@@ -2,7 +2,7 @@
 
 ## Abstract
 
-```{abstract}}
+```{abstract}
 {{ cookiecutter.description }}
 ```
 

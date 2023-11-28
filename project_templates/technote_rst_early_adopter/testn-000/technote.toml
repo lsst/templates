@@ -4,7 +4,7 @@ series_id = "TESTN"
 canonical_url = "https://testn-000.lsst.io"
 github_url = "https://github.com/lsst/testn-000"
 github_default_branch = "main"
-date_created = 2023-11-28T18:49:47Z
+date_created = 2023-11-28T19:40:44Z
 organization.name = "Vera C. Rubin Observatory"
 organization.ror = "https://ror.org/048g3cy84"
 
@@ -12,8 +12,8 @@ organization.ror = "https://ror.org/048g3cy84"
 state = "draft"
 
 [[technote.authors]]
-name.given "First"
-name.family "Author"
+name.given = "First"
+name.family = "Author"
 orcid = "https://orcid.org/0000-0003-3001-676X"
 internal_id = "ID from lsst-texmf/etc/authordb.yaml"
 [[technote.authors.affiliations]]
