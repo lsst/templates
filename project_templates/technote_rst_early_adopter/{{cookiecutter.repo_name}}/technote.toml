@@ -12,8 +12,8 @@ organization.ror = "https://ror.org/048g3cy84"
 state = "draft"
 
 [[technote.authors]]
-name.given "{{ cookiecutter.first_author_given }}"
-name.family "{{ cookiecutter.first_author_family }}"
+name.given = "{{ cookiecutter.first_author_given }}"
+name.family = "{{ cookiecutter.first_author_family }}"
 orcid = "{{ cookiecutter.first_author_orcid }}"
 internal_id = "{{ cookiecutter.author_id }}"
 [[technote.authors.affiliations]]

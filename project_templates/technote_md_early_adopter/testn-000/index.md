@@ -2,7 +2,7 @@
 
 ## Abstract
 
-```{abstract}}
+```{abstract}
 A short description of this document
 ```
 
