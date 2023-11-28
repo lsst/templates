@@ -4,14 +4,19 @@ series_id = "{{ cookiecutter.series | escape_yaml_doublequoted }}"
 canonical_url = "{{ cookiecutter.url | escape_yaml_doublequoted }}"
 github_url = "https://github.com/{{ cookiecutter.github_namespace | escape_yaml_doublequoted }}"
 github_default_branch = "main"
-date_created = "{% now 'utc', '%Y-%m-%dT%H:%M:%SZ' %}"
-
-[[technote.authors]]
-name = { name = "{{ cookiecutter.first_author }}" }
-# orcid = "https://orcid.org/..."
-# affiliations = [
-#     { name = "Rubin Observatory", ror = "https://ror.org/048g3cy84" }
-# ]
+date_created = {% now 'utc', '%Y-%m-%dT%H:%M:%SZ' %}
+organization.name = "Vera C. Rubin Observatory"
+organization.ror = "https://ror.org/048g3cy84"
 
 [technote.status]
 state = "draft"
+
+[[technote.authors]]
+name.given "{{ cookiecutter.first_author_given }}"
+name.family "{{ cookiecutter.first_author_family }}"
+orcid = "{{ cookiecutter.first_author_orcid }}"
+internal_id = "{{ cookiecutter.author_id }}"
+[[technote.authors.affiliations]]
+name = "{{ cookiecutter.first_author_affil_name }}"
+internal_id = "{{ cookiecutter.first_author_affil_internal_id }}"
+address = "{{ cookiecutter.first_author_affil_address }}"

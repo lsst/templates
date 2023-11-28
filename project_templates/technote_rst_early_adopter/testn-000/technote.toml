@@ -4,14 +4,19 @@ series_id = "TESTN"
 canonical_url = "https://testn-000.lsst.io"
 github_url = "https://github.com/lsst/testn-000"
 github_default_branch = "main"
-date_created = "2023-11-03T14:04:53Z"
-
-[[technote.authors]]
-name = { name = "First Last" }
-# orcid = "https://orcid.org/..."
-# affiliations = [
-#     { name = "Rubin Observatory", ror = "https://ror.org/048g3cy84" }
-# ]
+date_created = 2023-11-28T18:49:47Z
+organization.name = "Vera C. Rubin Observatory"
+organization.ror = "https://ror.org/048g3cy84"
 
 [technote.status]
 state = "draft"
+
+[[technote.authors]]
+name.given "First"
+name.family "Author"
+orcid = "https://orcid.org/0000-0003-3001-676X"
+internal_id = "ID from lsst-texmf/etc/authordb.yaml"
+[[technote.authors.affiliations]]
+name = "Rubin Observatory"
+internal_id = "RubinObs"
+address = "('950 N. Cherry Ave., Tucson, AZ 85719, USA',)"
