@@ -4,7 +4,7 @@ series_id = "TESTN"
 canonical_url = "https://testn-000.lsst.io"
 github_url = "https://github.com/lsst/testn-000"
 github_default_branch = "main"
-date_created = 2023-11-28T19:40:44Z
+date_created = 2023-12-12T20:30:05Z
 organization.name = "Vera C. Rubin Observatory"
 organization.ror = "https://ror.org/048g3cy84"
 
