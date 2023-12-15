@@ -9,7 +9,7 @@ html:
 
 .PHONY:
 lint:
-	tox run -e lint,link-check
+	tox run -e lint,linkcheck
 
 .PHONY:
 add-author:
