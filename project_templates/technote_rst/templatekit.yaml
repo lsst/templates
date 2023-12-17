@@ -1,4 +1,4 @@
-name: "Technote (reStructuredText)"
+name: "Technote (reStructuredText) Early Adopter"
 group: "Documents"
 dialog_title: "Create an rst technote"
 dialog_fields:
@@ -11,6 +11,11 @@ dialog_fields:
     label: "Abstract or description"
     hint: "You can use reStructuredText here."
     component: "textarea"
+    placeholder: ""
+  - key: "author_id"
+    label: "First author's ID"
+    hint: "ID is a key from lsst-texmf's authordb.yaml (http://ls.st/uyr)"
+    component: "text"
     placeholder: ""
   - label: "Series"
     component: "select"
