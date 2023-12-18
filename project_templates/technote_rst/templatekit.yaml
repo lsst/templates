@@ -1,4 +1,4 @@
-name: "Technote (reStructuredText) Early Adopter"
+name: "Technote (reStructuredText)"
 group: "Documents"
 dialog_title: "Create an rst technote"
 dialog_fields:
