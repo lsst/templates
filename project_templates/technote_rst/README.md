@@ -105,12 +105,15 @@ Example: [.github/workflows/ci.yaml](testn-000/.github/workflows/ci.yaml).
 The [GitHub Actions](https://help.github.com/en/actions) configuration file.
 CI is triggered whenever a technote is pushed to GitHub, and is responsible for deploying the technote to LSST the Docs.
 
-### lsstbib/
+### .github/dependabot.yml
 
-Example: [lsstbib](testn-000/lsstbib).
+This file configures [Dependabot](https://dependabot.com) to automatically update the technote's dependencies with pull requests on GitHub.
 
-This directory contains local copies of LSST BibTeX files that are maintained in [lsst-texmf](https://github.com/lsst/lsst-texmf).
-See the README of the generated technote repository for information on how to update these BibTeX files during the lifetime of a technote.
+### .pre-commit-config.yaml
+
+Example: [.pre-commit-config.yaml](testn-000/.pre-commit-config.yaml).
+
+This file configures the [Pre-commit](https://pre-commit.com) hooks that can run to validate and format the content with every commit.
 
 ### conf.py
 
@@ -126,20 +129,11 @@ Example: [COPYRIGHT](testn-000/COPYRIGHT).
 Record copyright claims in this file, one line per institution.
 See the [copyright](../copyright) template and [Copyrights for LSST DM work and the COPYRIGHT file](https://developer.lsst.io/legal/copyright-overview.html).
 
-### index.py
+### index.rst
 
 Example: [index.rst](testn-000/index.rst).
 
 This is the file that your technote's content should go into.
-There are a few caveats:
-
-- Don't add the top-level document title.
-  This is added for you.
-  Add section headers with `=` underscore symbols.
-  See the [headers documentation in the DM ReStructuredText Style Guide](https://developer.lsst.io/restructuredtext/style.html#sections).
-
-- Don't add `toctree` to incorporate additional pages.
-  You can still spread your content across multiple source files by using the [include](http://docutils.sourceforge.net/docs/ref/rst/directives.html#include) directive.
 
 ### LICENSE
 
@@ -152,22 +146,14 @@ See [Licensing LSST DM source code and content](https://developer.lsst.io/legal/
 
 Example: [local.bib](testn-000/local.bib).
 
-Add BibTeX citations to this file that aren't already available in [lsst-texmf](https://lsst-texmf.lsst.io) (the [lsstbib/](#testn-000/local_bib).
+Add BibTeX citations to this file that aren't already available in [lsst-texmf](https://lsst-texmf.lsst.io).
 See the [Updating bibliographies](https://lsst-texmf.lsst.io/developer.html#updating-bibliographies) documentation in lsst-texmf for how to migrate local bibliography data upstream into [lsst-texmf](https://lsst-texmf.lsst.io).
 
 ### Makefile
 
 Example: [Makefile](testn-000/Makefile).
 
-The Makefile runs the local Sphinx build for authors on their local machines, and is also used by the continous integration build (see [.github/workflows/ci.yaml](testn-000/.github/workflows/ci.yaml)).
-
-### metadata.yaml
-
-Example: [metadata.yaml](testn-000/metadata.yaml).
-
-This metadata file is used by [Documenteer](https://documenteer.lsst.io), which runs the Sphinx build itself.
-Editing the values in this file updates the title and author list in the built and published technote.
-See the comments in that file for further information.
+The Makefile runs the local Sphinx build for authors on their local machines, and is also used by the continuous integration build (see [.github/workflows/ci.yaml](testn-000/.github/workflows/ci.yaml)).
 
 ### README.rst
 
@@ -182,3 +168,19 @@ Example: [requirements.txt](testn-000/requirements.txt).
 The `requirements.txt` file defines build dependencies for both authors, on your local system, and for the CI system.
 If your technote requires additional Python Packages and Sphinx extensions to build, add those requirements to this file.
 Generally speaking, the [documenteer](https://documenteer.lsst.io) dependencies only needs to be updated if the build breaks or you need new features from [Documenteer](https://documenteer.lsst.io).
+
+## technote.toml
+
+Example: [technote.toml](testn-000/technote.toml).
+
+This is the configuration file for the technote.
+It contains both metadata about the document (authors, draft/deprecation status, etc.) and configuration for the Sphinx build.
+See the [Documenteer documentation](https://documenteer.lsst.io/technotes/index.html) for details.
+
+## tox.ini
+
+Example: [tox.ini](testtn-000/tox.ini)
+
+This is the [Tox](https://tox.wiki/en/latest/) configuration file.
+Technotes use tox to build the document in an isolated Python environment.
+The Makefile runs the build through tox.

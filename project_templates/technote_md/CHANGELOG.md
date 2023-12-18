@@ -1,5 +1,9 @@
 # Change log
 
+## 2023-12-17
+
+- The new Markdown technote template is now generally available.
+
 ## 2023-11-01
 
 - Created the `technote_md_early_adopter` template based on the `technote_rst_early_adopter` template.

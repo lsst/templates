@@ -33,8 +33,7 @@ Find these templates in the `project_templates/` directory:
 - [technote_aastex](project_templates/technote_aastex/)
 - [technote_latex](project_templates/technote_latex/)
 - [technote_rst](project_templates/technote_rst/)
-- [technote_md_early_adopter](project_templates/technote_md_early_adopter/)
-- [technote_rst_early_adopter](project_templates/technote_rst_early_adopter/)
+- [technote_md](project_templates/technote_md/)
 - [test_report](project_templates/test_report/)
 
 ## File templates
