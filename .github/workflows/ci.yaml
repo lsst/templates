@@ -22,14 +22,14 @@ jobs:
     strategy:
       matrix:
         python:
-          - "3.8"
-          - "3.9"
           - "3.10"
+          - "3.11"
+          - "3.12"
 
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python }}
 
@@ -51,9 +51,9 @@ jobs:
         with:
           username: sqrereadonly
           password: ${{ secrets.DOCKERHUB_SQREREADONLY_TOKEN }}
-        if: matrix.python == '3.10'
+        if: matrix.python == '3.11'
 
       - name: Check tex builds
         run: |
           docker run --rm -v `pwd`:/workspace -w /workspace lsstsqre/lsst-texmf:latest sh -c './testTexDocs.sh'
-        if: matrix.python == '3.10'
+        if: matrix.python == '3.11'
