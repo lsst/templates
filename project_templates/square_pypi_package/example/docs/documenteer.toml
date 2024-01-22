@@ -1,6 +1,6 @@
 [project]
 title = "example"
-copyright = "2023 Association of Universities for Research in Astronomy, Inc. (AURA)"
+copyright = "2024 Association of Universities for Research in Astronomy, Inc. (AURA)"
 
 [project.python]
 package = "example"
