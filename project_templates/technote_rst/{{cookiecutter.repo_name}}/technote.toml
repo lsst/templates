@@ -15,9 +15,9 @@ state = "draft"
 [[technote.authors]]
 name.given = "{{ cookiecutter.first_author_given }}"
 name.family = "{{ cookiecutter.first_author_family }}"
-{%- if cookiecutter.first_author_orcid %}orcid = "{{ cookiecutter.first_author_orcid }}"{% endif %}
 internal_id = "{{ cookiecutter.author_id }}"
+{% if cookiecutter.first_author_orcid %}orcid = "{{ cookiecutter.first_author_orcid }}"{% endif %}
 [[technote.authors.affiliations]]
 name = "{{ cookiecutter.first_author_affil_name }}"
 internal_id = "{{ cookiecutter.first_author_affil_internal_id }}"
-{%- if cookiecutter.first_author_affil_address %}address = "{{ cookiecutter.first_author_affil_address }}"{% endif %}
+address = "{{ cookiecutter.first_author_affil_address }}"
