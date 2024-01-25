@@ -1,7 +1,5 @@
 # {{ cookiecutter.title }}
 
-## Abstract
-
 ```{abstract}
 {{ cookiecutter.description }}
 ```
