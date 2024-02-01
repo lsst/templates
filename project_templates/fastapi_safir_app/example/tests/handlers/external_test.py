@@ -10,7 +10,7 @@ from example.config import config
 
 @pytest.mark.asyncio
 async def test_get_index(client: AsyncClient) -> None:
-    """Test ``GET /example/``"""
+    """Test ``GET /example/``."""
     response = await client.get("/example/")
     assert response.status_code == 200
     data = response.json()

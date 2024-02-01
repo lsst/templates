@@ -19,6 +19,7 @@ pydantic
 pytest
 pytest-asyncio
 pytest-cov
+ruff
 
 # Documentation
 scriv

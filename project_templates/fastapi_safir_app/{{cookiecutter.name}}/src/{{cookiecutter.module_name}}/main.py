@@ -7,6 +7,8 @@ constructed when this module is loaded and is not deferred until a function is
 called.
 """
 
+from collections.abc import AsyncIterator
+from contextlib import asynccontextmanager
 from importlib.metadata import metadata, version
 
 from fastapi import FastAPI
@@ -19,6 +21,17 @@ from .handlers.external import external_router
 from .handlers.internal import internal_router
 
 __all__ = ["app", "config"]
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI) -> AsyncIterator[None]:
+    """Set up and tear down the application."""
+    # Any code here will be run when the application starts up.
+
+    yield
+
+    # Any code here will be run when the application shuts down.
+    await http_client_dependency.aclose()
 
 
 configure_logging(
@@ -35,6 +48,7 @@ app = FastAPI(
     openapi_url=f"/{config.path_prefix}/openapi.json",
     docs_url=f"/{config.path_prefix}/docs",
     redoc_url=f"/{config.path_prefix}/redoc",
+    lifespan=lifespan,
 )
 """The main FastAPI application for {{ cookiecutter.name }}."""
 
@@ -44,8 +58,3 @@ app.include_router(external_router, prefix=f"{config.path_prefix}")
 
 # Add middleware.
 app.add_middleware(XForwardedMiddleware)
-
-
-@app.on_event("shutdown")
-async def shutdown_event() -> None:
-    await http_client_dependency.aclose()

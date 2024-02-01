@@ -2,39 +2,34 @@
 
 from __future__ import annotations
 
-from pydantic import BaseSettings, Field
+from pydantic import Field
+from pydantic_settings import BaseSettings, SettingsConfigDict
 from safir.logging import LogLevel, Profile
 
-__all__ = ["Configuration", "config"]
+__all__ = ["Config", "config"]
 
 
-class Configuration(BaseSettings):
+class Config(BaseSettings):
     """Configuration for {{ cookiecutter.name }}."""
 
-    name: str = Field(
-        "{{ cookiecutter.name }}",
-        title="Name of application",
-        env="SAFIR_NAME",
-    )
+    name: str = Field("{{ cookiecutter.name }}", title="Name of application")
 
     path_prefix: str = Field(
-        "/{{ cookiecutter.name | lower }}",
-        title="URL prefix for application",
-        env="SAFIR_PATH_PREFIX",
+        "/{{ cookiecutter.name | lower }}", title="URL prefix for application"
     )
 
     profile: Profile = Field(
-        Profile.development,
-        title="Application logging profile",
-        env="SAFIR_PROFILE",
+        Profile.development, title="Application logging profile"
     )
 
     log_level: LogLevel = Field(
-        LogLevel.INFO,
-        title="Log level of the application's logger",
-        env="SAFIR_LOG_LEVEL",
+        LogLevel.INFO, title="Log level of the application's logger"
+    )
+
+    model_config = SettingsConfigDict(
+        env_prefix="{{ cookiecutter.name | upper }}_", case_sensitive=False
     )
 
 
-config = Configuration()
+config = Config()
 """Configuration for {{ cookiecutter.name }}."""
