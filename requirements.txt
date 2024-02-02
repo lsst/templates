@@ -1,2 +1,2 @@
 templatekit>=0.6,<0.7
-cookiecutter<2.2
+cookiecutter<2.6
