@@ -18,7 +18,7 @@ jobs:
     strategy:
       matrix:
         python:
-          - "3.11"
+          - "3.12"
 
     steps:
       - uses: actions/checkout@v3
@@ -29,7 +29,7 @@ jobs:
       - name: Run neophile
         uses: lsst-sqre/run-neophile@v1
         with:
-          python-version: "3.11"
+          python-version: "3.12"
           mode: update
 
       - name: Run tests in tox

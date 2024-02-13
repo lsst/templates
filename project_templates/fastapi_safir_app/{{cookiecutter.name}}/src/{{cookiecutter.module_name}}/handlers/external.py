@@ -1,5 +1,7 @@
 """Handlers for the app's external root, ``/{{ cookiecutter.name | lower }}/``."""
 
+from typing import Annotated
+
 from fastapi import APIRouter, Depends
 from safir.dependencies.logger import logger_dependency
 from safir.metadata import get_metadata
@@ -25,7 +27,7 @@ external_router = APIRouter()
     summary="Application metadata",
 )
 async def get_index(
-    logger: BoundLogger = Depends(logger_dependency),
+    logger: Annotated[BoundLogger, Depends(logger_dependency)],
 ) -> Index:
     """GET ``/{{ cookiecutter.name | lower }}/`` (the app's external root).
 

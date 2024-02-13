@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import AsyncIterator
+from collections.abc import AsyncIterator
 
 import pytest_asyncio
 from asgi_lifespan import LifespanManager
