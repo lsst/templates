@@ -1,6 +1,6 @@
 .PHONY: help
 help:
-	@echo "Make targets for Gafaelfawr"
+	@echo "Make targets for example"
 	@echo "make init - Set up dev environment"
 	@echo "make run - Start a local development instance"
 	@echo "make update - Update pinned dependencies and run make init"
