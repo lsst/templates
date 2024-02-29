@@ -2,9 +2,6 @@
 Document Title
 ##############
 
-Abstract
-========
-
 .. abstract::
 
    A short description of this document
