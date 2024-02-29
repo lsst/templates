@@ -2,9 +2,6 @@
 {{ cookiecutter.title }}
 {{ "#" * cookiecutter.title|length }}
 
-Abstract
-========
-
 .. abstract::
 
    {{ cookiecutter.description }}
