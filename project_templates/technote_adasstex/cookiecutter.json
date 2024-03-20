@@ -1,12 +1,14 @@
 {
   "org": [
     "DM",
+    "OPS",
     "PST",
     "SE"
   ],
   "series": [
     "DMTN",
     "PSTN",
+    "RTN",
     "SMTN",
     "SQR",
     "TSTN",
@@ -15,6 +17,7 @@
   ],
   "serial_number": "000",
   "github_org": [
+    "lsst",
     "lsst-dm",
     "lsst-pst",
     "lsst-sims",
