@@ -45,11 +45,8 @@ Pre-commit hooks
 The pre-commit hooks, which are automatically installed by running the :command:`make init` command on :ref:`set up <dev-environment>`, ensure that files are valid and properly formatted.
 Some pre-commit hooks automatically reformat code:
 
-``isort``
-    Automatically sorts imports in Python modules.
-
-``black``
-    Automatically formats Python code.
+``ruff``
+    Automatically formats Python code and applies safe fixes to lint issues.
 
 ``blacken-docs``
     Automatically formats Python code in reStructuredText documentation and docstrings.
@@ -95,6 +92,17 @@ Documentation is built with Sphinx_:
    tox run -e docs
 
 The built documentation is located in the :file:`docs/_build/html` directory.
+
+Updating pre-commit
+===================
+
+To update the versions of the pre-commit hooks, run:
+
+.. code-block:: sh
+
+   pre-commit autoupdate
+
+You may wish to do this at the start of a development cycle so that you're using the latest versions of the linters.
 
 .. _dev-change-log:
 

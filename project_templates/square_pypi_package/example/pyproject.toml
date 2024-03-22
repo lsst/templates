@@ -14,13 +14,13 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
     "Intended Audience :: Developers",
     "Natural Language :: English",
     "Operating System :: POSIX",
     "Typing :: Typed",
 ]
-requires-python = ">=3.11"
+requires-python = ">=3.12"
 dependencies = []
 dynamic = ["version"]
 
@@ -33,7 +33,7 @@ dev = [
     "pre-commit",
     "mypy",
     # Documentation
-    "documenteer[guide]<1",
+    "documenteer[guide]<2",
     "scriv",
 ]
 
@@ -58,7 +58,7 @@ include = ["example*"]
 
 [tool.black]
 line-length = 79
-target-version = ["py38"]
+target-version = ["py312"]
 exclude = '''
 /(
     \.eggs
@@ -96,49 +96,32 @@ exclude_lines = [
     "if TYPE_CHECKING:"
 ]
 
-[tool.isort]
-profile = "black"
-line_length = 79
-known_first_party = ["example", "tests"]
-skip = ["docs/conf.py"]
-
 [tool.mypy]
 disallow_untyped_defs = true
 disallow_incomplete_defs = true
 ignore_missing_imports = true
 local_partial_types = true
 no_implicit_reexport = true
+show_error_codes = true
 strict_equality = true
 warn_redundant_casts = true
 warn_unreachable = true
 warn_unused_ignores = true
-# plugins =
-
-[tool.pydocstyle]
-# Reference: http://www.pydocstyle.org/en/stable/error_codes.html
-convention = "numpy"
-add_select = [
-    "D212" # Multi-line docstring summary should start at the first line
-]
-add-ignore = [
-    "D105", # Missing docstring in magic method
-    "D102", # Missing docstring in public method (needed for docstring inheritance)
-    "D100", # Missing docstring in public module
-    # Below are required to allow multi-line summaries.
-    "D200", # One-line docstring should fit on one line with quotes
-    "D205", # 1 blank line required between summary line and description
-    "D400", # First line should end with a period
-    # Properties shouldn't be written in imperative mode. This will be fixed
-    # post 6.1.1, see https://github.com/PyCQA/pydocstyle/pull/546
-    "D401",
-]
+# Uncomment and add the "pydantic.mypy" plugin if using Pydantic. Add the
+# "sqlalchemy.ext.mypy.plugin" if using SQL Alchemy.
+# plugins = []
 
 [tool.pytest.ini_options]
 asyncio_mode = "strict"
-python_files = [
-    "tests/*.py",
-    "tests/*/*.py"
-]
+# The python_files setting is not for test detection (pytest will pick up any
+# test files named *_test.py without this setting) but to enable special
+# assert processing in any non-test supporting files under tests.  We
+# conventionally put test support functions under tests.support and may
+# sometimes use assert in test fixtures in conftest.py, and pytest only
+# enables magical assert processing (showing a full diff on assert failures
+# with complex data structures rather than only the assert message) in files
+# listed in python_files.
+python_files = ["tests/*.py", "tests/*/*.py"]
 
 # The rule used with Ruff configuration is to disable every lint that has
 # legitimate exceptions that are not dodgy code, rather than cluttering code
@@ -151,6 +134,9 @@ python_files = [
 exclude = [
     "docs/**",
 ]
+target-version = "py312"
+
+[tool.ruff.lint]
 line-length = 79
 ignore = [
     "ANN101",  # self should not have a type annotation
@@ -166,31 +152,55 @@ ignore = [
     "D104",    # don't see the point of documenting every package
     "D105",    # our style doesn't require docstrings for magic methods
     "D106",    # Pydantic uses a nested Config class that doesn't warrant docs
+    "D205",    # our documentation style allows a folded first line
     "EM101",   # justification (duplicate string in traceback) is silly
     "EM102",   # justification (duplicate string in traceback) is silly
     "FBT003",  # positional booleans are normal for Pydantic field defaults
+    "FIX002",  # point of a TODO comment is that we're not ready to fix it
     "G004",    # forbidding logging f-strings is appealing, but not our style
     "RET505",  # disagree that omitting else always makes code more readable
+    "PLR0911", # often many returns is clearer and simpler style
     "PLR0913", # factory pattern uses constructors with many arguments
     "PLR2004", # too aggressive about magic values
+    "PLW0603", # yes global is discouraged but if needed, it's needed
     "S105",    # good idea but too many false positives on non-passwords
     "S106",    # good idea but too many false positives on non-passwords
+    "S107",    # good idea but too many false positives on non-passwords
+    "S603",    # not going to manually mark every subprocess call as reviewed
+    "S607",    # using PATH is not a security vulnerability
     "SIM102",  # sometimes the formatting of nested if statements is clearer
     "SIM117",  # sometimes nested with contexts are clearer
     "TCH001",  # we decided to not maintain separate TYPE_CHECKING blocks
     "TCH002",  # we decided to not maintain separate TYPE_CHECKING blocks
     "TCH003",  # we decided to not maintain separate TYPE_CHECKING blocks
+    "TD003",   # we don't require issues be created for TODOs
     "TID252",  # if we're going to use relative imports, use them always
     "TRY003",  # good general advice but lint is way too aggressive
+    "TRY301",  # sometimes raising exceptions inside try is the best flow
+
+    # The following settings should be disabled when using ruff format
+    # per https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules
+    "W191",
+    "E111",
+    "E114",
+    "E117",
+    "D206",
+    "D300",
+    "Q000",
+    "Q001",
+    "Q002",
+    "Q003",
+    "COM812",
+    "COM819",
+    "ISC001",
+    "ISC002",
 ]
 select = ["ALL"]
-target-version = "py311"
 
-[tool.ruff.per-file-ignores]
-"src/example/handlers/**" = [
-    "D103",    # FastAPI handlers should not have docstrings
-]
+[tool.ruff.lint.per-file-ignores]
 "tests/**" = [
+    "C901",    # tests are allowed to be complex, sometimes that's convenient
+    "D101",    # tests don't need docstrings
     "D103",    # tests don't need docstrings
     "PLR0915", # tests are allowed to be long, sometimes that's convenient
     "PT012",   # way too aggressive about limiting pytest.raises blocks
@@ -198,22 +208,13 @@ target-version = "py311"
     "SLF001",  # tests are allowed to access private members
 ]
 
-[tool.ruff.isort]
+[tool.ruff.lint.isort]
 known-first-party = ["example", "tests"]
 split-on-trailing-comma = false
 
-[tool.ruff.flake8-bugbear]
-extend-immutable-calls = [
-    "fastapi.Form",
-    "fastapi.Header",
-    "fastapi.Depends",
-    "fastapi.Path",
-    "fastapi.Query",
-]
-
 # These are too useful as attributes or methods to allow the conflict with the
 # built-in to rule out their use.
-[tool.ruff.flake8-builtins]
+[tool.ruff.lint.flake8-builtins]
 builtins-ignorelist = [
     "all",
     "any",
@@ -223,17 +224,11 @@ builtins-ignorelist = [
     "type",
 ]
 
-[tool.ruff.flake8-pytest-style]
+[tool.ruff.lint.flake8-pytest-style]
 fixture-parentheses = false
 mark-parentheses = false
 
-[tool.ruff.pep8-naming]
-classmethod-decorators = [
-    "pydantic.root_validator",
-    "pydantic.validator",
-]
-
-[tool.ruff.pydocstyle]
+[tool.ruff.lint.pydocstyle]
 convention = "numpy"
 
 [tool.scriv]
