@@ -9,10 +9,10 @@ help:
 
 .PHONY: init
 init:
-	pip install --upgrade pip
-	pip install --upgrade pre-commit tox
-	pip install --editable .
-	pip install --upgrade -r requirements/main.txt -r requirements/dev.txt
+	pip install --upgrade uv
+	uv pip install --upgrade pre-commit tox
+	uv pip install --editable .
+	uv pip install -r requirements/main.txt -r requirements/dev.txt
 	rm -rf .tox
 	pre-commit install
 
@@ -23,29 +23,21 @@ run:
 .PHONY: update
 update: update-deps init
 
-# The dependencies need --allow-unsafe because kubernetes-asyncio and
-# (transitively) pre-commit depends on setuptools, which is normally not
-# allowed to appear in a hashed dependency file.
 .PHONY: update-deps
 update-deps:
-	pip install --upgrade pip
-	pip install --upgrade pre-commit
+	pip install --upgrade uv
+	uv pip install --upgrade pre-commit
 	pre-commit autoupdate
-	pip install --upgrade pip-tools pip setuptools
-	pip-compile --upgrade --resolver=backtracking --build-isolation	\
-	    --allow-unsafe --generate-hashes				\
+	uv pip compile --upgrade --generate-hashes			\
 	    --output-file requirements/main.txt requirements/main.in
-	pip-compile --upgrade --resolver=backtracking --build-isolation	\
-	    --allow-unsafe --generate-hashes				\
+	uv pip compile --upgrade --generate-hashes			\
 	    --output-file requirements/dev.txt requirements/dev.in
 
 # Useful for testing against a Git version of Safir.
 .PHONY: update-deps-no-hashes
 update-deps-no-hashes:
-	pip install --upgrade pip-tools pip setuptools
-	pip-compile --upgrade --resolver=backtracking --build-isolation	\
-	    --allow-unsafe						\
+	pip install --upgrade uv
+	uv pip compile --upgrade					\
 	    --output-file requirements/main.txt requirements/main.in
-	pip-compile --upgrade --resolver=backtracking --build-isolation	\
-	    --allow-unsafe						\
+	uv pip compile --upgrade					\
 	    --output-file requirements/dev.txt requirements/dev.in
