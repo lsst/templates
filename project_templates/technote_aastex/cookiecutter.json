@@ -39,8 +39,8 @@
   "_copy_without_render": [
     "*.bib",
     "*acron*",
-    "aastex62.cls",
-    "yahapj.bst",
+    "aastex631.cls",
+    "aasjournal.bst",
     ".gitignore",
     "body.tex"
   ],
