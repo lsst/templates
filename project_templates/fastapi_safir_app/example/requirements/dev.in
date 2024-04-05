@@ -14,12 +14,10 @@ asgi-lifespan
 coverage[toml]
 httpx
 mypy
-pre-commit
 pydantic
 pytest
 pytest-asyncio
 pytest-cov
-ruff
 
 # Documentation
 scriv

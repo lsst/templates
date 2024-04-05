@@ -52,6 +52,7 @@ jobs:
         with:
           python-version: {{ "${{ matrix.python }}" }}
           tox-envs: "py,typing"
+          tox-plugins: tox-uv
 
   docs:
 
@@ -73,6 +74,7 @@ jobs:
           tox-envs: "docs"
           # Add docs-linkcheck when the docs and PyPI package are published
           # tox-envs: "docs,docs-linkcheck"
+          tox-plugins: tox-uv
 
       # Only attempt documentation uploads for tagged releases and pull
       # requests from ticket branches in the same repository.  This avoids
