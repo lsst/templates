@@ -1,5 +1,10 @@
 # Change log
 
+## 2024-04-05
+
+- Remove the `--flake8` pytest option.
+- Move pytest configuration to `pyproject.toml`.
+
 ## 2021-04-28
 
 - Switch package Sphinx configuration from `documenteer.sphinxconfig.stackconf` to `documenteer.conf.pipelinespkg` (available in Documenteer 0.6).

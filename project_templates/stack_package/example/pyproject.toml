@@ -1,0 +1,3 @@
+# Pytest configuration required to prevent pytest from looking for
+# configurations in parent directories. Can be empty.
+[tool.pytest.ini_options]
