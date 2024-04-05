@@ -50,6 +50,7 @@ jobs:
         with:
           python-version: {{ "${{ matrix.python }}" }}
           tox-envs: "py,coverage-report,typing"
+          tox-requirements: requirements/tox.txt
 
   build:
     runs-on: ubuntu-latest

@@ -16,7 +16,7 @@ clean:
 .PHONY: init
 init:
 	pip install --upgrade uv
-	uv pip install --upgrade pip tox pre-commit
+	uv pip install --upgrade pre-commit tox tox-uv
 	uv pip install --upgrade -e ".[dev]"
 	pre-commit install
 	rm -rf .tox
@@ -41,5 +41,5 @@ update: update-deps init
 .PHONY: update-deps
 update-deps:
 	pip install --upgrade uv
-	uv pip install pre-commit
+	uv pip install --upgrade pre-commit
 	pre-commit autoupdate
