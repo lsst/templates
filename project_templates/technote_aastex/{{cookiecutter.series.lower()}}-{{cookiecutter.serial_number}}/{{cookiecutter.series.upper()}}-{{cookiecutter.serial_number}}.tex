@@ -114,6 +114,14 @@
 \date{\today}
 \title{ {{- cookiecutter.title -}} }
 
+% This can write metadata into the PDF.
+% Update keywords and author information as necessary.
+\hypersetup{
+    pdftitle={ {{- cookiecutter.title -}} },
+    pdfauthor={ {{- cookiecutter.author_id -}} },
+    pdfkeywords={}
+}
+
 \input{abstract}
 
 %% Keywords should appear after the \end{abstract} command.
