@@ -54,6 +54,7 @@ ENTRY
     volume
     year
     handle
+    doi
     url
   }
   {}
@@ -232,9 +233,9 @@ INTEGERS { nameptr namesleft numnames }
 FUNCTION {format.url}
 {
   url empty$
-    { handle empty$
+    { doi empty$
       'skip$
-      { "\url{https://ls.st/" handle * "}" * output }
+      { "DOI: \url{https://doi.org/" doi * "}" * output }
     if$
     }
     { "\url{" url * "}" * output }
@@ -690,6 +691,7 @@ FUNCTION {article}
   if$
   new.block
   note output
+  format.url
   fin.entry
 }
 
@@ -721,6 +723,7 @@ FUNCTION {book}
   format.date
   new.block
   note output
+  format.url
   fin.entry
 }
 
@@ -779,6 +782,7 @@ FUNCTION {inbook}
   format.date
   new.block
   note output
+  format.url
   fin.entry
 }
 
@@ -805,6 +809,7 @@ FUNCTION {incollection}
   if$
   new.block
   note output
+  format.url
   fin.entry
 }
 
@@ -841,6 +846,7 @@ FUNCTION {inproceedings}
   if$
   new.block
   note output
+  format.url
   fin.entry
 }
 
@@ -876,6 +882,7 @@ FUNCTION {manual}
   format.date
   new.block
   note output
+  format.url
   fin.entry
 }
 
@@ -911,6 +918,7 @@ FUNCTION {misc}
   format.date
   new.block
   note output
+  format.url
   fin.entry
   empty.misc.check
 }
@@ -964,6 +972,7 @@ FUNCTION {proceedings}
   format.date
   new.block
   note output
+  format.url
   fin.entry
 }
 
@@ -978,6 +987,7 @@ FUNCTION {techreport}
   format.date
   new.block
   note output
+  format.url
   fin.entry
 }
 
