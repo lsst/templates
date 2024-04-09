@@ -36,7 +36,14 @@
 \input{authors}
 \date{\today}
 \title{ {{- cookiecutter.title -}} }
-\hypersetup{pdftitle={\@title}, pdfauthor={\@author}, pdfkeywords={\@keywords}}
+
+% This can write metadata into the PDF.
+% Update keywords and author information as necessary.
+\hypersetup{
+    pdftitle={ {{- cookiecutter.title -}} },
+    pdfauthor={ {{- cookiecutter.author_id -}} },
+    pdfkeywords={}
+}
 
 \maketitle
 
