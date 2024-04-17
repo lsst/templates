@@ -26,6 +26,7 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
           tox-envs: "lint,typing,py"
+          tox-plugins: tox-uv
           use-cache: false
 
   docs:
@@ -40,6 +41,7 @@ jobs:
         with:
           python-version: "3.12"
           tox-envs: "docs,docs-linkcheck"
+          tox-plugins: tox-uv
           use-cache: false
 
   test-packaging:

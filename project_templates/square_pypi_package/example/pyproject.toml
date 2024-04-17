@@ -30,7 +30,6 @@ dev = [
     "coverage[toml]",
     "pytest",
     "pytest-asyncio",
-    "pre-commit",
     "mypy",
     # Documentation
     "documenteer[guide]<2",

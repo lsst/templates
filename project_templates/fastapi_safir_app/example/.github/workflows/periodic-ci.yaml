@@ -37,6 +37,7 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
           tox-envs: "lint,typing,py"
+          tox-requirements: requirements/tox.txt
           use-cache: false
 
       - name: Report status
