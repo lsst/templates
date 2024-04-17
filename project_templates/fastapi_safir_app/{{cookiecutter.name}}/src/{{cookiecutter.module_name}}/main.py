@@ -45,9 +45,9 @@ app = FastAPI(
     title="{{ cookiecutter.name }}",
     description=metadata("{{ cookiecutter.name }}")["Summary"],
     version=version("{{ cookiecutter.name }}"),
-    openapi_url=f"/{config.path_prefix}/openapi.json",
-    docs_url=f"/{config.path_prefix}/docs",
-    redoc_url=f"/{config.path_prefix}/redoc",
+    openapi_url=f"{config.path_prefix}/openapi.json",
+    docs_url=f"{config.path_prefix}/docs",
+    redoc_url=f"{config.path_prefix}/redoc",
     lifespan=lifespan,
 )
 """The main FastAPI application for {{ cookiecutter.name }}."""
