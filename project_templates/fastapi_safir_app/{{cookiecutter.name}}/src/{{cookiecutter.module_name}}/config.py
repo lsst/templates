@@ -27,7 +27,7 @@ class Config(BaseSettings):
     )
 
     model_config = SettingsConfigDict(
-        env_prefix="{{ cookiecutter.name | upper }}_", case_sensitive=False
+        env_prefix="{{ cookiecutter.name | upper | replace('-', '_') }}_", case_sensitive=False
     )
 
 
