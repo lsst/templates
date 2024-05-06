@@ -20,9 +20,3 @@ github_org = '{{ cookiecutter.github_org }}'
 if uses_helm:
     print(f"(post-gen hook) Removing manifests directory")
     shutil.rmtree("manifests", ignore_errors=True)
-
-# Remove the empty dependency update GitHub Actions workflow if the GitHub
-# organization is not lsst-sqre.
-if github_org != "lsst-sqre":
-    print("(post-gen hook) Removing empty dependency update workflow")
-    os.remove(".github/workflows/dependencies.yaml")
