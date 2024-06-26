@@ -176,6 +176,7 @@ ignore = [
     "TID252",  # if we're going to use relative imports, use them always
     "TRY003",  # good general advice but lint is way too aggressive
     "TRY301",  # sometimes raising exceptions inside try is the best flow
+    "UP040",   # Python 3.12 supports `type` alias kw, but mypy doesn't yet
 
     # The following settings should be disabled when using ruff format
     # per https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules
