@@ -5,6 +5,13 @@
 
 name: Periodic CI
 
+env:
+  # Current supported Python version. For applications, there is generally no
+  # reason to support multiple Python versions, so all actions are run with
+  # this version. Quote the version to avoid interpretation as a floating
+  # point number.
+  PYTHON_VERSION: "3.12"
+
 "on":
   schedule:
     - cron: "0 12 * * 1"
@@ -15,27 +22,21 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
-    strategy:
-      matrix:
-        python:
-          - "3.12"
-
     steps:
       - uses: actions/checkout@v4
 
-      # Use the oldest supported version of Python to update dependencies,
-      # not the matrixed Python version, since this accurately reflects
-      # how dependencies should later be updated.
-      - name: Run neophile
-        uses: lsst-sqre/run-neophile@v1
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
-          mode: update
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Update dependencies
+        run: make update-deps
 
       - name: Run tests in tox
         uses: lsst-sqre/run-tox@v1
         with:
-          python-version: ${{ matrix.python }}
+          python-version: ${{ env.PYTHON_VERSION }}
           tox-envs: "lint,typing,py"
           tox-requirements: requirements/tox.txt
           use-cache: false

@@ -4,6 +4,12 @@
 
 name: Periodic CI
 
+env:
+  # Default Python version used for all jobs other than test, which uses a
+  # matrix of supported versions. Quote the version to avoid interpretation as
+  # a floating point number.
+  PYTHON_VERSION: "3.12"
+
 "on":
   schedule:
     - cron: "0 12 * * 1"
@@ -39,7 +45,7 @@ jobs:
       - name: Build docs in tox
         uses: lsst-sqre/run-tox@v1
         with:
-          python-version: "3.12"
+          python-version: ${{ env.PYTHON_VERSION }}
           tox-envs: "docs,docs-linkcheck"
           tox-plugins: tox-uv
           use-cache: false
@@ -56,5 +62,5 @@ jobs:
       - name: Build and publish
         uses: lsst-sqre/build-and-publish-to-pypi@v2
         with:
-          python-version: "3.12"
+          python-version: ${{ env.PYTHON_VERSION }}
           upload: false
