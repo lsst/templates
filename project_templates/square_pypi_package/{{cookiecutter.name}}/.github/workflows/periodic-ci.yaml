@@ -35,6 +35,17 @@ jobs:
           tox-envs: "lint,typing,py"
           tox-plugins: tox-uv
           use-cache: false
+{% if cookiecutter.github_org == "lsst-sqre" %}
+      - name: Report status
+        if: failure()
+        uses: ravsamhq/notify-slack-action@v2
+        with:
+          status: {{ "${{ job.status }}" }}
+          notify_when: "failure"
+          notification_title: "Periodic test for {repo} failed"
+        env:
+          SLACK_WEBHOOK_URL: {{ "${{ secrets.SLACK_ALERT_WEBHOOK }}" }}
+{%- endif %}
 
   docs:
     runs-on: ubuntu-latest
@@ -55,6 +66,17 @@ jobs:
           tox-envs: "docs,docs-linkcheck"
           tox-plugins: tox-uv
           use-cache: false
+{% if cookiecutter.github_org == "lsst-sqre" %}
+      - name: Report status
+        if: failure()
+        uses: ravsamhq/notify-slack-action@v2
+        with:
+          status: {{ "${{ job.status }}" }}
+          notify_when: "failure"
+          notification_title: "Periodic documentation test for {repo} failed"
+        env:
+          SLACK_WEBHOOK_URL: {{ "${{ secrets.SLACK_ALERT_WEBHOOK }}" }}
+{%- endif %}
 
   test-packaging:
     runs-on: ubuntu-latest
@@ -71,3 +93,14 @@ jobs:
         with:
           python-version: {{ "${{ env.PYTHON_VERSION }}" }}
           upload: false
+{% if cookiecutter.github_org == "lsst-sqre" %}
+      - name: Report status
+        if: failure()
+        uses: ravsamhq/notify-slack-action@v2
+        with:
+          status: {{ "${{ job.status }}" }}
+          notify_when: "failure"
+          notification_title: "Periodic packaging test for {repo} failed"
+        env:
+          SLACK_WEBHOOK_URL: {{ "${{ secrets.SLACK_ALERT_WEBHOOK }}" }}
+{%- endif %}
