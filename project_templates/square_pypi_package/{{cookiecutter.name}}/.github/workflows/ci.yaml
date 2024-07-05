@@ -102,6 +102,8 @@ jobs:
 
     name: Test packaging
     runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs: [lint, test, docs]
 
     steps:
       - uses: actions/checkout@v4
@@ -122,6 +124,7 @@ jobs:
     # See https://github.com/lsst-sqre/build-and-publish-to-pypi
     name: Upload release to PyPI
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     needs: [lint, test, docs, test-packaging]
     environment:
       name: pypi
