@@ -13,6 +13,7 @@ env:
 "on":
   schedule:
     - cron: "0 12 * * 1"
+  workflow_dispatch: {}
 
 jobs:
   test:
@@ -41,6 +42,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # full history for setuptools_scm
+
+      - name: Install Graphviz
+        run: sudo apt-get install graphviz
 
       - name: Build docs in tox
         uses: lsst-sqre/run-tox@v1
@@ -52,7 +58,8 @@ jobs:
 
   test-packaging:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 5
+    needs: [test, docs]
 
     steps:
       - uses: actions/checkout@v4
