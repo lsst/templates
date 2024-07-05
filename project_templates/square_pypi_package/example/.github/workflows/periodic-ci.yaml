@@ -36,6 +36,16 @@ jobs:
           tox-plugins: tox-uv
           use-cache: false
 
+      - name: Report status
+        if: failure()
+        uses: ravsamhq/notify-slack-action@v2
+        with:
+          status: ${{ job.status }}
+          notify_when: "failure"
+          notification_title: "Periodic test for {repo} failed"
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_ALERT_WEBHOOK }}
+
   docs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -56,6 +66,16 @@ jobs:
           tox-plugins: tox-uv
           use-cache: false
 
+      - name: Report status
+        if: failure()
+        uses: ravsamhq/notify-slack-action@v2
+        with:
+          status: ${{ job.status }}
+          notify_when: "failure"
+          notification_title: "Periodic documentation test for {repo} failed"
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_ALERT_WEBHOOK }}
+
   test-packaging:
     runs-on: ubuntu-latest
     timeout-minutes: 5
@@ -71,3 +91,13 @@ jobs:
         with:
           python-version: ${{ env.PYTHON_VERSION }}
           upload: false
+
+      - name: Report status
+        if: failure()
+        uses: ravsamhq/notify-slack-action@v2
+        with:
+          status: ${{ job.status }}
+          notify_when: "failure"
+          notification_title: "Periodic packaging test for {repo} failed"
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_ALERT_WEBHOOK }}
