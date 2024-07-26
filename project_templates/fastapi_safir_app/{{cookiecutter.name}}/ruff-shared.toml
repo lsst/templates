@@ -30,6 +30,7 @@ ignore = [
     "ANN401",  # sometimes Any is the right type
     "ARG001",  # unused function arguments are often legitimate
     "ARG002",  # unused method arguments are often legitimate
+    "ARG003",  # unused class method arguments are often legitimate
     "ARG005",  # unused lambda arguments are often legitimate
     "BLE001",  # we want to catch and report Exception in background tasks
     "C414",    # nested sorted is how you sort by multiple keys with reverse
