@@ -17,3 +17,7 @@ dialog_fields:
   - label: "Initial copyright holder"
     key: "copyright_holder"
     component: "select"
+  - label: "UWS service"
+    key: "uws_service"
+    hint: "Select True if this is an IVOA UWS service with a separate worker."
+    component: "select"

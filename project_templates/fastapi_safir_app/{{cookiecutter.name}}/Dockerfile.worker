@@ -1,0 +1,29 @@
+{%- if cookiecutter.uws_service == "True" %}
+# This Dockerfile constructs the image for backend workers. These images
+# are based on stack containers and install any required supporting code
+# for the backend, arq, and the backend worker definition.
+
+FROM lsstsqre/centos:7-stack-lsst_distrib-w_2024_27
+
+# Reset the user to root since we need to do system install tasks.
+USER root
+
+# Upgrade the system packages.
+COPY scripts/install-worker-packages.sh .
+RUN ./install-worker-packages.sh && rm ./install-worker-packages.sh
+
+# Install the necessary prerequisites and the vo-cutouts code.
+COPY . /workdir
+RUN /workdir/scripts/install-worker.sh /workdir && rm -r /workdir
+COPY scripts/start-worker.sh /
+
+# Create a non-root user
+RUN useradd --create-home appuser
+
+# Switch to the non-root user.
+USER appuser
+
+# Start the arq worker.
+WORKDIR /
+CMD ["/start-worker.sh"]
+{%- endif %}

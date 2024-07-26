@@ -1,0 +1,57 @@
+# This is a separate run of the Python test suite that runs from a schedule,
+# doesn't cache the tox environment, and updates pinned dependencies first.
+# The purpose is to test compatibility with the latest versions of
+# dependencies.
+
+name: Periodic CI
+
+env:
+  # Current supported Python version. For applications, there is generally no
+  # reason to support multiple Python versions, so all actions are run with
+  # this version. Quote the version to avoid interpretation as a floating
+  # point number.
+  PYTHON_VERSION: "3.12"
+
+"on":
+  schedule:
+    - cron: "0 12 * * 1"
+  workflow_dispatch: {}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Update dependencies
+        run: |
+          pip install --upgrade uv
+          uv venv
+          source .venv/bin/activate
+          make update-deps
+        shell: bash
+
+      - name: Run tests in tox
+        uses: lsst-sqre/run-tox@v1
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          tox-envs: "lint,typing,py"
+          tox-requirements: requirements/tox.txt
+          use-cache: false
+
+      - name: Report status
+        if: failure()
+        uses: ravsamhq/notify-slack-action@v2
+        with:
+          status: ${{ job.status }}
+          notify_when: "failure"
+          notification_title: "Periodic test for {repo} failed"
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_ALERT_WEBHOOK }}
