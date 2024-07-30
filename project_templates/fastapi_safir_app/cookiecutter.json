@@ -16,6 +16,5 @@
     "lsst-dm",
     "lsst-sqre-testing"
   ],
-  "uses_helm": ["True", "False"],
   "_extensions": ["jinja2_time.TimeExtension", "templatekit.TemplatekitExtension"]
 }
