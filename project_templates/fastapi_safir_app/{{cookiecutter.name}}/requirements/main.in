@@ -15,7 +15,7 @@ uvicorn[standard]
 # Other dependencies.
 pydantic
 pydantic-settings
-{%- if cookiecutter.uws_service == "True" %}
+{%- if cookiecutter.flavor == "UWS" %}
 safir[uws]>=7
 {%- else %}
 safir>=5

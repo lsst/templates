@@ -16,7 +16,7 @@ from safir.dependencies.http_client import http_client_dependency
 from safir.logging import configure_logging, configure_uvicorn_logging
 from safir.middleware.x_forwarded import XForwardedMiddleware
 
-from .config import config{% if cookiecutter.uws_service == "True" %}, uws{% endif %}
+from .config import config{% if cookiecutter.flavor == "UWS" %}, uws{% endif %}
 from .handlers.external import external_router
 from .handlers.internal import internal_router
 
@@ -27,14 +27,14 @@ __all__ = ["app"]
 async def lifespan(app: FastAPI) -> AsyncIterator[None]:
     """Set up and tear down the application."""
     # Any code here will be run when the application starts up.
-    {%- if cookiecutter.uws_service == "True" %}
+    {%- if cookiecutter.flavor == "UWS" %}
     await uws.initialize_fastapi()
     {%- endif %}
 
     yield
 
     # Any code here will be run when the application shuts down.
-    {%- if cookiecutter.uws_service == "True" %}
+    {%- if cookiecutter.flavor == "UWS" %}
     await uws.shutdown_fastapi()
     {%- endif %}
     await http_client_dependency.aclose()
@@ -60,14 +60,14 @@ app = FastAPI(
 
 # Attach the routers.
 app.include_router(internal_router)
-{%- if cookiecutter.uws_service == "True" %}
+{%- if cookiecutter.flavor == "UWS" %}
 uws.install_handlers(external_router)
 {%- endif %}
 app.include_router(external_router, prefix=f"{config.path_prefix}")
 
 # Add middleware.
 app.add_middleware(XForwardedMiddleware)
-{%- if cookiecutter.uws_service == "True" %}
+{%- if cookiecutter.flavor == "UWS" %}
 uws.install_middleware(app)
 
 # Install error handlers.

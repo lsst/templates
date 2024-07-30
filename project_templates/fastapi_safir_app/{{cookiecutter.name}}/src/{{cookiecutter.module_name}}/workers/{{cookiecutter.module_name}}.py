@@ -1,4 +1,4 @@
-{%- if cookiecutter.uws_service == "True" -%}
+{%- if cookiecutter.flavor == "UWS" -%}
 """Worker for {{ cookiecutter.name }}.
 
 This is a standalone file intended to be injected into a stack container as

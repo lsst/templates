@@ -1,4 +1,4 @@
-{%- if cookiecutter.uws_service == "True" %}
+{%- if cookiecutter.flavor == "UWS" %}
 #!/bin/bash
 
 # Install or upgrade any operating system packages needed on worker images.

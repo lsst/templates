@@ -2,34 +2,34 @@
 
 from __future__ import annotations
 
-from collections.abc import AsyncIterator{% if cookiecutter.uws_service == "True" %}, Iterator
+from collections.abc import AsyncIterator{% if cookiecutter.flavor == "UWS" %}, Iterator
 from datetime import timedelta
 {%- endif %}
 
-{% if cookiecutter.uws_service == "True" -%}
+{% if cookiecutter.flavor == "UWS" -%}
 import pytest
 {% endif -%}
 import pytest_asyncio
-{%- if cookiecutter.uws_service == "True" %}
+{%- if cookiecutter.flavor == "UWS" %}
 import structlog
 {%- endif %}
 from asgi_lifespan import LifespanManager
 from fastapi import FastAPI
 from httpx import ASGITransport, AsyncClient
-{%- if cookiecutter.uws_service == "True" %}
+{%- if cookiecutter.flavor == "UWS" %}
 from safir.arq import MockArqQueue
 from safir.testing.gcs import MockStorageClient, patch_google_storage
 from safir.testing.uws import MockUWSJobRunner
 {%- endif %}
 
 from {{ cookiecutter.module_name }} import main
-{%- if cookiecutter.uws_service == "True" %}
+{%- if cookiecutter.flavor == "UWS" %}
 from {{ cookiecutter.module_name }}.config import config, uws
 {%- endif %}
 
 
 @pytest_asyncio.fixture
-{%- if cookiecutter.uws_service == "True" %}
+{%- if cookiecutter.flavor == "UWS" %}
 async def app(arq_queue: MockArqQueue) -> AsyncIterator[FastAPI]:
 {%- else %}
 async def app() -> AsyncIterator[FastAPI]:
@@ -39,14 +39,14 @@ async def app() -> AsyncIterator[FastAPI]:
     Wraps the application in a lifespan manager so that startup and shutdown
     events are sent during test execution.
     """
-    {%- if cookiecutter.uws_service == "True" %}
+    {%- if cookiecutter.flavor == "UWS" %}
     logger = structlog.get_logger("{{ cookiecutter.module_name }}")
     await uws.initialize_uws_database(logger, reset=True)
     uws.override_arq_queue(arq_queue)
     {%- endif %}
     async with LifespanManager(main.app):
         yield main.app
-{%- if cookiecutter.uws_service == "True" %}
+{%- if cookiecutter.flavor == "UWS" %}
 
 
 @pytest.fixture
@@ -63,7 +63,7 @@ async def client(app: FastAPI) -> AsyncIterator[AsyncClient]:
         base_url="https://example.com/",
     ) as client:
         yield client
-{%- if cookiecutter.uws_service == "True" %}
+{%- if cookiecutter.flavor == "UWS" %}
 
 
 @pytest.fixture(autouse=True)

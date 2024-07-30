@@ -9,7 +9,7 @@ import os
 import shutil
 
 # These variables are interpolated by cookiecutter before this hook is run
-uws_service = True if '{{ cookiecutter.uws_service }}' == 'True' else False
+uws_service = True if '{{ cookiecutter.flavor }}' == 'UWS' else False
 module_name = '{{ cookiecutter.module_name }}'
 github_org = '{{ cookiecutter.github_org }}'
 

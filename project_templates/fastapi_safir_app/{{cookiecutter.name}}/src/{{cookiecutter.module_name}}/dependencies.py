@@ -1,4 +1,4 @@
-{%- if cookiecutter.uws_service == "True" %}
+{%- if cookiecutter.flavor == "UWS" %}
 """Job parameter dependencies."""
 
 from typing import Annotated

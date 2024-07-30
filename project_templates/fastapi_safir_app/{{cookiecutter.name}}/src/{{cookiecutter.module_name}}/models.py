@@ -1,12 +1,12 @@
 """Models for {{ cookiecutter.name }}."""
 
-{% if cookiecutter.uws_service == "True" -%}
+{% if cookiecutter.flavor == "UWS" -%}
 from typing import Self
 
 {% endif -%}
 from pydantic import BaseModel, Field
 from safir.metadata import Metadata as SafirMetadata
-{%- if cookiecutter.uws_service == "True" %}
+{%- if cookiecutter.flavor == "UWS" %}
 from safir.uws import ParametersModel, UWSJobParameter
 
 from .domain import Worker{{ cookiecutter.module_name | capitalize }}Model
@@ -27,7 +27,7 @@ class Index(BaseModel):
     """
 
     metadata: SafirMetadata = Field(..., title="Package metadata")
-{%- if cookiecutter.uws_service == "True" %}
+{%- if cookiecutter.flavor == "UWS" %}
 
 
 class {{ cookiecutter.module_name | capitalize }}Parameters(ParametersModel[Worker{{ cookiecutter.module_name | capitalize }}Model]):
