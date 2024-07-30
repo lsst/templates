@@ -1,4 +1,4 @@
-{%- if cookiecutter.uws_service == "True" %}
+{%- if cookiecutter.flavor == "UWS" %}
 # This Dockerfile constructs the image for backend workers. These images
 # are based on stack containers and install any required supporting code
 # for the backend, arq, and the backend worker definition.

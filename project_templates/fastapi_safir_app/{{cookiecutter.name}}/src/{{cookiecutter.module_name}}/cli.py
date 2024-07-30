@@ -1,4 +1,4 @@
-{%- if cookiecutter.uws_service == "True" %}
+{%- if cookiecutter.flavor == "UWS" %}
 """Administrative command-line interface."""
 
 from __future__ import annotations

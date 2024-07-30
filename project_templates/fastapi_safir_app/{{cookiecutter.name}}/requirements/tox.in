@@ -11,7 +11,7 @@
 -c dev.txt
 
 tox
-{%- if cookiecutter.uws_service == "True" %}
+{%- if cookiecutter.flavor == "UWS" %}
 tox-docker
 {%- endif %}
 tox-uv

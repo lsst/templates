@@ -16,4 +16,4 @@ env.Cookiecutter(AlwaysBuild(Dir('example')),
 env.Cookiecutter(AlwaysBuild(Dir('example-uws')),
                  'cookiecutter.json',
                  cookiecutter_context={'name': 'example-uws',
-                                       'uws_service': 'True'})
+                                       'flavor': 'UWS'})

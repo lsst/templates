@@ -1,4 +1,4 @@
-{%- if cookiecutter.uws_service == "True" %}
+{%- if cookiecutter.flavor == "UWS" %}
 #!/bin/bash
 
 # This script is installed in the worker image and starts the backend worker

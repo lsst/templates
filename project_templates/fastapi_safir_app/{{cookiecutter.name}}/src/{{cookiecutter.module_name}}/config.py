@@ -3,9 +3,9 @@
 from __future__ import annotations
 
 from pydantic import Field
-from pydantic_settings import {% if cookiecutter.uws_service != 'True' %}BaseSettings, {% endif %}SettingsConfigDict
+from pydantic_settings import {% if cookiecutter.flavor != "UWS" %}BaseSettings, {% endif %}SettingsConfigDict
 from safir.logging import LogLevel, Profile
-{%- if cookiecutter.uws_service == "True" %}
+{%- if cookiecutter.flavor == "UWS" %}
 from safir.uws import UWSApplication, UWSAppSettings, UWSConfig, UWSRoute
 
 from .dependencies import post_params_dependency
@@ -15,7 +15,7 @@ from .models import {{ cookiecutter.module_name | capitalize }}Parameters
 __all__ = ["Config", "config"]
 
 
-class Config({% if cookiecutter.uws_service == 'True' %}UWSAppSettings{% else %}BaseSettings{% endif %}):
+class Config({% if cookiecutter.flavor == "UWS" %}UWSAppSettings{% else %}BaseSettings{% endif %}):
     """Configuration for {{ cookiecutter.name }}."""
 
     name: str = Field("{{ cookiecutter.name }}", title="Name of application")
@@ -35,7 +35,7 @@ class Config({% if cookiecutter.uws_service == 'True' %}UWSAppSettings{% else %}
     model_config = SettingsConfigDict(
         env_prefix="{{ cookiecutter.name | upper | replace('-', '_') }}_", case_sensitive=False
     )
-{%- if cookiecutter.uws_service == "True" %}
+{%- if cookiecutter.flavor == "UWS" %}
 
     @property
     def uws_config(self) -> UWSConfig:
@@ -54,7 +54,7 @@ class Config({% if cookiecutter.uws_service == 'True' %}UWSAppSettings{% else %}
 
 config = Config()
 """Configuration for {{ cookiecutter.name }}."""
-{%- if cookiecutter.uws_service == "True" %}
+{%- if cookiecutter.flavor == "UWS" %}
 
 uws = UWSApplication(config.uws_config)
 """The UWS application for this service."""

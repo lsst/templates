@@ -1,4 +1,4 @@
-{%- if cookiecutter.uws_service == "True" %}
+{%- if cookiecutter.flavor == "UWS" %}
 #!/bin/bash
 
 # This script updates and installs the necessary prerequisites for a backend

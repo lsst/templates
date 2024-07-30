@@ -79,7 +79,7 @@ jobs:
         with:
           image: {{ "${{ github.repository }}" }}
           github_token: {{ "${{ secrets.GITHUB_TOKEN }}" }}
-{%- if cookiecutter.uws_service == "True" %}
+{%- if cookiecutter.flavor == "UWS" %}
 
       - uses: lsst-sqre/build-and-push-to-ghcr@v1
         id: build-worker
