@@ -19,8 +19,10 @@ setup lsst_distrib
 # Display each command as it's run.
 set -x
 
-# Install Python dependencies and the {{ cookiecutter.name }} code.
+# Install Python dependencies and the {{ cookiecutter.name }} code. httpx is
+# required by the remote Butler client, and google-cloud-storage is used to
+# store cutouts when the bucket has a gs URL.
 cd "$1"
-pip install --no-cache-dir google-cloud-storage safir-arq
+pip install --no-cache-dir google-cloud-storage httpx safir-arq structlog
 pip install --no-cache-dir --no-deps .
 {%- endif %}
