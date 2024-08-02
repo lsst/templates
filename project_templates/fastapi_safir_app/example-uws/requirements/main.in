@@ -15,4 +15,4 @@ uvicorn[standard]
 # Other dependencies.
 pydantic
 pydantic-settings
-safir[uws]>=7
+safir[uws]>=6.2.0
