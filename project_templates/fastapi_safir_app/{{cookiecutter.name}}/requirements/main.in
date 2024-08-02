@@ -16,7 +16,7 @@ uvicorn[standard]
 pydantic
 pydantic-settings
 {%- if cookiecutter.flavor == "UWS" %}
-safir[uws]>=7
+safir[uws]>=6.2.0
 {%- else %}
 safir>=5
 {%- endif %}
