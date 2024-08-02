@@ -16,5 +16,9 @@
     "lsst-dm",
     "lsst-sqre-testing"
   ],
+  "flavor": [
+    "Default",
+    "UWS"
+  ],
   "_extensions": ["jinja2_time.TimeExtension", "templatekit.TemplatekitExtension"]
 }

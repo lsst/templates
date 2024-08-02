@@ -6,3 +6,14 @@ from templatekit.builder import cookiecutter_project_builder
 env = Environment(BUILDERS={'Cookiecutter': cookiecutter_project_builder})
 env.Cookiecutter(AlwaysBuild(Dir('example')),
                  'cookiecutter.json')
+
+# Run cookiecutter to generate the 'example-uws' package
+# This represents an IVOA UWS service that does work via an arq queue
+# The explicit target directory, with AlwaysBuild, is needed for Scons to
+# differentiate this build from the example build above. We can't use Scons'
+# default build caching because we'd have to compute the cookiecutter
+# template anyways.
+env.Cookiecutter(AlwaysBuild(Dir('example-uws')),
+                 'cookiecutter.json',
+                 cookiecutter_context={'name': 'example-uws',
+                                       'flavor': 'UWS'})
