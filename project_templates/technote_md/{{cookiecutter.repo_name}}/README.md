@@ -21,8 +21,6 @@
 
 You can clone this repository and build the technote locally if your system has Python 3.11 or later:
 
-.. code-block:: bash
-
 ```sh
 git clone https://github.com/{{ cookiecutter.github_namespace }}
 cd {{ cookiecutter.series.lower() }}-{{ cookiecutter.serial_number }}
