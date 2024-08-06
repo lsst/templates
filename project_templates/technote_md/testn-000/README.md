@@ -19,8 +19,6 @@ A short description of this document
 
 You can clone this repository and build the technote locally if your system has Python 3.11 or later:
 
-.. code-block:: bash
-
 ```sh
 git clone https://github.com/lsst/testn-000
 cd testn-000
