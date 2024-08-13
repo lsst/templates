@@ -43,6 +43,7 @@ ignore = [
     "EM102",   # justification (duplicate string in traceback) is silly
     "FBT003",  # positional booleans are normal for Pydantic field defaults
     "FIX002",  # point of a TODO comment is that we're not ready to fix it
+    "PD011",   # attempts to enforce pandas conventions for all data types
     "G004",    # forbidding logging f-strings is appealing, but not our style
     "RET505",  # disagree that omitting else always makes code more readable
     "PLR0911", # often many returns is clearer and simpler style
