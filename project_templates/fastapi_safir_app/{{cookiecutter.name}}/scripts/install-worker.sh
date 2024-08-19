@@ -23,6 +23,7 @@ set -x
 # required by the remote Butler client, and google-cloud-storage is used to
 # store cutouts when the bucket has a gs URL.
 cd "$1"
-pip install --no-cache-dir google-cloud-storage httpx safir-arq structlog
+pip install --no-cache-dir \
+    google-cloud-storage httpx safir-arq safir-logging structlog
 pip install --no-cache-dir --no-deps .
 {%- endif %}
