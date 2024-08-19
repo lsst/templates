@@ -19,6 +19,7 @@ from safir.arq.uws import (
     WorkerResult,
     build_worker,
 )
+from safir.logging import configure_logging
 from structlog.stdlib import BoundLogger
 
 from ..domain import Worker{{ cookiecutter.module_name | capitalize }}Model
@@ -80,6 +81,12 @@ def {{ cookiecutter.name | replace('-', '_') }}(
         )
     ]
 
+
+configure_logging(
+    name="{{ cookiecutter.module_name }}",
+    profile=os.getenv("{{ cookiecutter.name | upper | replace('-', '_') }}_PROFILE", "development"),
+    log_level=os.getenv("{{ cookiecutter.name | upper | replace('-', '_') }}_LOG_LEVEL", "INFO"),
+)
 
 WorkerSettings = build_worker(
     {{ cookiecutter.name | replace('-', '_') }},

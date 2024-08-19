@@ -18,6 +18,7 @@ from safir.arq.uws import (
     WorkerResult,
     build_worker,
 )
+from safir.logging import configure_logging
 from structlog.stdlib import BoundLogger
 
 from ..domain import WorkerExampleuwsModel
@@ -79,6 +80,12 @@ def example_uws(
         )
     ]
 
+
+configure_logging(
+    name="exampleuws",
+    profile=os.getenv("EXAMPLE_UWS_PROFILE", "development"),
+    log_level=os.getenv("EXAMPLE_UWS_LOG_LEVEL", "INFO"),
+)
 
 WorkerSettings = build_worker(
     example_uws,
