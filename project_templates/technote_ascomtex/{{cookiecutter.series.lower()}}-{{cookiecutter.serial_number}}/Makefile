@@ -17,7 +17,7 @@ $(DOCNAME).pdf: $(tex) local.bib authors.tex
 	latexmk -bibtex -xelatex -f $(DOCNAME)
 
 authors.tex:  authors.yaml
-	python3 $(TEXMFHOME)/../bin/db2authors.py -m "ascom" > authors.tex
+	python3 $(TEXMFHOME)/../bin/db2authors.py -m ascom > authors.tex
 
 .PHONY: clean
 clean:
