@@ -1,6 +1,6 @@
 # technote_ascomtex
 
-**LSST technical note repository, formatted as a AASTeX paper preprint.**
+**LSST technical note repository, formatted as an Astronomy & Computing paper preprint.**
 
 This template generates a new paper repository based on [Elsevier cas Tex](https://mirrors.ctan.org/macros/latex/contrib/elsarticle.zip).
 This template also uses bib and author metadata from [lsst-texmf](https://lsst-texmf.lsst.io).
