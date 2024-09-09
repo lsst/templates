@@ -19,6 +19,7 @@ $(DOCNAME).pdf: $(tex) meta.tex local.bib authors.tex acronyms.tex
 
 
 # Acronym tool allows for selection of acronyms based on tags - you may want more than DM
+# If this is more T&S put "TS" instead of "DM"
 acronyms.tex: $(tex) myacronyms.txt
 	$(TEXMFHOME)/../bin/generateAcronyms.py -t "DM" $(tex)
 
