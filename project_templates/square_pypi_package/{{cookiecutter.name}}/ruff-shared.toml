@@ -87,6 +87,10 @@ ignore = [
 select = ["ALL"]
 
 [lint.per-file-ignores]
+"alembic/**" = [
+    "INP001",  # Alembic files are magical
+    "D400",    # Alembic migrations have their own docstring format
+]
 "noxfile.py" = [
     "T201",    # print makes sense as output from nox rules
 ]
