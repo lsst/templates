@@ -89,6 +89,7 @@ select = ["ALL"]
 [lint.per-file-ignores]
 "alembic/**" = [
     "INP001",  # Alembic files are magical
+    "D103",    # Alembic methods do not need docstrings
     "D400",    # Alembic migrations have their own docstring format
 ]
 "noxfile.py" = [
