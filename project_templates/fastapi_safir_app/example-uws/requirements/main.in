@@ -9,7 +9,6 @@
 
 # These dependencies are for fastapi including some optional features.
 fastapi>=0.100
-starlette
 uvicorn[standard]
 
 # Other dependencies.
