@@ -10,3 +10,5 @@ http
 p
 s
 A
+LMC
+SMC
