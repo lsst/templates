@@ -5,7 +5,6 @@ help:
 	@echo "make run - Start a local development instance"
 	@echo "make update - Update pinned dependencies and run make init"
 	@echo "make update-deps - Update pinned dependencies"
-	@echo "make update-deps-no-hashes - Pin dependencies without hashes"
 
 .PHONY: init
 init:
