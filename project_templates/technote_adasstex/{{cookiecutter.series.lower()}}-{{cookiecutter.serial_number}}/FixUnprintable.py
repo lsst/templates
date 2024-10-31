@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 #                    F i x  U n p r i n t a b l e . p y
 #
