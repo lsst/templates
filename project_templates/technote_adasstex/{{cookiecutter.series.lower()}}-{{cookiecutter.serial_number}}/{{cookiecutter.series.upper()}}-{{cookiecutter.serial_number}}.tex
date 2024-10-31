@@ -34,7 +34,6 @@
 
 \begin{document}
 \input{authors}
-\date{\today}
 \title{ {{- cookiecutter.title -}} }
 
 % This can write metadata into the PDF.
@@ -47,19 +46,24 @@
 
 \input{abstract}
 
+% These lines show examples of subject index entries. At this stage these have to commented
+% out, and need to be on separate lines. Eventually, they will be automatically uncommented
+% and used to generate entries in the Subject Index at the end of the Proceedings volume.
+% Don't leave these in! - replace them with ones relevant to your paper.
+%\ssindex{FOOBAR!conference!ADASS 2019}
+%\ssindex{FOOBAR!organisations!ASP}
+
+% These lines show examples of ASCL index entries. At this stage these have to commented
+% out, and need to be on separate lines. Eventually, they will be automatically uncommented
+% and used to generate entries in the ASCL Index at the end of the Proceedings volume.
+% The ascl.py command will scan your paper on possible code names.
+% Don't leave these in! - replace them with ones relevant to your paper.
+%\ooindex{FOOBAR, ascl:1101.010}
+
 \input{body}
 
-\appendix
-% Include all the relevant bib files.
-% https://lsst-texmf.lsst.io/lsstdoc.html#bibliographies
-\section{References} \label{sec:bib}
-\bibliography{local,lsst,lsst-dm,refs_ads,refs,books}
+\acknowledgments This material or work is supported in part by the National Science Foundation through Cooperative Agreement AST-1258333 and Cooperative Support Agreement AST1836783 managed by the Association of Universities for Research in Astronomy (AURA), and the Department of Energy under Contract No. DE-AC02-76SF00515 with the SLAC National Accelerator Laboratory managed by Stanford University.
 
-%Usually no space for acronyms in adass 4 pager
-% Make sure lsst-texmf/bin/generateAcronyms.py is in your path
-%\section{Acronyms} \label{sec:acronyms}
-%\input{acronyms.tex}
-\noindent {\tiny This material or work is supported in part by the National Science Foundation through Cooperative Agreement AST-1258333 and Cooperative Support Agreement AST1836783 managed by the Association of Universities for Research in Astronomy (AURA), and the Department of Energy under Contract No. DE-AC02-76SF00515 with the SLAC National Accelerator Laboratory managed by Stanford University.
-}
+\bibliography{local,lsst,lsst-dm,refs_ads,refs,books}
 
 \end{document}
