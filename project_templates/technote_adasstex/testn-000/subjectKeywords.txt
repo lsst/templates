@@ -1,0 +1,2265 @@
+.Astronomy
+ASCL
+Apple iPhone
+Artificial intelligence
+Astrophysics Data System (ADS)
+Bayes factor
+Big Data
+BoFs
+COSPAR
+Centre de Donn\'ees astronomiques de Strasbourg (CDS)
+Dagik-Earth
+Digital Object Identifier (DOI)
+Digitized Sky Survey (DSS)
+Distributed Annotation System (DAS)
+Earth
+    atmosphere
+        absorption
+        airglow
+        emission
+        ionosphere
+        model
+        scattering
+European Commission Framework Programmes
+European Virtual Observatory
+FAIR
+Fourth Paradigm
+German Astrophysical Virtual Observatory (GAVO)
+Google Earth
+Google Sky
+Google cardboard
+Group Membership Service (GMS)
+HELIO
+IGMP snooping
+International Virtual Observatory Alliance (IVOA)
+Internet of Things (IoT)
+Japanese Virtual Observatory (JVO)
+KIlo Degree Survey (KIDS)
+LSST
+NVIDIA
+NeCTAR
+Oculus Rift
+OpenStack
+Pickering Wedge
+Research Data Alliance (RDA)
+SkyView virtual telescope
+Sloan Digital Sky Survey (SDSS)
+Space Physics Archive Search and Extract (SPASE)
+Space-Time Coordinate (STC)
+    metadata
+Star Trek
+Two Micron All Sky Survey (2MASS)
+US Virtual Observatory Alliance (USVOA)
+Unified Astronomy Thesaurus (UAT)
+Universal Worker Service (UWS)
+    standard
+Virtual Astronomical Observatory (VAO)
+Virtual Observatory (VO)
+    Data Model
+    individual
+        All Sky Virtual Observatory (ASVO)
+        Chilean Virtual Observatory
+        Chinese Virtual Observatory (China-VO)
+        Euro-VO
+        German Astrophysical Virtual Observatory (GAVO)
+        Japanese Virtual Observatory (JVO)
+        NASA Astronomical Virtual Observatories (NAVO)
+        Spanish Virtual Observatory
+        VO-Paris
+        Virtual Solar Observatory (VSO)
+    interfaces
+    standards
+        Registry Interfaces
+        VO Data Modeling Language (VO-DML)
+World Coordinate System (WCS)
+\texttt{astrometry.net}
+adaptive optics
+alerts
+algorithm
+    $\sigma$-clipping
+    A'Trous wavelet reconstruction
+    CLEAN
+    ClumpFind
+    Compressed sensing
+    Compressive Sampling Matching Pursuit (CoSaMP)
+    DBSCAN
+    Delaunay Triangulation
+    Dirichlet Compound Multinomial (DCM)
+    Dirichlet Process Mixture (DPM)
+    Dortmund Spectrum Estimation Algorithm (DSEA)
+    Flood-fill
+    GaussClumps
+    Iterative Dichotomiser 3 (ID3)
+    LSQR
+    Lie-integration
+    Limited memory Broyden Fletcher Goldgarb Shanno
+    Lutz
+    Metropolis-Hastings
+    Min-Conflicts
+    Oddity
+    PIXON
+    Photometric De-trending (PDT)
+    Primal-Dual Interior Point Method
+    RFI detection
+    SExtractor
+    Simulated Annealing
+    Spectral Projected-Gradient L1 (SPGL1)
+    Splotch
+    Total Variation minimiser
+    VIS\_CS
+    Voronoi cells
+    Wide Field Interferometric Synthesis (WIFISYN)
+    \textit{k}-nearest neighbour regression
+    alpha shapes
+    analysis
+    artificial skepticism
+    automatic
+    basket-weaving
+    brute force
+    change of basis
+    clustering
+        spatial
+    control
+    coronal jet detection
+    cross-matching
+    data reduction
+    deconvolution
+    detection
+    efficiency
+    endian conversion
+    feature recognition
+    fitting
+    friends-of-friends
+    genetic
+    harmonic sum
+    heuristic
+    imaging
+    k-d trees
+    kernel-based
+    knapsack
+    least squares regression
+    line finding
+    machine learning
+        autoencoder
+        deep learning
+        k-nearest neighbors
+        logistic regression
+        naive Bayes classifier
+        random forest
+        recurrent neural network
+        semi-supervised
+        supervised
+        support vector machines
+        training
+        u-net
+        unsupervised
+    matching
+    minimisation
+    non-parametric fitting
+    optical flow
+    optimisation
+    parallelization
+    polygonal clipping
+    search
+    sky tesselation
+    source finding
+    support vector regression
+    tactics
+    tiling
+    tree-clustering
+    zone
+applications
+    AAOGlimpse
+    AARTFAAC
+    ACDC
+    AEGEAN
+    ANIS
+    AOFlagger
+    ASCOT
+    Aladin
+    Aladin Lite
+    AstroCloud
+    AstroVis
+    Astronomer's Workbench (AWOB)
+    BLOBCAT
+    C3
+    CARTA
+    CIGALE
+    COSIM
+    CSCXmatch
+    ChIPS
+    Chef
+    CoDa
+    DAOPhot
+    DJIN
+    DOPHOT
+    DS9
+    DataScope
+    Duchamp
+    EMMA
+    ESA Sky
+    ETC-42
+    FITS Liberator
+    FITS3D
+    FilExSeC
+    Filtergraph
+    Firefly
+    FreeTure
+    GADGET
+    GAIA
+    GALAPAGOS
+    GALFIT
+    GUCT
+    GammaLib
+    Ginga
+    Glnemo2
+    Google Calendar
+    Google Sky Map
+    HART
+    IceCore
+    Iris
+    JS9
+    JUDO
+    JUDO2
+    JVO Sky
+    Jupyter
+    Jupyterhub
+    L-PICOLA
+    LIME
+    Le Phare
+    LibreOffice
+    MAGIX
+    MIZAR
+    MUSELET
+    MakeCatalog
+    Montage
+    NLT
+    Nagios
+    Nightlight
+    NoiseChisel
+    PEGASE
+    PINOCCHIO
+    PSFEx
+    PatchELF
+    PlotXY
+    PyASB
+    PyBDSM
+    Q-FULLTREE
+    Radiopadre
+    SAADA
+    SAOImage DS9
+    SAS
+    SCAMP
+    SExtractor
+    SITools2
+    SPOT
+    STILTS
+    SWarp
+    SciApp
+    SedImporter
+    Sherpa
+    SimCADO
+    SkuareView
+    Skycat
+    SoFiA
+    Specview
+    Spotlight
+    Stellarium
+    TOM Toolkit
+    TOPCAT
+    TapHandle
+    TiRiFiC
+    UDON
+    UDON2
+    VO Crawler
+    VODance
+    VOSpec
+    VOVR
+    VisiOmatic
+    Vissage
+    Whole Sky Search
+    World Wide Telescope (WWT)
+    YouASTRO
+    aXe
+    blender
+    ccdproc
+    fpack/funpack
+    iCal
+    mViewer
+    map-making
+        JScanam
+        MadMap
+        Sanepic
+        Scanamorphos
+        Unimap
+    shadeMS
+    specreduce
+    spreadsheets
+archives
+    JAXA
+    NASA
+    NGAS
+    ODI
+    STARS
+    access
+    cloud-based
+    design
+        Archive Building System Infrastructure (ABSI)
+        NADIR
+    individual
+        ALMA Regional Centers (ARCs)
+        ALMA Science Archive
+        Anglo-Australian Telescope (AAT)
+        BLAST
+        CARMA
+        CASDA
+        CCAT Data Archive
+        CEFCA Catalogues Portal
+        CFHT
+        CGPS
+        Calar Alto
+        Chandra Data Archive
+        Cluster
+        DARTS
+        EVLA
+        EXOSAT Science Archive (EXSA)
+        Euclid Archive System
+        European Hubble Archive (eHST)
+        GAIA
+        GIRAFFE
+        Giotto
+        Gran Telescopio Canarias
+        HST Archive
+        Herschel Science Archive (HSA)
+        Hubble Legacy Archive (HLA)
+        Huygens
+        IBIS-A
+        IPAC
+        ISO Data Archive (IDA)
+        Integral SOC Science Data Archive (ISDA)
+        Isaac Newton Group Archive
+        JCMT Science Archive (SSA)
+        Javalambre
+        Keck Observatory Archive
+        Keck Observatory Archive (KOA)
+        LAMOST
+        LBT
+        LBT-DA
+        LOFAR Long Term Archive
+        NASA Exoplanet Archive
+        OmegaCam Science Archive
+        Planetary Data System (PDS)
+        SAO RAS
+        SMOKA
+        SOFIA
+        Spitzer Heritage Archive
+        Subaru Telescope Archive System (STARS)
+        TESS
+        Teide
+        UKIRT
+        Ulysses
+        VISTA Science Archive
+        ViaLactea Knowledge Base (VLKB)
+        WFCAM Science Archive
+        WIRCam
+        WISE
+        XMM-Newton
+        XMM-Newton Science Archive (XSA)
+    legacy
+    local
+    multiple
+        ESA Space Science Archives
+        ESDC
+        ESO Science Archive
+        Infrared Science Archive (IRSA)
+        Italian Astronomical Archive (IA2)
+        Mikulski Archive for Space Telescopes (MAST)
+        NASA/IPAC Infrared Science Archive (IRSA)
+        NOAO Science Archive
+        National Radio Astronomy Observatory (NRAO) data archive
+        Planetary Science Archive (PSA)
+        Wide Field Astronomy Unit (WFAU)
+    reduced
+    searching
+astroinformatics
+astronomers
+    as data scientists
+    careers in technology
+    skills
+    tech-savvy
+    tenure
+astronomy
+    AGNs
+        light curves
+    Baryon Acoustic Oscillations (BAO)
+    Be stars
+    Cosmic Microwave Background (CMB)
+    Dynamic Power Spectrum (DPS)
+    Einstein ring
+    Epoch of Reionisation
+    Galactic
+    Galactic bulge
+    Galactic center
+    Galactic halo
+    Hertzprung-Russell Diagram
+    Hubble Deep Field (HDF)
+    Hubble Deep Field South (HDFS)
+    Hubble Ultra Deep Field (HUDF)
+    ISM
+    Kuiper Belt Objects (KBO)
+    Line-of-sight velocity distribution (LOSVD)
+    Lyman-$\alpha$
+    Magellanic Clouds
+    Milky Way
+    Near Earth Objects (NEO)
+    Oort Cloud Objects
+    Sagittarius stream
+    Spectral Energy Distribution (SED)
+    Trans-Neptunian Objects (TNOs)
+    Voigt profile
+    X-ray
+    absorption line profile
+    absorption line systems
+    active galactic nuclei
+    air-Cherenkov
+    asteroids
+    astrometry
+    atmospheric dispersion
+    black holes
+        mergers
+    brown dwarfs
+    cataclysmic variables
+    cloud coverage
+    cluster
+        galaxy
+        stellar
+    coordinate systems
+    cosmic far-infrared background
+    cosmic microwave background (CMB)
+    dark clouds
+    dark energy
+    dark matter
+    data-driven
+    eclipsing binaries
+    emission line nebulae
+    emission line profile
+    equivalent width
+    exoplanets
+    extragalactic
+    far-infrared
+    fast radio burst (FRB)
+    galaxies
+        evolution
+        formation
+        high redshift
+        luminous Lyman break (LBG)
+        mass distribution
+        morphology
+        photometry
+        rotation
+    gamma-ray
+    gamma-ray bursts
+    gravitational lensing
+    gravitational microlensing
+    gravitational waves
+    heliophysics
+    hyper-velocity stars
+    interstellar medium
+    intracluster light (ICL)
+    k-correction
+    keplerian orbit
+    kinematics
+    local thermodynamic equilibrium (LTE)
+    luminosity function
+    magnetic fields
+    meteors
+    model
+    model atmospheres
+        BT\_Settl
+        PHOENIX
+    model
+        dust extinction
+        galaxy formation
+        star formation
+        stellar population synthesis
+    multi-messenger
+    near-infrared
+    neutral hydrogen
+    neutrino
+    neutron stars
+    novae
+    periodic variables
+    photometric redshift
+    photometry
+        Kron
+        Petrosian
+        aperture
+    planetary nebulae
+    planets
+        Mars
+    point source visibilities (PSV)
+    point spread function (PSF)
+        elliptical
+    polarisation
+    population synthesis
+    projections
+        HPX
+        Mollweide
+        TOAST
+        stereographic (STR)
+    proper motion
+    protoplanetary disks
+    pulsar
+    pulse detection
+    quasar
+    radial velocity
+    radio
+        VLBI
+        interferometer
+        interferometry
+        single-dish
+    redshift
+        photometric
+        spectroscopic
+    satellites
+        moon
+    seeing
+    simulation
+    sky background
+    sky brightness
+    solar
+    solar activity
+    solar flares
+    solar system
+    solar
+        coronal heating
+        solar spectral irradiance
+    spectra
+        artificial
+    spectral analysis
+    star formation
+    stars
+        dynamics
+        metallicity
+        seismology
+        young stellar objects (YSOs)
+    stellar atmospheres
+    stellar libraries
+        ELOIDE
+        MILES
+    stellar population
+    submillimeter
+    super-luminous supernovae (SLSNe)
+    supernova remnants
+    supernovae
+    surface brightness profile
+    survey
+    synthetic spectra
+    theory
+    time domain
+    transients
+        science alert
+    turbulent flow
+    variable sources
+    variable stars
+    white dwarfs
+astroreference
+astrostatistics
+astrotag
+atmospheric turbulence
+authentication and authorization
+    EduGAIN
+    federated identities
+    identity provider
+    protocols
+        OAuth
+        OpenID
+        SAML
+        X.509
+bibliography
+business intelligence
+business logic
+business rules
+calibration
+    arc lamps
+    astrometric
+    bias frames
+    continuum lamps
+    flat fields
+    flux
+    photometric
+    twilight flats
+    wavelength
+catalogues
+    GALAH Data Release 2
+    Gaia Data Release 1
+    Gaia Data Release 2
+    Gaia Data Release 3
+    RCSED
+    X-ray
+    astrometric
+    individual
+        2MASS
+        3XMM
+        3XMM XCatDB
+        Chandra Source Catalog
+        DSS
+        GALEX
+        GSC
+        Hipparcos
+        Hubble Source Catalog (HSC)
+        IRAS
+        RC3
+        ROSAT
+        SDSS
+        Tycho-2 stellar catalog
+        USNO-B Catalog
+        WISE
+        XMMFITCAT
+    infra-red
+    observing
+    services
+        AstroDAbis
+        BLINK
+        CDS X-Match
+        Gaia Archive Core Systems
+        Gaia Science Alerts
+        My Catalog Builder
+        SIMBAD TAP
+        Sesame
+        SimWatch
+        TAPVizieR
+        VizieR
+    simulation
+    solar
+citation
+    management
+    rates
+    software
+classification
+    Bayesian
+    algorithms
+    light curves
+    morphological
+    self-organising map
+    spectral
+code
+    documentation
+    legacy
+    management
+    moving to data
+    repository
+        CVS
+        Git
+        GitHub
+        GitLab
+    reviews
+computer languages
+    C
+    C#
+    C++
+    C++11
+    Fortran
+    GDL
+    Go
+    Groovy
+    IDL
+    Java
+    JavaScript
+    Julia
+    Jython
+    Objective-C
+    Perl
+    Pharo
+    Python
+    R
+    RUST
+    SPP
+    Scala
+    Tcl/Tk
+    Yorick
+    csh
+    domain-specific
+computers
+    Apple
+    Macintosh
+    benchmarks
+        LINPACK
+    hardware
+        ARM processors
+        CANBus
+        CDROMs
+        DRAM
+        I/O performance
+        IEEE floating-point
+        SSDs
+        Serial Attached SCSI (SAS)
+        Unimem
+        Xilinx
+        byte order
+        cache
+        flash memory
+        floating-point format
+        memory architecture
+        non-volatile memory
+        optical disks
+        power usage
+        renting
+    processing cores
+computing
+    CORBA
+    Eurolab-4-HPC
+    FPGA
+    GPU
+    OpenACC
+    OpenMP
+    architecture
+        CUDA
+        FLUX
+        Kepler
+        Non-Uniform Memory Architecture (NUMA)
+        REST
+        RESTful
+        Sandybridge
+        distributed component
+    atomic operations
+    authorization
+    cloud
+        Google
+        Infrastructure as a Service (IaaS)
+        Microsoft
+        Platform as a Service (PaaS)
+        Software as a Service (SaaS)
+        Virtual Private Sever
+    cluster
+        Docker Swarm
+        Kubernetes
+        Microsoft Azure
+        Sun Grid Engine
+    exascale
+    grid
+        European Grid Infrastructure (EGI)
+        Open Science Grid
+        TeraGrid
+        gLite
+    high-performance computing (HPC)
+    interoperability
+    massively parallel
+    mobile
+        Android
+        iOS
+        iPad
+        iPhone
+    monitoring
+        Nagios
+        Zabbix
+    parallel
+        GPI
+        Xeon Phi
+    parallelization
+    pre-exascale
+    race conditions
+    resource management
+        YARN
+    resources
+        Amazon Elastic Cloud 2 (EC2)
+        Amazon Web Services (AWS)
+        European Open Science Cloud (EOSC)
+    scalability
+    sky
+    supercomputing
+        Centro Svizzero di Calcolo Scientifico (CSCS)
+        Cray
+        HYDRA (at MPCDF)
+        Magnus
+        National Center for Supercomputing Applications (NCSA)
+        National Computational Infrastructure (NCI)
+        Pawsey Supercomputing Centre
+        Sunway
+        swinSTAR
+        top 500
+    virtual machines
+conference
+    .Astronomy
+    virtual
+configuration management
+    Chef
+coronagraphy
+correlators
+cosmology
+    distance
+covid
+creativity
+cross-identification
+cross-matching
+    dark side of
+    services
+dark energy
+data
+data centres
+    AGILE Data Center (ADC)
+    ASI Science Data Center (ASDC)
+    CDS
+    Canadian Astronomy Data Centre (CADC)
+    CeSAM
+    Data \& Analysis Center for Exoplanets (DACE)
+    ESAC Science Data Centre (ESDC)
+    GAVO
+    HEARSAC
+    IPAC
+    Italian center for Astronomical Archives (IA2)
+    JMMC
+    OV-GSO
+    SILSO
+    TAO
+    TWEA-DC
+    VO-PDC
+    Virtual Atomic and Molecular Data Center (VAMDC)
+data formats
+    ASDF
+    AST
+    CSV
+    FITS
+        HDU
+        WCS
+        headers
+        keywords
+        tables
+    HDF
+    HDF5
+    JPEG
+    JPEG2000
+    JSON
+    KML
+    MBFITS
+    MeasurementSets
+    Multi-MeasurementSets
+    PDS
+    ROOT
+    SDFITS
+    STC-S
+    TSV
+    VOTable
+    XML
+    YAML
+    netCDF
+data products
+data
+    $1/f$ noise
+    Hierarchical Progressive Surveys (HiPS)
+    access
+    acquisition
+    aggregation
+    analysis
+        in situ
+        real time (RTA)
+        spectral
+    ancillary
+    background noise
+    bad pixel masks
+    bad pixels
+    compression
+    cube
+        hyperspectral
+        mosaic
+    curation
+    delivery
+    discovery
+    error propagation
+    errors
+    filtering
+    flow
+    handling
+    heterogenous
+    ingestion
+    integrity
+    interoperability
+    management
+        DES Data Management (DESDM)
+        archive
+        operations
+        resilient distributed dataset (RDD)
+        storage
+        transport
+        workflow
+        workflows
+    media
+        CD-ROM
+        DVD-ROM
+        M-disc
+    metadata
+    mining
+    model
+        ALMA Project Data Model (APDM)
+        ALMA Science Data Model (SDM)
+        CAOM
+        Euclid Common Data Model (ECDM)
+        GOM.FITS
+        IVOA Characterisation DM (CharacterisationDM)
+        IVOA Simulation DM (SimDM)
+        IVOA Spectrum DM (SpectrumDM)
+        Model for Annotating Generic Objects (MANGO)
+        ObsTAP
+        PROV
+        PyCAOM
+    multi-dimensional
+    pipelines
+        processing
+        reduction
+        science
+    preservation
+    processing
+        Lambda Architecture
+        automated
+        bottlenecks
+        correlators
+    proprietary
+    provenance
+    public
+    publication
+    quality
+    quality assurance
+    quality control
+    query agent
+    reduction
+    repository
+        COSMO
+    sharing
+    signal to noise ratio
+    simulated
+    sparse
+    spectropolarimetric
+    storage
+        RAID
+    tabular
+    transfer
+    validation
+    variance
+    volume
+databases
+    Apache
+        Cassandra
+    Bucardo
+    DBMS
+    Hive
+    MariaDB
+    MonetDB
+    MongoDB
+    MySQL
+    NoSQL
+    Oracle
+    Postgres
+    RDBMS
+    Redis
+    SQLAlchemy
+    SQLite
+    SaadaDB
+    Sesame
+    Spark SQL
+    Sybase
+    atomic and molecular
+    caching
+    engine
+        Spider
+    engineering
+    individual
+        COSMOS
+        CRDS
+        Global TAP Schema (GloTS)
+        High Energy Astrophysics Science Archive Research Center (HEASARC)
+        LOFAR transients
+        MACHO
+        NASA Extragalactic Database (NED)
+        SIMPLE
+        SPHERE Target DataBase (TDB)
+        Simbad
+        T\"ubingen Model-Atom Database (TMAD)
+        VizieR
+    maintaining
+    object-oriented
+    query engine
+        Impala
+    query language
+        ADQL
+        GMRT
+        MSQL
+        PostgreSQL
+        SPARQL
+        SQL
+        SaadaQL
+        SciQL
+    querying
+    relational
+    sharding
+    spectroscopic
+        HITRAN
+    terascale
+    tools
+        Saada
+dice
+    loaded
+distribution
+    von Mises
+e-science
+education
+education and public outreach
+education
+    online
+        Coursera
+        Moodle
+email
+ethernet
+    White Rabbit
+exposure time calculator
+fault management
+footprint service
+geoinformatics
+geostatistics
+google
+    cloud
+hack day
+hackathon
+hardware
+helpdesks
+images
+    analysis
+        collaborative
+    browser
+    coaddition
+    high dynamic range
+    mosaic
+    processing
+        cosmic ray rejection
+        distortion correction
+        flat fields
+        photometry
+        source extraction
+        stray light removal
+        wavelength calibration
+    reconstruction
+    segmentation
+    tessellation
+        HEALPix
+        HTM
+        Multi-Order Coverage (MOC)
+        Voronoi
+    texture
+informatics
+    classes
+    namespaces
+    ontology
+information systems
+instruments
+    Berkley Visible Image Tube
+    CCDs
+        Charge Transfer Efficiency (CTE)
+    IACTs
+    Integral Field Spectrograph (IFS)
+    Integral Field Unit (IFU)
+    PSFs
+        Tiny Tim models
+    all-sky camera
+    bolometer
+    camera
+        EIS
+        submillimeter array
+    configuration
+    coronagraph
+    detectors
+        AQUARIUS
+        HAWAII-2RG
+        HAWAII-4RG
+        Phased-array feed (PAF)
+        cryostats
+        simulation
+    e-VLBI
+    fiber positioners
+    ghosts
+    individual
+        2dF
+        4MOST
+        AAOmega
+        ACE-FTS
+        ACS
+        ACSIS
+        ALFA
+        APERTIF
+        COS
+        CanariCam
+        DECam
+        DESI
+        DREAMS
+        EIT
+        EMIR
+        ESPRESSO
+        Echidna
+        FAST
+        FMOS
+        FORCAST
+        FORS
+        FRIDA
+        Fermi LAT
+        GIRAFFE
+        GMOS
+        GRID
+        HARMONI
+        HARP
+        HARPS
+        HAWC
+        HAWK-I
+        HERMES
+        HIFI
+        Hyper Suprime-Cam
+        IBIS
+        IMACS
+        IRAC
+        JEM-X
+        LUCI
+        MDI
+        MEGARA
+        METIS
+        MICADO
+        MIRI
+        MMIRS
+        MOS
+        MUSE
+        Megacam
+        Megaprime
+        NICMOS
+        NIRCam
+        NIRISS
+        NIRSpec
+        NISP
+        Namakanui
+        ODI
+        OMC
+        OSIRIS
+        OmegaCAM
+        PACS
+        PMAS
+        PPAK
+        Robert Stobie Spectrograph
+        SALTICAM
+        SAMI
+        SCUBA
+        SCUBA-2
+        SINFONI
+        SITELLE
+        SMILES
+        SPHERE
+        SPI
+        SPICAM
+        STIS
+        STIX
+        Sauron
+        Suprime-Cam
+        UVES
+        UVIS
+        VIMOS
+        VIRCAM
+        VIRTIS
+        VIS
+        VISIR
+        VLT/UT2
+        VLT/UT4
+        WFC3
+        WFPC2
+        X-IFU
+        X-shooter
+    interferometer
+    microbarometers
+    monitoring
+    multibeam
+    piezoelectric motors
+    polarimeter
+    seismographs
+    simulation
+    stick-slip motors
+    submillimeter array
+    telemetry
+international collaboration
+journals
+    Journal of Open Source Software (JOSS)
+language
+    natural
+libraries
+    ACALib
+    ALAMBIC
+    APLpy
+    AST
+    ATpy Python
+    Angular
+    Apache Airflow
+    Apache Tika
+    AstroLib
+    Astropy
+    BLT
+    Boost
+    Bootstrap JavaScript
+    CANOpen
+    CASAC
+    CFITSIO
+    CMSV
+    Common Pipeline Library (CPL)
+    DTS
+    Dask
+    Dask-MS
+    Datashader
+    ERFA
+    ESO Common Pipeline Library
+    Elgg
+    FUSE
+    GLUE
+    GNU Scientific Library (GSL)
+    GWCS
+    GammaLib
+    HDF5
+    HEALPix
+    HTM
+    High-Level Data Reduction Library (HDRL)
+    Highchart
+    JDBC
+    JSAMP
+    Javlin
+    Keras
+    LIBSVM
+    LWAS
+    Leaflet JavaScript
+    MMAP
+    MOSCA
+    MPI
+    MPI4PY
+    Mayavi
+    NDF
+    OpenCL
+    OpenGL
+    PAL
+    PgSphere
+    PyAST
+    PyCPL
+    PyCUDA
+    PyFITS
+    PyMidas
+    PyWCS
+    PydasLib
+    S2PLOT
+    SAMPy
+    SED template
+    SEDLib
+    SLALIB
+    SOFA
+    STWCS
+    SWIRE template
+    Sampjs
+    SpiceyPy
+    Stxxl
+    Thrust
+    VTK
+    WCSTools
+    WebGL
+    XMLRPC-C
+    astroML
+    astroplotlib
+    boto3
+    cURL
+    dautils
+    dygraph
+    healpy
+    jFreeChart
+    jJavaFX
+    jQuery
+    libsamp
+    libsim
+    matplotlib
+    mpi4py
+    numpy
+    pyCAOM2
+    pybind11
+    pycustos
+    pyql
+    scikit-learn
+    scipy
+    sky spectra
+    tensorfit
+    wcslib
+    zvtm
+license
+    BSD
+    GPL
+markup languages
+    HTML/HTML5
+    Schematron
+    XML
+    ebXML
+metadata
+    Astronomy Visualization Metadata (AVM)
+method
+    data
+        self-healing
+    discrete Chebyshev transform
+    tree
+        extremely randomized trees (Extra-Trees)
+methods
+    Bayesian
+        clustering
+    Covariance matrix
+    Fourier
+    Gauss-Hermite polynomials
+    Gaussian distributions
+    Hough Transformations
+    Laplacian filtering
+    Lomb-Scargle Periodogram
+    Octree
+    Optimal filtering
+    Poissonian
+    Principal Components Analysis (PCA)
+    RM synthesis
+    Resistance space
+    StEFCal
+    adaptive mesh refinement (AMR)
+    boxcar filter
+    growth-curve
+    high-pass filtering
+    indexing
+        B-tree
+        H3C
+        Hierarchical Triangular Mesh (HTM)
+        PgSphere
+        Q3C
+        \textit{k}d-tree
+    multi-order coverage (MOC)
+    ordinary differential equations
+    shapelet
+    shapelet decomposition
+    splines
+    statistical
+        Bayesian
+        Gibbs sampling
+        Markov chain Monte Carlo
+        Multi-scale
+        unsupervised clustering
+    support vector machine
+    tessellation
+    time series
+    wavelet
+    wavelet decomposition
+metrics
+    flux asymmetry
+    stochasticity
+observatories
+    EAO
+    ESO
+    H.E.S.S.
+    NAOJ
+    NRAO
+    ground-based
+        AAT
+        ACTA
+        ALMA
+        ASKAP
+        ATCA
+        ATST
+        Anglo-Australian Observatory (AAO)
+        Anglo-Australian Telescope (AAT)
+        Arecibo Radio Telescope
+        Asagio
+        Asiago Astronomical Observatory
+        Australian Astronomical Observatory (AAO)
+        BIMA
+        BTA-6
+        Boolardy Engineering Test Array (BETA)
+        CARMA
+        CCAT
+        CFHT
+        CTA
+        Calar Alto
+        Cerro Armazones
+        Cerro Paranal
+        Cerro Tololo Interamerican Observatory (CTIO)
+        Chandra
+        Cherenkov Telescope Array (CTA)
+        E-ELT
+        EMBRACE
+        EVLA
+        EVN
+        East Asian Observatory
+        Fermi Large Area Telescope (LAT)
+        First G-APD Cherenkov Telescope (FACT)
+        GMRT
+        GMT
+        GSMT
+        Gemini
+        Gran Telescopio Canarias
+        Green Bank Telescope (GBT)
+        HartRAO
+        Harvard College Observatory
+        Hobby-Eberly Telescope
+        Huairou Solar Observing Station (HSOS)
+        INAF
+        INAF-OAPd
+        INAF-OAT
+        IRAM
+        IceCube
+        JACH
+        JCMT
+        KAGRA
+        KM3Net
+        Keck
+        Kilodegree Extremely Little Telescope (KELT)
+        LBT
+        LIGO
+        LMT
+        LOFAR
+        LSST
+        LST
+        LWA
+        Major Atmospheric Gamma Imaging Cherenkov (MAGIC)
+        Medicina
+        MeerKAT
+        Murchison Radio Observatory (MRO)
+        Murchison Widefield Array (MWA)
+        NOEMA
+        National Optical Astronomy Observatory (NOAO)
+        NenuFAR
+        Noto
+        Observatorio Astrofisico de Javalambre (OAJ)
+        Observatorio Roque de los Muchachos
+        Ond\v rejov Observatory
+        Palomar
+        Pan-STARRS
+        Parkes
+        RATAN-600
+        Rubin
+        SKA
+        SKAMP
+        SMA
+        SOFIA
+        Serra la Nave
+        Southern African Large Telescope (SALT)
+        Special Astrophysical Observatory (SAO)
+        Subaru
+        TMT
+        TNG
+        UK Schmidt Telescope (UKST)
+        UKIRT
+        VISTA
+        VLA
+        VLBA
+        VLT
+        VST
+        Virgo
+        WIYN
+        WST
+        Westerbork
+        askap
+    lunar-based
+        Lunar-based Ultraviolet Telescope (LUT)
+    space-based
+        AGILE
+        AGILIE
+        ASCA
+        ATHENA
+        BepiColombo
+        COBE
+        Cassini-Huygens
+        Chandra
+        CoRoT
+        Euclid
+        Exosat
+        Fermi Gamma-ray Space Telescope
+        GALEX
+        Gaia
+        HOBYS
+        HST
+        Herschel
+        Hinode
+        Hipparcos
+        INTEGRAL
+        IRAS
+        IUE
+        IXO
+        Infrared Space Observatory (ISO)
+        International Space Station (ISS)
+        JASMINE
+        JWST
+        Kepler
+        LISA
+        MAXI
+        MIDEX
+        NEOSSat
+        Nano-Jasmine
+        Planck
+        RHESSI
+        ROSAT
+        SDO
+        SMEX
+        SOHO
+        SORCE
+        STSci
+        Solar Orbiter
+        Spektr-R
+        Spitzer Space Telescope
+        Suzaku
+        Swift
+        TESS
+        WFIRST
+        WISE
+        WMAP
+        XMM-Newton
+        eRosita
+    survey
+observing
+    calculator
+    colours
+    conditions
+    exposure
+    imaging
+    region of interest
+    remote
+    resolution
+    scheduling
+        classical
+        observing blocks
+        queue
+        time allocation
+    variability
+ontologies
+    astronomical object types
+organisations
+    American Astronomical Society (AAS)
+        Working Group on Astronomical Software (WGAS)
+    CSIRO
+    CeSAM
+    ESA
+    ESAC
+    ESTEC
+    European Strategy Forum on Research Infrastructures (ESFRI)
+    HITS
+    ICRAR
+    IOA
+        CASU
+    Microsoft
+    NASA
+        Deep Space Network
+    Roscosmos
+    Russian Academy of Sciences (RAS)
+    USGS
+    World Wide Web Consortium (W3C)
+packages
+    ACALib
+    ADMIT
+    AIPS
+    AIPS++
+    Aspera
+    Astropype
+    CASSIS
+    CIAO
+    CTLearn
+    CUPID
+    CalCOS
+    CasaPy
+    Casacore
+    Common Astronomy Software Applications (CASA)
+    DRAMA
+    DRAMA2
+    Debian Astro
+    Docker
+    DrizzlePac
+    Elasticsearch
+    FASE
+    FTOOLS
+    FitsStorage
+    GDL
+    GILDAS
+    Gnuastro
+    HCSS
+    HEAsoft
+    HIPE
+    Hadoop
+    IDL
+    IRAF
+    JNanocubes
+    LBLRTM
+    MADEX
+    MATLAB
+    MIDAS
+    MIRIAD
+    MMFIXEN
+    MPICASA
+    MyXCLASS
+    Nanocubes
+    ORAC-DR
+    OpenLDAP
+    ProgReg
+    PyRAF
+    PySALT
+    PySAP
+    PyVO
+    R
+    RVSAO
+    SAGE
+    SAS
+    SIRENA
+    SMURF
+    SOLR
+    STIFF
+    STSDAS
+    STWCS
+    Singularity
+    SolarSoftWare (SSW)
+    Starlink
+    TMAP
+    TMAW
+    VO-CLOUD
+    VisIVO
+    Vissage
+    Weka
+    funtools
+    jBabel
+    jESLint
+    jGENGA
+    jQuery
+    pandas
+    photutils
+    pysynphot
+    qplan
+    stpipe
+photographic plates
+    digitisation
+    multiple-exposure
+photometry
+physics
+    Cherenkov radiation
+    Doppler shift
+    Faraday rotation
+    Higgs boson
+    Planck's law
+    Stokes parameters
+    atomic
+    molecular
+    polarization
+    radiation transfer
+    statistical equilibrium
+    thermal radiation
+pipelines
+    Alma Science Pipeline
+    AstrOmatic
+    BAYESTAR
+    CASU
+    JScanam
+    LOFAR Default Pre-Processing Pipeline (DPPP)
+    PICARD
+    PyEmir
+    Transient imaging pipeline
+    XMM-Newton Pipeline Processing System (PPS)
+    streaming
+planetarium
+    formats
+        FITS
+        Speck
+portals
+    CDS
+    ESA Datalabs (EDL)
+    ESASky
+    JVO
+    ODI
+    VESPA
+project
+    management
+        Electronic Document Management System (EDMS)
+projects
+    ADSASS
+    AENEAS
+    ARTEMIS
+    ASCL
+    ASTERICS
+    ASTRI
+    ASTRODEEP
+    ASTRONET
+    ATHENA
+    Astro-WISE
+    AstroAccelerate
+    AstroHDF
+    Astronomy Data Services (ADS)
+    BLINK
+    BRAMS
+    CANFAR
+    CATS
+    CHILES
+    CSI 2264
+    Chang'e
+    Chinese Lunar Exploration Program
+    CyberSKA
+    D-SIGALE
+    Data Analysis Center for Exoplanets (DACE)
+    ECOSCALE
+    ENZO
+    EOSC
+    ESCAPE
+    EVALSO
+    EXPLORE
+    EuroPlaNet
+    EuroServer
+    ExaNeSt
+    ExaNoDe
+    FRIPON
+    GALFACTS
+    GENIUS
+    Grouper
+    Herschel Extragalactic Legacy Project (HELP)
+    Horizon 2020 (H2020)
+        StarFormMapper
+    INDIGO-DataCloud
+    INDIGO_DataCloud
+    Jupyter
+    Millimetron
+    OBELICS
+    OGLE
+    PRISMA
+    Quicklook
+    Radioastron
+    SOCCI
+    SOLARNET
+    SciServer Compute
+    Shibboleth
+    StarFormMapper
+    Starlink
+    VIALACTEA
+    VLBI-IT
+    WTF
+    YSOVAR
+    astrometry.net
+    iPython
+    the Tractor
+protocols
+    AMQP
+    CANOpen
+    Cone search
+    Datalink
+    EPN-TAP
+    FTP
+    GCP
+    GKE
+    HTTP
+    IVOA Data Access Layer (DAL)
+    JPIP
+    JSONP
+    Lightweight Directory Access Protocol (LDAP)
+    ObsCore
+    SAIP
+    SAMP
+    SCS
+    SIAP
+    SLAP
+    SSAP
+    TAP
+    TCP/IP
+    UDP
+    UWS
+    VOEvent
+    VOSI
+    VOSpace
+    XPA
+publication
+quality control
+radio frequency interference (RFI)
+registry
+research
+    citizen science
+    infrastructure
+        NCRIS
+risk management
+satellites
+    earth observation
+        Aura
+        ENVISAT
+        MODIS
+        OCO2
+scheduling
+science portal
+security
+    Macaroons
+    SAML
+    Shibboleth
+    Single Sign-On (SSO)
+    Transport Layer Security (TLS)
+semantics
+services
+    IAU-Transient Name Server (TNS)
+    Skybot
+simulations
+    Bolshoi
+    Markov Chain Monte Carlo (MCMC)
+    Millennium
+    Monte Carlo
+    N-body
+    numerical
+smartphone
+software
+    COTS
+    DPDK
+    Linux
+    Linux kernel
+    Linux
+        Debian
+        cache buffer
+        huge pages
+        kernel
+    Mac OS X
+    Unix
+    XID+
+    applications
+    architecture
+    authentication
+        EduGain
+        OAuth2
+    authorization
+    automatic detection
+    calibration
+    containers
+    contributed
+    control system
+    cost
+    data handling
+    design
+    design patterns
+        Model-View-Controller (MVC)
+    design
+        KISS
+        inheritance
+        model-driven
+        object-oriented
+        templates
+        user requirements
+    development
+        DevOps
+        agile
+        design reviews
+        management
+    distribution
+    documentation
+    error reporting
+    evaluation
+    exceptions
+    file system
+        HDFS
+        Lustre
+        tmpfs
+    formats
+        CFF
+        CodeMeta
+    framework
+        agilepy
+        rtapipe
+        threeML
+    frameworks
+        ALMA Common Software (ACS)
+        ASPIC
+        Apache Storm
+        Easylife
+        FRIAA
+        Flask
+        Grails
+        Griffon
+        HTCondor
+        Irrlicht
+        MPDAF
+        MapReduce
+        MeqTree
+        Open Workflow Layer (OWL)
+        Ruby on Rails
+        Spark
+        TANGO
+        Tez
+        Unity
+        encube
+        streams
+    free
+    image analysis
+    image display
+    image processing
+    infrastructure
+    interfaces
+        Added Value Interface (AVI)
+        Ephestos
+        Gamification
+        JNI
+        nativeBoost
+    library
+        Pandora Next Generation Software (PNGS)
+        polycomp
+    licences
+    locks
+    logging
+    multi-platform
+    multi-tasking
+    multi-threading
+    observation planning
+    open source
+    package manager
+        NPM
+    packages
+        CAS
+        DaCHS
+    performance
+        CPU usage
+        memory usage
+        overhead
+        peak
+        sustained
+    portability
+    project management
+    project tracking
+        JIRA
+        Redmine
+        Trac
+    release manager
+    reuse
+    root access
+    scheduling
+    scripting
+    services
+        ARI-Gaia
+        Active Directory (AD)
+        GACS
+        GAVIP
+        GAZPAR
+        JOVIAL
+        MocServer
+    simulation
+        HxRG
+        MICE
+        PhoSim
+        SimCADO
+    source code
+    spectral analysis
+    style
+    support
+    testing
+        Chai
+        Mocha
+        synthetic data
+        unit tests
+    threads
+    tools
+        AJAX
+        APERIcubes
+        ASC Correlator
+        Ant
+        Automatic POrtal GEneratOr (APOGEO)
+        CASANOVA
+        CASSIS
+        CORBA
+        COTS
+        CSCView
+        Cython
+        DUCHAMP
+        Django
+        Doxygen
+        Finder Chart
+        Flask
+        Gtk
+        HIPSgen
+        JS9
+        KDU
+        MAF
+        Montage Image Mosaic Toolkit
+        OpenGL
+        Phosphoros
+        PyGtk
+        PyKE
+        PyQt
+        PyRAF
+        Qt
+        SVN
+        SWIG
+        Spherical Geometry Toolkit
+        TELELA
+        VOSamp
+        VisIt
+        Xova
+        iRODS
+        mViewer
+    user interfaces
+        controllers
+        tooltips
+        touchscreens
+        wands
+        web-based
+    virtualisation
+        VMWare
+    workflows
+        AstroTaverna
+        ESO Reflex
+        Pegasus
+        Reflex
+        serializing
+space probes
+    Europa Clipper
+    ExoMars
+    MarsExpress
+    Rosetta
+    Schiaparelli
+    Voyager
+space weather
+spectrograph
+    multi-object
+spectroscopy
+    3D
+    Echelle
+    cross-dispersed
+    grism
+    integral field
+    longslit
+    multi-object
+    slitless
+    slitlets
+spherical harmonic transform
+stars
+    evolution
+    light curves
+statistical analysis
+surveys
+    2MASS
+    AKARI
+    Athena
+    Australia Telescope Low-Brightness Survey (ATLBS)
+    Blanco DECam Bulge Survey (BDBS)
+    CORNISH
+    COSMOS
+    Canada-France Ecliptic Plane Survey
+    Canada-France-Hawaii Telescope Legacy Survey (CFHTLS)
+    Canada-France-Hawaii Telescope Legacy Wide and Deep
+    Catalina Sky Survey
+    Cosmic Assembly Near-infrared Deep Extragalactic Legacy Survey (CANDELS)
+    DEEP2
+    DENIS
+    Dark Energy Survey (DES)
+    Deep Ecliptic Survey (DES)
+    Deep Investigations of Neutral Gas Origins (DINGO)
+    EUCLID
+    Evolutionary Map of the Universe (EMU)
+    FIRST
+    GALEX
+    GAMA
+    GAPS
+    GLEAM
+    GLIMPSE
+    GOODS
+    GRS
+    Gaia-ESO
+    Galactic Arecibo L-band Feed Array HI (GALFA-HI)
+    Great Observatories Origins Deep Survey (GOODS)
+    HAT-South
+    HETDEX
+    HIPASS
+    HSC
+    Herschel
+        SPIRE
+    Hi-GAL
+    Javalambre Photometric Local Universe Survey (J-PLUS)
+    Javalambre Physics of the Accelerating Universe Astrophysical Survey (J-PAS)
+    LAMOST
+    LINEAR
+    MAGPIS
+    MIPSGAL
+    MOPRA
+    Mapping Nearby Galaxies at APO (MaNGA)
+    NANTEN
+    NVSS
+    Northern Sky Variability Survey (NSVS)
+    OSPS
+    Outer Solar System Origins Survey (OSSOS)
+    OzDES
+    PFS
+    Palomar Distant Solar System Survey (PDSSS)
+    Palomar Transient Factory (PTF)
+    Pan-STARRS
+    Planck
+    Public ESO Spectroscopic Survey of Transient Objects (PESSTO)
+    Radial Velocity Experiment (RAVE)
+    SERVS
+    SINGS
+    SSOS
+    Siding Spring Survey
+    SkyMapper
+    Sloan Digital Sky Survey (SDSS)
+    Space Watch
+    Spitzer
+    SuperCOSMOS
+    THINGS
+    Trans-Atlantic Exoplanet Survey (TrES)
+    UKIRT Infrared Deep Sky Survey (UKIDSS)
+    VANDELS
+    VAST
+    VIKING
+    VIPERS
+    VISION
+    VISTA
+    VLA Sky Survey (VLASS)
+    VLSS
+    VUDS
+    VVDS
+    WALLABY
+    WENSS
+    WISE
+    Zwicky Transient Facility (ZTF)
+    sky
+    very deep
+    wallaby
+    zCOSMOS
+target of opportunity
+techniques
+    2D correlation
+    API
+    Fast Holographic Deconvolution
+    Fredholm integral equation
+    Gaussian fitting
+    Kendall's Tau coefficient
+    RFI mitigation
+    Random Forest
+    Theil-Sen regression
+    adaptive calibration
+    autocompletion
+    coherent dedispersion
+    compressive sensing
+    concave hulls
+    continuous ranked probability score
+    continuum fitting
+    convolutional neural networks (CNN)
+    cross correlation
+    dark subtraction
+    dashboards
+    data challenges
+    decision trees
+    demixing
+    eggs
+    event detection
+    forced photometry
+    generative spectrum networks (GSN)
+    image deconvolution
+    incoherent dedispersion
+    line fitting
+    machine learning
+    model fitting
+    multinominal classification
+    neural networks
+        artificial
+    noise-based detection
+    optimal extraction
+    pattern matching
+    pattern recognition
+    priorized fitting
+    probability density functions
+    probability integral transform
+    random forest regression
+    ray casting
+    ray tracing
+    reflection
+    scatterplot matrices
+    searching
+    serendipity
+    serialization
+    signal-based detection
+    sky model
+    sky partitioning
+    sky subtraction
+    slippy map
+    sonification
+    source detection
+    space-ground interferometry
+    sparse modeling
+    superflat
+    template fitting
+    transfer learning
+    transpilation
+    triangulation
+    visual analytics
+    web scraping
+technology
+    standards
+telescopes
+    commissioning
+    ghosts
+    lunar-based
+    pointing
+    robotic
+    spiders
+    vignetting
+tensorflow
+theorem
+    Brewer
+    CAP
+    L'Huilier
+    Nyquist
+unconference
+    Astro Hack Week
+user interfaces
+    interaction cost
+    widgets
+virtual reality
+    MOZVR
+visualisation
+    3D
+    CAVE2
+    Google Cardboard
+    Oculus Rift
+    blender
+    hybrid rendering
+    immersive environment
+    immersive-3D
+    multi-dimensional
+    web-based
+web
+    Apache
+    Apache NiFi
+    Linked Open Data (LOD)
+    Piwigo
+    RDF
+    Tomcat
+    access
+    application
+    browser
+        Chrome
+        Firefox
+        Firefox Nightly
+        Internet Explorer
+        Opera
+        Safari
+    client
+    cookies
+    development tools
+        AJAX
+        CSS
+        Eclipse
+        Google Web Toolkit (GWT)
+        Jira
+        MANTIS
+        OWL
+        PHP
+        RDF
+        React
+        SKOS
+        SOAP
+    framework
+        CherryPy
+        Daiquiri
+        Web2Py
+    gadgets
+    interface
+        APOGEO
+    proposal
+        hedwig
+    scraping
+    search engines
+    searching
+    semantic
+    server
+        IIPimage
+    services
+    social media
+    technologies
+workloads
+workshops
+    ANITA
+    SciCoder
