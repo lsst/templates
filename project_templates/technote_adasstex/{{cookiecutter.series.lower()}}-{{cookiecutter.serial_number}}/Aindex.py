@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 #                           A i n d e x . p y
 #
@@ -32,11 +32,52 @@
 
 from __future__ import (print_function,division,absolute_import)
 
-
+import os
 import sys
 import string
 
 import AdassChecks
+
+def FindTexFile (Paper,Problems) :
+   TexFileName = Paper + ".tex"
+   print("The main .tex file for the paper should be called",TexFileName)
+
+   #  There should be a main .tex file in the directory called <paper>.tex
+
+   if (os.path.exists(TexFileName)) :
+      print("Found main .tex file",TexFileName,"OK")
+   else :
+      print("** Could not find",TexFileName,"**")
+
+      #  See if there is just one .tex file in the directory, and if so use
+      #  it.
+
+      DirList = os.listdir(".")
+      TexFiles = []
+      for FileName in DirList :
+         if os.path.splitext(FileName)[1] == ".tex" and os.path.splitext(FileName)[0].find('.') != 0:
+            TexFiles.append(FileName)
+      if (len(TexFiles) == 1) :
+         OnlyFileName = TexFiles[0]
+         print("There is just one .tex file in the directory,")
+         print("so we will assume",OnlyFileName,"is the one to use.")
+         print("It should be renamed as",TexFileName)
+         Problems.append("Should rename " + OnlyFileName + " as " + TexFileName)
+         TexFileName = OnlyFileName
+      else :
+         TexFileName = ""
+         if (len(TexFiles) == 0) :
+            print("** There are no .tex files in the directory **")
+            Problems.append("Could not find any .tex files in the directory")
+         else :
+            print("The directory has the following .tex files:")
+            for TexFile in TexFiles :
+               print("   ",TexFile)
+            print("Unable to know which is the main .tex file for the paper")
+            Problems.append("Cannot identify the correct .tex file to use")
+   return TexFileName
+
+
 
 NumberArgs = len(sys.argv)
 if (NumberArgs < 2) :
@@ -44,8 +85,12 @@ if (NumberArgs < 2) :
    print("eg: Aindex O1-4")
 else :
    Paper = sys.argv[1]
+   if not os.path.exists(Paper):
+        print("Paper {} not found... looking for main .tex".format(Paper))
+        Paper = FindTexFile(Paper, [])
    Notes = []
-   
+   if os.path.splitext(Paper)[1] == '.tex':
+       Paper = Paper[:-4]
    print("")
    print("Generating author index entries for paper",Paper)
    print("")

@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 #
 #   quick helper code for ASCL editing (Teuben/Allen)
 #   is really part of the git module 'teuben/ascl-tools' but placed here
