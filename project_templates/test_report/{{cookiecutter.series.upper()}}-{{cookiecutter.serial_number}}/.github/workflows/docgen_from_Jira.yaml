@@ -30,6 +30,7 @@ jobs:
         env:
           JIRA_USER: {% raw %}${{ secrets.JIRA_USER }}{% endraw %}
           JIRA_PASSWORD: {% raw %}${{ secrets.JIRA_PASSWORD }}{% endraw %}
+          ZEPHYR_TOKEN: {% raw %}${{ secrets.ZEPHYR_TOKEN }}{% endraw %}
         run: |
           source ${CONDA}/bin/activate docsteady-env
           docsteady  --namespace {{ cookiecutter.namespace }} generate-tpr {{ cookiecutter.plan }}  {{ cookiecutter.series }}-{{ cookiecutter.serial_number }}.tex
