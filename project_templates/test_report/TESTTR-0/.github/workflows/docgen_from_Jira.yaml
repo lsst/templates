@@ -30,6 +30,7 @@ jobs:
         env:
           JIRA_USER: ${{ secrets.JIRA_USER }}
           JIRA_PASSWORD: ${{ secrets.JIRA_PASSWORD }}
+          ZEPHYR_TOKEN: ${{ secrets.ZEPHYR_TOKEN }}
         run: |
           source ${CONDA}/bin/activate docsteady-env
           docsteady  --namespace DM generate-tpr LVV-P73  TESTTR-0.tex
