@@ -123,6 +123,12 @@ select = ["ALL"]
     "S301",    # allow tests for whether code can be pickled
     "SLF001",  # tests are allowed to access private members
 ]
+"tests/schema_test.py" = [
+    "ASYNC221", # useful to run subprocess in async tests for Alembic
+]
+"*/tests/schema_test.py" = [
+    "ASYNC221", # useful to run subprocess in async tests for Alembic
+]
 
 # These are too useful as attributes or methods to allow the conflict with the
 # built-in to rule out their use.
