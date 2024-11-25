@@ -15,6 +15,7 @@ from fastapi import FastAPI
 from safir.dependencies.http_client import http_client_dependency
 from safir.logging import configure_logging, configure_uvicorn_logging
 from safir.middleware.x_forwarded import XForwardedMiddleware
+from safir.slack.webhook import SlackRouteErrorHandler
 
 from .config import config
 from .handlers.external import external_router
@@ -58,3 +59,11 @@ app.include_router(external_router, prefix=f"{config.path_prefix}")
 
 # Add middleware.
 app.add_middleware(XForwardedMiddleware)
+
+# Configure Slack alerts.
+if config.slack_webhook:
+    logger = structlog.get_logger("example")
+    SlackRouteErrorHandler.initialize(
+        config.slack_webhook, "example", logger
+    )
+    logger.debug("Initialized Slack webhook")

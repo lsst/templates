@@ -16,7 +16,15 @@ __all__ = ["Config", "config"]
 class Config(UWSAppSettings):
     """Configuration for example-uws."""
 
+    model_config = SettingsConfigDict(
+        env_prefix="EXAMPLE_UWS_", case_sensitive=False
+    )
+
     name: str = Field("example-uws", title="Name of application")
+
+    log_level: LogLevel = Field(
+        LogLevel.INFO, title="Log level of the application's logger"
+    )
 
     path_prefix: str = Field(
         "/example-uws", title="URL prefix for application"
@@ -26,12 +34,10 @@ class Config(UWSAppSettings):
         Profile.development, title="Application logging profile"
     )
 
-    log_level: LogLevel = Field(
-        LogLevel.INFO, title="Log level of the application's logger"
-    )
-
-    model_config = SettingsConfigDict(
-        env_prefix="EXAMPLE_UWS_", case_sensitive=False
+    slack_webhook: SecretStr | None = Field(
+        None,
+        title="Slack webhook for alerts",
+        description="If set, alerts will be posted to this Slack webhook",
     )
 
     @property
