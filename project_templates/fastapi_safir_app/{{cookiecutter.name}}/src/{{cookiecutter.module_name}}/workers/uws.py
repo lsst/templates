@@ -1,4 +1,4 @@
-{%- if cookiecutter.flavor == "UWS" %}
+{%- if cookiecutter.flavor == "UWS" -%}
 """Worker for UWS database updates."""
 
 from __future__ import annotations

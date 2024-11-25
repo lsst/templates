@@ -1,4 +1,3 @@
-
 """Domain models for example-uws."""
 
 from __future__ import annotations

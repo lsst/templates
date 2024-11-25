@@ -1,4 +1,4 @@
-{%- if cookiecutter.flavor == "UWS" %}
+{%- if cookiecutter.flavor == "UWS" -%}
 """Domain models for {{ cookiecutter.name }}."""
 
 from __future__ import annotations

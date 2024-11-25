@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from pydantic import Field
+from pydantic import Field, SecretStr
 from pydantic_settings import SettingsConfigDict
 from safir.logging import LogLevel, Profile
 from safir.uws import UWSApplication, UWSAppSettings, UWSConfig, UWSRoute
