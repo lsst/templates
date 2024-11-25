@@ -1,9 +1,9 @@
-{%- if cookiecutter.flavor == "UWS" %}
+{%- if cookiecutter.flavor == "UWS" -%}
 """Job parameter dependencies."""
 
 from typing import Annotated
 
-from fastapi import Depends, Request
+from fastapi import Depends
 from safir.uws import UWSJobParameter, uws_post_params_dependency
 
 __all__ = [

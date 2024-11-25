@@ -5,6 +5,7 @@ from typing import Annotated
 from fastapi import APIRouter, Depends
 from safir.dependencies.logger import logger_dependency
 from safir.metadata import get_metadata
+from safir.slack.webhook import SlackRouteErrorHandler
 from structlog.stdlib import BoundLogger
 
 from ..config import config
@@ -12,7 +13,7 @@ from ..models import Index
 
 __all__ = ["external_router"]
 
-external_router = APIRouter()
+external_router = APIRouter(route_class=SlackRouteErrorHandler)
 """FastAPI router for all external handlers."""
 
 
