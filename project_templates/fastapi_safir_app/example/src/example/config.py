@@ -16,11 +16,11 @@ class Config(BaseSettings):
         env_prefix="EXAMPLE_", case_sensitive=False
     )
 
-    name: str = Field("example", title="Name of application")
-
     log_level: LogLevel = Field(
         LogLevel.INFO, title="Log level of the application's logger"
     )
+
+    name: str = Field("example", title="Name of application")
 
     path_prefix: str = Field(
         "/example", title="URL prefix for application"
