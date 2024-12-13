@@ -6,9 +6,10 @@ from pydantic import Field, SecretStr
 from pydantic_settings import SettingsConfigDict
 from safir.logging import LogLevel, Profile
 from safir.uws import UWSApplication, UWSAppSettings, UWSConfig, UWSRoute
+from vo_models.uws import JobSummary
 
 from .dependencies import post_params_dependency
-from .models import ExampleuwsParameters
+from .models import ExampleuwsParameters, ExampleuwsXmlParameters
 
 __all__ = ["Config", "config"]
 
@@ -20,11 +21,11 @@ class Config(UWSAppSettings):
         env_prefix="EXAMPLE_UWS_", case_sensitive=False
     )
 
-    name: str = Field("example-uws", title="Name of application")
-
     log_level: LogLevel = Field(
         LogLevel.INFO, title="Log level of the application's logger"
     )
+
+    name: str = Field("example-uws", title="Name of application")
 
     path_prefix: str = Field(
         "/example-uws", title="URL prefix for application"
@@ -44,6 +45,7 @@ class Config(UWSAppSettings):
     def uws_config(self) -> UWSConfig:
         """Corresponding configuration for the UWS subsystem."""
         return self.build_uws_config(
+            job_summary_type=JobSummary[ExampleuwsXmlParameters],
             parameters_type=ExampleuwsParameters,
             worker="example_uws",
             async_post_route=UWSRoute(

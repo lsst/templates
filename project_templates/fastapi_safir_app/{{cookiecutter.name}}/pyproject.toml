@@ -22,9 +22,6 @@ requires-python = ">=3.12"
 dependencies = []
 dynamic = ["version"]
 
-[project.scripts]
-{{cookiecutter.name | lower}} = "{{cookiecutter.module_name}}.cli:main"
-
 [project.urls]
 Homepage = "https://{{cookiecutter.name | lower}}.lsst.io"
 Source = "https://github.com/{{cookiecutter.github_org}}/{{cookiecutter.name}}"
@@ -32,8 +29,6 @@ Source = "https://github.com/{{cookiecutter.github_org}}/{{cookiecutter.name}}"
 [build-system]
 requires = ["setuptools>=61", "wheel", "setuptools_scm[toml]>=6.2"]
 build-backend = "setuptools.build_meta"
-
-[tool.setuptools_scm]
 
 [tool.coverage.run]
 parallel = true
@@ -111,3 +106,5 @@ format = "md"
 md_header_level = "2"
 new_fragment_template = "file:changelog.d/_template.md.jinja"
 skip_fragments = "_template.md.jinja"
+
+[tool.setuptools_scm]

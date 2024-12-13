@@ -7,9 +7,10 @@ from pydantic_settings import {% if cookiecutter.flavor != "UWS" %}BaseSettings,
 from safir.logging import LogLevel, Profile
 {%- if cookiecutter.flavor == "UWS" %}
 from safir.uws import UWSApplication, UWSAppSettings, UWSConfig, UWSRoute
+from vo_models.uws import JobSummary
 
 from .dependencies import post_params_dependency
-from .models import {{ cookiecutter.module_name | capitalize }}Parameters
+from .models import {{ cookiecutter.module_name | capitalize }}Parameters, {{ cookiecutter.module_name | capitalize }}XmlParameters
 {%- endif %}
 
 __all__ = ["Config", "config"]
@@ -22,11 +23,11 @@ class Config({% if cookiecutter.flavor == "UWS" %}UWSAppSettings{% else %}BaseSe
         env_prefix="{{ cookiecutter.name | upper | replace('-', '_') }}_", case_sensitive=False
     )
 
-    name: str = Field("{{ cookiecutter.name }}", title="Name of application")
-
     log_level: LogLevel = Field(
         LogLevel.INFO, title="Log level of the application's logger"
     )
+
+    name: str = Field("{{ cookiecutter.name }}", title="Name of application")
 
     path_prefix: str = Field(
         "/{{ cookiecutter.name | lower }}", title="URL prefix for application"
@@ -47,6 +48,7 @@ class Config({% if cookiecutter.flavor == "UWS" %}UWSAppSettings{% else %}BaseSe
     def uws_config(self) -> UWSConfig:
         """Corresponding configuration for the UWS subsystem."""
         return self.build_uws_config(
+            job_summary_type=JobSummary[{{ cookiecutter.module_name | capitalize }}XmlParameters],
             parameters_type={{ cookiecutter.module_name | capitalize }}Parameters,
             worker="{{ cookiecutter.name | replace('-', '_') }}",
             async_post_route=UWSRoute(

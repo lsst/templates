@@ -21,6 +21,5 @@ if not uws_service:
     os.remove("scripts/install-worker.sh")
     os.remove("scripts/install-worker-packages.sh")
     os.remove("scripts/start-worker.sh")
-    os.remove(f"src/{module_name}/cli.py")
     os.remove(f"src/{module_name}/dependencies.py")
     os.remove(f"src/{module_name}/domain.py")

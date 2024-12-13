@@ -7,15 +7,12 @@
 # After editing, update requirements/main.txt by running:
 #     make update-deps
 
-# These dependencies are for fastapi including some optional features.
 fastapi>=0.100
-uvicorn[standard]
-
-# Other dependencies.
 pydantic>2
 pydantic-settings
 {%- if cookiecutter.flavor == "UWS" %}
-safir[uws]>=6.2.0
+safir[uws]>=9.0.1
 {%- else %}
 safir>=5
 {%- endif %}
+uvicorn[standard]
