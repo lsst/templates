@@ -13,18 +13,13 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: 3.9
+          python-version: "3.11"
 
       - name: Python install
         run: |
           python -m pip install --upgrade pip
-          python -m pip install "lander<2.0.0"
+          python -m pip install -r requirements.txt
 
-      - name: condaenv
-        run: |
-          conda init bash
-          conda create --name docsteady-env docsteady -c lsst-dm -c conda-forge
-        shell: bash
 
       - name: docugen
         env:
@@ -32,7 +27,6 @@ jobs:
           JIRA_PASSWORD: {% raw %}${{ secrets.JIRA_PASSWORD }}{% endraw %}
           ZEPHYR_TOKEN: {% raw %}${{ secrets.ZEPHYR_TOKEN }}{% endraw %}
         run: |
-          source ${CONDA}/bin/activate docsteady-env
           docsteady  --namespace {{ cookiecutter.namespace }} generate-tpr {{ cookiecutter.plan }}  {{ cookiecutter.series }}-{{ cookiecutter.serial_number }}.tex
         shell: bash
 
