@@ -43,6 +43,8 @@ generate: .FORCE
 
 
 #Traditional acronyms are better in this document
+# remeber to add more TAGS like PMO or CAM to get corect acronyms and preferably
+# do not commit acronyms.tex
 acronyms.tex : ${TEX} myacronyms.txt skipacronyms.txt
 	echo ${TEXMFHOME}
 	python3 ${TEXMFHOME}/../bin/generateAcronyms.py -t "DM"    $(TEX)
