@@ -1,6 +1,6 @@
 {
   "series": ["DMTR", "PSTR", "SCTR", "TESTTR"],
-  "namespace": ["DM", "CAM", "EPO", "OCS", "OPS", "PSE", "T&S", "SE", "PST"],
+  "namespace": ["DM", "CAM", "EPO", "OCS", "OPS", "PSE", "T&S","SE","PST"],
   "serial_number": "0",
   "github_org": ["lsst-dm", "lsst-pst", "lsst-sitcom", "lsst-sqre-testing"],
   "title": "Document Title",

@@ -36,7 +36,7 @@ dialog_fields:
         presets:
           series: "SCTR"
           github_org: "lsst-sitcom"
-          namespace: "SE"
+          namespace: "PSE"
       - label: "Test"
         value: "test"
         presets:
