@@ -38,8 +38,10 @@ meta.tex: Makefile .FORCE
 	printf '\\newcommand{\\vcsDate}{$(GITDATE)}\n' >>$@
 
 
+# Almost none of the test runs have the "include in report" set to True so
+# I enable includeall here - take it out if you start using the flag
 generate: .FORCE
-	docsteady --namespace $(NAMESPACE) generate-tpr $(PLAN) $(DOCNAME).tex
+	docsteady --namespace $(NAMESPACE) generate-tpr --includeall True $(PLAN) $(DOCNAME).tex
 
 
 #Traditional acronyms are better in this document

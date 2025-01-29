@@ -20,6 +20,8 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -r requirements.txt
 
+      - name: Set up pandoc
+        uses: pandoc/actions/setup@v1
 
       - name: docugen
         env:
@@ -27,7 +29,7 @@ jobs:
           JIRA_PASSWORD: {% raw %}${{ secrets.JIRA_PASSWORD }}{% endraw %}
           ZEPHYR_TOKEN: {% raw %}${{ secrets.ZEPHYR_TOKEN }}{% endraw %}
         run: |
-          docsteady  --namespace {{ cookiecutter.namespace }} generate-tpr {{ cookiecutter.plan }}  {{ cookiecutter.series }}-{{ cookiecutter.serial_number }}.tex
+          docsteady  --namespace {{ cookiecutter.namespace }} generate-tpr --includeall True {{ cookiecutter.plan }}  {{ cookiecutter.series }}-{{ cookiecutter.serial_number }}.tex
         shell: bash
 
       - name: Create commit

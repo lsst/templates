@@ -20,6 +20,8 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -r requirements.txt
 
+      - name: Set up pandoc
+        uses: pandoc/actions/setup@v1
 
       - name: docugen
         env:
@@ -27,7 +29,7 @@ jobs:
           JIRA_PASSWORD: ${{ secrets.JIRA_PASSWORD }}
           ZEPHYR_TOKEN: ${{ secrets.ZEPHYR_TOKEN }}
         run: |
-          docsteady  --namespace DM generate-tpr LVV-P73  TESTTR-0.tex
+          docsteady  --namespace DM generate-tpr --includeall True LVV-P73  TESTTR-0.tex
         shell: bash
 
       - name: Create commit
