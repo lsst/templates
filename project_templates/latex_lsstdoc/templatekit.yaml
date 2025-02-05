@@ -10,7 +10,7 @@ dialog_fields:
   - key: "handle"
     label: "Handle"
     hint: "As assigned by DocuShare. Use a technote template for technote handles."
-    placeholder: "e.g.: LDM-151"
+    placeholder: "e.g.: LDM-151, RDO-121"
     component: "text"
   - label: "GitHub organization"
     component: "select"
@@ -20,6 +20,11 @@ dialog_fields:
         presets:
           github_org: "lsst"
           lsstdoc_org: "DM"
+      - label: "Operations"
+        value: "lsst"
+        presets:
+          github_org: "lsst"
+          lsstdoc_org: "RDO"
       - label: "lsst-dm"
         value: "lsst-dm"
         presets:
