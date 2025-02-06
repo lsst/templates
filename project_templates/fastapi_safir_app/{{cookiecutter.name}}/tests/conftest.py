@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from collections.abc import AsyncIterator{% if cookiecutter.flavor == "UWS" %}, Iterator
+from collections.abc import AsyncGenerator{% if cookiecutter.flavor == "UWS" %}, Iterator
 from datetime import timedelta
 {%- endif %}
 
@@ -30,9 +30,9 @@ from {{ cookiecutter.module_name }}.config import config, uws
 
 @pytest_asyncio.fixture
 {%- if cookiecutter.flavor == "UWS" %}
-async def app(arq_queue: MockArqQueue) -> AsyncIterator[FastAPI]:
+async def app(arq_queue: MockArqQueue) -> AsyncGenerator[FastAPI]:
 {%- else %}
-async def app() -> AsyncIterator[FastAPI]:
+async def app() -> AsyncGenerator[FastAPI]:
 {%- endif %}
     """Return a configured test application.
 
@@ -56,7 +56,7 @@ def arq_queue() -> MockArqQueue:
 
 
 @pytest_asyncio.fixture
-async def client(app: FastAPI) -> AsyncIterator[AsyncClient]:
+async def client(app: FastAPI) -> AsyncGenerator[AsyncClient]:
     """Return an ``httpx.AsyncClient`` configured to talk to the test app."""
     async with AsyncClient(
         base_url="https://example.com/", transport=ASGITransport(app=app)
@@ -75,7 +75,7 @@ def mock_google_storage() -> Iterator[MockStorageClient]:
 @pytest_asyncio.fixture
 async def runner(
     arq_queue: MockArqQueue,
-) -> AsyncIterator[MockUWSJobRunner]:
+) -> AsyncGenerator[MockUWSJobRunner]:
     async with MockUWSJobRunner(config.uws_config, arq_queue) as runner:
         yield runner
 {%- endif %}
