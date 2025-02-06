@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from collections.abc import AsyncIterator, Iterator
+from collections.abc import AsyncGenerator, Iterator
 from datetime import timedelta
 
 import pytest
@@ -20,7 +20,7 @@ from exampleuws.config import config, uws
 
 
 @pytest_asyncio.fixture
-async def app(arq_queue: MockArqQueue) -> AsyncIterator[FastAPI]:
+async def app(arq_queue: MockArqQueue) -> AsyncGenerator[FastAPI]:
     """Return a configured test application.
 
     Wraps the application in a lifespan manager so that startup and shutdown
@@ -39,7 +39,7 @@ def arq_queue() -> MockArqQueue:
 
 
 @pytest_asyncio.fixture
-async def client(app: FastAPI) -> AsyncIterator[AsyncClient]:
+async def client(app: FastAPI) -> AsyncGenerator[AsyncClient]:
     """Return an ``httpx.AsyncClient`` configured to talk to the test app."""
     async with AsyncClient(
         base_url="https://example.com/", transport=ASGITransport(app=app)
@@ -57,6 +57,6 @@ def mock_google_storage() -> Iterator[MockStorageClient]:
 @pytest_asyncio.fixture
 async def runner(
     arq_queue: MockArqQueue,
-) -> AsyncIterator[MockUWSJobRunner]:
+) -> AsyncGenerator[MockUWSJobRunner]:
     async with MockUWSJobRunner(config.uws_config, arq_queue) as runner:
         yield runner
