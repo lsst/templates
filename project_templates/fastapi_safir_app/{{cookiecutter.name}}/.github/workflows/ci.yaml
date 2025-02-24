@@ -5,7 +5,7 @@ env:
   # reason to support multiple Python versions, so all actions are run with
   # this version. Quote the version to avoid interpretation as a floating
   # point number.
-  PYTHON_VERSION: "3.12"
+  PYTHON_VERSION: "3.13"
 
 "on":
   merge_group: {}
