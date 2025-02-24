@@ -15,6 +15,7 @@ classifiers = [
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
     "Intended Audience :: Developers",
     "Natural Language :: English",
     "Operating System :: POSIX",
@@ -57,7 +58,7 @@ include = ["{{cookiecutter.module_name}}*"]
 
 [tool.black]
 line-length = 79
-target-version = ["py312"]
+target-version = ["py313"]
 
 [tool.coverage.run]
 parallel = true
