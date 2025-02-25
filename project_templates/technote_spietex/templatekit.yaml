@@ -26,6 +26,12 @@ dialog_fields:
           series: "DMTN"
           github_org: "lsst-dm"
           org: "DM"
+      - label: "CTN"
+        value: "CTN"
+        presets:
+          series: "CTN"
+          github_org: "lsst"
+          org: "OPS"
       - label: "PSTN"
         value: "PSTN"
         presets:

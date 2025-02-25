@@ -25,6 +25,11 @@ dialog_fields:
         presets:
           series: "DMTN"
           github_org: "lsst-dm"
+      - label: "CTN"
+        value: "ctn"
+        presets:
+          series: "CTN"
+          github_org: "lsst"
       - label: "ITTN"
         value: "ittn"
         presets:

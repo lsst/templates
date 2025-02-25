@@ -15,6 +15,12 @@ dialog_fields:
   - label: "Series"
     component: "select"
     preset_options:
+      - label: "CTN"
+        value: "CTN"
+        presets:
+          series: "CTN"
+          github_org: "lsst"
+          org: "OPS"
       - label: "DMTN"
         value: "DMTN"
         presets:
