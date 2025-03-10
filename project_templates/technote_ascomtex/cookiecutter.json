@@ -22,6 +22,7 @@
     "lsst-pst",
     "lsst-sims",
     "lsst-sitcom",
+    "lsst-tstn",
     "lsst-sqre-testing"
 
   ],
