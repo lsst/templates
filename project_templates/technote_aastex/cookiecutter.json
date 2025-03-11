@@ -11,6 +11,7 @@
     "PSTN",
     "RTN",
     "SMTN",
+    "SQR",
     "TSTN",
     "TESTN"
   ],
@@ -20,6 +21,8 @@
     "lsst-dm",
     "lsst-pst",
     "lsst-sims",
+    "lsst-sqre",
+    "lsst-tstn",
     "lsst-sqre-testing"
 
   ],
