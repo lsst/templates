@@ -12,6 +12,7 @@
     "RTN",
     "SITCOMTN",
     "SMTN",
+    "SQR",
     "TSTN",
     "TESTN"
   ],
@@ -22,6 +23,7 @@
     "lsst-pst",
     "lsst-sims",
     "lsst-sitcom",
+    "lsst-sqre",
     "lsst-tstn",
     "lsst-sqre-testing"
 
