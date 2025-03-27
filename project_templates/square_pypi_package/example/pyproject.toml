@@ -2,7 +2,8 @@
 # https://packaging.python.org/en/latest/specifications/declaring-project-metadata/
 name = "example"
 description = "Short one-sentence description of the package"
-license = {file = "LICENSE"}
+license = "MIT"
+license-files = ["LICENSE"]
 readme= "README.md"
 keywords = [
     "rubin",
@@ -11,7 +12,6 @@ keywords = [
 # https://pypi.org/classifiers/
 classifiers = [
     "Development Status :: 4 - Beta",
-    "License :: OSI Approved :: MIT License",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.12",
