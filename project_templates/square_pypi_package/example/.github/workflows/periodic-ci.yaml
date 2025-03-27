@@ -87,9 +87,8 @@ jobs:
           fetch-depth: 0 # full history for setuptools_scm
 
       - name: Build and publish
-        uses: lsst-sqre/build-and-publish-to-pypi@v2
+        uses: lsst-sqre/build-and-publish-to-pypi@v3
         with:
-          python-version: ${{ env.PYTHON_VERSION }}
           upload: false
 
       - name: Report status
