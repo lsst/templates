@@ -43,8 +43,8 @@
   "_copy_without_render": [
     "*.bib",
     "*acron*",
-    "aastex631.cls",
-    "aasjournal.bst",
+    "*.cls",
+    "*.bst",
     ".gitignore",
     "body.tex"
   ],
