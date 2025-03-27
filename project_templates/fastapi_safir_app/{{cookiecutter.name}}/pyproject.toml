@@ -15,6 +15,7 @@ classifiers = [
     "Intended Audience :: Developers",
     "Natural Language :: English",
     "Operating System :: POSIX",
+    "Private :: Do Not Upload",
     "Typing :: Typed",
 ]
 requires-python = ">=3.13"
