@@ -28,7 +28,3 @@ apt-get -y upgrade
 
 # Example of installing a new package, without unnecessary packages:
 apt-get -y install --no-install-recommends git
-
-# Delete cached files we don't need anymore:
-apt-get clean
-rm -rf /var/lib/apt/lists/*
