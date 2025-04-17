@@ -22,6 +22,7 @@ set -x
 export DEBIAN_FRONTEND=noninteractive
 
 # Install build-essential because sometimes Python dependencies need to build
-# C modules, particularly when upgrading to newer Python versions.  libffi-dev
-# is sometimes needed to build cffi (a cryptography dependency).
-apt-get -y install --no-install-recommends build-essential libffi-dev
+# C modules, particularly when upgrading to newer Python versions. git is
+# required by setuptools_scm for package installation. libffi-dev is sometimes
+# needed to build cffi (a cryptography dependency).
+apt-get -y install --no-install-recommends build-essential git libffi-dev
