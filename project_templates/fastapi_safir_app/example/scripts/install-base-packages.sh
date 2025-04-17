@@ -27,4 +27,4 @@ apt-get update
 apt-get -y upgrade
 
 # Example of installing a new package, without unnecessary packages:
-apt-get -y install --no-install-recommends git
+#apt-get -y install --no-install-recommends git
