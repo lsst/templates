@@ -26,8 +26,6 @@ async def app(arq_queue: MockArqQueue) -> AsyncGenerator[FastAPI]:
     Wraps the application in a lifespan manager so that startup and shutdown
     events are sent during test execution.
     """
-    logger = structlog.get_logger("exampleuws")
-    await uws.initialize_uws_database(logger, reset=True)
     uws.override_arq_queue(arq_queue)
     async with LifespanManager(main.app):
         yield main.app
@@ -55,8 +53,5 @@ def mock_google_storage() -> Iterator[MockStorageClient]:
 
 
 @pytest_asyncio.fixture
-async def runner(
-    arq_queue: MockArqQueue,
-) -> AsyncGenerator[MockUWSJobRunner]:
-    async with MockUWSJobRunner(config.uws_config, arq_queue) as runner:
-        yield runner
+async def runner(arq_queue: MockArqQueue) -> MockUWSJobRunner:
+    return MockUWSJobRunner(config.uws_config, arq_queue)

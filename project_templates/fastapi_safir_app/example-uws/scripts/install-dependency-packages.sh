@@ -21,6 +21,9 @@ set -x
 # feedback:
 export DEBIAN_FRONTEND=noninteractive
 
+# Update the package listing, so we know what packages exist:
+apt-get update
+
 # Install build-essential because sometimes Python dependencies need to build
 # C modules, particularly when upgrading to newer Python versions. git is
 # required by setuptools_scm for package installation. libffi-dev is sometimes

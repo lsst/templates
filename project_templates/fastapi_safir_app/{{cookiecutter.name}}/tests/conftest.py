@@ -40,8 +40,6 @@ async def app() -> AsyncGenerator[FastAPI]:
     events are sent during test execution.
     """
     {%- if cookiecutter.flavor == "UWS" %}
-    logger = structlog.get_logger("{{ cookiecutter.module_name }}")
-    await uws.initialize_uws_database(logger, reset=True)
     uws.override_arq_queue(arq_queue)
     {%- endif %}
     async with LifespanManager(main.app):
@@ -73,9 +71,6 @@ def mock_google_storage() -> Iterator[MockStorageClient]:
 
 
 @pytest_asyncio.fixture
-async def runner(
-    arq_queue: MockArqQueue,
-) -> AsyncGenerator[MockUWSJobRunner]:
-    async with MockUWSJobRunner(config.uws_config, arq_queue) as runner:
-        yield runner
+async def runner(arq_queue: MockArqQueue) -> MockUWSJobRunner:
+    return MockUWSJobRunner(config.uws_config, arq_queue)
 {%- endif %}

@@ -1,3 +1,6 @@
+UV_VERSION = $(shell uv export -q --no-hashes --only-group tox \
+               | grep ^uv== | sed 's/.*=//')
+
 .PHONY: help
 help:
 	@echo "Make targets for example"
@@ -8,13 +11,8 @@ help:
 
 .PHONY: init
 init:
-	pip install --upgrade uv
-	uv pip install -r requirements/main.txt -r requirements/dev.txt \
-	    -r requirements/tox.txt
-	uv pip install --editable .
-	rm -rf .tox
-	uv pip install --upgrade pre-commit
-	pre-commit install
+	uv sync --frozen --all-groups
+	uv run pre-commit install
 
 .PHONY: run
 run:
@@ -25,12 +23,6 @@ update: update-deps init
 
 .PHONY: update-deps
 update-deps:
-	pip install --upgrade uv
-	uv pip install --upgrade pre-commit
-	pre-commit autoupdate
-	uv pip compile --upgrade --universal --generate-hashes		\
-	    --output-file requirements/main.txt requirements/main.in
-	uv pip compile --upgrade --universal --generate-hashes		\
-	    --output-file requirements/dev.txt requirements/dev.in
-	uv pip compile --upgrade --universal --generate-hashes		\
-	    --output-file requirements/tox.txt requirements/tox.in
+	uv lock --upgrade
+	uv run --only-group=lint pre-commit autoupdate
+	./scripts/update-uv-version.sh
