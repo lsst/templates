@@ -12,14 +12,23 @@ classifiers = [
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.13",
-    "Intended Audience :: Developers",
     "Natural Language :: English",
     "Operating System :: POSIX",
     "Private :: Do Not Upload",
     "Typing :: Typed",
 ]
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "fastapi>=0.100",
+    "pydantic>2",
+    "pydantic-settings>=2",
+    {%- if cookiecutter.flavor == "UWS" %}
+    "safir[uws]>=9.0.1",
+    {%- else %}
+    "safir>=5",
+    {%- endif %}
+    "uvicorn[standard]>=0.34",
+]
 dynamic = ["version"]
 
 [project.urls]
@@ -29,6 +38,30 @@ Source = "https://github.com/{{cookiecutter.github_org}}/{{cookiecutter.name}}"
 [build-system]
 requires = ["setuptools>=61", "wheel", "setuptools_scm[toml]>=6.2"]
 build-backend = "setuptools.build_meta"
+
+[dependency-groups]
+dev = [
+    "asgi-lifespan",
+    "coverage[toml]>=5.0.2",
+    "httpx",
+    "pytest",
+    "pytest-asyncio",
+    "pytest-cov",
+    "respx",
+    "scriv[toml]",
+]
+lint = [
+    "pre-commit",
+    "pre-commit-uv",
+    "ruff>=0.12",
+]
+tox = [
+    "tox>=4.24",
+    "tox-uv>=1.25",
+]
+typing = [
+    "mypy>=1.15",
+]
 
 [tool.coverage.run]
 parallel = true

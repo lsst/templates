@@ -17,5 +17,6 @@ async def post_params_dependency(
     # Use str | None for single-valued attributes and list[str] | None for
     # parameters that can be given more than one time.
 ) -> ExampleuwsParameters:
+    """Parse POST parameters for a new job."""
     # Populate class with the values of all form parameters that were set.
     return ExampleuwsParameters()

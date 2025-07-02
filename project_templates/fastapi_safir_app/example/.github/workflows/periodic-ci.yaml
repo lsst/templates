@@ -6,11 +6,10 @@
 name: Periodic CI
 
 env:
-  # Current supported Python version. For applications, there is generally no
-  # reason to support multiple Python versions, so all actions are run with
-  # this version. Quote the version to avoid interpretation as a floating
-  # point number.
-  PYTHON_VERSION: "3.13"
+  # Current supported uv version. The uv documentation recommends pinning
+  # this. The version should match the version used in .pre-commit-config.yaml
+  # and frozen in uv.lock. It is updated by make update-deps.
+  UV_VERSION: "0.7.15"
 
 "on":
   schedule:
@@ -28,23 +27,18 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: ${{ env.PYTHON_VERSION }}
+          python-version-file: ".python-version"
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          version: ${{ env.UV_VERSION }}
 
       - name: Update dependencies
-        run: |
-          pip install --upgrade uv
-          uv venv
-          source .venv/bin/activate
-          make update-deps
-        shell: bash
+        run: make update-deps
 
-      - name: Run tests in tox
-        uses: lsst-sqre/run-tox@v1
-        with:
-          python-version: ${{ env.PYTHON_VERSION }}
-          tox-envs: "lint,typing,py"
-          tox-requirements: requirements/tox.txt
-          use-cache: false
+      - name: Run tox
+        run: uv run --only-group=tox tox run -e lint,typing,py
 
       - name: Report status
         if: failure()

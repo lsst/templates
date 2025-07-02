@@ -1,11 +1,10 @@
 name: CI
 
 env:
-  # Current supported Python version. For applications, there is generally no
-  # reason to support multiple Python versions, so all actions are run with
-  # this version. Quote the version to avoid interpretation as a floating
-  # point number.
-  PYTHON_VERSION: "3.13"
+  # Current supported uv version. The uv documentation recommends pinning
+  # this. The version should match the version used in .pre-commit-config.yaml
+  # and frozen in uv.lock. It is updated by make update-deps.
+  UV_VERSION: "0.7.15"
 
 "on":
   merge_group: {}
@@ -14,7 +13,7 @@ env:
     branches-ignore:
       # These should always correspond to pull requests, so ignore them for
       # the push trigger and let them be triggered by the pull_request
-      # trigger, avoiding running the workflow twice.  This is a minor
+      # trigger, avoiding running the workflow twice. This is a minor
       # optimization so there's no need to ensure this is comprehensive.
       - "dependabot/**"
       - "gh-readonly-queue/**"
@@ -25,21 +24,6 @@ env:
       - "*"
 
 jobs:
-  lint:
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: {{ "${{ env.PYTHON_VERSION }}" }}
-
-      - name: Run pre-commit
-        uses: pre-commit/action@v3.0.1
-
   test:
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -47,12 +31,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Run tox
-        uses: lsst-sqre/run-tox@v1
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          python-version: {{ "${{ env.PYTHON_VERSION }}" }}
-          tox-envs: "py,coverage-report,typing"
-          tox-requirements: requirements/tox.txt
+          python-version-file: ".python-version"
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          version: {{ "${{ env.UV_VERSION }}" }}
+
+      - name: Run tox
+        run: uv run --only-group=tox tox run -e lint,typing,py,coverage-report
 
   build:
     runs-on: ubuntu-latest
@@ -60,7 +50,7 @@ jobs:
     timeout-minutes: 10
 
     # Only do Docker builds of tagged releases and pull requests from ticket
-    # branches.  This will still trigger on pull requests from untrusted
+    # branches. This will still trigger on pull requests from untrusted
     # repositories whose branch names match our tickets/* branch convention,
     # but in this case the build will fail with an error since the secret
     # won't be set.
