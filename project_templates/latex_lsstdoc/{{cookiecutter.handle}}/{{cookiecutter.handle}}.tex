@@ -15,10 +15,7 @@
 \title{ {{- cookiecutter.title -}} }
 % \setDocSubtitle{Optional subtitle}
 
-{% raw -%}
-\author{%{%- endraw %}
-{{ cookiecutter.author }}
-}
+\input{authors}
 
 \setDocRef{ {{- cookiecutter.handle -}} }
 \setDocUpstreamLocation{\url{https://github.com/{{ cookiecutter.github_org }}/{{ cookiecutter.handle -}} }}

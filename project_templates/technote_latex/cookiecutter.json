@@ -35,6 +35,7 @@
   ],
   "title": "Document Title",
   "first_author": "First Last",
+  "author_id": "ID from lsst-texmf/etc/authordb.yaml",
   "abstract": "Abstract text.",
   "copyright_year": "{% now 'utc', '%Y' %}",
   "copyright_holder": [

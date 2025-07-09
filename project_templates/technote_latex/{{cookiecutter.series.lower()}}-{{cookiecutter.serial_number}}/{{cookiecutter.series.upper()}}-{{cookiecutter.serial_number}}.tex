@@ -22,10 +22,7 @@
 % Optional subtitle
 % \setDocSubtitle{A subtitle}
 
-{% raw -%}
-\author{%{%- endraw %}
-{{ cookiecutter.first_author }}
-}
+\input{authors}
 
 \setDocRef{ {{- cookiecutter.series.upper() -}}-{{- cookiecutter.serial_number -}} }
 \setDocUpstreamLocation{\url{https://github.com/{{ cookiecutter.github_org }}/{{ cookiecutter.series.lower()}}-{{ cookiecutter.serial_number -}} }}

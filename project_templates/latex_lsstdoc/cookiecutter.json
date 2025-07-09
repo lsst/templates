@@ -27,6 +27,7 @@
   ],
   "title": "Document Title",
   "author": "First Author",
+  "author_id": "ID from lsst-texmf/etc/authordb.yaml",
   "date": "{%- now 'utc', '%Y-%m-%d' -%}",
   "_copy_without_render": [
     "*.bib"
