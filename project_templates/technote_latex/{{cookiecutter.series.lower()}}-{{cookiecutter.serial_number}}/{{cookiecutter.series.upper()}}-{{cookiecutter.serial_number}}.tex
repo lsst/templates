@@ -15,7 +15,7 @@
 % Update keywords and author information as necessary.
 \hypersetup{
     pdftitle={ {{- cookiecutter.title -}} },
-    pdfauthor={ {{- cookiecutter.first_author -}} },
+    pdfauthor={ {{- cookiecutter.first_author_given -}} {{- cookiecutter.first_author_family -}}},
     pdfkeywords={}
 }
 
@@ -43,7 +43,7 @@
 % See LPM-51 for version number policy.
 {% raw -%}
 \setDocChangeRecord{%{%- endraw %}
-  \addtohist{1}{YYYY-MM-DD}{Unreleased.}{ {{- cookiecutter.first_author -}} }
+  \addtohist{1}{YYYY-MM-DD}{Unreleased.}{ {{- cookiecutter.first_author_family -}} }
 }
 
 

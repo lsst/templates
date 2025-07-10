@@ -1,8 +1,15 @@
 from templatekit.builder import cookiecutter_project_builder
 
 # Run cookiecutter to generate the 'TESTN-000' report
-env = Environment(BUILDERS={'Cookiecutter': cookiecutter_project_builder})
-env.Cookiecutter(AlwaysBuild(Dir('TESTN-000')),
-                 'cookiecutter.json',
-                 cookiecutter_context={'series': 'TESTN',
-                                       'github_org': 'lsst-dm'})
+env = Environment(BUILDERS={"Cookiecutter": cookiecutter_project_builder})
+env.Cookiecutter(
+    AlwaysBuild(Dir("TESTN-000")),
+    "cookiecutter.json",
+    cookiecutter_context={
+        "series": "TESTN",
+        "first_author_given": "First",
+        "first_author_family": "Author",
+        "first_author_author_id": "test",
+        "github_org": "lsst-dm",
+    },
+)
