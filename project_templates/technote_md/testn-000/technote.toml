@@ -5,7 +5,7 @@ canonical_url = "https://testn-000.lsst.io"
 github_url = "https://github.com/lsst/testn-000"
 github_default_branch = "main"
 date_created = 2025-06-26T23:54:16Z
-organization.name = "Vera C. Rubin Observatory"
+organization.name = "NSF-DOE Vera C. Rubin Observatory"
 organization.ror = "https://ror.org/048g3cy84"
 license.id = "CC-BY-4.0"
 

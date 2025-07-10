@@ -2,20 +2,34 @@ from templatekit.builder import cookiecutter_project_builder
 
 # Run cookiecutter to generate the 'EXAMPLE' report.
 # This does not have the series and serial number set.
-env = Environment(BUILDERS={'Cookiecutter': cookiecutter_project_builder})
-env.Cookiecutter(AlwaysBuild(Dir('EXAMPLE')),
-                 'cookiecutter.json',
-                 cookiecutter_context={'github_org': 'lsst-dm',
-                                       'handle': 'EXAMPLE',
-                                       'date': '2020-01-01'})
+env = Environment(BUILDERS={"Cookiecutter": cookiecutter_project_builder})
+env.Cookiecutter(
+    AlwaysBuild(Dir("EXAMPLE")),
+    "cookiecutter.json",
+    cookiecutter_context={
+        "github_org": "lsst-dm",
+        "handle": "EXAMPLE",
+        "first_author_given": "First",
+        "first_author_family": "Author",
+        "first_author_author_id": "test",
+        "date": "2020-01-01",
+    },
+)
 
 # Run cookiecutter to generate the 'EXAMPLE-0' report.
 # This *does* have the series and serial number set.
-env = Environment(BUILDERS={'Cookiecutter': cookiecutter_project_builder})
-env.Cookiecutter(AlwaysBuild(Dir('EXAMPLE-0')),
-                 'cookiecutter.json',
-                 cookiecutter_context={'github_org': 'lsst-dm',
-                                       'handle': 'EXAMPLE-0',
-                                       'series': 'EXAMPLE',
-                                       'serial_number': '0',
-                                       'date': '2020-01-01'})
+env = Environment(BUILDERS={"Cookiecutter": cookiecutter_project_builder})
+env.Cookiecutter(
+    AlwaysBuild(Dir("EXAMPLE-0")),
+    "cookiecutter.json",
+    cookiecutter_context={
+        "github_org": "lsst-dm",
+        "handle": "EXAMPLE-0",
+        "series": "EXAMPLE",
+        "first_author_given": "First2",
+        "first_author_family": "Author2",
+        "first_author_author_id": "test2",
+        "serial_number": "0",
+        "date": "2020-01-01",
+    },
+)

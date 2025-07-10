@@ -15,10 +15,7 @@
 \title{ {{- cookiecutter.title -}} }
 % \setDocSubtitle{Optional subtitle}
 
-{% raw -%}
-\author{%{%- endraw %}
-{{ cookiecutter.author }}
-}
+\input{authors}
 
 \setDocRef{ {{- cookiecutter.handle -}} }
 \setDocUpstreamLocation{\url{https://github.com/{{ cookiecutter.github_org }}/{{ cookiecutter.handle -}} }}
@@ -36,7 +33,7 @@ Add abstract text.
 % See LPM-51 for version number policy.
 {% raw -%}
 \setDocChangeRecord{%{%- endraw %}
-  \addtohist{1}{ {{- cookiecutter.date -}} }{Unreleased.}{ {{- cookiecutter.author -}} }
+  \addtohist{1}{ {{- cookiecutter.date -}} }{Unreleased.}{ {{- cookiecutter.first_author_family -}} }
 }
 
 \begin{document}
@@ -47,6 +44,11 @@ Add abstract text.
 % You can also use the \input command to include several content files.
 
 \appendix
+
+\section{Acknowledgements}
+
+This material is based upon work supported in part by the National Science Foundation through Cooperative Agreements AST-1258333 and AST-2241526 and Cooperative Support Agreements AST-1202910 and AST-2211468 managed by the Association of Universities for Research in Astronomy (AURA), and the Department of Energy under Contract No.\ DE-AC02-76SF00515 with the SLAC National Accelerator Laboratory managed by Stanford University.
+Additional Rubin Observatory funding comes from private donations, grants to universities, and in-kind support from LSST-DA Institutional Members.
 
 % Include all the relevant bib files.
 % https://lsst-texmf.lsst.io/lsstdoc.html#bibliographies
