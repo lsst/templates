@@ -33,7 +33,7 @@ dev = [
     "pytest-asyncio",
     "mypy",
     # Documentation
-    "documenteer[guide]<2",
+    "documenteer[guide]>=2,<3",
     "scriv",
 ]
 
