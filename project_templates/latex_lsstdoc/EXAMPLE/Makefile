@@ -21,7 +21,7 @@ $(DOCNAME).pdf: $(tex) meta.tex local.bib authors.tex acronyms.tex
 # For glossary uncomment the 2 lines above
 
 authors.tex:  authors.yaml
-        python3 $(TEXMFHOME)/../bin/db2authors.py -m lsstdoc > authors.tex
+	python3 $(TEXMFHOME)/../bin/db2authors.py -m lsstdoc > authors.tex
 
 # Acronym tool allows for selection of acronyms based on tags - you may want more than DM
 acronyms.tex: $(tex) myacronyms.txt
