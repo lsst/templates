@@ -1,6 +1,3 @@
-UV_VERSION = $(shell uv export -q --no-hashes --only-group tox \
-               | grep ^uv== | sed 's/.*=//')
-
 .PHONY: help
 help:
 	@echo "Make targets for example"
