@@ -26,7 +26,7 @@ jobs:
           - "3.12"
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Run tests in tox
         uses: lsst-sqre/run-tox@v1
@@ -52,7 +52,7 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0 # full history for setuptools_scm
 
@@ -84,7 +84,7 @@ jobs:
     needs: [test, docs]
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0 # full history for setuptools_scm
 
