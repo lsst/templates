@@ -4,7 +4,7 @@ env:
   # Current supported uv version. The uv documentation recommends pinning
   # this. The version should match the version used in .pre-commit-config.yaml
   # and frozen in uv.lock. It is updated by make update-deps.
-  UV_VERSION: "0.7.15"
+  UV_VERSION: "0.8.19"
 
 "on":
   merge_group: {}
