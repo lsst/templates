@@ -37,7 +37,7 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None]:
 
 
 configure_logging(
-    profile=config.profile,
+    profile=config.log_profile,
     log_level=config.log_level,
     name="example",
 )

@@ -27,14 +27,14 @@ class Config({% if cookiecutter.flavor == "UWS" %}UWSAppSettings{% else %}BaseSe
         LogLevel.INFO, title="Log level of the application's logger"
     )
 
+    log_profile: Profile = Field(
+        Profile.development, title="Application logging profile"
+    )
+
     name: str = Field("{{ cookiecutter.name }}", title="Name of application")
 
     path_prefix: str = Field(
         "/{{ cookiecutter.name | lower }}", title="URL prefix for application"
-    )
-
-    profile: Profile = Field(
-        Profile.development, title="Application logging profile"
     )
 
     slack_webhook: SecretStr | None = Field(

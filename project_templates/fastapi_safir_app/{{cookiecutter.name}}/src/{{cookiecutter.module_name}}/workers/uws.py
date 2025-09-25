@@ -12,7 +12,9 @@ __all__ = ["WorkerSettings"]
 
 
 configure_logging(
-    name="{{ cookiecutter.module_name }}", profile=config.profile, log_level=config.log_level
+    name="{{ cookiecutter.module_name }}",
+    profile=config.log_profile,
+    log_level=config.log_level,
 )
 
 WorkerSettings = uws.build_worker(structlog.get_logger("{{ cookiecutter.module_name }}"))
