@@ -20,14 +20,14 @@ class Config(BaseSettings):
         LogLevel.INFO, title="Log level of the application's logger"
     )
 
+    log_profile: Profile = Field(
+        Profile.development, title="Application logging profile"
+    )
+
     name: str = Field("example", title="Name of application")
 
     path_prefix: str = Field(
         "/example", title="URL prefix for application"
-    )
-
-    profile: Profile = Field(
-        Profile.development, title="Application logging profile"
     )
 
     slack_webhook: SecretStr | None = Field(
