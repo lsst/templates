@@ -17,8 +17,8 @@ uv_version=$(uv export -q --no-hashes --only-group lint \
 for f in .github/workflows/*.yaml; do
     sed "s/UV_VERSION: .*/UV_VERSION: \"$uv_version\"/" "$f" >"$f.n"
     if ! cmp -s "$f" "${f}.n"; then
-	echo "Updating UV_VERSION to $uv_version in $f"
-	mv "${f}.n" "$f"
+        echo "Updating UV_VERSION to $uv_version in $f"
+        mv "${f}.n" "$f"
     else
         rm "${f}.n"
     fi
@@ -29,7 +29,7 @@ for f in Dockerfile*; do
     sed "s/uv:[0-9][0-9.]*/uv:$uv_version/" "$f" >"${f}.n"
     if ! cmp -s "$f" "${f}.n"; then
         echo "Updating uv container version to $uv_version in $f"
-	mv "${f}.n" "$f"
+        mv "${f}.n" "$f"
     else
         rm "${f}.n"
     fi
