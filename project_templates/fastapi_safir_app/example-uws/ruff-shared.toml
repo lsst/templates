@@ -20,7 +20,6 @@
 # Reference for rules: https://docs.astral.sh/ruff/rules/
 exclude = ["docs/**"]
 line-length = 79
-target-version = "py312"
 
 [format]
 docstring-code-format = true
