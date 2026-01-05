@@ -9,6 +9,7 @@ name: CI
       # optimization so there's no need to ensure this is comprehensive.
       - "dependabot/**"
       - "renovate/**"
+      - "t/**"
       - "tickets/**"
       - "u/**"
     tags:
@@ -26,6 +27,7 @@ jobs:
           - "3.11"
           - "3.12"
           - "3.13"
+          - "3.14"
 
     steps:
       - uses: actions/checkout@v5
@@ -52,9 +54,9 @@ jobs:
         with:
           username: sqrereadonly
           password: ${{ secrets.DOCKERHUB_SQREREADONLY_TOKEN }}
-        if: matrix.python == '3.13'
+        if: matrix.python == '3.14'
 
       - name: Check tex builds
         run: |
           docker run --rm -v `pwd`:/workspace -w /workspace lsstsqre/lsst-texmf:latest sh -c './testTexDocs.sh'
-        if: matrix.python == '3.13'
+        if: matrix.python == '3.14'
