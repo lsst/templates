@@ -18,6 +18,7 @@ env:
       - "dependabot/**"
       - "gh-readonly-queue/**"
       - "renovate/**"
+      - "t/**"
       - "tickets/**"
       - "u/**"
   release:
@@ -25,7 +26,6 @@ env:
 
 jobs:
   lint:
-
     runs-on: ubuntu-latest
     timeout-minutes: 5
 
@@ -41,7 +41,6 @@ jobs:
         uses: pre-commit/action@v3.0.1
 
   test:
-
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
@@ -61,10 +60,39 @@ jobs:
           tox-envs: "py,typing"
           tox-plugins: tox-uv
 
-  docs:
+  changes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
 
+    permissions:
+      pull-requests: read
+    outputs:
+      docs: ${{ steps.filter.outputs.docs }}
+      docs-specific: ${{ steps.filter.outputs.docs-specific }}
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            docs:
+              - "CHANGELOG.md"
+              - "docs/**"
+              - "src/**"
+            docs-specific:
+              - "CHANGELOG.md"
+              - "docs/**"
+
+  docs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    needs: changes
+    if: >
+      (needs.changes.outputs.docs == 'true')
+      || (github.event_name == 'workflow_dispatch')
+      || (github.event_name == 'release' && github.event.action == 'published')
 
     steps:
       - uses: actions/checkout@v5
@@ -95,12 +123,14 @@ jobs:
           username: ${{ secrets.LTD_USERNAME }}
           password: ${{ secrets.LTD_PASSWORD }}
         if: >
-          github.event_name != 'merge_group'
-          && (github.event_name != 'pull_request'
-              || startsWith(github.head_ref, 'tickets/'))
+          (github.event_name == 'push' && github.ref_name == 'main')
+          || (github.event_name == 'workflow_dispatch')
+          || (github.event_name == 'pull_request'
+              && (startsWith(github.head_ref, 'tickets/')
+                  || startsWith(github.head_ref, 't/'))
+              && needs.changes.outputs.docs-specific == 'true')
   
   test-packaging:
-
     name: Test packaging
     runs-on: ubuntu-latest
     timeout-minutes: 5
@@ -117,7 +147,6 @@ jobs:
           upload: false
 
   pypi:
-
     # This job requires set up:
     # 1. Set up a trusted publisher for PyPI
     # 2. Set up a "pypi" environment in the repository
