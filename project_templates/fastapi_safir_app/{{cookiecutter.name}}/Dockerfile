@@ -34,6 +34,10 @@ RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
 # cache on a separate file system.
 ENV UV_LINK_MODE=copy
 
+# Force use of system Python so that the Python version is controlled by
+# the Docker base image version, not by whatever uv decides to install.
+ENV UV_PYTHON_PREFERENCE=only-system
+
 # Install the dependencies.
 WORKDIR /app
 RUN --mount=type=cache,target=/root/.cache/uv \
