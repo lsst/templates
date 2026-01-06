@@ -1,7 +1,5 @@
 """Test fixtures for {{ cookiecutter.name }} tests."""
 
-from __future__ import annotations
-
 from collections.abc import AsyncGenerator{% if cookiecutter.flavor == "UWS" %}, Iterator
 from datetime import timedelta
 {%- endif %}

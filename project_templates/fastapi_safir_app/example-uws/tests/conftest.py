@@ -1,7 +1,5 @@
 """Test fixtures for example-uws tests."""
 
-from __future__ import annotations
-
 from collections.abc import AsyncGenerator, Iterator
 from datetime import timedelta
 

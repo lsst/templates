@@ -1,8 +1,6 @@
 {%- if cookiecutter.flavor == "UWS" -%}
 """Domain models for {{ cookiecutter.name }}."""
 
-from __future__ import annotations
-
 from pydantic import BaseModel
 
 __all__ = ["Worker{{ cookiecutter.module_name | capitalize }}Model"]
