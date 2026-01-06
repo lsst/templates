@@ -1,7 +1,5 @@
 """Test the packaging."""
 
-from __future__ import annotations
-
 from {{cookiecutter.module_name}} import __version__
 
 

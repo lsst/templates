@@ -4,8 +4,6 @@ This is a standalone file intended to be injected into a stack container as
 the arq worker definition. Only this module is allowed to use stack packages.
 """
 
-from __future__ import annotations
-
 import os
 from datetime import timedelta
 

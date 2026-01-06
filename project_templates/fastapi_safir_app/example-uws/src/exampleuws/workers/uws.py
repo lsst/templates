@@ -1,7 +1,5 @@
 """Worker for UWS database updates."""
 
-from __future__ import annotations
-
 import structlog
 from safir.logging import configure_logging
 

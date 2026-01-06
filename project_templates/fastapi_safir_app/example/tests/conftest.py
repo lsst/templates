@@ -1,7 +1,5 @@
 """Test fixtures for example tests."""
 
-from __future__ import annotations
-
 from collections.abc import AsyncGenerator
 
 import pytest_asyncio

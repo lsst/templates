@@ -1,7 +1,5 @@
 """Tests for the example.handlers.external module and routes."""
 
-from __future__ import annotations
-
 import pytest
 from httpx import AsyncClient
 
