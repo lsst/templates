@@ -147,5 +147,8 @@ builtins-ignorelist = [
 fixture-parentheses = false
 mark-parentheses = false
 
+[lint.isort]
+split-on-trailing-comma = false
+
 [lint.pydocstyle]
 convention = "numpy"

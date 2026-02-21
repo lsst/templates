@@ -131,7 +131,6 @@ extend = "ruff-shared.toml"
 
 [tool.ruff.lint.isort]
 known-first-party = ["example", "tests"]
-split-on-trailing-comma = false
 
 [tool.scriv]
 categories = [
