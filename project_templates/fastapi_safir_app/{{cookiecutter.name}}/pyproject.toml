@@ -135,7 +135,6 @@ extend = "ruff-shared.toml"
 
 [tool.ruff.lint.isort]
 known-first-party = ["{{cookiecutter.module_name}}", "tests"]
-split-on-trailing-comma = false
 
 [tool.scriv]
 categories = [
