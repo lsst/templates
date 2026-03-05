@@ -1,3 +1,10 @@
+%% aasjournalv7.bst March 4, 2025
+%%
+%% Revision 1.19: Aptara 
+%% Modified to include first initials for inline citations.
+%% Full titles can be called via that "longbib" style option in 
+%% aastex7.cls. This version should only be used with v7+.
+%%
 %% AASJournal.bst June 3, 2019
 %%
 %% Revision 1.18 2019/6/3 Amy Hendrickson
@@ -642,6 +649,13 @@ FUNCTION {format.title}
   if$
 }
 
+FUNCTION {format.title.misc}
+{ title empty$
+    { "" }
+    { title  add.comma remove.irrelevant.period.comma }
+  if$
+}
+
 FUNCTION {format.full.names}
 {'s :=
   #1 'nameptr :=
@@ -733,6 +747,8 @@ FUNCTION {make.full.names}
 
 FUNCTION {output.bibitem}
 { newline$
+  "% type= " write$  type$ write$
+  newline$
   "\bibitem[{" write$
   label write$
   ")" make.full.names duplicate$ short.list =
@@ -1342,6 +1358,8 @@ FUNCTION {incollection}
   %name.or.dash
   format.date "year" output.check
   date.block
+  format.title "title" output.check
+  add.blank
   bbl.in " " * booktitle format.full.book.spec * output
 %  crossref missing$
 %    { format.in.ed.booktitle "booktitle" output.check
@@ -1366,6 +1384,8 @@ FUNCTION {inproceedings}
   author format.key output            % added
   format.date "year" output.check
   date.block
+  format.title "title" output.check
+  add.blank
   bbl.in " " * booktitle format.full.book.spec * output
 %  crossref missing$
 %    { format.in.ed.booktitle "booktitle" output.check
@@ -1429,12 +1449,12 @@ FUNCTION {misc}
   format.date "year" output.check
   date.block
 %% new
-  format.title output
+  format.title.misc output
 %% new
   version empty$
-        'skip$
- {bbl.version version * output}
- if$
+    'skip$
+    {add.blank bbl.version version * output}
+  if$
 %%
    howpublished output
     publisher empty$
@@ -1452,7 +1472,8 @@ FUNCTION {phdthesis}
   %name.or.dash
   format.date "year" output.check
   date.block
-%  format.title "title" output.check
+  format.title "title" output.check
+  add.blank
   bbl.phdthesis format.thesis.type output.nonnull
   school "school" output.check
   address output
@@ -1500,7 +1521,8 @@ FUNCTION {techreport}
   %name.or.dash
   format.date "year" output.check
   date.block
-  format.title "title" output.check
+  format.title.misc "title" output.check
+  add.blank
   format.tr.number output.nonnull
   institution "institution" output.check
   address output
@@ -1515,7 +1537,8 @@ FUNCTION {unpublished}
   %name.or.dash
   format.date "year" output.check
   date.block
-%  format.title "title" output.check
+  format.title "title" output.check
+  add.blank
   format.pid output
   fin.entry
 }
