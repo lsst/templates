@@ -27,7 +27,7 @@ Find these templates in the `project_templates/` directory:
 - [latex_lsstdoc](project_templates/latex_lsstdoc/)
 - [nbreport](project_templates/nbreport/)
 - [roundtable_aiohttp_bot](project_templates/roundtable_aiohttp_bot/)
-- [sitcom_personal_notebooks](project_templates/sitcom_personal_notebooks/)
+- [so_personal_notebooks](project_templates/so_personal_notebooks/)
 - [stack_package](project_templates/stack_package/)
 - [square_pypi_package](project_templates/square_pypi_package/)
 - [technote_aastex](project_templates/technote_aastex/)

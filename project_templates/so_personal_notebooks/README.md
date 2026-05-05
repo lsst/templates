@@ -1,14 +1,14 @@
-# SIT-Com Personal Notebooks Repository
+# Summit Operations Personal Notebooks Repository
 
-This template creates a personal notebooks repository for SIT-Com team members to store and organize notebooks and any associated methods which contain Rubin-related work but are not meant for public consumption and are not expected to be supported by the author.
-The reason for creation of these repos is to ensure work is documented and stored in a place that is available by all SIT-Com personnel.
+This template creates a personal notebooks repository for Summit Operations team members to store and organize notebooks and any associated methods which contain Rubin-related work but are not meant for public consumption and are not expected to be supported by the author.
+The reason for creation of these repos is to ensure work is documented and stored in a place that is available by all Summit Operations personnel.
 This is important to ensure content is available to others in the event that the original author cannot support the activity.
 
 ## Template variables
 
 ### cookiecutter.username
 
-The "username" of the SIT-Com staff member.
+The "username" of the Summit Operations staff member.
 This should be the same as their project username.
 The username is used in many places, such as naming the repository, and naming Python namespaces.
 Therefore the username should be conform to the naming rules for Python variables.
