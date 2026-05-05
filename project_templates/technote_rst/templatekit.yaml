@@ -46,11 +46,6 @@ dialog_fields:
         presets:
           series: "RTN"
           github_org: "lsst"
-      - label: "SITCOMTN"
-        value: "sitcomtn"
-        presets:
-          series: "SITCOMTN"
-          github_org: "lsst-sitcom"
       - label: "SMTN"
         value: "smtn"
         presets:

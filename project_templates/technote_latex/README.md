@@ -43,7 +43,6 @@ Choose a GitHub organization that matches the [series](#cookiecutter_series):
 - `lsst` for the RTN series.
 - `lsst-pst` for the PSTN series.
 - `lsst-sims` for the Simulations Group's SMTN series.
-- `lsst-sitcom` for the SITCOMTN series.
 - `lsst-sqre` for the SQuaRE SQR series.
 - `lsst-sqre-testing` for the TESTN series.
 - `lsst-tstn` for the TSTN series.
