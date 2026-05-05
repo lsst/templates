@@ -10,7 +10,6 @@
     "CTN",
     "PSTN",
     "RTN",
-    "SITCOMTN",
     "SMTN",
     "SQR",
     "TSTN",
@@ -22,7 +21,6 @@
     "lsst-dm",
     "lsst-pst",
     "lsst-sims",
-    "lsst-sitcom",
     "lsst-sqre",
     "lsst-tstn",
     "lsst-sqre-testing"

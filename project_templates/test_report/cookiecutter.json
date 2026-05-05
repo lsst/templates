@@ -2,7 +2,7 @@
   "series": ["DMTR", "PSTR", "SCTR", "TESTTR"],
   "namespace": ["DM", "CAM", "EPO", "OCS", "OPS", "PSE", "T&S","SE","PST"],
   "serial_number": "0",
-  "github_org": ["lsst-dm", "lsst-pst", "lsst-sitcom", "lsst-sqre-testing"],
+  "github_org": ["lsst-dm", "lsst-pst", "lsst-so", "lsst-sqre-testing"],
   "title": "Document Title",
   "author": "First Author",
   "plan": "LVV-P73",

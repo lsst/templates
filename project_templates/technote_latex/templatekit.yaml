@@ -50,11 +50,6 @@ dialog_fields:
           series: "PSTN"
           github_org: "lsst-pst"
           org: "PST"
-      - label: "SITCOMTN"
-        value: "sitcomtn"
-        presets:
-          series: "SITCOMTN"
-          github_org: "lsst-sitcom"
           org: "SE"
       - label: "SMTN"
         value: "smtn"
