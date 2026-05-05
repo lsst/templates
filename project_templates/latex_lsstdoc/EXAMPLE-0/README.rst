@@ -1,7 +1,7 @@
 .. image:: https://img.shields.io/badge/example--0-lsst.io-brightgreen.svg
    :target: https://example-0.lsst.io
-.. image:: https://github.com/lsst-dm/EXAMPLE-0/workflows/CI/badge.svg
-   :target: https://github.com/lsst-dm/EXAMPLE-0/actions/
+.. image:: https://github.com/lsst/EXAMPLE-0/workflows/CI/badge.svg
+   :target: https://github.com/lsst/EXAMPLE-0/actions/
 
 ##############
 Document Title
@@ -13,8 +13,8 @@ Links
 =====
 
 - Live drafts: https://example-0.lsst.io
-- GitHub: https://github.com/lsst-dm/EXAMPLE-0
-- Build: https://github.com/lsst-dm/EXAMPLE-0/actions/
+- GitHub: https://github.com/lsst/EXAMPLE-0
+- Build: https://github.com/lsst/EXAMPLE-0/actions/
 
 Build
 =====
@@ -22,7 +22,7 @@ Build
 This repository includes lsst-texmf_ as a Git submodule.
 Clone this repository::
 
-    git clone --recurse-submodules https://github.com/lsst-dm/EXAMPLE-0
+    git clone --recurse-submodules https://github.com/lsst/EXAMPLE-0
 
 Compile the PDF::
 
