@@ -1,6 +1,6 @@
 name: "Personal Notebooks"
 group: "Summit Operations"
-dialog_title: "Summit Operations notebooks repo"
+dialog_title: "Summit Ops notebooks"
 dialog_fields:
   - key: "username"
     label: "User name"
