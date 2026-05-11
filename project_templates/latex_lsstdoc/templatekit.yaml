@@ -31,7 +31,7 @@ dialog_fields:
           lsstdoc_org: "SE"
   - key: "serial_number"
     label: "Serial number"
-    hint: "The suffix after the series name, as assigned by DocuShare. Use a technote template for technote handles."
+    hint: "The suffix after the series name, as assigned by DocuShare."
     placeholder: "e.g.: '151' for LDM-151"
     component: "text"
   - key: "author_id"
