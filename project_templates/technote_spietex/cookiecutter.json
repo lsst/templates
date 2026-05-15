@@ -23,7 +23,8 @@
     "lsst-pst",
     "lsst-so",
     "lsst-sims",
-    "lsst-sqre-testing"
+    "lsst-sqre-testing",
+    "lsst-tstn"
 
   ],
   "title": "Document Title",
