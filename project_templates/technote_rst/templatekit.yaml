@@ -40,7 +40,6 @@ dialog_fields:
         presets:
           series: "PSTN"
           github_org: "lsst-pst"
-          org: "PST"
       - label: "RTN"
         value: "rtn"
         presets:
@@ -51,6 +50,11 @@ dialog_fields:
         presets:
           series: "SMTN"
           github_org: "lsst-sims"
+      - label: "SOTN"
+        value: "sotn"
+        presets:
+          series: "SOTN"
+          github_org: "lsst-so"
       - label: "SQR"
         value: "sqr"
         presets:
