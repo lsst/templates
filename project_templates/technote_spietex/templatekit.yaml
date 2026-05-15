@@ -50,6 +50,12 @@ dialog_fields:
           series: "SMTN"
           github_org: "lsst-sims"
           org: "SE"
+      - label: "SOTN"
+        value: "sotn"
+        presets:
+          series: "SOTN"
+          github_org: "lsst-so"
+          org: "SE"
       - label: "TSTN"
         value: "tstn"
         presets:
