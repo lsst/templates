@@ -1,0 +1,27 @@
+# Prune unreferenced Docker images and ticket branches from more than six
+# months ago, weekly on Monday.
+
+name: GHCR Cleanup
+
+"on":
+  schedule:
+    - cron: "0 4 * * 1"
+  workflow_dispatch: {}
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+    concurrency:
+      group: packages
+      queue: max
+
+    steps:
+      - uses: dataaxiom/ghcr-cleanup-action@v1
+        with:
+          delete-orphaned-images: true
+          delete-tags: "tickets-*,t-*"
+          delete-untagged: true
+          older-than: "6 months"
+          validate: true
