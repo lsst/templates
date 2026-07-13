@@ -2,6 +2,7 @@
 
 from collections.abc import AsyncGenerator, Iterator
 from datetime import timedelta
+from pathlib import Path
 
 import pytest
 import pytest_asyncio
@@ -10,11 +11,21 @@ from asgi_lifespan import LifespanManager
 from fastapi import FastAPI
 from httpx import ASGITransport, AsyncClient
 from safir.arq import MockArqQueue
+from safir.testing.data import Data
 from safir.testing.gcs import MockStorageClient, patch_google_storage
 from safir.testing.uws import MockUWSJobRunner
 
 from exampleuws import main
 from exampleuws.config import config, uws
+
+
+def pytest_addoption(parser: pytest.Parser) -> None:
+    parser.addoption(
+        "--update-test-data",
+        action="store_true",
+        default=False,
+        help="Overwrite expected test output with current results",
+    )
 
 
 @pytest_asyncio.fixture
@@ -41,6 +52,12 @@ async def client(app: FastAPI) -> AsyncGenerator[AsyncClient]:
         base_url="https://example.com/", transport=ASGITransport(app=app)
     ) as client:
         yield client
+
+
+@pytest.fixture
+def data(request: pytest.FixtureRequest) -> Data:
+    update = request.config.getoption("--update-test-data")
+    return Data(Path(__file__).parent / "data", update_test_data=update)
 
 
 @pytest.fixture(autouse=True)
