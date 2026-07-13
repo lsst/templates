@@ -51,9 +51,9 @@ dev = [
     "scriv[toml]",
 ]
 lint = [
-    "pre-commit",
-    "pre-commit-uv",
+    "prek",
     "ruff>=0.12",
+    "uv",
 ]
 tox = [
     "tox>=4.24",

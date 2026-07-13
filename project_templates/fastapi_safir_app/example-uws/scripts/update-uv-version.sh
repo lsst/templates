@@ -7,9 +7,8 @@
 # http://redsymbol.net/articles/unofficial-bash-strict-mode/ for details.
 set -euo pipefail
 
-# Determine the current frozen uv version. Since the lint group depends on
-# pre-commit-uv, uv should always be part of its dependencies and thus updated
-# when running uv lock --upgrade, which should be run before this script.
+# Determine the current frozen uv version. uv must be part of the lint
+# dependency group in pyproject.toml.
 uv_version=$(uv export -q --no-hashes --only-group lint \
              | grep ^uv== | sed 's/.*=//')
 
@@ -24,13 +23,16 @@ for f in .github/workflows/*.yaml; do
     fi
 done
 
-# Replace the version in any Dockerfiles.
+# Replace the version in any Dockerfiles. Allow for copying this script into
+# packages that have no Dockerfile.
 for f in Dockerfile*; do
-    sed "s/uv:[0-9][0-9.]*/uv:$uv_version/" "$f" >"${f}.n"
-    if ! cmp -s "$f" "${f}.n"; then
-        echo "Updating uv container version to $uv_version in $f"
-        mv "${f}.n" "$f"
-    else
-        rm "${f}.n"
+    if [ -f "$f" ]; then
+        sed "s/uv:[0-9][0-9.]*/uv:$uv_version/" "$f" >"${f}.n"
+        if ! cmp -s "$f" "${f}.n"; then
+            echo "Updating uv container version to $uv_version in $f"
+            mv "${f}.n" "$f"
+        else
+            rm "${f}.n"
+        fi
     fi
 done
