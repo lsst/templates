@@ -3,6 +3,7 @@
 from collections.abc import AsyncGenerator{% if cookiecutter.flavor == "UWS" %}, Iterator
 from datetime import timedelta
 {%- endif %}
+from pathlib import Path
 
 {% if cookiecutter.flavor == "UWS" -%}
 import pytest
@@ -16,6 +17,9 @@ from fastapi import FastAPI
 from httpx import ASGITransport, AsyncClient
 {%- if cookiecutter.flavor == "UWS" %}
 from safir.arq import MockArqQueue
+{%- endif %}
+from safir.testing.data import Data
+{%- if cookiecutter.flavor == "UWS" %}
 from safir.testing.gcs import MockStorageClient, patch_google_storage
 from safir.testing.uws import MockUWSJobRunner
 {%- endif %}
@@ -24,6 +28,15 @@ from {{ cookiecutter.module_name }} import main
 {%- if cookiecutter.flavor == "UWS" %}
 from {{ cookiecutter.module_name }}.config import config, uws
 {%- endif %}
+
+
+def pytest_addoption(parser: pytest.Parser) -> None:
+    parser.addoption(
+        "--update-test-data",
+        action="store_true",
+        default=False,
+        help="Overwrite expected test output with current results",
+    )
 
 
 @pytest_asyncio.fixture
@@ -58,6 +71,12 @@ async def client(app: FastAPI) -> AsyncGenerator[AsyncClient]:
         base_url="https://example.com/", transport=ASGITransport(app=app)
     ) as client:
         yield client
+
+
+@pytest.fixture
+def data(request: pytest.FixtureRequest) -> Data:
+    update = request.config.getoption("--update-test-data")
+    return Data(Path(__file__).parent / "data", update_test_data=update)
 {%- if cookiecutter.flavor == "UWS" %}
 
 
