@@ -45,10 +45,10 @@ dev = [
     "pytest-cov",
     "respx",
     "scriv[toml]",
+    "uv",
 ]
 lint = [
-    "pre-commit",
-    "pre-commit-uv",
+    "prek",
     "ruff>=0.12",
 ]
 tox = [
