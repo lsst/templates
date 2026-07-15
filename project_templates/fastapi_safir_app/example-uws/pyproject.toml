@@ -45,11 +45,11 @@ dev = [
     "pytest-cov",
     "respx",
     "scriv[toml]",
+    "uv",
 ]
 lint = [
     "prek",
     "ruff>=0.12",
-    "uv",
 ]
 tox = [
     "tox>=4.24",

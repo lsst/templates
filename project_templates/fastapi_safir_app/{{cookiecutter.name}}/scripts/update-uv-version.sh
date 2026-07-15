@@ -7,10 +7,15 @@
 # http://redsymbol.net/articles/unofficial-bash-strict-mode/ for details.
 set -euo pipefail
 
-# Determine the current frozen uv version. uv must be part of the lint
-# dependency group in pyproject.toml.
-uv_version=$(uv export -q --no-hashes --only-group lint \
-             | grep ^uv== | sed 's/.*=//')
+# Expand non-matching globs to the empty list instead of the glob so that
+# packages that don't have one of the affected files can silently skip the
+# uv version rewrite rule that doesn't apply.
+shopt -s nullglob
+
+# Determine the current uv release version.
+uv_version=$(echo uv \
+             | uv pip compile - --quiet --no-header --no-annotate --no-config \
+             | sed -n 's/^uv==//p')
 
 # Replace the version in the env variables in GitHub Actions workflows.
 for f in .github/workflows/*.yaml; do
@@ -26,13 +31,11 @@ done
 # Replace the version in any Dockerfiles. Allow for copying this script into
 # packages that have no Dockerfile.
 for f in Dockerfile*; do
-    if [ -f "$f" ]; then
-        sed "s/uv:[0-9][0-9.]*/uv:$uv_version/" "$f" >"${f}.n"
-        if ! cmp -s "$f" "${f}.n"; then
-            echo "Updating uv container version to $uv_version in $f"
-            mv "${f}.n" "$f"
-        else
-            rm "${f}.n"
-        fi
+    sed "s/uv:[0-9][0-9.]*/uv:$uv_version/" "$f" >"${f}.n"
+    if ! cmp -s "$f" "${f}.n"; then
+        echo "Updating uv container version to $uv_version in $f"
+        mv "${f}.n" "$f"
+    else
+        rm "${f}.n"
     fi
 done
