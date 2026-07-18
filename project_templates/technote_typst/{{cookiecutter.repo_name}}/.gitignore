@@ -1,0 +1,7 @@
+*.pdf
+lsstbib/
+.typst-packages/
+.typst-tmp/
+.tox/
+venv/
+.venv/

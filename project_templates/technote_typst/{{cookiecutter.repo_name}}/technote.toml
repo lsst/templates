@@ -1,0 +1,23 @@
+[technote]
+id = "{{ cookiecutter.series | escape_yaml_doublequoted }}-{{ cookiecutter.serial_number | escape_yaml_doublequoted }}"
+series_id = "{{ cookiecutter.series | escape_yaml_doublequoted }}"
+canonical_url = "{{ cookiecutter.url | escape_yaml_doublequoted }}"
+github_url = "https://github.com/{{ cookiecutter.github_namespace | escape_yaml_doublequoted }}"
+github_default_branch = "main"
+date_created = {% now 'utc', '%Y-%m-%dT%H:%M:%SZ' %}
+organization.name = "NSF-DOE Vera C. Rubin Observatory"
+organization.ror = "https://ror.org/048g3cy84"
+license.id = "CC-BY-4.0"
+
+[technote.status]
+state = "draft"
+
+[[technote.authors]]
+name.given = "{{ cookiecutter.first_author_given }}"
+name.family = "{{ cookiecutter.first_author_family }}"
+internal_id = "{{ cookiecutter.author_id }}"
+{% if cookiecutter.first_author_orcid %}orcid = "{{ cookiecutter.first_author_orcid }}"{% endif %}
+[[technote.authors.affiliations]]
+name = "{{ cookiecutter.first_author_affil_name }}"
+internal_id = "{{ cookiecutter.first_author_affil_internal_id }}"
+address = "{{ cookiecutter.first_author_affil_address }}"

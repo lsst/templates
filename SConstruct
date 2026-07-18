@@ -7,6 +7,7 @@ SConscript(
         "project_templates/nbreport/SConscript",
         "project_templates/technote_rst/SConscript",
         "project_templates/technote_md/SConscript",
+        "project_templates/technote_typst/SConscript",
         "project_templates/technote_latex/SConscript",
         "project_templates/technote_aastex/SConscript",
         "project_templates/technote_adasstex/SConscript",

@@ -1,0 +1,72 @@
+name: CI
+
+'on': [push, pull_request, workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0 # full history for landing-page metadata
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Python install
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install "lander<2.0.0" setuptools
+
+      - uses: typst-community/setup-typst@v5
+        with:
+          typst-version: '0.15.0'
+
+      - name: Typst build
+        run: make pdf
+
+      # The landing page shows the metadata from technote.toml, so author
+      # changes made with make add-author are picked up automatically. The
+      # title is set when the repository is scaffolded; update it here if
+      # the document title changes.
+      - name: Landing page upload
+        if: ${{ github.event_name == 'push' }}
+        env:
+          LTD_PASSWORD: ${{ secrets.LTD_PASSWORD }}
+          LTD_USERNAME: ${{ secrets.LTD_USERNAME }}
+        run: |
+          python3 - <<'EOF'
+          import json
+          import os
+          import subprocess
+          import tomllib
+
+          with open("technote.toml", "rb") as fh:
+              technote = tomllib.load(fh)["technote"]
+
+          authors = [
+              " ".join(
+                  part
+                  for part in (author["name"].get("given"), author["name"]["family"])
+                  if part
+              )
+              for author in technote.get("authors", [])
+          ]
+          subprocess.run(
+              [
+                  "lander",
+                  "--upload",
+                  "--pdf", "TESTN-000.pdf",
+                  "--ltd-product", "testn-000",
+                  "--handle", technote["id"],
+                  "--title", "Document Title",
+                  "--authors", json.dumps(authors),
+                  "--repo-url", technote["github_url"],
+                  "--repo-branch", os.environ["GITHUB_REF_NAME"],
+              ],
+              check=True,
+          )
+          EOF
