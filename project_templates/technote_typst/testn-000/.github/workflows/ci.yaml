@@ -28,10 +28,9 @@ jobs:
       - name: Typst build
         run: make pdf
 
-      # The landing page shows the metadata from technote.toml, so author
-      # changes made with make add-author are picked up automatically. The
-      # title is set when the repository is scaffolded; update it here if
-      # the document title changes.
+      # The landing page metadata comes from technote.toml and from the
+      # compiled document's own <rubin-technote> front matter, so author,
+      # title, and abstract changes are picked up automatically.
       - name: Landing page upload
         if: ${{ github.event_name == 'push' }}
         env:
@@ -47,6 +46,45 @@ jobs:
           with open("technote.toml", "rb") as fh:
               technote = tomllib.load(fh)["technote"]
 
+          # The flags mirror the compile command in the Makefile.
+          query = subprocess.run(
+              [
+                  "typst", "query",
+                  "--root", ".",
+                  "--package-path", ".typst-packages",
+                  "--font-path", ".typst-packages/preview/rubin-technote/0.1.0/fonts",
+                  "index.typ",
+                  "<rubin-technote>",
+                  "--field", "value",
+                  "--one",
+              ],
+              check=True,
+              capture_output=True,
+              text=True,
+          )
+          front_matter = json.loads(query.stdout)
+
+          def plain_text(node):
+              """Flatten queried Typst content to plain text."""
+              if node is None:
+                  return ""
+              if isinstance(node, str):
+                  return node
+              if isinstance(node, list):
+                  return "".join(plain_text(child) for child in node)
+              if isinstance(node, dict):
+                  func = node.get("func")
+                  if func == "text":
+                      return node.get("text", "")
+                  if func == "space":
+                      return " "
+                  if func in ("parbreak", "linebreak"):
+                      return "\n"
+                  return plain_text(
+                      node.get("children") or node.get("body") or node.get("child")
+                  )
+              return ""
+
           authors = [
               " ".join(
                   part
@@ -55,18 +93,19 @@ jobs:
               )
               for author in technote.get("authors", [])
           ]
-          subprocess.run(
-              [
-                  "lander",
-                  "--upload",
-                  "--pdf", "TESTN-000.pdf",
-                  "--ltd-product", "testn-000",
-                  "--handle", technote["id"],
-                  "--title", "Document Title",
-                  "--authors", json.dumps(authors),
-                  "--repo-url", technote["github_url"],
-                  "--repo-branch", os.environ["GITHUB_REF_NAME"],
-              ],
-              check=True,
-          )
+          command = [
+              "lander",
+              "--upload",
+              "--pdf", "TESTN-000.pdf",
+              "--ltd-product", "testn-000",
+              "--handle", technote["id"],
+              "--title", plain_text(front_matter["title"]).strip(),
+              "--authors", json.dumps(authors),
+              "--repo-url", technote["github_url"],
+              "--repo-branch", os.environ["GITHUB_REF_NAME"],
+          ]
+          abstract = plain_text(front_matter.get("abstract")).strip()
+          if abstract:
+              command.extend(("--abstract", abstract))
+          subprocess.run(command, check=True)
           EOF
