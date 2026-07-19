@@ -5,6 +5,13 @@ PACKAGE_DIR = .typst-packages/preview/rubin-technote/$(TEMPLATE_VERSION)
 LSST_TEXMF_REF ?= main
 BIB_FILES = lsst.bib lsst-dm.bib refs.bib refs_ads.bib books.bib
 
+# The git state is stamped into the document's front matter.
+GITVERSION := $(shell git log -1 --date=short --pretty=%h)
+GITSTATUS := $(shell git status --porcelain)
+ifneq "$(GITSTATUS)" ""
+	GITDIRTY = -dirty
+endif
+
 .PHONY:
 init:
 	pip install tox pre-commit
@@ -15,6 +22,7 @@ pdf: $(PACKAGE_DIR) lsstbib
 	typst compile --root . \
 	  --package-path .typst-packages \
 	  --font-path $(PACKAGE_DIR)/fonts \
+	  --input source-version=$(GITVERSION)$(GITDIRTY) \
 	  index.typ $(DOCNAME).pdf
 
 # Fetch the rubin-technote Typst template as a vendored package. Set
