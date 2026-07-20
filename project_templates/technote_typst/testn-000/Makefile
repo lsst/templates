@@ -12,6 +12,11 @@ ifneq "$(GITSTATUS)" ""
 	GITDIRTY = -dirty
 endif
 
+# Enforced PDF standards: archival (PDF/A-2a) and accessible (PDF/UA-1)
+# output, making missing alt text a compilation failure. Set PDF_STANDARD
+# to empty to explicitly opt out of the enforcement.
+PDF_STANDARD ?= a-2a,ua-1
+
 .PHONY:
 init:
 	pip install tox pre-commit
@@ -23,6 +28,7 @@ pdf: $(PACKAGE_DIR) lsstbib
 	  --package-path .typst-packages \
 	  --font-path $(PACKAGE_DIR)/fonts \
 	  --input source-version=$(GITVERSION)$(GITDIRTY) \
+	  $(if $(PDF_STANDARD),--pdf-standard $(PDF_STANDARD)) \
 	  index.typ $(DOCNAME).pdf
 
 # Fetch the rubin-technote Typst template as a vendored package. Set

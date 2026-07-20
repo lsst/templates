@@ -28,6 +28,20 @@ jobs:
       - name: Typst build
         run: make pdf
 
+      # Independent audit of the archival (PDF/A-2a) and accessibility
+      # (PDF/UA-1) conformance that the build enforces, using veraPDF.
+      # This covers the machine-checkable requirements; alt-text quality
+      # and reading order still need human review.
+      - name: Validate PDF/A and PDF/UA conformance
+        run: |
+          for flavour in 2a ua1; do
+            docker run --rm -v "$PWD":/data verapdf/cli \
+              --flavour $flavour --format text \
+              "/data/TESTN-000.pdf" \
+              | tee "verapdf-$flavour.txt"
+          done
+          ! grep -h "^FAIL" verapdf-*.txt
+
       # The landing page metadata comes from technote.toml and from the
       # compiled document's own <rubin-technote> front matter, so author,
       # title, and abstract changes are picked up automatically.
