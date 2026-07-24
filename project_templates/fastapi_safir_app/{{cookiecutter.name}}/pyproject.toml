@@ -55,9 +55,9 @@ lint = [
     "prek",
     "ruff>=0.12",
 ]
-tox = [
-    "tox>=4.24",
-    "tox-uv>=1.25",
+nox = [
+    "nox",
+    "nox-uv",
 ]
 typing = [
     "mypy>=1.15",
