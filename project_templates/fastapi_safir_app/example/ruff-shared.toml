@@ -99,9 +99,11 @@ select = ["ALL"]
 ]
 "src/*/handlers/**" = [
     "D103",    # FastAPI handlers should not have docstrings
+    "PLR0917", # FastAPI injects handler arguments by keyword, not position
 ]
 "*/src/*/handlers/**" = [
     "D103",    # FastAPI handlers should not have docstrings
+    "PLR0917", # FastAPI injects handler arguments by keyword, not position
 ]
 "tests/**" = [
     "C901",    # tests are allowed to be complex, sometimes that's convenient
