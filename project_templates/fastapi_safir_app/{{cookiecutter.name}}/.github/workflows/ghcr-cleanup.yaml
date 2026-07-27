@@ -25,3 +25,14 @@ jobs:
           delete-untagged: true
           older-than: "6 months"
           validate: true
+{% if cookiecutter.github_org == "lsst-sqre" %}
+      - name: Report status
+        if: failure()
+        uses: ravsamhq/notify-slack-action@v2
+        with:
+          status: {{ "${{ job.status }}" }}
+          notify_when: "failure"
+          notification_title: "GHCR cleanup for {repo} failed"
+        env:
+          SLACK_WEBHOOK_URL: {{ "${{ secrets.SLACK_ALERT_WEBHOOK }}" }}
+{%- endif %}
