@@ -32,6 +32,7 @@ dev = [
     "pytest",
     "pytest-asyncio",
     "mypy",
+    "safir>=14.2.0",
     # Documentation
     "documenteer[guide]>=2,<3",
     "scriv",
