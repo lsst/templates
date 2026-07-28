@@ -5,9 +5,7 @@ from datetime import timedelta
 {%- endif %}
 from pathlib import Path
 
-{% if cookiecutter.flavor == "UWS" -%}
 import pytest
-{% endif -%}
 import pytest_asyncio
 {%- if cookiecutter.flavor == "UWS" %}
 import structlog
