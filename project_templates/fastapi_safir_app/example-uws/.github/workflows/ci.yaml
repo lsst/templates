@@ -38,7 +38,7 @@ jobs:
           version: ${{ env.UV_VERSION }}
 
       - name: Run tox
-        run: uv run --only-group=tox tox run -e lint,typing,py,coverage-report
+        run: uv run --only-group=nox nox -s lint typing test coverage-report
 
   build:
     needs: [test]

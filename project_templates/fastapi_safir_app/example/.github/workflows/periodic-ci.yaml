@@ -33,7 +33,7 @@ jobs:
         run: make update-deps
 
       - name: Run tox
-        run: uv run --only-group=tox tox run -e lint,typing,py
+        run: uv run --only-group=nox nox -s lint typing test
 
       - name: Report status
         if: failure()

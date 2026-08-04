@@ -1,6 +1,6 @@
 """Models for example-uws."""
 
-from typing import Self
+from typing import override
 
 from pydantic import BaseModel, Field
 from safir.metadata import Metadata as SafirMetadata
@@ -44,8 +44,10 @@ class ExampleuwsParameters(ParametersModel[WorkerExampleuwsModel, ExampleuwsXmlP
     conversions.
     """
 
+    @override
     def to_worker_parameters(self) -> WorkerExampleuwsModel:
         return WorkerExampleuwsModel()
 
+    @override
     def to_xml_model(self) -> ExampleuwsXmlParameters:
         return ExampleuwsXmlParameters()

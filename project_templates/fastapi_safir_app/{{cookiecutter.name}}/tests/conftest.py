@@ -5,13 +5,8 @@ from datetime import timedelta
 {%- endif %}
 from pathlib import Path
 
-{% if cookiecutter.flavor == "UWS" -%}
 import pytest
-{% endif -%}
 import pytest_asyncio
-{%- if cookiecutter.flavor == "UWS" %}
-import structlog
-{%- endif %}
 from asgi_lifespan import LifespanManager
 from fastapi import FastAPI
 from httpx import ASGITransport, AsyncClient
@@ -82,9 +77,10 @@ def data(request: pytest.FixtureRequest) -> Data:
 
 @pytest.fixture(autouse=True)
 def mock_google_storage() -> Iterator[MockStorageClient]:
-    yield from patch_google_storage(
+    with patch_google_storage(
         expected_expiration=timedelta(minutes=15), bucket_name="some-bucket"
-    )
+    ) as mock:
+        yield mock
 
 
 @pytest_asyncio.fixture

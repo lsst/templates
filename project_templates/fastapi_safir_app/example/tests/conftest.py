@@ -3,6 +3,7 @@
 from collections.abc import AsyncGenerator
 from pathlib import Path
 
+import pytest
 import pytest_asyncio
 from asgi_lifespan import LifespanManager
 from fastapi import FastAPI

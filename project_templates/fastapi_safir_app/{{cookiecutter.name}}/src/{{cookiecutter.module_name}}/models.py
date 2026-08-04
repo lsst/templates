@@ -1,7 +1,7 @@
 """Models for {{ cookiecutter.name }}."""
 
 {% if cookiecutter.flavor == "UWS" -%}
-from typing import Self
+from typing import override
 
 {% endif -%}
 from pydantic import BaseModel, Field
@@ -49,9 +49,11 @@ class {{ cookiecutter.module_name | capitalize }}Parameters(ParametersModel[Work
     conversions.
     """
 
+    @override
     def to_worker_parameters(self) -> Worker{{ cookiecutter.module_name | capitalize }}Model:
         return Worker{{ cookiecutter.module_name | capitalize }}Model()
 
+    @override
     def to_xml_model(self) -> {{ cookiecutter.module_name | capitalize}}XmlParameters:
         return {{ cookiecutter.module_name | capitalize}}XmlParameters()
 {%- endif %}
