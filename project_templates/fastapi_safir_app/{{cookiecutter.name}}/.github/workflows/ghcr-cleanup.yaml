@@ -14,7 +14,7 @@ jobs:
     permissions:
       packages: write
     concurrency:
-      group: packages
+      group: docker
       queue: max
 
     steps:
@@ -24,6 +24,9 @@ jobs:
           delete-tags: "tickets-*,t-*"
           delete-untagged: true
           older-than: "6 months"
+          {%- if cookiecutter.flavor == "UWS" %}
+          packages: "{{ cookiecutter.name | lower }}"
+          {%- endif %}
           validate: true
 {% if cookiecutter.github_org == "lsst-sqre" %}
       - name: Report status
@@ -35,4 +38,35 @@ jobs:
           notification_title: "GHCR cleanup for {repo} failed"
         env:
           SLACK_WEBHOOK_URL: {{ "${{ secrets.SLACK_ALERT_WEBHOOK }}" }}
+{%- endif %}
+{%- if cookiecutter.flavor == "UWS" %}
+
+  cleanup-worker:
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+    concurrency:
+      group: docker-worker
+      queue: max
+
+    steps:
+      - uses: dataaxiom/ghcr-cleanup-action@v1
+        with:
+          delete-orphaned-images: true
+          delete-tags: "tickets-*,t-*"
+          delete-untagged: true
+          older-than: "6 months"
+          packages "{{ cookiecutter.name | lower }}-worker"
+          validate: true
+{% if cookiecutter.github_org == "lsst-sqre" %}
+      - name: Report status
+        if: failure()
+        uses: ravsamhq/notify-slack-action@v2
+        with:
+          status: {{ "${{ job.status }}" }}
+          notify_when: "failure"
+          notification_title: "GHCR cleanup for {repo}-worker failed"
+        env:
+          SLACK_WEBHOOK_URL: {{ "${{ secrets.SLACK_ALERT_WEBHOOK }}" }}
+{%- endif %}
 {%- endif %}
