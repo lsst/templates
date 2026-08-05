@@ -41,6 +41,9 @@ jobs:
         run: uv run --only-group=nox nox -s lint typing test coverage-report
 
   build:
+    concurrency:
+      group: docker
+      queue: max
     needs: [test]
     secrets: inherit
     uses: lsst-sqre/multiplatform-build-and-push/.github/workflows/build.yaml@v3
@@ -60,6 +63,9 @@ jobs:
 {%- if cookiecutter.flavor == "UWS" %}
 
   build-worker:
+    concurrency:
+      group: docker-worker
+      queue: max
     needs: [test]
     secrets: inherit
     uses: lsst-sqre/multiplatform-build-and-push/.github/workflows/build.yaml@v3
