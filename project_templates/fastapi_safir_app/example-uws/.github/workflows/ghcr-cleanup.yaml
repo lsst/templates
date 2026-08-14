@@ -52,7 +52,7 @@ jobs:
           delete-tags: "tickets-*,t-*"
           delete-untagged: true
           older-than: "6 months"
-          packages "example-uws-worker"
+          packages: "example-uws-worker"
           validate: true
 
       - name: Report status
