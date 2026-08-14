@@ -56,7 +56,7 @@ jobs:
           delete-tags: "tickets-*,t-*"
           delete-untagged: true
           older-than: "6 months"
-          packages "{{ cookiecutter.name | lower }}-worker"
+          packages: "{{ cookiecutter.name | lower }}-worker"
           validate: true
 {% if cookiecutter.github_org == "lsst-sqre" %}
       - name: Report status
