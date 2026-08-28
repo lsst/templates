@@ -1,4 +1,4 @@
-"""Short one-sentence description of the package"""
+"""Short one-sentence description of the package."""
 
 __all__ = ["__version__"]
 

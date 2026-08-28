@@ -1,14 +1,8 @@
-# This is a separate run of the Python test suite that doesn't cache the tox
-# environment and runs from a schedule.  The purpose is to test compatibility
+# This is a separate run of the Python test suite that updates frozen
+# dependencies and runs from a schedule. The purpose is to test compatibility
 # with the latest versions of dependencies.
 
 name: Periodic CI
-
-env:
-  # Default Python version used for all jobs other than test, which uses a
-  # matrix of supported versions. Quote the version to avoid interpretation as
-  # a floating point number.
-  PYTHON_VERSION: "3.13"
 
 "on":
   schedule:
@@ -23,18 +17,24 @@ jobs:
     strategy:
       matrix:
         python:
-          - "3.12"
+          - "3.13"
+          - "3.14"
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0 # full history for setuptools-scm
 
-      - name: Run tests in tox
-        uses: lsst-sqre/run-tox@v1
+      - name: Install uv
+        uses: astral-sh/setup-uv@v10.0.1
         with:
           python-version: ${{ matrix.python }}
-          tox-envs: "lint,typing,py"
-          tox-plugins: tox-uv
-          use-cache: false
+
+      - name: Update dependencies
+        run: make update-deps
+
+      - name: Run nox
+        run: uv run --only-group=nox nox -P $UV_PYTHON -s lint typing test
 
       - name: Report status
         if: failure()
@@ -51,20 +51,23 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
         with:
-          fetch-depth: 0 # full history for setuptools_scm
+          fetch-depth: 0 # full history for setuptools-scm
 
       - name: Install Graphviz
         run: sudo apt-get install graphviz
 
-      - name: Build docs in tox
-        uses: lsst-sqre/run-tox@v1
-        with:
-          python-version: ${{ env.PYTHON_VERSION }}
-          tox-envs: "docs,docs-linkcheck"
-          tox-plugins: tox-uv
-          use-cache: false
+      - name: Install uv
+        uses: astral-sh/setup-uv@v10.0.1
+
+      - name: Install extra packages
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y graphviz
+
+      - name: Run nox
+        run: uv run --only-group=nox nox -s docs docs-linkcheck
 
       - name: Report status
         if: failure()
@@ -82,14 +85,15 @@ jobs:
     needs: [test, docs]
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
         with:
-          fetch-depth: 0 # full history for setuptools_scm
+          fetch-depth: 0 # full history for setuptools-scm
 
-      - name: Build and publish
-        uses: lsst-sqre/build-and-publish-to-pypi@v3
-        with:
-          upload: false
+      - name: Install uv
+        uses: astral-sh/setup-uv@v10.0.1
+
+      - name: Build the packages
+        run: uv build --no-sources --all-packages
 
       - name: Report status
         if: failure()
