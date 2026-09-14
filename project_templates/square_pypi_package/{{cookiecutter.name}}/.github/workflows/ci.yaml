@@ -1,11 +1,5 @@
 name: Python CI
 
-env:
-  # Default Python version used for all jobs other than test, which uses a
-  # matrix of supported versions. Quote the version to avoid interpretation as
-  # a floating point number.
-  PYTHON_VERSION: "3.13"
-
 "on":
   merge_group: {}
   pull_request: {}
@@ -13,7 +7,7 @@ env:
     branches-ignore:
       # These should always correspond to pull requests, so ignore them for
       # the push trigger and let them be triggered by the pull_request
-      # trigger, avoiding running the workflow twice.  This is a minor
+      # trigger, avoiding running the workflow twice. This is a minor
       # optimization so there's no need to ensure this is comprehensive.
       - "dependabot/**"
       - "gh-readonly-queue/**"
@@ -25,21 +19,6 @@ env:
     types: [published]
 
 jobs:
-  lint:
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-
-    steps:
-      - uses: actions/checkout@v5
-
-      - name: Set up Python
-        uses: actions/setup-python@v6
-        with:
-          python-version: {{ "${{ env.PYTHON_VERSION }}" }}
-
-      - name: Run pre-commit
-        uses: j178/prek-action@v2
-
   test:
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -47,23 +26,29 @@ jobs:
     strategy:
       matrix:
         python:
-          - "3.12"
           - "3.13"
+          - "3.14"
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0 # full history for setuptools-scm
 
-      - name: Run tox
-        uses: lsst-sqre/run-tox@v1
+      # Use floating latest uv version, since we've had great luck with
+      # backward compatibility. If we run into the problems in the future, we
+      # can do something more complicated with a pinned version updated with a
+      # script run by `make update-deps` similar to service packages.
+      - name: Install uv
+        uses: astral-sh/setup-uv@v10.0.1
         with:
           python-version: {{ "${{ matrix.python }}" }}
-          tox-envs: "py,typing"
-          tox-plugins: tox-uv
+
+      - name: Run nox
+        run: uv run --only-group=nox nox -P $UV_PYTHON -s lint typing test
 
   changes:
     runs-on: ubuntu-latest
     timeout-minutes: 5
-
     permissions:
       pull-requests: read
     outputs:
@@ -71,9 +56,9 @@ jobs:
       docs-specific: {{ "${{ steps.filter.outputs.docs-specific }}" }}
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
-      - uses: dorny/paths-filter@v3
+      - uses: dorny/paths-filter@v4
         id: filter
         with:
           filters: |
@@ -87,7 +72,7 @@ jobs:
 
   docs:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     needs: changes
     if: >
       (needs.changes.outputs.docs == 'true')
@@ -95,24 +80,23 @@ jobs:
       || (github.event_name == 'release' && github.event.action == 'published')
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
         with:
-          fetch-depth: 0 # full history for setuptools_scm
+          fetch-depth: 0 # full history for setuptools-scm
 
-      - name: Install Graphviz
-        run: sudo apt-get install graphviz
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
 
-      - name: Run tox
-        uses: lsst-sqre/run-tox@v1
-        with:
-          python-version: {{ "${{ env.PYTHON_VERSION }}" }}
-          tox-envs: "docs"
-          # Add docs-linkcheck when the docs and PyPI package are published
-          # tox-envs: "docs,docs-linkcheck"
-          tox-plugins: tox-uv
+      - name: Install extra packages
+        run: |
+          sudo apt-get update
+          sudo apt-get install -u graphviz
+
+      - name: Run nox
+        run: uv run --only-group=nox nox -s docs
 
       # Only attempt documentation uploads for tagged releases and pull
-      # requests from ticket branches in the same repository.  This avoids
+      # requests from ticket branches in the same repository. This avoids
       # version clutter in the docs and failures when a PR doesn't have access
       # to secrets.
       - name: Upload to LSST the Docs
@@ -124,27 +108,55 @@ jobs:
           password: {{ "${{ secrets.LTD_PASSWORD }}" }}
         if: >
           (github.event_name == 'push' && github.ref_name == 'main')
+          || (github.event_name == 'release'
+              && github.event.action == 'published')
           || (github.event_name == 'workflow_dispatch')
           || (github.event_name == 'pull_request'
               && (startsWith(github.head_ref, 'tickets/')
                   || startsWith(github.head_ref, 't/'))
               && needs.changes.outputs.docs-specific == 'true')
 
+  linkcheck:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    needs: changes
+    if: >
+      (needs.changes.outputs.docs == 'true')
+      || (github.event_name == 'workflow_dispatch')
+
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0 # full history for setuptools-scm
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v10.0.1
+
+      - name: Install extra packages
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y graphviz
+
+      - name: Run nox
+        run: uv run --only-group=nox nox -s docs-linkcheck
+
   test-packaging:
     name: Test packaging
     runs-on: ubuntu-latest
     timeout-minutes: 5
-    needs: [lint, test, docs]
+    needs: [test, docs]
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
         with:
-          fetch-depth: 0 # full history for setuptools_scm
+          fetch-depth: 0 # full history for setuptools-scm
 
-      - name: Build and publish
-        uses: lsst-sqre/build-and-publish-to-pypi@v3
-        with:
-          upload: false
+      - name: Install uv
+        uses: astral-sh/setup-uv@v10.0.1
+
+      - name: Build the packages
+        run: uv build --no-sources --all-packages
 
   pypi:
     # This job requires set up:
@@ -154,7 +166,7 @@ jobs:
     name: Upload release to PyPI
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    needs: [lint, test, docs, test-packaging]
+    needs: [test, docs, test-packaging]
     environment:
       name: pypi
       url: https://pypi.org/p/{{cookiecutter.name}}
@@ -163,9 +175,15 @@ jobs:
     if: github.event_name == 'release' && github.event.action == 'published'
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
         with:
-          fetch-depth: 0 # full history for setuptools_scm
+          fetch-depth: 0 # full history for setuptools-scm
 
-      - name: Build and publish
-        uses: lsst-sqre/build-and-publish-to-pypi@v3
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+
+      - name: Build the packages
+        run: uv build --no-sources --all-packages
+
+      - name: Publish the packages
+        run: uv publish

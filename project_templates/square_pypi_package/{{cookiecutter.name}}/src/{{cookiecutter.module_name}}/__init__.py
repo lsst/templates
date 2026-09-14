@@ -1,4 +1,4 @@
-"""{{cookiecutter.description}}"""
+"""{{cookiecutter.description}}."""
 
 __all__ = ["__version__"]
 

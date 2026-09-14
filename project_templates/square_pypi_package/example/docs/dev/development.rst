@@ -21,7 +21,11 @@ example is developed by the Rubin Observatory SQuaRE team.
 Setting up a local development environment
 ==========================================
 
-To develop example, create a virtual environment with your method of choice (like virtualenvwrapper) and then clone or fork, and install:
+example is developed using uv_.
+You will therefore need uv installed to set up a development environment.
+See the `uv installation instructions <https://docs.astral.sh/uv/getting-started/installation/>`__ for details.
+
+Once you have those prerequisites installed, get started by cloning the repository and setting up a virtual environment:
 
 .. code-block:: sh
 
@@ -31,11 +35,19 @@ To develop example, create a virtual environment with your method of choice (lik
 
 This init step does three things:
 
-1. Installs example in an editable mode with its "dev" extra that includes test and documentation dependencies.
-2. Installs pre-commit and tox.
-3. Installs the pre-commit hooks.
+1. Creates a Python virtual environment in the :file:`.venv` subdirectory with the packages needed to do example development installed.
+2. Installs example in an editable mode in that virtual environment.
+3. Installs the pre-commit hooks (run by prek_).
 
-You must have Docker installed and configured so that your user can start Docker containers in order to run the test suite.
+You can activate the example virtual environment if you wish with:
+
+.. code-block:: sh
+
+   source .venv/bin/activate
+
+This is optional; you do not have to activate the virtual environment to do development.
+However, if you do, you can omit :command:`uv run` from the start of all commands described below.
+Also, editors with Python integration, such as VSCode, may work more smoothly if you activate the virtualenv before starting them.
 
 .. _pre-commit-hooks:
 
@@ -54,55 +66,98 @@ Some pre-commit hooks automatically reformat code:
 When these hooks fail, your Git commit will be aborted.
 To proceed, stage the new modifications and proceed with your Git commit.
 
+If you have to commit changes that fail pre-commit checks, pass the ``--no-verify`` flag to :command:`git commit`.
+This will have to be temporary, though, since the change will fail GitHub CI checks.
+
+Despite the name, example uses prek_ to run pre-commit hooks rather than the package named pre-commit.
+
 .. _dev-run-tests:
 
 Running tests
 =============
 
-To test the library, run tox_, which tests the library the same way that the CI workflow does:
+example uses nox_ as its automation tool for testing.
+
+To run all example tests, run:
 
 .. code-block:: sh
 
-   tox run
+   uv run nox
 
-To see a listing of test environments, run:
+This will run several nox sessions to lint and type-check the code, run the test suite, and build the documentation.
 
-.. code-block:: sh
+To list the available sessions, run:
 
-   tox list
+.. prompt:: bash
 
-To run a specific test or list of tests, you can add test file names (and any other pytest_ options) after ``--`` when executing the ``py`` tox environment.
+   uv run nox --list
+
+To run a specific test or list of tests, you can add test file names (and any other pytest_ options) after ``--`` when executing the ``test`` nox session.
 For example:
 
-.. code-block:: sh
+.. prompt:: bash
 
-   tox run -e py -- tests/database_test.py
+   uv run nox -s test -- tests/example_test.py
+
+example uses the `Safir test data library <https://safir.lsst.io/user-guide/test-data.html>`__ to manage test data.
+If you change the code in a way that would change test output, run:
+
+.. prompt:: bash
+
+   uv run nox -s test -- --update-test-data
+
+This will update any test output files to match the current output of the test suite.
+Review any changes with :command:`git diff` and ensure they match the expected changes.
 
 .. _dev-build-docs:
 
 Building documentation
 ======================
 
-Documentation is built with Sphinx_:
+Documentation is built with Sphinx_.
+It is built as part of a normal test run to check that the documentation can still build without warnings, or can be built explicitly with:
 
 .. _Sphinx: https://www.sphinx-doc.org/en/master/
 
 .. code-block:: sh
 
-   tox run -e docs
+   uv run nox -s docs
 
 The built documentation is located in the :file:`docs/_build/html` directory.
 
-Updating pre-commit
-===================
+Additional dependencies required for the documentation build should be added to the ``docs`` dependency group in :file:`pyproject.toml`.
 
-To update the versions of the pre-commit hooks, run:
+Documentation builds are incremental, and generate and use cached descriptions of the internal Python APIs.
+If you see errors in building the Python API documentation or have problems with changes to the documentation (particularly diagrams) not showing up, try a clean documentation build with:
+
+.. prompt:: bash
+
+   uv run nox -s docs-clean
+
+This will be slower, but it will ensure that the documentation build doesn't rely on any cached data.
+
+To check the documentation for broken links, run:
 
 .. code-block:: sh
 
-   pre-commit autoupdate
+   uv run nox -s docs-linkcheck
+
+Update pinned dependencies
+==========================
+
+All dependencies of example are pinned to specific versions for local development and for GitHub Actions CI jobs to ensure reproducible results.
+These dependency pins do not affect use of example as a library.
+They are only used during development.
+
+To update the pinned dependencies, including the versions of the pre-commit hooks, run:
+
+.. code-block:: sh
+
+   make update-deps
 
 You may wish to do this at the start of a development cycle so that you're using the latest versions of the linters.
+
+You can instead run :command:`make update` to also update the installed dependencies in the development virtual environment.
 
 .. _dev-change-log:
 
@@ -125,13 +180,20 @@ Change log entries use the following sections:
 - **Bug fixes**
 - **Other changes** (for minor, patch-level changes that are not bug fixes, such as logging formatting changes or updates to the documentation)
 
-These entries will eventually be cut and pasted into the release description for the next release, so the Markdown for the change descriptions should be compatible with GitHub's Markdown conventions for the release description.
+The change log entries should be written in imperative tense and describe to the user the change in behavior or the impact on the user at a high level.
+Changes that are not visible to the user, including minor documentation changes, should not have a change log fragment.
+Technical descriptions of how the change was implemented belong in commit messages, not change log entries.
+
+Formatting change log entries
+-----------------------------
+
+These entries will eventually be cut and pasted into the release description for the next release, so the Markdown for the change descriptions must be compatible with GitHub's Markdown conventions for the release description.
 Specifically:
 
 - Each bullet point should be entirely on one line, even if it contains multiple sentences.
   This is an exception to the normal documentation convention of a newline after each sentence.
   Unfortunately, GitHub interprets those newlines as hard line breaks, so they would result in an ugly release description.
-- Avoid using too much complex markup, such as nested bullet lists, since the formatting in the GitHub release description may not be what you expect and manually editing it is tedious.
+- Be cautious with complex markup, such as nested bullet lists, since the formatting in the GitHub release description may not be what you expect and manually repairing it is tedious.
 
 .. _style-guide:
 
@@ -144,7 +206,11 @@ Code
 - The code style follows :pep:`8`, though in practice lean on Black and isort to format the code for you.
 
 - Use :pep:`484` type annotations.
-  The ``tox run -e typing`` test environment, which runs mypy_, ensures that the project's types are consistent.
+  The :command:`uv run nox -s typing` session, which runs mypy_, ensures that the project's types are consistent.
+
+- example uses the Ruff_ linter with most checks enabled.
+  Try to avoid ``noqa`` markers except for issues that need to be fixed in the future.
+  Tests that generate false positives should normally be disabled, but if the lint error can be avoided with minor rewriting that doesn't make the code harder to read, prefer the rewriting.
 
 - Write tests for Pytest_.
 

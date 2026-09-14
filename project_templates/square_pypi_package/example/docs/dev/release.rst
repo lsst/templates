@@ -23,8 +23,8 @@ See :ref:`backport-release` to patch an earlier major-minor version.
 
 Release tags are semantic version identifiers following the :pep:`440` specification.
 
-1. Change log and documentation
--------------------------------
+1. Update the change log
+------------------------
 
 Change log messages for each release are accumulated using scriv_.
 See :ref:`dev-change-log` in the *Developer guide* for more details.
@@ -33,7 +33,7 @@ When it comes time to make the release, there should be a collection of change l
 Those fragments will make up the change log for the new release.
 
 Review those fragments to determine the version number of the next release.
-Safir follows semver_, so follow its rules to pick the next version:
+example follows semver_, so follow its rules to pick the next version:
 
 .. rst-class:: compact
 
@@ -41,18 +41,37 @@ Safir follows semver_, so follow its rules to pick the next version:
 - If there are any new features, increment the minor version number and set the patch version to 0.
 - Otherwise, increment the patch version number.
 
-Then, run ``scriv collect --version <version>`` specifying the version number you decided on.
+Then, run :command:`uv run scriv collect --version <version>`, specifying the version number you decided on.
 This will delete the fragment files and collect them into :file:`CHANGELOG.md` under an entry for the new release.
 Review that entry and edit it as needed (proofread, change the order to put more important things first, etc.).
+
 scriv will put blank lines between entries from different files.
 You may wish to remove those blank lines to ensure consistent formatting by various Markdown parsers.
 
 Finally, create a PR from those changes and merge it before continuing with the release process.
 
-2. GitHub release and tag
--------------------------
+2. Create a GitHub release and tag
+----------------------------------
 
 Use `GitHub's Release feature <https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository>`__ to create releases and their corresponding Git tags.
+
+#. For the tag, enter the version number of the release in the :guilabel:`Find or create a new tag` box in the dropdown under :guilabel:`Select tag`.
+   The tag must follow the :pep:`440` specification since Nublado uses setuptools-scm_ to set version metadata based on Git tags.
+   In particular, don't prefix the tag with ``v``.
+
+   .. _setuptools-scm: https://github.com/pypa/setuptools-scm
+
+#. Ensure the branch target is set appropriately (normally ``main``).
+
+#. For the release title, repeat the version string.
+
+#. Click the :guilabel:`Generate release notes` button to include the GitHub-generated summary of pull requests in the release notes.
+
+#. In the release notes box above the generated notes, paste the contents of the :file:`CHANGELOG.md` entry for this release, without the initial heading specifying the version number and date.
+   Adjust the heading depth of the subsections to use ``##`` instead of ``###`` to match the pull request summary.
+
+The `ci.yaml`_ GitHub Actions workflow will upload the new release to PyPI, documentation to https://example.lsst.io, and a Docker image to the GitHub Container Registry.
+
 
 1. Specify a tag from the appropriate branch (typically ``main``).
    This tag's name is :pep:`440` and is usually formatted at ``X.Y.Z`` (without a ``v`` prefix).
@@ -74,7 +93,7 @@ The `ci.yaml`_ GitHub Actions workflow uploads the new release to PyPI and docum
 Backport releases
 =================
 
-The regular release procedure works from the main line of development on the ``master`` Git branch.
+The regular release procedure works from the main line of development on the ``main`` Git branch.
 To create a release that patches an earlier major or minor version, you need to release from a **release branch.**
 
 Creating a release branch

@@ -2,7 +2,7 @@ Thanks for contributing to example.
 
 ## Support
 
-If you are a Rubin Observatory staff member, please reach out of us on Slack in the #dm-square channel or create a Jira ticket.
+If you are a Rubin Observatory staff member, please reach out of us on Slack in the #square-team channel or create a Jira ticket.
 
 If you are a community member, feel free to create a GitHub issue and we'll do our best to help you.
 

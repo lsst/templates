@@ -97,6 +97,10 @@ select = ["ALL"]
 "noxfile.py" = [
     "T201",    # print makes sense as output from nox rules
 ]
+"*/noxfile.py" = [
+    "INP001",  # subdirectory nox configuration isn't in a package
+    "T201",    # print makes sense as output from nox rules
+]
 "src/*/handlers/**" = [
     "D103",    # FastAPI handlers should not have docstrings
 ]

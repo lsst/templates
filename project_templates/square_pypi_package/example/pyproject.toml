@@ -5,60 +5,58 @@ description = "Short one-sentence description of the package"
 license = "MIT"
 license-files = ["LICENSE"]
 readme= "README.md"
-keywords = [
-    "rubin",
-    "lsst",
-]
+keywords = ["rubin", "lsst"]
 # https://pypi.org/classifiers/
 classifiers = [
     "Development Status :: 4 - Beta",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
     "Intended Audience :: Developers",
     "Natural Language :: English",
     "Operating System :: POSIX",
     "Typing :: Typed",
 ]
-requires-python = ">=3.12"
+requires-python = ">=3.13"
 dependencies = []
 dynamic = ["version"]
-
-[project.optional-dependencies]
-dev = [
-    # Testing
-    "coverage[toml]",
-    "pytest",
-    "pytest-asyncio",
-    "mypy",
-    # Documentation
-    "documenteer[guide]>=2,<3",
-    "scriv",
-]
 
 [project.urls]
 Homepage = "https://example.lsst.io"
 Source = "https://github.com/lsst-sqre/example"
 
 [build-system]
-requires = [
-    "setuptools>=61",
-    "wheel",
-    "setuptools_scm[toml]>=6.2"
-]
+requires = ["setuptools>=61", "setuptools_scm[toml]>=6.2"]
 build-backend = "setuptools.build_meta"
 
-[tool.setuptools_scm]
-
-[tool.setuptools.packages.find]
-# https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html
-where = ["src"]
-include = ["example*"]
+[dependency-groups]
+dev = [
+    "coverage[toml]",
+    "pytest",
+    "pytest-asyncio",
+    "pytest-cov",
+    "safir>=14.3",
+    "uv",
+]
+docs = [
+    "documenteer[guide]>=2,<3",
+    "scriv[toml]>=1.5",
+]
+lint = [
+    "prek",
+    "ruff>=0.12",
+]
+nox = [
+    "nox",
+    "nox-uv",
+]
+typing = [
+    "mypy>=2.3",
+]
 
 [tool.black]
 line-length = 79
-target-version = ["py313"]
 
 [tool.coverage.run]
 parallel = true
@@ -66,7 +64,7 @@ branch = true
 source = ["example"]
 
 [tool.coverage.paths]
-source = ["src", ".tox/*/site-packages"]
+source = ["src"]
 
 [tool.coverage.report]
 show_missing = true
@@ -98,14 +96,20 @@ enable_error_code = [
 ignore_missing_imports = true
 local_partial_types = true
 no_implicit_reexport = true
+# Uncomment and add the "pydantic.mypy" plugin if using Pydantic. Add the
+# "sqlalchemy.ext.mypy.plugin" if using SQL Alchemy.
+# plugins = []
 show_error_codes = true
 strict_equality = true
 warn_redundant_casts = true
 warn_unreachable = true
 warn_unused_ignores = true
-# Uncomment and add the "pydantic.mypy" plugin if using Pydantic. Add the
-# "sqlalchemy.ext.mypy.plugin" if using SQL Alchemy.
-# plugins = []
+
+[tool.pydantic-mypy]
+init_forbid_extra = true
+init_typed = true
+warn_required_dynamic_aliases = true
+warn_untyped_fields = true
 
 [tool.pytest.ini_options]
 asyncio_default_fixture_loop_scope = "function"
@@ -128,7 +132,6 @@ extend = "ruff-shared.toml"
 
 [tool.ruff.lint.isort]
 known-first-party = ["example", "tests"]
-split-on-trailing-comma = false
 
 [tool.scriv]
 categories = [
@@ -142,3 +145,5 @@ format = "md"
 md_header_level = "2"
 new_fragment_template = "file:changelog.d/_template.md.jinja"
 skip_fragments = "_template.md.jinja"
+
+[tool.setuptools_scm]
