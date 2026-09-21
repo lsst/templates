@@ -28,8 +28,7 @@ for f in .github/workflows/*.yaml; do
     fi
 done
 
-# Replace the version in any Dockerfiles. Allow for copying this script into
-# packages that have no Dockerfile.
+# Replace the version in any Dockerfiles.
 for f in Dockerfile*; do
     sed "s/uv:[0-9][0-9.]*/uv:$uv_version/" "$f" >"${f}.n"
     if ! cmp -s "$f" "${f}.n"; then
