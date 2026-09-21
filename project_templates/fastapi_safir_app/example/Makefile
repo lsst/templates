@@ -13,7 +13,7 @@ init:
 
 .PHONY: run
 run:
-	nox -s run
+	uv run nox -s run
 
 .PHONY: update
 update: update-deps init
