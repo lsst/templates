@@ -31,6 +31,7 @@ Find these templates in the `project_templates/` directory:
 - [stack_package](project_templates/stack_package/)
 - [square_pypi_package](project_templates/square_pypi_package/)
 - [technote_aastex](project_templates/technote_aastex/)
+- [technote_ejpconf](project_templates/technote_ejpconf/)
 - [technote_latex](project_templates/technote_latex/)
 - [technote_rst](project_templates/technote_rst/)
 - [technote_md](project_templates/technote_md/)
