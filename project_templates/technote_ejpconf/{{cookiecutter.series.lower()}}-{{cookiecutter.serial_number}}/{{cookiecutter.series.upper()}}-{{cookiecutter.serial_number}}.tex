@@ -5,7 +5,7 @@
 \usepackage[varg]{txfonts}
 \usepackage{amsmath,amsfonts,amssymb}
 \usepackage{graphicx}
-\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{orcidlink}
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage{longtable}
@@ -33,6 +33,7 @@
 % This can write metadata into the PDF.
 % Update keywords and author information as necessary.
 \hypersetup{
+    hidelinks,
     pdftitle={ {{- cookiecutter.title -}} },
     pdfauthor={ {{- cookiecutter.author_id -}} },
     pdfkeywords={}
