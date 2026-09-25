@@ -61,3 +61,11 @@ To update to a newer version of `lsst-texmf`_, you can update the submodule in t
 Commit, then push, the updated submodule.
 
 .. _lsst-texmf: https://github.com/lsst/lsst-texmf
+
+Publication Right Form
+======================
+
+All authors must sign the `Web of Conferences Publication Right Form`_ before the paper can be published.
+Download, complete, and return the form to the conference editors.
+
+.. _Web of Conferences Publication Right Form: https://www.webofconferences.org/doc_journal/woc/publication_right_form.pdf

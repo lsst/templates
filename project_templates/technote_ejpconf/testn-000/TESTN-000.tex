@@ -1,9 +1,8 @@
 
-\documentclass[]{spie}
+\documentclass{webofc}
 
 % Package imports go here.
-\renewcommand{\baselinestretch}{1.0} % Change to 1.65 for double spacing
-
+\usepackage[varg]{txfonts}
 \usepackage{amsmath,amsfonts,amssymb}
 \usepackage{graphicx}
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
@@ -24,16 +23,11 @@
 
 % Local commands go here.
 
-% See ASPmanual2010.pdf 2.1.4  and ManuscriptInstructions.pdf for more details
-%\markboth{auth}{short title}
-
-
 \newcommand{\docRef}{TESTN-000}
 \newcommand{\docUpstreamLocation}{\url{https://github.com/lsst-dm/testn-000}}
 
 
 \begin{document}
-\input{authors}
 \title{Document Title}
 
 % This can write metadata into the PDF.
@@ -44,20 +38,26 @@
     pdfkeywords={}
 }
 
-\maketitle
+\input{authors}
 
-\input{abstract}
+\abstract{\input{abstract}}
+
+\maketitle
 
 \input{body}
 
-\acknowledgments
+\section*{Acknowledgements}
 
 This material is based upon work supported in part by the National Science Foundation through Cooperative Agreements AST-1258333 and AST-2241526 and Cooperative Support Agreements AST-1202910 and AST-2211468 managed by the Association of Universities for Research in Astronomy (AURA), and the Department of Energy under Contract No.\ DE-AC02-76SF00515 with the SLAC National Accelerator Laboratory managed by Stanford University.
 Additional Rubin Observatory funding comes from private donations, grants to universities, and in-kind support from LSST-DA Institutional Members.
 
+%% Appendix material should be preceded with a single \appendix command.
+%% There should be a \section command for each appendix.
+
+%% \appendix
+
 % Include all the relevant bib files.
 % https://lsst-texmf.lsst.io/lsstdoc.html#bibliographies
-\bibliographystyle{spiebib}
 \bibliography{local,lsst,lsst-dm,refs_ads,refs,books}
 
 \end{document}

@@ -2,4 +2,4 @@
 
 ## 2022-07-05
 
-Add this ADASS support
+Add this EPJ Web of Conferences support

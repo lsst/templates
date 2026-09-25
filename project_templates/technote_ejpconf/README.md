@@ -1,5 +1,6 @@
-pie
-**LSST technical note repository, formatted as an SPIE  paper preprint.**
+# technote_ejpconf
+
+**LSST technical note repository, formatted as an EPJ Web of Conferences paper preprint.**
 
 This template also uses bib and author metadata from [lsst-texmf](https://lsst-texmf.lsst.io).
 See [Technotes for stand-alone technical documentation in the Developer Guide](https://developer.lsst.io/project-docs/technotes.html).
@@ -63,6 +64,11 @@ See [Copyrights for LSST DM work and the COPYRIGHT file](https://developer.lsst.
 ### testn-000/
 
 The [testn-000](testn-000) directory is an example of a LaTeX-formatted technote.
+
+## Publication Right Form
+
+All authors must sign the [Web of Conferences Publication Right Form](https://www.webofconferences.org/doc_journal/woc/publication_right_form.pdf) before the paper can be published.
+The `README.rst` in each generated repository includes a reminder and link to this form.
 
 ## Files
 

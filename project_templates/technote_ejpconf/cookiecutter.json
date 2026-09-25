@@ -45,7 +45,10 @@
     "*.bib",
     "*acron*",
     "*.py",
-    "spie*",
+    "webofc*",
+    "woc.bst",
+    "cuted.sty",
+    "doiEDPS.sty",
     ".gitignore",
     "body.tex"
   ],
