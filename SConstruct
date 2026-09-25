@@ -12,6 +12,7 @@ SConscript(
         "project_templates/technote_adasstex/SConscript",
         "project_templates/technote_spietex/SConscript",
         "project_templates/technote_ascomtex/SConscript",
+        "project_templates/technote_ejpconf/SConscript",
         "project_templates/test_report/SConscript",
         "project_templates/latex_lsstdoc/SConscript",
         "project_templates/fastapi_safir_app/SConscript",
