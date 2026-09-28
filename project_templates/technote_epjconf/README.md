@@ -1,4 +1,4 @@
-# technote_ejpconf
+# technote_epjconf
 
 **LSST technical note repository, formatted as an EPJ Web of Conferences paper preprint.**
 
