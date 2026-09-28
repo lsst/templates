@@ -19,3 +19,4 @@ version.py
 *.egg-info
 .venv
 venv
+.idea
