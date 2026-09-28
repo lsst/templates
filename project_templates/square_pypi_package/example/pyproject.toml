@@ -96,8 +96,7 @@ enable_error_code = [
 ignore_missing_imports = true
 local_partial_types = true
 no_implicit_reexport = true
-# Uncomment and add the "pydantic.mypy" plugin if using Pydantic. Add the
-# "sqlalchemy.ext.mypy.plugin" if using SQL Alchemy.
+# Uncomment and add the "pydantic.mypy" plugin if using Pydantic.
 # plugins = []
 show_error_codes = true
 strict_equality = true
