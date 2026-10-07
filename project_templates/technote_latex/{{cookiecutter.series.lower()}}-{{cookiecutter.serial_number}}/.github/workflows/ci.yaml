@@ -30,7 +30,7 @@ jobs:
 
       - name: TeX build
         run: |
-          docker run --rm -v `pwd`:/workspace -w /workspace lsstsqre/lsst-texmf:latest sh -c 'make'
+          docker run --rm -v `pwd`:/workspace -w /workspace lsstsqre/lsst-texmf:latest sh -c 'make authors.tex; make'
 
       - name: Landing page upload
         if: {% raw %}${{ github.event_name == 'push' }}{% endraw %}
