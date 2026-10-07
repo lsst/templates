@@ -7,13 +7,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0 # full history for metadata
           submodules: true
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.13"
 
@@ -30,7 +30,7 @@ jobs:
 
       - name: TeX build
         run: |
-          docker run --rm -v `pwd`:/workspace -w /workspace lsstsqre/lsst-texmf:latest sh -c 'make'
+          docker run --rm -v `pwd`:/workspace -w /workspace lsstsqre/lsst-texmf:latest sh -c 'make authors.tex; make'
 
       - name: Landing page upload
         if: {% raw %}${{ github.event_name == 'push' }}{% endraw %}
@@ -38,4 +38,4 @@ jobs:
           LTD_PASSWORD: {% raw %}${{ secrets.LTD_PASSWORD }}{% endraw %}
           LTD_USERNAME: {% raw %}${{ secrets.LTD_USERNAME }}{% endraw %}
         run: |
-          lander --upload --pdf {{ cookiecutter.series }}-{{ cookiecutter.serial_number }}.pdf --ltd-product {{ cookiecutter.series.lower() }}-{{ cookiecutter.serial_number }} --lsstdoc "{{ cookiecutter.series }}-{{ cookiecutter.serial_number }}.tex"
+          lander --upload --pdf {{ cookiecutter.series }}-{{ cookiecutter.serial_number }}.pdf --ltd-product {{ cookiecutter.series.lower() }}-{{ cookiecutter.serial_number }} --title "{{cookiecutter.title}}" --handle "{{cookiecutter.series}}-{{cookiecutter.serial_number}}" --lsstdoc "{{ cookiecutter.series }}-{{ cookiecutter.serial_number }}.tex"

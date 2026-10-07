@@ -7,13 +7,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0 # full history for metadata
           submodules: true
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.13"
 
@@ -30,7 +30,7 @@ jobs:
 
       - name: TeX build
         run: |
-          docker run --rm -v `pwd`:/workspace -w /workspace lsstsqre/lsst-texmf:latest sh -c 'make'
+          docker run --rm -v `pwd`:/workspace -w /workspace lsstsqre/lsst-texmf:latest sh -c 'make authors.tex; make'
 
       - name: Landing page upload
         if: ${{ github.event_name == 'push' }}
@@ -38,4 +38,4 @@ jobs:
           LTD_PASSWORD: ${{ secrets.LTD_PASSWORD }}
           LTD_USERNAME: ${{ secrets.LTD_USERNAME }}
         run: |
-          lander --upload --pdf TESTN-000.pdf --ltd-product testn-000 --lsstdoc "TESTN-000.tex"
+          lander --upload --pdf TESTN-000.pdf --ltd-product testn-000 --title "Document Title" --handle "TESTN-000" --lsstdoc "TESTN-000.tex"
